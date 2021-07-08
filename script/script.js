@@ -49,7 +49,9 @@ setup_img_portfolio();
 function setup_img_portfolio() {
     let index = 1
     document.querySelectorAll("#boxporfolio div img").forEach(element => {
-        element.src = "img/porfolio_box/porfolio_" + index + ".png";
+        // element.src = "img/porfolio_box/porfolio_" + index + ".png"; 
+        element.src = "img/porfolio_box/giphy - Copia (" + index + ").gif"; 
+        // element.src = "../img/porfolio_box/giphy.gif";
         c(element);
         index++;
     });
