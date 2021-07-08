@@ -57,7 +57,7 @@ p{
 
     justify-content: space-between;
     background-color: white;
-
+    z-index: 100;
 }
 .navlogo{
     flex-grow: 1;
@@ -151,11 +151,31 @@ margin-left: auto;
     margin: 20px;
     /* background-color: indianred; */
     border-radius: 50px;
+    overflow: hidden;
+    transform: scale(0.9);
+    transition-property: transform, box-shadow; 
+    transition-duration: 1s ;  
+    z-index: 3;
+}
+.box:hover{
+    transform: scale(1.5);
+    box-shadow: 0px 0px 20px #00000094;
+    /* transition-property: transform box-shadow;
+    transition-duration:  1s;
+    transition-delay: 250ms; */
+    z-index: 4;
+
 }
 
-#boxporfolio div img{
+
+#boxporfolio .box img{
     width: 250px;
-    border-radius: 50px;
+    /* border-radius: 50px; */
+    transform: scale(1.01);
+    /* transition: transform 2s; */
+}
+#boxporfolio .box img:hover{
+    /* transform: scale(1.25) */
 }
 /* descrizioni portfolio */
 
@@ -172,6 +192,9 @@ margin-left: auto;
     box-shadow: 0px 0px 20px #00000047;
     margin: 0;
     margin: 40px 0px 40px 0px;
+
+        /* transition-property: transform box-shadow ; */
+    /* transition-duration:  500ms; */
 }
 #boxporfolio .boxactive img{
     /* width: unset; */
@@ -183,8 +206,11 @@ margin-left: auto;
     border-bottom-left-radius :75px;
     flex-grow: 1;
     object-fit: cover;
-    min-width: 300px;
+    min-width: 300px;  
+
+
 }
+
 
 .box div, .box h4{
     display: none;
@@ -247,13 +273,13 @@ margin-left: auto;
 
 }
 .boxactive .social a:nth-of-type(1){
-    background: url("img/social/social_share.svg")no-repeat top left;
+    background: url("../img/social/social_share.svg")no-repeat top left;
 }
 .boxactive .social a:nth-of-type(2){
-    background: url("img/social/social_insta.svg")no-repeat top left;
+    background: url("../img/social/social_insta.svg")no-repeat top left;
 }
 .boxactive .social a:nth-of-type(3){
-    background: url("img/social/social_fb.svg")no-repeat top left;
+    background: url("../img/social/social_fb.svg")no-repeat top left;
 
 }
 

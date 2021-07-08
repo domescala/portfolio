@@ -16,15 +16,29 @@ function setup_box_porfolio() {
         
         let a = document.querySelector("#boxporfolio .boxactive")
         if(a && a != this){
-            a.classList.remove("boxactive")
+            a.classList.remove("boxactive");
+            a.classList.add("box");
         }
 
         console.log(this)
+        
+        // this.style["transition-property"]=  "none";
+        this.classList.toggle("box")
+        
+        
+        // this.style["transition-property"]=  "transform box-shadow";
         this.classList.toggle("boxactive")
         this.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" })
 
-
-
+        // let a = document.querySelector(".boxactive")
+        // if (this.className.includes("box")) {
+        //     if(a){
+        //         a.classList.remove("boxactive");
+        //         a.classList.add("box")
+        //     }
+        //     this.classList.remove("box")
+        //     this.classList.add("boxactive")
+        // }
     }
 }
 
@@ -49,7 +63,7 @@ document.addEventListener('scroll', function(e) {
     let s = window.scrollY;
     let b = (s/255) % 255;
     a.style["boxShadow"]  =  "0px 0px 25px rgba(158, 126, 255, "+b*0.5+")"
-    c(a.style["boxShadow"])
+    // c(a.style["boxShadow"])
     
 })
 
