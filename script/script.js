@@ -62,7 +62,7 @@ document.addEventListener('scroll', function(e) {
     let a = document.querySelector("#navbar");
     let s = window.scrollY;
     let b = (s/255) % 255;
-    a.style["boxShadow"]  =  "0px 0px 25px rgba(158, 126, 255, "+b*0.5+")"
+    a.style["boxShadow"]  =  "0px 0px 35px rgba(158, 126, 255, "+b*0.5+")"
     // c(a.style["boxShadow"])
     
 })
