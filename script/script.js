@@ -4,30 +4,33 @@ function setup_project_portfolio() {
     let ultimo;
 //    let index = 3;
 //    c("hola")
-    document.querySelectorAll("#containerportfolio .project").forEach(e => {
+//     document.querySelectorAll("#containerportfolio .project").forEach(e => {
 
-        e.addEventListener("click", f);
-        //assegno ad ogni riga un multiplo di due, così il project selezionato rimane nella riga e gli altri scalano sotto
-//        e.style.order = Math.floor(index/3)*2;
-//        index++;
-    });
-
-    function f() {
+//         e.addEventListener("click", f);
+//         //assegno ad ogni riga un multiplo di due, così il project selezionato rimane nella riga e gli altri scalano sotto
+// //        e.style.order = Math.floor(index/3)*2;
+// //        index++;
+//     });
+    $("#containerportfolio .project").click(
+        function () {
         
-        let a = document.querySelector("#containerportfolio .projectactive")
+        // let a = document.querySelector("#containerportfolio .projectactive")
+        // if(a && a != this){
+        //     a.classList.remove("projectactive");
+        //     a.classList.add("project");
+        // }
+        let a = $("#containerportfolio .projectactive")
         if(a && a != this){
-            a.classList.remove("projectactive");
-            a.classList.add("project");
+            a.remove("projectactive");
+            a.add("project");
         }
 
-        console.log(this)
+
         
-        // this.style["transition-property"]=  "none";
         this.classList.toggle("project")
-        
-        
-        // this.style["transition-property"]=  "transform box-shadow";
         this.classList.toggle("projectactive")
+
+        //scroll
         this.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" })
 
         // let a = document.querySelector(".projectactive")
@@ -40,6 +43,8 @@ function setup_project_portfolio() {
         //     this.classList.add("projectactive")
         // }
     }
+    )
+
 }
 
 
@@ -61,11 +66,21 @@ function setup_img_portfolio() {
 
 
 document.addEventListener('scroll', function(e) {
-    let a = document.querySelector("#navbar");
+    let a = document.getElementById("navbar");
+    
     let s = window.scrollY;
     let b = (s/255) % 255;
-    a.style["projectShadow"]  =  "0px 0px 35px rgba(158, 126, 255, "+b*0.5+")"
-    // c(a.style["projectShadow"])
+    a.style["boxShadow"]  =  "0px 0px 35px rgba(158, 126, 255, "+b*0.5+")"
+    c(s)
+
+    
+    let logotype = document.querySelector(".logotype");
+    let d =  ((300-s)*0.4)-25
+    if(d<1){
+        d = 0
+    }
+
+    logotype.style["transform"] = "translateY("+d+"px)"
     
 })
 
@@ -79,3 +94,7 @@ function c(t) {
 }
 
 
+$(".navham").click(function () {
+    $(".navlink").toggleClass("open")
+    $(".navham").toggleClass("open")
+})
