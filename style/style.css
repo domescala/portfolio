@@ -77,17 +77,16 @@ flex-grow: 1;
     display: flex;
     margin-top: 50px;
     align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap-reverse;
+    justify-content: center;
     max-width: 1200px;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 125px;
+    width: 100%;
+    flex-direction: row;
 }
 /* blocco per i testi*/
-#presentation div {
-width: 400px;margin-left: 25px;margin-right: 25px;
-}
+#presentation div {width: 400px;margin-left: 25px;margin-right: 25px;order: -1;}
 /* blocco per la foto */
 #presentation img{
     width: 100vw;
@@ -314,9 +313,9 @@ margin-top: 100px;
     /* GENERALE, TESTI E TITOLI*/
     h1{
         font-size: 56px;
-        margin-bottom: 26px;
+        margin-bottom: 18px;
     }
-    h2{
+    /* h2{
         font-size: 51px;
         margin-bottom: 21px;
     }
@@ -331,7 +330,7 @@ margin-top: 100px;
     }
     p{
         font-weight: 500;
-    }
+    } */
 
     /* ---------------------------------------- */
     /* NAVBAR */
@@ -381,9 +380,9 @@ margin-top: 100px;
     }
     /* blocco per i testi*/
     #presentation div {
-    width: 290px;
+    /* width: 290px;
     margin-left: 25px;
-    margin-right: 25px;
+    margin-right: 25px; */
     }
     /* blocco per la foto */
     #presentation img{
@@ -394,27 +393,28 @@ margin-top: 100px;
     }
     /* sottotitolo */
     #presentation div h5{
-        font-size: 18px;
+        /* font-size: 18px;
         text-transform: uppercase;
-        color: gray;
-        margin-bottom: 36px;
+        color: gray; */
+        margin-bottom: 26px;
     }
     /* piccola descrizione */
     #presentation div p{
-        margin-top: 42px;
+        margin-top: 0px;
         margin-bottom: 48px;
         font-size: 21px;
+        max-width: 300px;
     }
     /* pulsante */
-    #presentation div a{
-        color: #0a0a0a;
+    /* #presentation div a{
+        color: #0a0a0a; */
         /* font-weight: bold; */
-        background-color: rgb(82, 255, 179);
+        /* background-color: rgb(82, 255, 179);
         font-size: 18px;
         padding: 15px 30px 15px 30px;
         border-radius: 100px;
-        text-decoration: none;
-    }
+        text-decoration: none; */
+    /* } */
     /* ------------------------------------------- */    
      /* PORTFOLIO */
 
@@ -479,10 +479,10 @@ margin-top: 100px;
       /* -------------------------------------- */
     /* GENERALE, TESTI E TITOLI*/
     h1{
-        font-size: 72px;
-        margin-bottom: 26px;
+        font-size: 48px;
+        margin-bottom: 21px;
     }
-    h2{
+    /* h2{
         font-size: 51px;
         margin-bottom: 21px;
     }
@@ -497,7 +497,7 @@ margin-top: 100px;
     }
     p{
         font-weight: 500;
-    }
+    } */
 
     /* ---------------------------------------- */
     /* NAVBAR */
@@ -544,40 +544,46 @@ margin-top: 100px;
         margin-right: auto;
         margin-left: auto;
         margin-bottom: 125px; */
+        flex-direction: column;
     }
     /* blocco per i testi*/
     #presentation div {
-    width: 400px;margin-left: 25px;margin-right: 25px;
+    width: unset;
+    margin-left: 25px;
+    margin-right: 25px;
+    order: 2;
     }
     /* blocco per la foto */
     #presentation img{
-        width: 100vw;
-        max-width: 450px;
-        margin-right: -80px;
-        margin-left: -50px;
+        /* width: 100vw; */
+        max-width: 250px;
+        /* margin-right: -80px; */
+        /* margin-left: -50px; */
+        margin: unset;
+        margin-bottom: -35px;
     }
     /* sottotitolo */
     #presentation div h5{
-        font-size: 21px;
-        text-transform: uppercase;
-        color: gray;
-        margin-bottom: 36px;
+        font-size: 14px;
+        /* text-transform: uppercase;
+        color: gray; */
+        margin-bottom: 26px;
     }
     /* piccola descrizione */
     #presentation div p{
-        margin-top: 42px;
-        margin-bottom: 48px;
-        font-size: 26px;
+        margin-top: unset;
+        margin-bottom: 36px;
+        font-size: 16px;
     }
     /* pulsante */
     #presentation div a{
-        color: #0a0a0a;
+        /* color: #0a0a0a; */
         /* font-weight: bold; */
-        background-color: rgb(82, 255, 179);
-        font-size: 21px;
-        padding: 15px 30px 15px 30px;
+        /* background-color: rgb(82, 255, 179); */
+        font-size: 14px;
+        /* padding: 15px 30px 15px 30px;
         border-radius: 100px;
-        text-decoration: none;
+        text-decoration: none; */
     }
     /* ------------------------------------------- */    
      /* PORTFOLIO */
