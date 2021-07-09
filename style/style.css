@@ -11,7 +11,8 @@ body{
 /* -------------------------------------- */
 /* GENERALE, TESTI E TITOLI*/
 h1, h2{
-    font-family: riffic free;
+    font-family: "riffic", sans-serif;
+    font-weight: 900;
 }
 h1{
     font-size: 72px;
