@@ -100,8 +100,8 @@ width: 400px;margin-left: 25px;margin-right: 25px;
     margin-right: auto;
     width: 90%;
 }
-/* container per i box */
-#boxporfolio{
+/* container per i project */
+#containerporfolio{
 display: flex;
 flex-wrap: wrap;
 max-width: 1200px;
@@ -110,8 +110,8 @@ margin-top: 100px;
 margin-right: auto;
 margin-left: auto;
 }
-/* box per ogni progetto */
-.box{
+/* project per ogni progetto */
+.project{
     box-shadow: 0px 0px 10px #00000094;
     flex-grow: 0;
     width: 250px;
@@ -125,33 +125,33 @@ margin-left: auto;
     transition-duration: 1s ;  
     z-index: 3;
 }
-/* zoom-in box*/
-.box:hover{
+/* zoom-in project*/
+.project:hover{
     transform: scale(1.25);
     box-shadow: 0px 0px 20px #00000094;
     z-index: 4;
 }
 
 /* immagine */
-#boxporfolio .box img{
+#containerporfolio .project img{
     width: 250px;
     /* border-radius: 50px; */
     transform: scale(1.5);
     transition: transform 1s;
 }
 /* zoom-out immagine  */
-#boxporfolio .box img:hover{
+#containerporfolio .project img:hover{
     transform: scale(1.02)
 }
 /* spengo i div delle descrizioni dei progetti */
-.box div, .box h4{
+.project div, .project h4{
     display: none;
 }
 
 /* --------------------- */ 
 /* DESCRIZIONI PORTFOLIO */
-/* box del progetto selezionato */
-.boxactive{
+/* project del progetto selezionato */
+.projectactive{
     /* order: ; */
     flex-grow: 0;
     width: 100%;
@@ -166,11 +166,11 @@ margin-left: auto;
     margin: 40px 0px 40px 0px;
 }
 /* riaccendo i div */
-.boxactive div{
+.projectactive div{
     display: unset;
 }
 /* immagine del progetto selezionato */
-#boxporfolio .boxactive img{
+#containerporfolio .projectactive img{
     height: 100%;
     margin-left: 0px;
     border-radius: unset;
@@ -181,7 +181,7 @@ margin-left: auto;
     min-width: 300px;  
 }
 /* blocco descrizione */
-.boxactive .boxcaption{
+.projectactive .projectcaption{
     margin-left: 65px;
     margin-top: 25px;
     margin-right: 50px;
@@ -192,20 +192,20 @@ margin-left: auto;
     flex-direction: column;
     flex-grow: 2;
 }
-/* box intestazione */
-.boxactive .boxcaption div{ 
+/* project intestazione */
+.projectactive .projectcaption div{ 
     display: flex;
     justify-content: space-between;
 }
 /* social */
-.boxactive .social{
+.projectactive .social{
     width: 20px;
     align-self: center;
     margin-left: auto;
     margin-right: 30px;
     order: 6;
 }
-.boxactive .social a{
+.projectactive .social a{
     display: block;
     color: rgba(0, 0, 0, 0); /*testo trasparente*/
     width: 20px;
@@ -214,31 +214,31 @@ margin-left: auto;
     opacity: 0.3;
 }
 /* icone sfondo nel tag a */
-.boxactive .social a:nth-of-type(1){
+.projectactive .social a:nth-of-type(1){
     background: url("../img/social/social_share.svg")no-repeat top left;
 }
-.boxactive .social a:nth-of-type(2){
+.projectactive .social a:nth-of-type(2){
     background: url("../img/social/social_insta.svg")no-repeat top left;
 }
-.boxactive .social a:nth-of-type(3){
+.projectactive .social a:nth-of-type(3){
     background: url("../img/social/social_fb.svg")no-repeat top left;
 }
 /* testi nelle descrizioni */
-.boxactive p{
+.projectactive p{
     margin-top: 20px;
     margin-bottom: 25px;
     max-width: 450px;
     font-size: 16px;
 }
-.boxactive h2{
+.projectactive h2{
     margin-top: 35px;
     margin-bottom: 17px;
 }
-.boxactive h4{
+.projectactive h4{
     right: 0;
     font-weight: 700;
 }
-.boxactive h5{
+.projectactive h5{
     font-weight: 500;
     margin-top: auto;
     text-align: end;
