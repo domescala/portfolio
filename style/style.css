@@ -101,7 +101,7 @@ width: 400px;margin-left: 25px;margin-right: 25px;
     width: 90%;
 }
 /* container per i project */
-#containerporfolio{
+#containerportfolio{
 display: flex;
 flex-wrap: wrap;
 max-width: 1200px;
@@ -133,14 +133,14 @@ margin-left: auto;
 }
 
 /* immagine */
-#containerporfolio .project img{
+#containerportfolio .project img{
     width: 250px;
     /* border-radius: 50px; */
     transform: scale(1.5);
     transition: transform 1s;
 }
 /* zoom-out immagine  */
-#containerporfolio .project img:hover{
+#containerportfolio .project img:hover{
     transform: scale(1.02)
 }
 /* spengo i div delle descrizioni dei progetti */
@@ -170,7 +170,7 @@ margin-left: auto;
     display: unset;
 }
 /* immagine del progetto selezionato */
-#containerporfolio .projectactive img{
+#containerportfolio .projectactive img{
     height: 100%;
     margin-left: 0px;
     border-radius: unset;
@@ -244,3 +244,19 @@ margin-left: auto;
     text-align: end;
 }
 
+/* ---------------------------- */ 
+/* SEZIONE SKILLS E INTERESSI */
+
+/* container */
+#containerskills{
+/* display: flex; */
+flex-wrap: wrap;
+max-width: 1200px;
+justify-content: center;
+margin-top: 100px;
+margin-right: auto;
+margin-left: auto;
+}
+.skill{
+
+}

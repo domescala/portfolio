@@ -1,10 +1,10 @@
 c("hola")
-setup_project_porfolio();
-function setup_project_porfolio() {
+setup_project_portfolio();
+function setup_project_portfolio() {
     let ultimo;
 //    let index = 3;
 //    c("hola")
-    document.querySelectorAll("#containerporfolio .project").forEach(e => {
+    document.querySelectorAll("#containerportfolio .project").forEach(e => {
 
         e.addEventListener("click", f);
         //assegno ad ogni riga un multiplo di due, così il project selezionato rimane nella riga e gli altri scalano sotto
@@ -14,7 +14,7 @@ function setup_project_porfolio() {
 
     function f() {
         
-        let a = document.querySelector("#containerporfolio .projectactive")
+        let a = document.querySelector("#containerportfolio .projectactive")
         if(a && a != this){
             a.classList.remove("projectactive");
             a.classList.add("project");
@@ -44,14 +44,14 @@ function setup_project_porfolio() {
 
 
 // inserimento delle immagini nei project del portfolio
-// devono chiamarsi "porfolio_1.png"
+// devono chiamarsi "portfolio_1.png"
 setup_img_portfolio();
 function setup_img_portfolio() {
     let index = 1
-    document.querySelectorAll("#containerporfolio div img").forEach(element => {
-        // element.src = "img/porfolio_project/porfolio_" + index + ".png"; 
-        element.src = "img/porfolio_projects/giphy - Copia (" + index + ").gif"; 
-        // element.src = "../img/porfolio_project/giphy.gif";
+    document.querySelectorAll("#containerportfolio div img").forEach(element => {
+        // element.src = "img/portfolio_project/portfolio_" + index + ".png"; 
+        element.src = "img/portfolio_projects/giphy - Copia (" + index + ").gif"; 
+        // element.src = "../img/portfolio_project/giphy.gif";
         c(element);
         index++;
     });
