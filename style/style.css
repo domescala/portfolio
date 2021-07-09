@@ -54,7 +54,7 @@ p{
     z-index: 100;
 }
 .navlogo{
-    flex-grow: 1;
+    /* flex-grow: 1; */
 }
 .navlink a{
     margin-left: 20px;
@@ -62,13 +62,11 @@ p{
     flex-grow: 2;
     
 }
-.navlink{
-justify-self: center;    
-
-flex-grow: 1;
-}
+.navlink{justify-self: center;/* width: 600px; *//* flex-grow: 1; */}
 .navham{
     /* width: 25%; */
+    justify-self: flex-end;
+    /* flex-grow: 1; */
 }
 
 /* -------------------------------------------- */
@@ -78,7 +76,7 @@ flex-grow: 1;
     display: flex;
     margin-top: 50px;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     max-width: 1200px;
     margin-right: auto;
     margin-left: auto;
@@ -279,30 +277,53 @@ margin-left: auto;
 
 /* container */
 #containerskills{
-margin-top: 100px;
-}
-.skill{
+    flex-basis: auto;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px}
+.skill{ /*ROW*/
+    display: flex;
     border-radius: 30px;
     overflow: hidden;
     box-shadow: 0px 0px 10px #00000094;
+    margin-top: 60px;
+    max-width: 900px;
+    /* justify-content: space-between; */
+}
+.skill.right {
+    align-self: flex-end;}
 
-
+.skill.left {
+    align-self: flex-start;
 }
 .skill div{
     padding: 0; /*reset padding nella row*/
 }
-
 .skill div img{
     transform: scale(1.05);
     width: 100%;
-    max-height: 300px;
+    max-height: 350px;
     /* max-width: 400px; */
     object-fit: cover;
+    min-height: 100%;
 }
 .skill .skillcaption{
-
-    padding: 70px 50px;
+max-width: 550px;
+padding: 70px 50px;
 }
+.skill.left .skillcaption{
+    order: 2;
+}
+.skill.right .skillcaption{
+    order: -1;
+}
+/* testi skill */
+.skill .skillcaption p{
+    margin-bottom: 30px;
+}
+
+
 
 /* ------------------------------------------ */
 /* RESPONSIVE SETTINGS */
@@ -333,37 +354,7 @@ margin-top: 100px;
         font-weight: 500;
     } */
 
-    /* ---------------------------------------- */
-    /* NAVBAR */
-    #navbar{
-        display: flex;
-        position: fixed;
-        justify-content: space-between;
-        top: 0px;
-        left: 0px;
-        right: 0px;
-        padding: 25px 50px 25px 50px;
-        box-shadow: 0px 0px 0px #9e7eff7e;
-        background-color: white;
-        z-index: 100;
-    }
-    .navlogo{
-        flex-grow: 1;
-    }
-    .navlink a{
-        margin-left: 20px;
-        margin-right: 20px;
-        flex-grow: 2;
-        
-    }
-    .navlink{
-    justify-self: center;    
 
-    flex-grow: 1;
-    }
-    .navham{
-        /* width: 25%; */
-    }
 
     /* -------------------------------------------- */
     /* PRESENTAZIONE */
@@ -378,12 +369,15 @@ margin-top: 100px;
         margin-right: auto;
         margin-left: auto;
         margin-bottom: 125px; */
+        display: flex;
+        justify-content: space-evenly;
     }
     /* blocco per i testi*/
     #presentation div {
     /* width: 290px;
     margin-left: 25px;
     margin-right: 25px; */
+    width: 300px;
     }
     /* blocco per la foto */
     #presentation img{
@@ -483,10 +477,10 @@ margin-top: 100px;
         font-size: 48px;
         margin-bottom: 21px;
     }
-    /* h2{
-        font-size: 51px;
-        margin-bottom: 21px;
-    }
+    h2{
+        font-size: 42px;
+        margin-bottom: 18px;
+    }/*
     h5, h4{
         font-size: 14px;
         text-transform: uppercase;
@@ -500,37 +494,7 @@ margin-top: 100px;
         font-weight: 500;
     } */
 
-    /* ---------------------------------------- */
-    /* NAVBAR */
-    #navbar{
-        display: flex;
-        position: fixed;
-        justify-content: space-between;
-        top: 0px;
-        left: 0px;
-        right: 0px;
-        padding: 25px 50px 25px 50px;
-        box-shadow: 0px 0px 0px #9e7eff7e;
-        background-color: white;
-        z-index: 100;
-    }
-    .navlogo{
-        flex-grow: 1;
-    }
-    .navlink a{
-        margin-left: 20px;
-        margin-right: 20px;
-        flex-grow: 2;
-        
-    }
-    .navlink{
-    justify-self: center;    
 
-    flex-grow: 1;
-    }
-    .navham{
-        /* width: 25%; */
-    }
 
     /* -------------------------------------------- */
     /* PRESENTAZIONE */
@@ -587,6 +551,10 @@ margin-top: 100px;
         text-decoration: none; */
     }
     /* ------------------------------------------- */    
+    .titlesection h2{
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
      /* PORTFOLIO */
 
     /* project per ogni progetto */
@@ -600,4 +568,14 @@ margin-top: 100px;
     #containerportfolio .project img{
         width: 125px;
     }
+
+    /* ------------------------------------- */
+    /* Skill */
+    .skill.left .skillcaption{
+        order: -1;
+    }
+    .skill.right .skillcaption{
+        order: -1;
+    }
+    
 }
