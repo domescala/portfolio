@@ -42,7 +42,7 @@ flex-grow: 1;
     /* width: 25%; */
 }
 
-/* ------------ */
+/* -------------------------------------------- */
 /* PRESENTAZIONE */
 
 #presentation{
@@ -91,7 +91,7 @@ width: 400px;margin-left: 25px;margin-right: 25px;
     text-decoration: none;
 }
 
-/* ------------- */
+/* ---------------------------------------- */
 /* PORTFOLIO */
 /* titolo sezione */
 .titlesection{
@@ -148,7 +148,7 @@ margin-left: auto;
     display: none;
 }
 
-/* --------------------- */ 
+/* ------------------------------------------ */ 
 /* DESCRIZIONI PORTFOLIO */
 /* project del progetto selezionato */
 .projectactive{
@@ -164,6 +164,7 @@ margin-left: auto;
     box-shadow: 0px 0px 20px #00000047;
     margin: 0;
     margin: 40px 0px 40px 0px;
+    overflow: hidden;
 }
 /* riaccendo i div */
 .projectactive div{
@@ -174,8 +175,8 @@ margin-left: auto;
     height: 100%;
     margin-left: 0px;
     border-radius: unset;
-    border-top-left-radius : 50px;
-    border-bottom-left-radius :75px;
+    /* border-top-left-radius : 50px; */
+    /* border-bottom-left-radius :75px; */
     flex-grow: 1;
     object-fit: cover;
     min-width: 300px;  
@@ -196,6 +197,7 @@ margin-left: auto;
 .projectactive .projectcaption div{ 
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
 }
 /* social */
 .projectactive .social{
@@ -244,7 +246,7 @@ margin-left: auto;
     text-align: end;
 }
 
-/* ---------------------------- */ 
+/* ------------------------------------------------- */ 
 /* SEZIONE SKILLS E INTERESSI */
 
 /* container */
@@ -272,4 +274,77 @@ margin-top: 100px;
 .skill .skillcaption{
 
     padding: 70px 50px;
+}
+
+/* ------------------------------------------ */
+/* RESPONSIVE SETTINGS */
+@media only screen and (max-width: 880px) {
+        /* Quando lo schermo è meno di 880px*/
+        /* body {
+        } */
+
+        
+     /* PORTFOLIO */
+
+    /* project per ogni progetto */
+    .project{
+        width: 125px;
+        height: 125px;
+        margin: 5px;
+        border-radius: 25px;
+    }
+    /* immagine */
+    #containerportfolio .project img{
+        width: 125px;
+    }
+
+
+    /* ------------------------------------------ */ 
+    /* DESCRIZIONI PORTFOLIO */
+    /* project del progetto selezionato */
+    .projectactive{
+        height: 100%;
+        display:flex;
+        flex-direction: column;
+    }
+    /* immagine del progetto selezionato */
+    #containerportfolio .projectactive img{
+        height: unset;
+        max-height: 300px;
+        width: 100%; 
+    }
+    /* blocco descrizione */
+    .projectactive .projectcaption{
+        margin: 40px 40px 20px 40px;
+        max-width: unset;
+        flex-direction: column;
+    }
+    /* social */
+    .projectactive .social{
+        width: 100%;
+        padding: 0px 40px 40px 40px;
+        text-align: center;
+    }
+    .projectactive .social a{
+        display: inline-block;
+        margin-right: 20px;
+        width: 30px;
+        height: 30px;
+        margin-top: 10px;
+    }
+    /* testi nelle descrizioni */
+    .projectactive p{
+        margin-bottom: 0px;
+    }
+    .projectactive h5{
+        margin-top: 10px;
+    }
+}
+
+  @media only screen and (max-width: 500px) {
+    /* Quando lo schermo è meno di 880px*/
+    body {
+      padding:0;
+    }
+
 }
