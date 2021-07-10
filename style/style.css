@@ -272,12 +272,12 @@ margin-left: auto;
 .projectactive .social a:nth-of-type(1){
     background: url("../img/social/social_share.svg")no-repeat top left;
 }
-.projectactive .social a:nth-of-type(2){
+/* .projectactive .social a:nth-of-type(2){
     background: url("../img/social/social_insta.svg")no-repeat top left;
-}
-.projectactive .social a:nth-of-type(3){
+} */
+/* .projectactive .social a:nth-of-type(2){
     background: url("../img/social/social_fb.svg")no-repeat top left;
-}
+} */
 /* testi nelle descrizioni */
 .projectactive p{
     margin-top: 20px;
@@ -352,16 +352,15 @@ padding: 70px 50px;
 
 /* ------------------------------------------ */
 /* CONTATTI */
-#containercontacts{
-
-}
+#containercontacts{margin-top: 100px;}
 #containercontacts .contacts, #containercontacts .social {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    align-content: center;
+    /* align-content: center; */
     margin-top: 75px;
     margin-bottom: 10px;
+    text-align: center;
 }
 #containercontacts img{
     /* width: 30px; */
@@ -392,7 +391,8 @@ padding: 70px 50px;
     margin-top: 80px;
 }
 #containercontacts .social img{
-    height: 70px;
+    height: 60px;
+    /* margin: 0px 20px; */
 }
 
 

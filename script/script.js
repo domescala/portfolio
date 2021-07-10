@@ -1,3 +1,7 @@
+// -----
+// shareon();
+
+
 // ----- APERTURA/CHIUSURA PROGETTI ----- 
 $("#containerportfolio .project").click(
     function () {
@@ -41,7 +45,7 @@ document.addEventListener('scroll', function (e) {
         s = 1;
     }
 
-    navbar.style["boxShadow"] = "0px 0px 35px rgba(158, 126, 255, " + s + ")"
+    navbar.style["boxShadow"] = "0px 0px 35px rgba(158, 126, 255, " + s*0.8 + ")"
 
 
     // ----- COMPARSA DEL LOGOTIPO NELLA NAVBAR ----- 
@@ -91,6 +95,9 @@ $(".navlink a").click(function(){
     }
     else if (content == "portfolio") {
         id = "containerportfolio" 
+    }
+    else if (content == "contacts") {
+        id = "containercontacts" 
     }
 
     let a = document.querySelector("#"+id+" div")
