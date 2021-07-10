@@ -94,7 +94,7 @@ $(".navlink a").click(function(){
     }
 
     let a = document.querySelector("#"+id+" div")
-    a.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" })
+    a.scrollIntoView({ block: "center", inline: "nearest" })
 
 
 })
