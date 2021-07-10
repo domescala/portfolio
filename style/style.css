@@ -11,7 +11,7 @@ body{
 /* -------------------------------------- */
 /* GENERALE, TESTI E TITOLI*/
 h1, h2{
-    font-family: "riffic", sans-serif;
+    font-family: "riffic", "Poppins", sans-serif;
     font-weight: 900;
 }
 h1{
@@ -48,17 +48,18 @@ p{
     top: 0px;
     left: 0px;
     right: 0px;
-    padding: 25px 50px 25px 50px;
+    padding: 0px 50px 0px 50px;
     box-shadow: 0px 0px 0px #9e7eff7e;
     background-color: white;
     z-index: 100;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .navlogo{
     display: flex;
     align-items: center;
     width: 225px;
-    height: 65px;
+    height: 80px;
+    overflow: hidden;
 }
 .navlogo .logo{
     /* transform: scale(2.5); */
@@ -87,7 +88,7 @@ p{
     margin-right: 20px;
     flex-grow: 2;
 }
-.navlink{justify-self: center;/* width: 600px; *//* flex-grow: 1; */}
+.navlink{justify-self: center;/* width: 600px; *//* flex-grow: 1; */display: flex;align-items: center;}
 .navham{
     /* width: 25%; */
     justify-self: flex-end;
@@ -354,7 +355,7 @@ padding: 70px 50px;
 /* ------------------------------------------ */
 /* RESPONSIVE SETTINGS */
 @media only screen and (max-width: 880px) {
-        /* Quando lo schermo è meno di 880px*/
+        /* Quando lo schermo Ã¨ meno di 880px*/
         /* body {
         } */
       /* -------------------------------------- */
@@ -493,9 +494,9 @@ padding: 70px 50px;
 }
 
   @media only screen and (max-width: 650px) {
-    /* Quando lo schermo è meno di 650px*/
+    /* Quando lo schermo Ã¨ meno di 650px*/
     body {
-      padding:0;
+      padding: 25px 0px 0px 0px;
     }
       /* -------------------------------------- */
     /* GENERALE, TESTI E TITOLI*/
@@ -506,22 +507,12 @@ padding: 70px 50px;
     h2{
         font-size: 42px;
         margin-bottom: 18px;
-    }/*
-    h5, h4{
-        font-size: 14px;
-        text-transform: uppercase;
-        color: gray;
     }
-    h4{
-        color: rgb(46, 46, 46);
-        font-weight: 500;
-    }
-    p{
-        font-weight: 500;
-    } */
 
     /* NAVBAR */
-
+    #navbar{
+        padding: 0px 20px;
+    }
     .navlink{
     justify-self: center;
     /* width: 600px; */
@@ -531,9 +522,9 @@ padding: 70px 50px;
     /* left: 50%; */
     display: flex;
     flex-direction: column;
-    margin-left: -50px;
-    /* left: 50%; */
-    padding: 50px 0px;
+    /* margin-left: auto; */
+    left: 0;
+    padding: 50px px;
     width: 100%;
     text-align: center;
     background: white;
@@ -543,6 +534,9 @@ padding: 70px 50px;
     }
     .navlink.open{
     top: 80px; 
+    }
+    .navlink a{
+        color:tomato;
     }
     /* .navlink{
         display: flex;

@@ -1,87 +1,61 @@
-c("hola")
-setup_project_portfolio();
-function setup_project_portfolio() {
-    let ultimo;
-//    let index = 3;
-//    c("hola")
-//     document.querySelectorAll("#containerportfolio .project").forEach(e => {
-
-//         e.addEventListener("click", f);
-//         //assegno ad ogni riga un multiplo di due, così il project selezionato rimane nella riga e gli altri scalano sotto
-// //        e.style.order = Math.floor(index/3)*2;
-// //        index++;
-//     });
-    $("#containerportfolio .project").click(
-        function () {
-        
-        // let a = document.querySelector("#containerportfolio .projectactive")
-        // if(a && a != this){
-        //     a.classList.remove("projectactive");
-        //     a.classList.add("project");
-        // }
-        let a = $("#containerportfolio .projectactive")
-        if(a && a != this){
-            a.remove("projectactive");
-            a.add("project");
-        }
-
-
-        
+// ----- APERTURA/CHIUSURA PROGETTI ----- 
+$("#containerportfolio .project").click(
+    function () {
         this.classList.toggle("project")
         this.classList.toggle("projectactive")
-
-        //scroll
+        // Animazione scroll
         this.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" })
-
-        // let a = document.querySelector(".projectactive")
-        // if (this.className.includes("project")) {
-        //     if(a){
-        //         a.classList.remove("projectactive");
-        //         a.classList.add("project")
-        //     }
-        //     this.classList.remove("project")
-        //     this.classList.add("projectactive")
-        // }
     }
-    )
-
-}
+)
 
 
-// inserimento delle immagini nei project del portfolio
+
+// ----- INSERIMENTO IMMAGINI PORFOLIO -----
+
 // devono chiamarsi "portfolio_1.png"
 setup_img_portfolio();
 function setup_img_portfolio() {
     let index = 1
     document.querySelectorAll("#containerportfolio div img").forEach(element => {
-        // element.src = "img/portfolio_project/portfolio_" + index + ".png"; 
-        element.src = "img/portfolio_projects/giphy - Copia (" + index + ").gif"; 
-        // element.src = "../img/portfolio_project/giphy.gif";
+        element.src = "img/portfolio_projects/giphy - Copia (" + index + ").gif";
         c(element);
         index++;
     });
 }
 
 
+// ----- AZIONI TRAMITE SCROLL ----- 
 
+var navbar = document.querySelector("#navbar");
+var logotype = document.querySelector("#navbar .logotype");
 
-document.addEventListener('scroll', function(e) {
-    let a = document.getElementById("navbar");
-    
-    let s = window.scrollY;
-    let b = (s/255) % 255;
-    a.style["boxShadow"]  =  "0px 0px 35px rgba(158, 126, 255, "+b*0.5+")"
-    c(s)
+document.addEventListener('scroll', function (e) {
 
-    
-    let logotype = document.querySelector(".logotype");
-    let d =  ((300-s)*0.4)-25
-    if(d<1){
-        d = 0
+    // ----- OMBRA NAVBAR ----- 
+
+    var s = window.scrollY;
+
+    s = (s / 150);
+    if (s > 1) {
+        // limite a 1
+        s = 1;
     }
 
-    logotype.style["transform"] = "translateY("+d+"px)"
-    
+    navbar.style["boxShadow"] = "0px 0px 35px rgba(158, 126, 255, " + s + ")"
+
+
+    // ----- COMPARSA DEL LOGOTIPO NELLA NAVBAR ----- 
+
+    // posizione "top" rispetto alla viewport
+    var h = document.querySelector("#presentation h1").getBoundingClientRect().top;
+
+    h = h - 5;
+    if (h < 0) { // limite a 0
+        h = 0;
+    }
+
+    logotype.style["transform"] = "translateY(" + h + "px)"
+
 })
 
 
@@ -94,7 +68,33 @@ function c(t) {
 }
 
 
+// ----- MENU A SCOMPARSA ----- 
+
 $(".navham").click(function () {
     $(".navlink").toggleClass("open")
     $(".navham").toggleClass("open")
+})
+
+// ----- SCROLL ALLA SEZIONE DAL MENU -----
+
+$(".navlink a").click(function(){
+
+
+    $(".navlink").removeClass("open")
+    $(".navham").removeClass("open")
+
+
+    var content = this.innerHTML;
+    let id = ""
+    if (content == "about") {
+        id = "containerskills"
+    }
+    else if (content == "portfolio") {
+        id = "containerportfolio" 
+    }
+
+    let a = document.querySelector("#"+id+" div")
+    a.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" })
+
+
 })
