@@ -20,7 +20,6 @@ function setup_img_portfolio() {
     let index = 1
     document.querySelectorAll("#containerportfolio div img").forEach(element => {
         element.src = "img/portfolio_projects/portfolio_" + index + ".gif";
-        c(element);
         index++;
     });
 }
@@ -60,14 +59,6 @@ document.addEventListener('scroll', function (e) {
 
 })
 
-
-
-
-
-
-function c(t) {
-    console.log(t);
-}
 
 
 // ----- MENU A SCOMPARSA ----- 
