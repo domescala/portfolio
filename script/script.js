@@ -1,8 +1,6 @@
-// -----
-// shareon();
-
 
 // ----- APERTURA/CHIUSURA PROGETTI ----- 
+
 $("#containerportfolio .project").click(
     function () {
         this.classList.toggle("project")
@@ -21,7 +19,7 @@ setup_img_portfolio();
 function setup_img_portfolio() {
     let index = 1
     document.querySelectorAll("#containerportfolio div img").forEach(element => {
-        element.src = "img/portfolio_projects/giphy - Copia (" + index + ").gif";
+        element.src = "img/portfolio_projects/portfolio_" + index + ".gif";
         c(element);
         index++;
     });
