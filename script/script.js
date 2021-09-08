@@ -3,6 +3,13 @@
 
 $("#containerportfolio .project").click(
     function () {
+        console.log("e")
+
+        document.querySelectorAll(".projectactive").forEach(e => {
+            e.classList.toggle("project")
+            e.classList.toggle("projectactive")
+            console.log(e)
+        });
         this.classList.toggle("project")
         this.classList.toggle("projectactive")
         // Animazione scroll

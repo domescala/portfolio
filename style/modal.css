@@ -16,13 +16,14 @@
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
-  margin: 20% auto; /* 15% from the top and centered */
-  padding: 50px;
+  margin: 20% auto;
+  padding: 10px;
   border: 1px solid #888;
-  width: 100%; /* Could be more or less, depending on screen size */
+  width: 90%;
   max-width: 600px;
   border-radius: 30px;
   padding-top: 20px;
+  text-align: center;
 }
 
 /* The Close Button */

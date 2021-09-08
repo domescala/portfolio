@@ -140,6 +140,7 @@ p{
     border-bottom: 5px solid black;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 20px;
     width: 90%;
 }
 /* container per i project */
@@ -501,21 +502,40 @@ padding: 70px 50px;
       /* -------------------------------------- */
     /* GENERALE, TESTI E TITOLI*/
     h1{
-        font-size: 48px;
+        font-size: 32px;
         margin-bottom: 21px;
     }
     h2{
-        font-size: 42px;
-        margin-bottom: 18px;
+        font-size: 32px;
+        margin-bottom: 0px;
     }
-
+    h4, h5 {
+        font-size: 10px;
+    }
+    p{
+        font-size: 13px;
+    }
     /* NAVBAR */
     #navbar{
         padding: 0px 20px;
     }
+    .navlogo{
+        height: 50px;
+    }
+    .navlogo .logo{
+        width: 30px;
+        height: 30px;
+    }
+    .navlogo .logotype{
+        margin-left: 15px;
+    }
+    .navlogo .logotype h1{
+        font-size: 18px;
+    }
+
     .navlink{
     justify-self: center;
-    line-height: 4;
+    line-height: 3.5;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -529,7 +549,7 @@ padding: 70px 50px;
     transition: top 1s;
     }
     .navlink.open{
-    top: 80px; 
+    top: 40px; 
     }
     
     .navham{
@@ -537,25 +557,34 @@ padding: 70px 50px;
         display: unset;
         align-self: center;
         margin: 0;
+        margin-left: 10px;
     }
     .navham div{
         width: 15px;
-        height: 3px;
+        height: 2px;
         background-color: rgb(0, 0, 0);
-        margin-bottom: 7.5px;
+        /* margin-bottom: 7.5px;
         margin-top: 7.5px;
-        margin-left: 10px;
+        margin-left: 10px; */
+        margin: none;
+        padding: none;
+        border: none;
         transition: transform 500ms;
-        transform: scale(1.3);
+    }
+    .navham :nth-child(1){
+        transform: translateY(-4px) scale(1.3);
+    }
+    .navham :nth-child(2){
+        transform: translateY(4px) scale(1.3);
     }
     .navham.open div{
         padding: 0;
     }
     .navham.open :nth-child(1) {
-        transform: translateY(4.75px) rotateZ(-45deg)  scale(1.3) ;
+        transform: translateY(1px) rotateZ(-135deg)  scale(1.3) ;
     }
     .navham.open :nth-child(2) {
-        transform: translateY(-4.75px) rotateZ(45deg) scale(1.3)  ;
+        transform: translateY(-1px) rotateZ(135deg) scale(1.3)  ;
     }
 
 
@@ -602,14 +631,26 @@ padding: 70px 50px;
 
     /* project per ogni progetto */
     .project{
-        width: 125px;
-        height: 125px;
-        margin: 5px;
+        width:  120px;
+        height: 120px;
+        margin: 0px;
         border-radius: 25px;
     }
     /* immagine */
     #containerportfolio .project img{
         width: 125px;
+    }
+    .projectactive .projectcaption{
+        margin: 20px 20px 20px 20px;
+    }
+    .projectactive .projectcaption p{
+        font-size: 13px;
+        margin-top: 8px;
+
+    }
+    .projectactive h2{
+        margin-bottom: 2px;
+        margin-top: 15px
     }
 
     /* ------------------------------------- */
@@ -620,5 +661,14 @@ padding: 70px 50px;
     .skill.right .skillcaption{
         order: -1;
     }
-    
+    .skill .skillcaption{
+        padding: 20px;
+        padding-top: 40px;
+    }
+    .skill .skillcaption p{
+        margin-top: 5px
+    }
+    #containercontacts .social div{
+        margin-top:40px
+    }
 }
