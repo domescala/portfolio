@@ -101,3 +101,36 @@ $(".navlink a").click(function(){
 
 
 })
+$(".counter").hide()
+
+var counter = 0
+key_check =  "domescala.portfolio10_09_2021"
+
+console.log(localStorage.n_Visit10)
+
+console.log(localStorage.n_Visit10)
+
+
+console.log("response")
+
+if (!localStorage.n_Visit10 ){
+    console.log("hola");
+    
+$.getJSON("https://api.allorigins.win/get?url=" +
+        encodeURIComponent("http://api.countapi.xyz/hit/"+key_check+"/visits?  callback=callbackName") + "&callback=?",
+        function (data) {
+            console.log(data.contents)
+            counter = data.contents.split(":")[1].split("}")[0]
+            localStorage.n_Visit10 = counter
+            $(".counter p").html (counter)
+            $(".counter").show()
+            console.log("dopo")
+        });
+    
+    }
+else{
+        $(".counter p").html (localStorage.n_Visit10)
+        $(".counter").show()
+        console.log("else")
+    
+    }
