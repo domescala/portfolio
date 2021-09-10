@@ -104,33 +104,49 @@ $(".navlink a").click(function(){
 $(".counter").hide()
 
 var counter = 0
-key_check =  "domescala.portfolio10_09_2021"
+key_check =  "domescala.portfolio11_09_2021"
 
 console.log(localStorage.n_Visit10)
 
-console.log(localStorage.n_Visit10)
+console.log(localStorage.last_refresh)
+console.log(new Date().getTime())
 
 
 console.log("response")
+date = new Date().getTime()
+if (!localStorage.last_refresh ){
+    console.log(localStorage.last_refresh);
 
-if (!localStorage.n_Visit10 ){
-    console.log("hola");
+    console.log("prima visita");
+    Counter("hit")
+    localStorage.last_refresh = new Date().getTime()    
+    }
+else if (new Date().getTime() - localStorage.last_refresh > (1000*3600)) {
+    Counter("hit")
+    localStorage.last_refresh = new Date().getTime()
+     
+    }
+else{
+
+    console.log("non prima visita");
+    Counter("get")
+
     
-$.getJSON("https://api.allorigins.win/get?url=" +
-        encodeURIComponent("http://api.countapi.xyz/hit/"+key_check+"/visits?  callback=callbackName") + "&callback=?",
+    }
+
+function Counter(metodo) {
+    $.getJSON("https://api.allorigins.win/get?url=" +
+        encodeURIComponent("http://api.countapi.xyz/"+metodo+"/"+key_check+"/visits?  callback=callbackName") + "&callback=?",
         function (data) {
             console.log(data.contents)
             counter = data.contents.split(":")[1].split("}")[0]
-            localStorage.n_Visit10 = counter
+
             $(".counter p").html (counter)
             $(".counter").show()
             console.log("dopo")
         });
+} 
+
+function d() {
     
-    }
-else{
-        $(".counter p").html (localStorage.n_Visit10)
-        $(".counter").show()
-        console.log("else")
-    
-    }
+}
