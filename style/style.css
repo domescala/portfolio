@@ -621,6 +621,10 @@ padding: 70px 50px;
     margin-right: 25px;
     order: 2;
     }
+    #presentation .img_presentation {
+        order: 1;
+        }
+
     /* blocco per la foto */
     #presentation img{
         max-width: 250px;
