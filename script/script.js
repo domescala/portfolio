@@ -101,9 +101,13 @@ $(".navlink a").click(function(){
 
 
 })
+
+
+// -----    COUNTER     -----
+
 $(".counter").hide()
 
-var counter = 0
+var views = 0
 key_check =  "domescala.portfolio11_09_2021"
 
 console.log(localStorage.n_Visit10)
@@ -142,14 +146,11 @@ function Counter(metodo) {
         encodeURIComponent("http://api.countapi.xyz/"+metodo+"/"+key_check+"/visits?  callback=callbackName") + "&callback=?",
         function (data) {
             console.log(data.contents)
-            counter = data.contents.split(":")[1].split("}")[0]
+            views = data.contents.split(":")[1].split("}")[0]
 
-            $(".counter p").html (counter)
+            $(".counter p").html (views)
             $(".counter").show()
             console.log("dopo")
         });
 } 
 
-function d() {
-    
-}
