@@ -104,14 +104,14 @@ $(".navlink a").click(function(){
 $(".counter").hide()
 
 var counter = 0
-key_check =  "domescala.portfolio11_09_2021/b15d356c-3bd4-47de-a8ca-4d2ff8bd0597"
+key_check =  "domescala.portfolio11_09_2021"
 
 console.log(localStorage.n_Visit10)
 
 console.log(localStorage.last_refresh)
 console.log(new Date().getTime())
 
-if(document.URL.split("portfoli")[1] != "o"){
+if(document.URL.split("portfoli")[1] == "o/?debug"){
 localStorage.last_refresh = new Date().getTime()
 }
 
