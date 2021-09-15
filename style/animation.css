@@ -4,11 +4,17 @@
 }
 @keyframes bounce {
     0%{
-        transform: translateY(-5px) ;
+        transform: translateY(-5px) rotateX(-6.5deg) ;
     }
     100%{
-        transform: translateY(0px)  ;
+        transform: translateY(0px)  rotateX( 6.5deg) ;
         }
+}
+@keyframes blink {
+    0%{
+        opacity: 0.05;
+    }
+    100%{opacity: 0.3}
 }
 #presentation .img_presentation{
     z-index: -1;
@@ -23,8 +29,8 @@
     animation: rotation 4s ease-in-out 0s infinite alternate;
 }
 
-#presentation img:hover{
-    transform: rotateY(45deg);
+#presentation:hover .img{
+    background-color: tomato;
 }
 
 #presentation div a, #containercontacts .contacts a{
@@ -36,3 +42,10 @@
     transform: scale(1.2);
 }
 
+.counter div.realtime{
+    animation-name: blink;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-out;
+    animation-duration: 1.5s
+}
