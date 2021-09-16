@@ -4,10 +4,10 @@
 }
 @keyframes bounce {
     0%{
-        transform: translateY(-5px) rotateX(-6.5deg) ;
+        transform: translateY(-5px) rotateX(-2deg) ;
     }
     100%{
-        transform: translateY(0px)  rotateX( 6.5deg) ;
+        transform: translateY(0px)  rotateX( 2deg) ;
         }
 }
 @keyframes blink {

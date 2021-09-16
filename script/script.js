@@ -1,3 +1,12 @@
+// sincronizzazione 
+var sec_intervall = 60
+setTimeout(() => {
+    console.log("hola")
+    refreshAll();
+    setInterval(() => {  refreshAll()}, 1000 * 60/(60/sec_intervall));
+}, 1000* (60 - new Date().getSeconds())/(60/sec_intervall)  )
+
+
 
 // ----- APERTURA/CHIUSURA PROGETTI ----- 
 
@@ -105,7 +114,8 @@ $(".navlink a").click(function(){
 
 // -----    COUNTER     -----
 
-$(".counter").hide()
+// $(".counter").hide()
+$(".counter").show()
 
 var views = 0
 key_check =  "domescala.portfolio11_09_2021"
@@ -123,27 +133,7 @@ localStorage.last_refresh = new Date().getTime()
 
 console.log("response")
 date = new Date().getTime()
-// if (localStorage.last_refresh == true ){
-    
-//     console.log("non prima visita");
-//     Counter("get")
-    
-//     }
-// if (new Date().getTime() - localStorage.last_refresh > (1000*3600)) {
-//     Counter("hit")
-//     localStorage.last_refresh = new Date().getTime()
-     
-//     }
-// else{
-//     console.log(localStorage.last_refresh);
-
-//     console.log("prima visita");
-//     Counter("hit")
-//     localStorage.last_refresh = new Date().getTime()    
-
-    
-//     }
-    console.log(localStorage.visit);
+console.log(localStorage.visit);
 if (localStorage.visit == "true"){
     console.log("non prima visita");
 
@@ -164,7 +154,7 @@ else {
 }
 
 function Counter(metodo) {
-    $.getJSON("http://api.countapi.xyz/"+metodo+"/"+key_check+"/visits?  callback=callbackName" + "&callback=?",
+    $.getJSON("https://api.countapi.xyz/"+metodo+"/"+key_check+"/visits?  callback=callbackName" + "&callback=?",
         function (data) {
             //console.log(data.contents)
             let views = data.value;
@@ -183,6 +173,9 @@ var time_delay = 100
 
 let count_time = 0
 var last_time = 0
+var difference = 0
+var difference_old = 0
+
 
 var list_count = [1,1,1,1,1,1]
 
@@ -209,53 +202,102 @@ function average(n) {
     return parseInt(m/list_count.length)
 
 }
-var a = setInterval(() => {    refresh() }, 1000 * 30);
-refresh();
-var first = true;
-function refresh() {
-    let time_start = new Date().getTime()
+console.log("OOOOOOO", localStorage.counterlive)
+if(Number(localStorage.counterlive) > 0){
+    difference = Number(localStorage.counterlive);
+    $(".counter .realtime p").html(difference)
+}
+else{
     $.getJSON(
-        "https://api.countapi.xyz/hit/"+namespace+"/"+key,
+    "https://api.countapi.xyz/hit/"+namespace+"/"+key2,
+        function (data) {
+            console.log(data, "BBBBBBBBBB")
+            difference = data.value
+            $(".counter .realtime p").html(difference);
+            localStorage.counterlive = difference
+        }
+)
+}
+var time_intervall2 = 0.1
+
+
+refreshAll();
+
+function refreshAll() {
+    refresh()
+
+}
+
+
+// var a = setInterval(() => {    refresh() }, 1000 * 60);
+var times = -2
+function refresh() {
+console.log(" refresh ")
+
+    let time_start = new Date().getTime()
+
+    $.getJSON("https://api.countapi.xyz/hit/"+namespace+"/"+key,
             function (data) {
+console.log(" getjson ")
+                
+                var count_time = data.value
+                // difference = count_time - last_time
 
-                let count_time = data.value
-                difference = count_time - last_time
-
-                console.log("get", difference, data )
-                last_time = data.value 
-                if(first){ 
-                    difference = 1;
-                    $.getJSON(
-                        "https://api.countapi.xyz/hit/"+namespace+"/"+key,
-                            function (data) {
-                                difference = data.value
-                            }
-                    )
-                }
-                $(".counter .realtime p").html(difference);
+                console.log("HIT", "last_time", last_time, "difference", difference, "data", data, "times", times )
 
                 if(data.value > 1000 && difference == 1){
                     $.getJSON(
                         "https://api.countapi.xyz/set/"+namespace+"/"+key+"?value=0",
                             function (data) {});
                 }
-                first = false
+    console.log(" time++ ")
 
+                times++;
+    console.log(" wait for check ")
+
+                setTimeout(() => {
+
+                    check();
+                }, 10000 );
             });
+            
  
 }
+ function check(){
+    console.log(" check ")
 
-function check(){
-    $.getJSON(
-        "https://api.countapi.xyz/get/"+namespace+"/"+key,
-            function (data) {
-                console.log("check get", new Date(), data.value, last_time)
+ $.getJSON(
+         "https://api.countapi.xyz/get/"+namespace+"/"+key,
+             function (data) {
+    console.log(" getjson ")
 
-                let count_time = data.value
-                difference = count_time - last_time
+                console.log("check :", "data.value", data.value, "lasttime", last_time, "difference", difference)
+                let count_time = data.value;
+                
 
                 $(".counter .realtime p").html(difference);
-                console.log("get", difference )
-                last_time = data.value 
-            });    
-}
+                if (last_time!=0) {
+
+                    difference = count_time - last_time;
+                console.log("last time diversa da zero", difference  )
+
+                }
+                console.log("last time = data.value" , data.value)
+                last_time = data.value ;
+
+                if (difference_old != difference && times > 0){
+
+                    $.getJSON(
+                        "https://api.countapi.xyz/set/"+namespace+"/"+key2+"?value="+difference,
+                            function (data) {
+                                console.log("SET", difference, data )
+                            });
+                    }
+                $(".counter .realtime p").html(difference);
+                console.log("difference_old = difference" , difference)
+
+                difference_old = difference
+                localStorage.counterlive = difference
+             });    
+
+ }
