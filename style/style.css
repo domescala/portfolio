@@ -16,7 +16,7 @@ h2{
     font-size: 51px;
     margin-bottom: 21px;
 }
-h5, h4, p, a{
+h5, h4, p, a, b, i{
     font-family: "Poppins",  sans-serif;
     
 }
@@ -32,6 +32,12 @@ h4{
 p{
     font-weight: 500;
     line-height: 1.3;
+}
+b{
+    font-weight: 800;
+}
+i{
+    font-style: italic;
 }
 /*---------------*/
 .counter div{
@@ -259,7 +265,7 @@ margin-left: auto;
     flex-grow: 2;
 }
 /* project intestazione */
-.projectactive .projectcaption div{ 
+.projectactive .projectcaption div:not(.boxviews div){ 
     display: flex;
     justify-content: space-between;
     align-items: baseline;
@@ -305,7 +311,28 @@ margin-left: auto;
     margin-top: auto;
     text-align: end;
 }
+.projectactive .boxviews{
+    position: relative; 
+    width: 0; 
+    height: 0
+}
+.projectactive .boxviews div{
+    display: inline-flex;
+    position: absolute;
+    top: -100px;
+    left: unset;
+}
 
+.projectactive .boxviews div p{
+    margin-right: 2px;
+    font-weight: bold;
+    font-size: 18px;
+    margin-left: 10px;
+}
+.projectactive .boxviews div {
+    transform: scale(0.8);
+    opacity: 0.7;
+}
 /* ------------------------------------------------- */ 
 /* SEZIONE SKILLS E INTERESSI */
 
@@ -356,7 +383,9 @@ padding: 70px 50px;
 .skill .skillcaption p{
     margin-bottom: 30px;
 }
-
+.skill .skillcaption a{
+    font-style: italic;
+}
 /* ------------------------------------------ */
 /* CONTATTI */
 #containercontacts{
@@ -513,6 +542,14 @@ padding: 70px 50px;
     .projectactive h5{
         margin-top: 10px;
     }
+    .projectactive .boxviews div{
+        display: flex;
+        align-items: flex-end;
+        position: absolute; 
+        top: -100px;
+        left: unset;
+    }
+
 
     /* ---- SKILL ---- */
     .skill.right .skillcaption{
@@ -681,6 +718,10 @@ padding: 70px 50px;
     .projectactive h2{
         margin-bottom: 2px;
         margin-top: 15px
+    }
+    .projectactive .boxviews div{
+        position: absolute; 
+        top: -50px;
     }
 
     /* ------------------------------------- */
