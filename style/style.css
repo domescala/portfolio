@@ -265,10 +265,11 @@ margin-left: auto;
     flex-grow: 2;
 }
 /* project intestazione */
-.projectactive .projectcaption div:not(.boxviews div){ 
+.projectactive .projectcaption .header{ 
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: flex-end;
+    
 }
 /* social */
 .projectactive .social{
@@ -305,11 +306,14 @@ margin-left: auto;
 .projectactive h4{
     right: 0;
     font-weight: 700;
+    width: fit-content;
 }
 .projectactive h5{
     font-weight: 500;
     margin-top: auto;
     text-align: end;
+    width: fit-content;
+
 }
 .projectactive .boxviews{
     fill: white;
