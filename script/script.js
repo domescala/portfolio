@@ -125,6 +125,9 @@ $(".navlink a").click(function(){
     else if (content == "contacts") {
         id = "containercontacts" 
     }
+    else if (content == "skills") {
+        id = "containerabout" 
+    }
 
     let a = document.querySelector("#"+id+" div")
     a.scrollIntoView({ block: "center", inline: "nearest" })
@@ -147,15 +150,16 @@ console.log(localStorage.last_refresh)
 console.log(new Date().getTime())
 
 // localStorage.last_refresh = new Date().getTime();
+var debug =  false;
 
-if(document.URL.split("portfoli")[1] == "o/?debug"){
-localStorage.last_refresh = new Date().getTime()
+if(document.URL.search("debug") != -1){
+    debug = true;
 }
 
 console.log("response")
 date = new Date().getTime()
 console.log(localStorage.visit);
-if (localStorage.visit == "true"){
+if (localStorage.visit == "true" && !debug){
     console.log("non prima visita");
 
     if (new Date().getTime() - localStorage.last_refresh > (1000*3600)) {
@@ -167,7 +171,7 @@ if (localStorage.visit == "true"){
         Counter("get")
     }
 }
-else {
+else if(!debug){
     console.log("prima visita");
     Counter("hit")
     localStorage.last_refresh = new Date().getTime()    
@@ -245,7 +249,9 @@ var time_intervall2 = 0.1
 refreshAll();
 
 function refreshAll() {
-    refresh()
+    if (!debug) {
+        refresh()
+    }
 
 }
 
