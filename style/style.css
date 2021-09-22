@@ -349,85 +349,140 @@ margin-left: auto;
     justify-content: space-between;
     margin-top: 100px;
     margin-right: auto;
+    align-items:center;
     margin-left: auto;
 }
 .graph{
     transform: scale(1);
-    width:50%
+    width:50%;
+    overflow: hidden;
 }
 .graph svg{
     animation: rotation 20s reverse infinite linear;
     transform-origin: center;
+
+}
+.graph svg text{
+    font-size: 3px;
+    /* letter-spacing: 1; */
+    text-transform: uppercase;
+    font-family: "Poppins",  sans-serif;
+    color: white;
 }
 
 
 .graph circle{
-fill: none;
-stroke-width: 4px;
-transform-origin: center;
-transition-property: stroke-dasharray;
-transition-duration: 2s;
-animation: rotation 20s infinite 0s linear;
-stroke-dasharray: 200;
-stroke-dashoffset: 0;
+    fill: none;
+    stroke-width: 2.8px;
+    transform-origin: center;
+    transition-property: stroke-dasharray;
+    transition-duration: 2s;
+    animation: rotation 20s infinite 0s linear;
+    stroke-dasharray: 200;
+    stroke-dashoffset: 0;
+
+    }
+    /*
+    #FFD85A
+    #9999FF
+    #FF3366
+    #FFAE43
+    #59A5D3
+    #67FF85
+    #5D8BE0
+    #baa4a4
+    
+    */
+    .graph text textPath:nth-child(1){
+        fill: #5d8be0;
+    }
+    .graph g circle:nth-child(1){
+    stroke: #5d8be0;
+        /* godot */
+    stroke-dashoffset: 100;
+    animation-duration: 10s;
+    
+    }
+    .graph text textPath:nth-child(2){
+        fill: #5ed2a1;
+    }
+    .graph g circle:nth-child(2){
+    stroke: #5ed2a1;
+        /* id */
+    stroke-dashoffset: 110;
+    animation-duration: 9s;
+    /* animation-direction: reverse; */
+    
+    }
+    .graph text textPath:nth-child(3){
+        fill: #31a8ff;
+    }
+    .graph g circle:nth-child(3){
+    stroke: #31a8ff;
+        /* ps */
+    stroke-dashoffset: 100;
+    animation-duration: 8s;
+    
+    }
+    .graph text textPath:nth-child(4){
+        fill: #9999ff;
+    }
+    .graph g circle:nth-child(4){
+    stroke: #9999ff;
+        /* ae */
+    stroke-dashoffset: 110;
+    animation-duration: 10.5s;
+    /* animation-direction: reverse; */
+    
+    }
+    .graph text textPath:nth-child(5){
+        fill: #baa4a4;
+    }
+    .graph g circle:nth-child(5){
+    stroke: #baa4a4;
+     /* rhino */
+    stroke-dashoffset: 125;
+    animation-duration: 6s;
+    
+    }
+    .graph text textPath:nth-child(6){
+        fill: #ff3366;
+    }
+    .graph g circle:nth-child(6){
+    stroke: #ff3366;
+     /* blender */
+    stroke-dashoffset: 140;
+    animation-duration: 5s;
+    /* animation-direction: reverse; */
+    
+    }
+    .graph text textPath:nth-child(7){
+        fill: #ffd85a;
+    }
+    .graph g circle:nth-child(7){
+    stroke: #ffd85a;
+     /* ill */
+    stroke-dashoffset: 150;
+    animation-duration: 7.5s;
+    
+    }
+    #containerabout .container{
+        padding: none;
+    }
+#containerabout .aboutcaption{
+    width: 40%;
+    padding: 5px;
+}
+#containerabout .aboutcaption h2{
+    margin-bottom: 5px;
+}
+#containerabout .aboutcaption p{
+    font-size: 18px;
 }
 
-.graph circle:nth-child(1){
-stroke: #5d8be0;    /* godot */
-stroke-dashoffset: 100;
-animation-duration: 10s;
-
-}
-.graph circle:nth-child(2){
-stroke: #ff3366;    /* id */
-stroke-dashoffset: 110;
-animation-duration: 9s;
-/* animation-direction: reverse; */
-
-}
-.graph circle:nth-child(3){
-stroke: #31a8ff;    /* ps */
-stroke-dashoffset: 100;
-animation-duration: 8s;
-
-}
-.graph circle:nth-child(4){
-stroke: #9999ff;    /* ae */
-stroke-dashoffset: 110;
-animation-duration: 10.5s;
-/* animation-direction: reverse; */
-
-}
-.graph circle:nth-child(5){
-stroke: #a8a8a8; /* rhino */
-stroke-dashoffset: 125;
-animation-duration: 6s;
-
-}
-.graph circle:nth-child(6){
-stroke: #ffbc58; /* blender */
-stroke-dashoffset: 140;
-animation-duration: 5s;
-/* animation-direction: reverse; */
-
-}
-.graph circle:nth-child(7){
-stroke: #ff9a00; /* ill */
-stroke-dashoffset: 143;
-animation-duration: 7.5s;
-
-}
 
 
 
-
-
-.graph circle:hover{
-stroke-width: 10px;
-/* stroke: #41423b; ill */
-filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.109));
-
-}
 
 
 
@@ -656,6 +711,14 @@ padding: 70px 50px;
     .skill.right .skillcaption{
         order: 1;
     }
+    /* ------------------------------------------------- */
+    /* ABOUT */
+    .graph{
+        width:100%
+    }
+    #containerabout .aboutcaption{
+    width: 100%;
+}
 }
 
   @media only screen and (max-width: 650px) {
@@ -842,5 +905,11 @@ padding: 70px 50px;
     }
     #containercontacts .social div{
         margin-top:40px
+    }
+
+    /* ------------------------------------------------- */
+    /* ABOUT */
+    #containerabout .aboutcaption p{
+        font-size: 14px;
     }
 }
