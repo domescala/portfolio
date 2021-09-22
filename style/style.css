@@ -312,15 +312,21 @@ margin-left: auto;
     text-align: end;
 }
 .projectactive .boxviews{
+    fill: white;
+    color: white;
     position: relative; 
     width: 0; 
-    height: 0
+    height: 0;
+    mix-blend-mode: exclusion;
+    opacity: 1
 }
 .projectactive .boxviews div{
-    display: inline-flex;
+    display: flex;
+    /* display: inline-flex; */
+    align-items: center;
     position: absolute;
-    top: -100px;
-    left: unset;
+    top: -25px;
+    left: -150px;
 }
 
 .projectactive .boxviews div p{
@@ -328,13 +334,104 @@ margin-left: auto;
     font-weight: bold;
     font-size: 18px;
     margin-left: 10px;
+    margin: none;
 }
 .projectactive .boxviews div {
     transform: scale(0.8);
-    opacity: 0.7;
+    /* opacity: 0.7; */
 }
 /* ------------------------------------------------- */
 /* ABOUT */
+#containerabout{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    justify-content: space-between;
+    margin-top: 100px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.graph{
+    transform: scale(1);
+    width:50%
+}
+.graph svg{
+    animation: rotation 20s reverse infinite linear;
+    transform-origin: center;
+}
+
+
+.graph circle{
+fill: none;
+stroke-width: 4px;
+transform-origin: center;
+transition-property: stroke-dasharray;
+transition-duration: 2s;
+animation: rotation 20s infinite 0s linear;
+stroke-dasharray: 200;
+stroke-dashoffset: 0;
+}
+
+.graph circle:nth-child(1){
+stroke: #5d8be0;    /* godot */
+stroke-dashoffset: 100;
+animation-duration: 10s;
+
+}
+.graph circle:nth-child(2){
+stroke: #ff3366;    /* id */
+stroke-dashoffset: 110;
+animation-duration: 9s;
+/* animation-direction: reverse; */
+
+}
+.graph circle:nth-child(3){
+stroke: #31a8ff;    /* ps */
+stroke-dashoffset: 100;
+animation-duration: 8s;
+
+}
+.graph circle:nth-child(4){
+stroke: #9999ff;    /* ae */
+stroke-dashoffset: 110;
+animation-duration: 10.5s;
+/* animation-direction: reverse; */
+
+}
+.graph circle:nth-child(5){
+stroke: #a8a8a8; /* rhino */
+stroke-dashoffset: 125;
+animation-duration: 6s;
+
+}
+.graph circle:nth-child(6){
+stroke: #ffbc58; /* blender */
+stroke-dashoffset: 140;
+animation-duration: 5s;
+/* animation-direction: reverse; */
+
+}
+.graph circle:nth-child(7){
+stroke: #ff9a00; /* ill */
+stroke-dashoffset: 143;
+animation-duration: 7.5s;
+
+}
+
+
+
+
+
+.graph circle:hover{
+stroke-width: 10px;
+/* stroke: #41423b; ill */
+filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.109));
+
+}
+
+
+
+
 
 
 /* ------------------------------------------------- */ 
@@ -549,7 +646,7 @@ padding: 70px 50px;
     .projectactive .boxviews div{
         display: flex;
         align-items: flex-end;
-        position: absolute; 
+        position: absolute;
         top: -100px;
         left: unset;
     }
@@ -724,8 +821,8 @@ padding: 70px 50px;
         margin-top: 15px
     }
     .projectactive .boxviews div{
-        position: absolute; 
-        top: -50px;
+        position: absolute;
+        top: -58px;
     }
 
     /* ------------------------------------- */

@@ -9,10 +9,10 @@ setTimeout(() => {
 
 
 // ----- APERTURA/CHIUSURA PROGETTI ----- 
-
+localStorage.viewsproject10 += "";
+localStorage.viewsproject10_n += "";
 $("#containerportfolio .project").click(
     function () {
-        console.log("e")
 
         document.querySelectorAll(".projectactive").forEach(e => {
             e.classList.toggle("project")
@@ -22,7 +22,28 @@ $("#containerportfolio .project").click(
         this.classList.toggle("project")
         this.classList.toggle("projectactive")
         // Animazione scroll
-        this.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" })
+        this.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+
+        var key = this.querySelector("img").src.split("portfolio_projects/")[1].replace(".gif", "");
+        const counter = this.querySelector(".boxviews p");
+
+        if (localStorage.viewsproject10.search(key) == -1) {
+            localStorage.viewsproject10 += " "+key
+        console.log("non c'era")
+             $.getJSON("https://api.countapi.xyz/hit/domescala.portfolio11_09_2021/"+key+"?  callback=callbackName" + "&callback=?",
+             function (data) {
+                 let views = data.value;
+                 counter.innerHTML = views
+                localStorage.viewsproject10_n += key+views+key
+             });
+        }
+        else{
+            counter.innerHTML = localStorage.viewsproject10_n.split(key)[1]
+
+        }
+        console.log(key)
+
+      
     }
 )
 
@@ -245,7 +266,7 @@ console.log(" getjson ")
 
                 console.log("HIT", "last_time", last_time, "difference", difference, "data", data, "times", times )
 
-                if(data.value > 1000 && difference == 1){
+                if(data.value > 200 && difference == 1){
                     $.getJSON(
                         "https://api.countapi.xyz/set/"+namespace+"/"+key+"?value=0",
                             function (data) {});

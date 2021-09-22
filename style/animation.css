@@ -1,6 +1,6 @@
-@keyframes rotation {
-    0%{         transform: rotateY(-25deg)  ; }  
-    100%{       transform: rotateY( 25deg) ;}
+@keyframes photo_rotation {
+    0%{         transform: rotateY(-20deg)  ;  }  
+    100%{       transform: rotateY( 20deg) ; }
 }
 @keyframes bounce {
     0%{
@@ -16,22 +16,26 @@
     }
     100%{opacity: 0.3}
 }
+@keyframes rotation {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
 #presentation .img_presentation{
     z-index: -1;
     perspective: 500px;
-    animation: bounce 0.5s ease-in-out 0s infinite alternate-reverse;
+    animation: bounce 0.7s ease-in-out 0s infinite alternate-reverse;
 
 }
 
 #presentation img{
-    transition: 1s;
     transform: rotateY(-45deg);
-    animation: rotation 4s ease-in-out 0s infinite alternate;
+    animation: photo_rotation 7s ease-in-out 0s infinite alternate;
 }
 
-#presentation:hover .img{
-    background-color: tomato;
-}
 
 #presentation div a, #containercontacts .contacts a{
     transition: 0.5s;
