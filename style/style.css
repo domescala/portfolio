@@ -271,6 +271,13 @@ margin-left: auto;
     align-items: flex-end;
     
 }
+/* project piè */
+.projectactive .projectcaption .footer{ 
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    
+}
 /* social */
 .projectactive .social{
     width: 20px;
