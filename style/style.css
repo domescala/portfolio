@@ -410,7 +410,7 @@ margin-left: auto;
     .graph g circle:nth-child(1){
     stroke: #5d8be0;
         /* godot */
-    stroke-dashoffset: 100;
+    stroke-dashoffset: 185;
     animation-duration: 10s;
     
     }
@@ -420,7 +420,7 @@ margin-left: auto;
     .graph g circle:nth-child(2){
     stroke: #5ed2a1;
         /* id */
-    stroke-dashoffset: 110;
+    stroke-dashoffset: 120;
     animation-duration: 9s;
     /* animation-direction: reverse; */
     
