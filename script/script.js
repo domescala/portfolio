@@ -7,6 +7,11 @@ setTimeout(() => {
 }, 1000* (60 - new Date().getSeconds())/(60/sec_intervall)  )
 
 
+// ----- CHECK DEBUG ----- 
+var debug =  false;
+if(document.URL.search("debug") != -1){
+    debug = true;
+}
 
 // ----- APERTURA/CHIUSURA PROGETTI ----- 
 localStorage.viewsproject10 += "";
@@ -27,7 +32,10 @@ $("#containerportfolio .project").click(
         var key = this.querySelector("img").src.split("portfolio_projects/")[1].replace(".gif", "");
         const counter = this.querySelector(".boxviews p");
 
-        if (localStorage.viewsproject10.search(key) == -1) {
+
+        // ----- COUNTER PROGETTI ----- 
+
+        if (localStorage.viewsproject10.search(key) == -1 && !debug) {
             localStorage.viewsproject10 += " "+key
         console.log("non c'era")
              $.getJSON("https://api.countapi.xyz/hit/domescala.portfolio11_09_2021/"+key+"?  callback=callbackName" + "&callback=?",
@@ -150,11 +158,7 @@ console.log(localStorage.last_refresh)
 console.log(new Date().getTime())
 
 // localStorage.last_refresh = new Date().getTime();
-var debug =  false;
 
-if(document.URL.search("debug") != -1){
-    debug = true;
-}
 
 console.log("response")
 date = new Date().getTime()
