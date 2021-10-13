@@ -39,6 +39,7 @@ b{
 i{
     font-style: italic;
 }
+
 /*---------------*/
 .counter div{
     position:absolute;
@@ -163,6 +164,25 @@ i{
     border-radius: 100px;
     text-decoration: none;
     box-shadow: 0px 0px 15px rgb(82, 255, 179) ;
+}
+.name span{
+    font-family: "riffic", "Poppins", sans-serif;
+    font-weight: 900;
+    font-size: 72px;
+}
+.name{
+    display: flex;
+    flex-wrap: wrap;
+    width: 350px;
+    cursor: url(../img/cursor.png) 20 20, auto;
+}
+.textboom{
+    position: relative;
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0, 0.68, 1, 1)
+}
+.name span:hover{
+    color: #ad92ff;
 }
 
 /* ---------------------------------------- */
@@ -655,7 +675,15 @@ padding: 70px 50px;
         margin-bottom: 48px;
         font-size: 21px;
         max-width: 300px;
+    }     
+    .name span{
+        font-size: 56px;
+        margin-bottom: 10px;
     }
+    .name{
+        width: 280px;
+    }
+
      /* PORTFOLIO */
 
     /* project per ogni progetto */
@@ -864,6 +892,14 @@ padding: 70px 50px;
     #presentation div a{
         font-size: 14px;
     }
+    .name span{
+        font-size: 32px;
+        margin-bottom: 5px;
+    }
+    .name{
+        width: 150px;
+    }
+
     /* ------------------------------------------- */    
     .titlesection h2{
         font-size: 32px;
