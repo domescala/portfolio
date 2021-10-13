@@ -12,6 +12,12 @@ var debug =  false;
 if(document.URL.search("debug") != -1){
     debug = true;
 }
+if(document.URL.search("qr") != -1){
+    $.getJSON("https://api.countapi.xyz/hit/domescala.portfolio11_09_2021_qr?  callback=callbackName" + "&callback=?",
+             function (data) {
+                 console.log(data)
+                          });
+}
 
 // ----- APERTURA/CHIUSURA PROGETTI ----- 
 localStorage.viewsproject10 += "";
@@ -187,13 +193,63 @@ function Counter(metodo) {
         function (data) {
             //console.log(data.contents)
             let views = data.value;
-
-            $(".counter .views p").html (data.value);
-            $(".counter").show();
+            loadCount(views);
+            // $(".counter .views p").html (data.value);
+            // $(".counter").show();
             console.log("richiesta fatta");
         });
 } 
 
+function loadCount(n) {
+    let progress = 1
+    let i = 1;
+    if (n>300) {
+        progress = Math.pow(n, 0.1)
+
+    }
+    let t = 15 / (n/100)
+    $(".counter .views p").html (0);
+    $(".counter").show();
+    upgrade(n, i, t);
+    function upgrade(n, i, t) {
+        let x = i/n
+
+        i = i + progress
+        t = 800 *  Math.pow(x, (n*21 / 100))
+        console.log(i, progress, t, ( 1 - Math.pow(1 - x, 3) ))
+
+        $(".counter .views p").html (Math.round(i) );
+        
+        // if (i > 0.9*n ){
+        //     progress = 1;
+        //     t = (15 / (n/100)) * (0.1 + (n/i))
+        // }
+        if (i>=n) { 
+            
+            $(".counter .views p").html (n);}
+        else{
+        setTimeout(() => {
+            upgrade(n, i, t)
+        }, t);
+        }
+
+    }
+
+
+    // var int = setInterval(() => {
+    //     console.log(i)
+    //     i = i + progress;
+
+    //     $(".counter .views p").html (i);
+        
+    //     if (i == 50 ){
+    //         t = 500
+    //     }
+    //     if ((i+progress)>=n) { 
+    //         clearInterval(int);
+    //         $(".counter .views p").html (n);}
+    // }, t);
+}
 
 // -----    COUNTER  REAL TIME   -----
 
