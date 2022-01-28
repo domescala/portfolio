@@ -38,6 +38,9 @@ b{
 }
 i{
     font-style: italic;
+    font-size: 15px;
+    opacity: 0.5;
+    line-height: 1.25;
 }
 
 /*---------------*/
@@ -89,7 +92,7 @@ i{
     overflow: hidden;
 }
 .navlogo .logo{
-    width: 60px;
+    width: 120px;
     height: 60px;
     background: url("../img/logo.svg")no-repeat top left;
 
@@ -174,16 +177,20 @@ i{
     display: flex;
     flex-wrap: wrap;
     width: 350px;
-    cursor: url(../img/cursor.png) 20 20, auto;
+    /* cursor: pointer; */
+    /* cursor: url(../img/cursor.png) 20 20, auto; */
 }
 .textboom{
     position: relative;
     transition-property: transform;
-    transition-timing-function: cubic-bezier(0, 0.68, 1, 1)
+    transition-timing-function: cubic-bezier(0, 0.68, 1, 1);
 }
-.name span:hover{
-    color: #ad92ff;
-}
+.textboom{
+    cursor: grabbing;
+} 
+.textboom_boom:hover{
+    cursor: grab;
+} 
 
 /* ---------------------------------------- */
 /* PORTFOLIO */
@@ -620,15 +627,15 @@ padding: 70px 50px;
 #containercontacts .social div{
     color: #0a0a0a;
     display: flex;
-    justify-content: space-evenly;
-    margin-top: 80px;
+    justify-content: center;
+    margin-top: 30px;
 }
 #containercontacts .social img{
-    height: 60px;
-    /* margin: 0px 20px; */
+    height: 50px;
+    margin: 0px 20px;
     filter: invert(1) brightness(0.5) sepia(1) hue-rotate(208deg) saturate(5);
 }
-#containercontacts .social h1{
+.social_title{
     color: #ad92ff;
 }
 
@@ -780,6 +787,9 @@ padding: 70px 50px;
     }
     p{
         font-size: 13px;
+    }
+    i{
+        font-size: 12px;
     }
     /* NAVBAR */
     #navbar{

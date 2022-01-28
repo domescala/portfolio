@@ -24,6 +24,22 @@
         transform: rotate(-360deg);
     }
 }
+@keyframes text_wide {
+    0%{
+        letter-spacing: 0px;
+    } 
+    5%{
+        letter-spacing: -5px;
+
+    }    35%{
+        letter-spacing: 5px;
+
+    }
+    100%{
+        letter-spacing: 0px;
+    } 
+    
+}
 #presentation .img_presentation{
     z-index: -1;
     perspective: 500px;
@@ -52,4 +68,13 @@
     animation-direction: alternate;
     animation-timing-function: ease-out;
     animation-duration: 1.5s
+}
+.wide_text_animation, .wide_text_animation_b{
+    animation-name: text_wide;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    /* color: brown; */
+}
+.social_title {
+    animation-delay: 0.5s;
 }
