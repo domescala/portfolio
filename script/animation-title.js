@@ -7,7 +7,11 @@ for (let index = 0; index < text_boom.innerHTML.length; index++) {
 text_boom.innerHTML = ""
 
 var boomed = false;
+var namecontainer_span1 = document.createElement("SPAN")
+var namecontainer_span2 = document.createElement("SPAN")
+var flag_namecontainer = false
 for (let index = 0; index < text.length; index++) {
+    
     const element = document.createElement("SPAN")
     element.classList = "textboom t"+index
     element.innerHTML = text[index]
@@ -15,11 +19,15 @@ for (let index = 0; index < text.length; index++) {
         if(!boomed){    boom() }
         else{           sboom()}
     });
-    if (element.innerHTML != " ") {
-        text_boom.appendChild(element)
+    console.log("flag_namecontainer", flag_namecontainer, element.innerHTML, element.innerHTML == " ")
+    if (element.innerHTML == " " || flag_namecontainer) {
+        text_boom.appendChild(namecontainer_span2).appendChild(element)
+        flag_namecontainer = true
+        console.log("yea")
     }
     else{
-        text_boom.appendChild(document.createElement("BR"))
+        text_boom.appendChild(namecontainer_span1).appendChild(element)
+        
     }
 }
 var doc_span = document.querySelectorAll(".textboom")

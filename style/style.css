@@ -172,6 +172,7 @@ i{
     font-family: "riffic", "Poppins", sans-serif;
     font-weight: 900;
     font-size: 72px;
+    display: flex;
 }
 .name{
     display: flex;
@@ -184,13 +185,9 @@ i{
     position: relative;
     transition-property: transform;
     transition-timing-function: cubic-bezier(0, 0.68, 1, 1);
-}
-.textboom{
     cursor: grabbing;
-} 
-.textboom_boom:hover{
-    cursor: grab;
-} 
+}
+
 
 /* ---------------------------------------- */
 /* PORTFOLIO */
