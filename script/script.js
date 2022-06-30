@@ -390,3 +390,8 @@ console.log(" getjson ")
  }
 
 // -----  COUNTER VIEWS PROJECT -----
+
+// counter 13_03_2022
+if(document.URL.search("\\?s") != -1){
+    $.getJSON("https://api.countapi.xyz/hit/domescala.portfolio13_03_2022/"+"?  callback=callbackName" + "&callback=?",function () {});
+}
