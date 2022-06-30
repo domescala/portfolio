@@ -32,6 +32,7 @@ for (let index = 0; index < text.length; index++) {
 }
 var doc_span = document.querySelectorAll(".textboom")
 
+var color_boom = ["#359593","#a9e79d","#9431fc","#f26317","#d76ac1","#31f367","#2f25dd","#386269","#a3b1bd","#ec448e","#406cce","#779280","#d7e0ec","#df0025","#aafb68","#27547d","#19b52d", "#ea9203","#6e86e7","#7ca8bd","#fbf992","#1bf241","#e8e599","#ee75f6","#fd1625","#9695db","#06f338","#0fb8de","#0c6a5c","#409cb7","#5a97af","#761c70","#8a51d4","#f36a5e",]
 
 function boom() {
     for (let index = 0; index < doc_span.length; index++) {
@@ -46,6 +47,9 @@ function boom() {
         // element.style["filter"] = "blur("+rand.s*1.5+"px)"
         element.style["transform"] = "translate("+rand.x+"px, "+rand.y+"px) scale("+rand.s+") rotate("+rand.r+"deg)"
         element.style["cursor"] = "grab"
+
+        var color = (Math.random()*color_boom.length).toFixed(0)
+        element.style ["color"] = color_boom[color]
     }
     console.log("boom")
     boomed = true;

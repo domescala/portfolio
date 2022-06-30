@@ -178,8 +178,14 @@ i{
     display: flex;
     flex-wrap: wrap;
     width: 350px;
+    transition-property:transform;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0, 0.94, 0.67, 1.02);
     /* cursor: pointer; */
     /* cursor: url(../img/cursor.png) 20 20, auto; */
+}
+.name:active{
+    transform: scale(0.50);
 }
 .textboom{
     position: relative;
