@@ -2,6 +2,43 @@
     0%{         transform: rotateY(-20deg)  ;  }  
     100%{       transform: rotateY( 20deg) ; }
 }
+@keyframes shadow_photo_rotation {
+    0%{
+        transform: translateX(0px);
+        /* filter: drop-shadow(0px 0px 15px #ad92ffee) hue-rotate(80deg); */
+                filter: hue-rotate(80deg);
+    }  
+    100%{
+        transform: translateX(-10px);
+        /* filter: drop-shadow(0px 0px 15px #ad92ffee) hue-rotate(0deg); */
+                filter: hue-rotate(0deg);
+    }
+}
+@keyframes photo_back1 {
+    0%{
+        transform: translateX(10px)  rotateZ( -5deg) rotateY( -20deg);  
+        /* filter: drop-shadow(0px 0px 5px #f5fe8c) hue-rotate(340deg) ; */
+                filter: hue-rotate(340deg) ;
+    }  
+    100%{
+        transform: translateX(-25px) rotateZ( 5deg)   rotateY( 20deg); 
+        /* filter: drop-shadow(0px 0px 5px #f5fe8c) hue-rotate(360deg); */
+                filter: hue-rotate(360deg);
+
+    }
+}
+@keyframes photo_back2 {
+    0%{
+        transform: translateX(10px)  rotateZ( -15deg)   rotateY( 15deg);  
+        /* filter: drop-shadow(0px 0px 5px #53feb4) hue-rotate(40deg); */
+                filter: hue-rotate(40deg);
+    }  
+    100%{
+        transform: translateX(-20px) rotateZ( 5deg)  rotateY( -15deg); 
+        /* filter: drop-shadow(0px 0px 5px #53feb4) hue-rotate(95deg); */
+                filter: hue-rotate(95deg);
+    }
+}
 @keyframes bounce {
     0%{
         transform: translateY(-5px) rotateX(-2deg) ;
@@ -40,16 +77,46 @@
     } 
     
 }
-#presentation .img_presentation{
+.img_presentation{
     z-index: -1;
     perspective: 500px;
     animation: bounce 0.7s ease-in-out 0s infinite alternate-reverse;
 
 }
 
-#presentation img{
+.test_presentation{
     transform: rotateY(-45deg);
     animation: photo_rotation 7s ease-in-out 0s infinite alternate;
+}
+
+.img_back_1{
+    animation: photo_back1 7s ease-in-out 0s infinite alternate;    
+    filter: drop-shadow(0px 0px 5px #f5fe8c);
+/*  f5fe8c 
+    ad92ff80
+*/
+    
+
+}
+.div_img_back_1{
+    /* animation: bounce2 0.7s ease-in-out 0s infinite alternate-reverse; */
+
+}
+.img_back_2{
+    animation: photo_back2 7s ease-in-out 0s infinite alternate;    
+    filter: drop-shadow(0px 0px 5px #53feb4);
+/* #53feb4 */
+    
+
+}
+.img_shadow{
+    animation: shadow_photo_rotation 7s ease-in-out 0s infinite alternate;  
+    filter: drop-shadow(0px 0px 15px #ad92ffee);
+    
+}
+.img_face{
+
+    
 }
 
 
@@ -78,3 +145,5 @@
 .social_title {
     animation-delay: 0.5s;
 }
+
+

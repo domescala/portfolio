@@ -126,10 +126,10 @@ i{
 
 #presentation{
     display: flex;
-    margin-top: 50px;
+    margin-top: 100px;
     align-items: center;
-    justify-content: space-evenly;
-    max-width: 1200px;
+    justify-content: flex-start;
+    max-width: 987px;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 125px;
@@ -137,29 +137,38 @@ i{
     flex-direction: row;
 }
 /* blocco per i testi*/
-#presentation div {width: 400px;margin-left: 25px;margin-right: 25px;order: -1;}
+.presentation_text {width: 400px;margin-left: 25px;margin-right: 25px;order: -1;}
 /* blocco per la foto */
-#presentation img{
+.img_presentation{
+    margin-left: 266px;
+}
+.photo_presentation{
     width: 100vw;
     max-width: 450px;
     margin-right: -80px;
-    margin-left: -50px;
+    margin-left: 0px;
+    position: absolute;
+    top: -236px;
+    left: -224px;
 }
+.img_shadow{
+    margin-left: -5px;
+} 
 /* sottotitolo */
-#presentation div h5{
+.presentation_text h5{
     font-size: 21px;
     text-transform: uppercase;
     color: gray;
     margin-bottom: 36px;
 }
 /* piccola descrizione */
-#presentation div p{
+.presentation_text p{
     margin-top: 42px;
     margin-bottom: 48px;
     font-size: 26px;
 }
 /* pulsante */
-#presentation div a{
+.presentation_text a{
     color: #0a0a0a;
     background-color: rgb(82, 255, 179);
     font-size: 21px;
@@ -189,7 +198,7 @@ i{
 } */
 .textboom{
     position: relative;
-    transition-property: transform;
+    transition-property: transform, filter;
     transition-timing-function: cubic-bezier(0.06, 0.81, 0.21, 1.11);
     cursor: grabbing;
     
@@ -409,7 +418,7 @@ margin-left: auto;
     overflow: hidden;
 }
 .graph svg{
-    animation: rotation 20s reverse infinite linear;
+    /* animation: rotation 20s reverse infinite linear; */
     transform-origin: center;
 
 }
@@ -440,18 +449,19 @@ margin-left: auto;
     #FFAE43
     #59A5D3
     #67FF85
-    #5D8BE0
+    #f19237
     #baa4a4
     
     */
     .graph text textPath:nth-child(1){
-        fill: #5d8be0;
+        fill: #478cbf;
     }
     .graph g circle:nth-child(1){
-    stroke: #5d8be0;
-        /* godot */
-    stroke-dashoffset: 185;
-    animation-duration: 10s;
+    stroke: #478cbf;
+        /* godot engine */
+    stroke-dasharray: 300;
+    stroke-dashoffset: 240;
+    animation-duration: 11s;
     
     }
     .graph text textPath:nth-child(2){
@@ -459,10 +469,9 @@ margin-left: auto;
     }
     .graph g circle:nth-child(2){
     stroke: #5ed2a1;
-        /* id */
+        /* indesign */
     stroke-dashoffset: 120;
-    animation-duration: 9s;
-    /* animation-direction: reverse; */
+    animation-duration: 10s;
     
     }
     .graph text textPath:nth-child(3){
@@ -470,15 +479,26 @@ margin-left: auto;
     }
     .graph g circle:nth-child(3){
     stroke: #31a8ff;
-        /* ps */
+        /* photoshop */
+    stroke-dashoffset: 100;
+    animation-duration: 9s;
+    /* animation-direction: reverse; */
+    
+    }
+    .graph text textPath:nth-child(4){
+        fill: #f19237;
+    }
+    .graph g circle:nth-child(4){
+    stroke: #f19237;
+        /* upbge */
     stroke-dashoffset: 100;
     animation-duration: 8s;
     
     }
-    .graph text textPath:nth-child(4){
+    .graph text textPath:nth-child(5){
         fill: #9999ff;
     }
-    .graph g circle:nth-child(4){
+    .graph g circle:nth-child(5){
     stroke: #9999ff;
         /* ae */
     stroke-dashoffset: 110;
@@ -486,20 +506,20 @@ margin-left: auto;
     /* animation-direction: reverse; */
     
     }
-    .graph text textPath:nth-child(5){
+    .graph text textPath:nth-child(6){
         fill: #baa4a4;
     }
-    .graph g circle:nth-child(5){
+    .graph g circle:nth-child(6){
     stroke: #baa4a4;
      /* rhino */
     stroke-dashoffset: 125;
     animation-duration: 6s;
     
     }
-    .graph text textPath:nth-child(6){
+    .graph text textPath:nth-child(7){
         fill: #ff3366;
     }
-    .graph g circle:nth-child(6){
+    .graph g circle:nth-child(7){
     stroke: #ff3366;
      /* blender */
     stroke-dashoffset: 140;
@@ -507,10 +527,10 @@ margin-left: auto;
     /* animation-direction: reverse; */
     
     }
-    .graph text textPath:nth-child(7){
+    .graph text textPath:nth-child(8){
         fill: #ffd85a;
     }
-    .graph g circle:nth-child(7){
+    .graph g circle:nth-child(8){
     stroke: #ffd85a;
      /* ill */
     stroke-dashoffset: 150;
@@ -672,25 +692,32 @@ padding: 70px 50px;
 
     #presentation{
         display: flex;
-        justify-content: space-evenly;
+        justify-content: flex-start;
     }
     /* blocco per i testi*/
-    #presentation div {
+    .presentation_text {
     width: 300px;
     }
     /* blocco per la foto */
-    #presentation img{
+    .img_presentation{
+        margin-left: 157px;
+    }
+    .photo_presentation{
         width: 100vw;
         max-width: 350px;
         margin-right: -80px;
-        margin-left: -50px;
+        /* margin-left: 203px; */
+        left: -174px;
+    }
+    .img_shadow{
+        margin-left: -3.5px;
     }
     /* sottotitolo */
-    #presentation div h5{
+    .presentation_text h5{
         margin-bottom: 26px;
     }
     /* piccola descrizione */
-    #presentation div p{
+    .presentation_text p{
         margin-top: 0px;
         margin-bottom: 48px;
         font-size: 21px;
@@ -829,7 +856,7 @@ padding: 70px 50px;
     display: flex;
     flex-direction: column;
     left: 0;
-    padding: 50px px;
+    padding: 50px 0px;
     width: 100%;
     text-align: center;
     background: white;
@@ -884,35 +911,46 @@ padding: 70px 50px;
         flex-direction: column;
     }
     /* blocco per i testi*/
-    #presentation div {
+    .presentation_text {
     width: unset;
     margin-left: 25px;
     margin-right: 25px;
     order: 2;
+    margin-top: 210px;
     }
-    #presentation .img_presentation {
-        order: 1;
-        }
 
+        
     /* blocco per la foto */
-    #presentation img{
+    .img_presentation{
+        order: 1;
+        margin-left: 18px;
+    }
+
+    .photo_presentation{
+        top: -50px;
+        left: -118px;
         max-width: 250px;
         margin: unset;
         margin-bottom: -35px;
+        left: -124px;
+        /* margin-left: 132px; */
     }
+    .img_shadow{
+        margin-left: 1px;
+    }    
     /* sottotitolo */
-    #presentation div h5{
+    .presentation_text h5{
         font-size: 14px;
         margin-bottom: 26px;
     }
     /* piccola descrizione */
-    #presentation div p{
+    .presentation_text p{
         margin-top: unset;
         margin-bottom: 36px;
         font-size: 16px;
     }
     /* pulsante */
-    #presentation div a{
+    .presentation_text a{
         font-size: 14px;
     }
     .name span{

@@ -15,9 +15,10 @@ for (let index = 0; index < text.length; index++) {
     
     const element = document.createElement("SPAN")
     element.classList = "textboom t"+index
+    console.log(text)
     element.innerHTML = text[index]
     $(element).click(function (e) {
-        if(!boomed){    boom({x:e.pageX, y:e.pageY}) }
+        if(!boomed){    boom(e) }
         else{           sboom()}
     });
 
@@ -31,14 +32,27 @@ for (let index = 0; index < text.length; index++) {
     }
 }
 var doc_span = document.querySelectorAll(".textboom")
+/*
+       color: #cc5068;
+    /* color: #7948b9; */
+    /* color: #6d6dc6; */
+    /* color: #07bf72; */
+    /* color: #e27b17;
+var color_boom = [ "#beceff", "#52ffb3", "#fb6985", "#aa68ff", "#9999ff", "#5ed2a1", "#f19237",]
 
-var color_boom = ["#359593","#a9e79d","#9431fc","#f26317","#d76ac1","#31f367","#2f25dd","#386269","#a3b1bd","#ec448e","#406cce","#779280","#d7e0ec","#df0025","#aafb68","#27547d","#19b52d", "#ea9203","#6e86e7","#7ca8bd","#fbf992","#1bf241","#e8e599","#ee75f6","#fd1625","#9695db","#06f338","#0fb8de","#0c6a5c","#409cb7","#5a97af","#761c70","#8a51d4","#f36a5e",]
-
-function boom(point_click) {
+*/
+var color_boom = [  "#cc5068",  "#6d6dc6", "#7c8ec6"   ]
+var TEST = 0
+function boom(event) {
+    color_random = color_boom[Math.round(Math.random()*color_boom.length-1)]
+    console.log("color",color_random )
+    TEST = event
+    var point_click = {x:event.pageX, y:event.pageY}
     // text_boom.style.transform = "scale(0.8)"
     var time_rincorsa = 0.5 // in secondi
     text_boom.style.transform = ""
     var rand =  []
+    var colors_pos = color_for_position(event)
     for (let i = 0; i < doc_span.length; i++) {
 
         var random_pos = {
@@ -84,6 +98,9 @@ function boom(point_click) {
         var r = - rand[i].r / 60
         element.style["transform"] = "translate("+x+"px, "+y+"px) scale("+s+") rotate("+r+"deg)"
         element.style["cursor"] = "grab"
+        element.style["color"] = color_random
+        element.style["filter"] = "hue-rotate(" + (colors_pos[i]*5).toString() + "deg) brightness(" + (((colors_pos[i] + 9)/9)).toString() + ")"
+        console.log(colors_pos[i], element.style["filter"])
     }
     setTimeout(() => {
         for (let i = 0; i < doc_span.length; i++) {
@@ -96,11 +113,41 @@ function boom(point_click) {
             element.style["cursor"] = "grab"
     
             var color = (Math.random()*color_boom.length).toFixed(0)
-            element.style ["color"] = color_boom[color]
+            
+            // element.style["filter"] = "aaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            console.log(element.style["filter"])
         }
     }, time_rincorsa*1000);
     console.log("boom")
     boomed = true;
+}
+
+function color_for_position(index_main_letter){
+    // nel punto in cui clicca il colore della lettera è quello principale, quelli vicino hanno una sfumatura 
+    index_main_letter = Number(event.target.className.replace("textboom t", "")) // 0 to 15
+    var list = Array(16)
+    var clamped = index_main_letter
+    if (index_main_letter > 7){
+        clamped = index_main_letter - 8
+    }
+    console.log(index_main_letter, clamped)
+    
+    var line1 = Number(index_main_letter >= 8)
+    var line2 = Number(index_main_letter <= 7)
+
+
+    for (let i = 0; i <= 7; i++) {
+        list[i] = Math.abs(clamped - i)    + line1 // if second line
+            
+    }
+    list[8] = -1
+    for (let i = 9; i <= 16; i++) {
+        list[i] = Math.abs(clamped + 8 - i)    + line2 // if second line    
+    }
+
+    console.log(list.slice(0, 8))
+    console.log(list.slice(9, 16))
+    return list
 }
 
 function boom3() {
