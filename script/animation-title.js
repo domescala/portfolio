@@ -15,7 +15,7 @@ for (let index = 0; index < text.length; index++) {
     
     const element = document.createElement("SPAN")
     element.classList = "textboom t"+index
-    console.log(text)
+
     element.innerHTML = text[index]
     $(element).click(function (e) {
         if(!boomed){    boom(e) }
@@ -45,7 +45,7 @@ var color_boom = [  "#cc5068",  "#6d6dc6", "#7c8ec6"   ]
 var TEST = 0
 function boom(event) {
     color_random = color_boom[Math.round(Math.random()*color_boom.length-1)]
-    console.log("color",color_random )
+
     TEST = event
     var point_click = {x:event.pageX, y:event.pageY}
     // text_boom.style.transform = "scale(0.8)"
@@ -55,13 +55,22 @@ function boom(event) {
     var colors_pos = color_for_position(event)
     for (let i = 0; i < doc_span.length; i++) {
 
+        var max_X = window.innerWidth - 50
+        var initial_X = doc_span[i].getBoundingClientRect().x
+        var max_Y = 1000 //document.querySelector("#containercontacts").getBoundingClientRect().y / 2
+        var initial_Y = doc_span[i].getBoundingClientRect().y
+        
         var random_pos = {
-            x: (Math.random()*1500 + 500) * (Math.random()*1 - 0.4),
-            y: (Math.random()*3500 + 500)* (Math.random()*1 - 0.1),
+            // x: (Math.random()*1500 + 500) * (Math.random()*1 - 0.4),
+            x: (Math.random() * max_X - initial_X),
+            // y: (Math.random()*3500 + 500)* (Math.random()*1 - 0.1),
+            y: (Math.random() * max_Y - initial_Y),
             s: Math.random()*5 + 0.3 ,
             r: (Math.random()*360 + 720) * (Math.round(Math.random()) * 2 - 1 ) ,
         }
         rand[i] = random_pos
+        console.log(random_pos)
+        console.log(max_X, max_Y)
     }
         
     for (let i = 0; i < doc_span.length; i++) {
@@ -100,13 +109,12 @@ function boom(event) {
         element.style["cursor"] = "grab"
         element.style["color"] = color_random
         element.style["filter"] = "hue-rotate(" + (colors_pos[i]*5).toString() + "deg) brightness(" + (((colors_pos[i] + 9)/9)).toString() + ")"
-        console.log(colors_pos[i], element.style["filter"])
     }
     setTimeout(() => {
         for (let i = 0; i < doc_span.length; i++) {
             let element = doc_span[i]
 
-            element.style["transition-duration"] = "30s"
+            element.style["transition-duration"] = "15s"
             // element.style["filter"] = "blur("+(1/rand.s)+"px)"
             element.style["transition-timing-function"] = "cubic-bezier(0.06, 0.81, 0.21, 1.06)"
             element.style["transform"] = "translate("+rand[i].x+"px, "+rand[i].y+"px) scale("+rand[i].s+") rotate("+rand[i].r+"deg)"
@@ -115,7 +123,6 @@ function boom(event) {
             var color = (Math.random()*color_boom.length).toFixed(0)
             
             // element.style["filter"] = "aaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-            console.log(element.style["filter"])
         }
     }, time_rincorsa*1000);
     console.log("boom")
@@ -130,7 +137,7 @@ function color_for_position(index_main_letter){
     if (index_main_letter > 7){
         clamped = index_main_letter - 8
     }
-    console.log(index_main_letter, clamped)
+
     
     var line1 = Number(index_main_letter >= 8)
     var line2 = Number(index_main_letter <= 7)
@@ -145,8 +152,6 @@ function color_for_position(index_main_letter){
         list[i] = Math.abs(clamped + 8 - i)    + line2 // if second line    
     }
 
-    console.log(list.slice(0, 8))
-    console.log(list.slice(9, 16))
     return list
 }
 
