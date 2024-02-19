@@ -66,14 +66,14 @@ $("#containerportfolio .project").click(
 // ----- INSERIMENTO IMMAGINI PORFOLIO -----
 
 // devono chiamarsi "portfolio_1.png"
-setup_img_portfolio();
-function setup_img_portfolio() {
-    let index = 1
-    document.querySelectorAll("#containerportfolio div img").forEach(element => {
-        element.src = "img/portfolio_projects/portfolio_" + index + ".gif";
-        index++;
-    });
-}
+// setup_img_portfolio();
+// function setup_img_portfolio() {
+//     let index = 1
+//     document.querySelectorAll("#containerportfolio div img").forEach(element => {
+//         element.src = "img/portfolio_projects/portfolio_" + index + ".gif";
+//         index++;
+//     });
+// }
 
 
 // ----- AZIONI TRAMITE SCROLL ----- 
