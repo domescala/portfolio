@@ -66,6 +66,9 @@ i{
     font-weight: bold;
     font-size: 14px;
 }
+.counter p::before{
+    content:"\1F441\FE0F"
+}
 .counter svg{
     transform: scale(0.7);
 }
@@ -240,13 +243,13 @@ margin-left: auto;
     flex-grow: 0;
     width: 250px;
     height: 250px;
-    margin: 20px;
+    margin: 9px;
     /* background-color: indianred; */
-    border-radius: 50px;
+    border-radius: 29px;
     overflow: hidden;
     transform: scale(0.9);
-    transition-property: transform, box-shadow; 
-    transition-duration: 1s ;  
+    transition-property: transform, box-shadow;
+    transition-duration: 1s;
     z-index: 3;
 }
 /* zoom-in project*/
@@ -282,7 +285,7 @@ margin-left: auto;
     height: 450px;
     display:flex;
     align-items: flex-start;
-    border-radius: 75px;
+    border-radius: 29px;
     box-shadow: 0px 0px 20px #00000047;
     margin: 0;
     margin: 40px 0px 40px 0px;
@@ -372,33 +375,44 @@ margin-left: auto;
 
 }
 .projectactive .boxviews{
-    fill: white;
-    color: white;
-    position: relative; 
-    width: 0; 
+    /* fill: white; */
+    /* color: white; */
+    position: relative;
+    /* width: 0; */
     height: 0;
-    mix-blend-mode: exclusion;
-    opacity: 0.7
+    opacity: 0.6;
 }
 .projectactive .boxviews div{
     display: flex;
-    /* display: inline-flex; */
-    align-items: center;
     position: absolute;
-    top: -25px;
+    top: 0px;
     left: -150px;
+    /* height: 41px; */
+    width: 53px;
+    outline: 1px solid black;
+    /* margin-top: 26px; */
+    border-radius: 3px;
+    background-color: white;
+    justify-content: center;
+    padding: 8px;
 }
 
 .projectactive .boxviews div p{
-    margin-right: 2px;
-    font-weight: bold;
-    font-size: 18px;
-    margin-left: 10px;
-    margin: none;
+    /* margin-right: 2px; */
+    /* font-weight: bold; */
+    font-size: 14px;
+    display: block;
+    margin: 0;
+}
+.projectactive .boxviews div p::before{
+    content: "\1F441\FE0F";
+    margin-right: 5px;
+    /* display: inline-block; */
 }
 .projectactive .boxviews div {
-    transform: scale(0.8);
+    /* transform: scale(0.8); */
     /* opacity: 0.7; */
+    /* padding: 7px; */
 }
 /* ------------------------------------------------- */
 /* ABOUT */
@@ -755,8 +769,8 @@ padding: 70px 50px;
     /* immagine del progetto selezionato */
     #containerportfolio .projectactive img{
         height: unset;
-        max-height: 300px;
-        width: 100%; 
+        max-height: 50vh;
+        width: 100%;
     }
     /* blocco descrizione */
     .projectactive .projectcaption{
@@ -786,7 +800,6 @@ padding: 70px 50px;
     }
     .projectactive .boxviews div{
         display: flex;
-        align-items: flex-end;
         position: absolute;
         top: -100px;
         left: unset;
@@ -993,7 +1006,7 @@ padding: 70px 50px;
     }
     .projectactive .boxviews div{
         position: absolute;
-        top: -58px;
+        top: -70px;
     }
 
     /* ------------------------------------- */

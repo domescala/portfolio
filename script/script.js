@@ -1,10 +1,4 @@
-// sincronizzazione 
-var sec_intervall = 60
-setTimeout(() => {
-    console.log("hola")
-    refreshAll();
-    setInterval(() => {  refreshAll()}, 1000 * 60/(60/sec_intervall));
-}, 1000* (60 - new Date().getSeconds())/(60/sec_intervall)  )
+
 
 
 // ----- CHECK DEBUG ----- 
@@ -35,33 +29,66 @@ $("#containerportfolio .project").click(
         // Animazione scroll
         this.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
 
-        var key = this.querySelector("img").src.split("portfolio_projects/")[1].replace(".gif", "");
-        const counter = this.querySelector(".boxviews p");
-
-
         // ----- COUNTER PROGETTI ----- 
 
-        if (localStorage.viewsproject10.search(key) == -1 && !debug) {
-            localStorage.viewsproject10 += " "+key
-        console.log("non c'era")
-             $.getJSON("https://api.countapi.xyz/hit/domescala.portfolio11_09_2021/"+key+"?  callback=callbackName" + "&callback=?",
-             function (data) {
-                 let views = data.value;
-                 counter.innerHTML = views
-                localStorage.viewsproject10_n += key+views+key
-             });
-        }
-        else{
-            counter.innerHTML = localStorage.viewsproject10_n.split(key)[1]
+        let key = this.querySelector("h2").innerHTML
+        var action = 'open_project'
+        var namespace = 'domescale.github.io_portfolio'
+        var options = { behavior: 'vote' } 
+        const counter = this.querySelector(".boxviews p");
+        fetch("prject")
+        counterApi.increment(key, action, namespace, options, function(err, res){
+            let views = res.value
+            console.log(res)
+            console.log("PERCHE NON VAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+            counter.innerHTML = views
+        })
 
-        }
-        console.log(key)
+
+
+        // if (localStorage.viewsproject10.search(key) == -1 && !debug) {
+        //     localStorage.viewsproject10 += " "+key
+        // console.log("non c'era")
+        //      $.getJSON("https://api.countapi.xyz/hit/domescala.portfolio11_09_2021/"+key+"?  callback=callbackName" + "&callback=?",
+        //      function (data) {
+        //          let views = data.value;
+        //          counter.innerHTML = views
+        //         localStorage.viewsproject10_n += key+views+key
+        //      });
+        // }
+        // else{
+        //     counter.innerHTML = localStorage.viewsproject10_n.split(key)[1]
+
+        // }
+        // console.log(key)
 
       
     }
 )
 
+// ----- COUNTER PAGE -----
+function counter_page() {
+        
 
+        let key = "main_page"
+        let action = 'views'
+        let namespace = 'domescale.github.io_portfolio'
+        let options = {  startNumber: 42, behavior: 'vote' } 
+        
+        counter = document.querySelector(".counter .views p")
+        counterApi.increment(key, action, namespace, options, function(err, res){
+            let views = res.value
+            console.log(res)
+            counter.innerHTML = views
+        })
+    
+}
+window.addEventListener("load", function () {
+    
+    setTimeout(() => {
+        counter_page() 
+    }, 10);
+})
 
 // ----- INSERIMENTO IMMAGINI PORFOLIO -----
 
@@ -150,248 +177,3 @@ $(".navlink a").click(function(){
 })
 
 
-// -----    COUNTER     -----
-
-// $(".counter").hide()
-$(".counter").show()
-
-var views = 0
-key_check =  "domescala.portfolio11_09_2021"
-
-console.log(localStorage.n_Visit11)
-
-console.log(localStorage.last_refresh)
-console.log(new Date().getTime())
-
-// localStorage.last_refresh = new Date().getTime();
-
-
-console.log("response")
-date = new Date().getTime()
-console.log(localStorage.visit);
-if (localStorage.visit == "true" && !debug){
-    console.log("non prima visita");
-
-    if (new Date().getTime() - localStorage.last_refresh > (1000*3600)) {
-        Counter("hit")
-        localStorage.last_refresh = new Date().getTime()
-        }
-    else {
-        console.log("non prima visita");
-        Counter("get")
-    }
-}
-else if(!debug){
-    console.log("prima visita");
-    Counter("hit")
-    localStorage.last_refresh = new Date().getTime()    
-    localStorage.visit = true
-}
-
-function Counter(metodo) {
-    $.getJSON("https://api.countapi.xyz/"+metodo+"/"+key_check+"/visits?  callback=callbackName" + "&callback=?",
-        function (data) {
-            //console.log(data.contents)
-            let views = data.value;
-            loadCount(views);
-            // $(".counter .views p").html (data.value);
-            // $(".counter").show();
-            console.log("richiesta fatta");
-        });
-} 
-
-function loadCount(n) {
-    let progress = 1
-    let i = 1;
-    if (n>300) {
-        progress = Math.pow(n, 0.1)
-
-    }
-    let t = 15 / (n/100)
-    $(".counter .views p").html (0);
-    $(".counter").show();
-    upgrade(n, i, t);
-    function upgrade(n, i, t) {
-        let x = i/n
-
-        i = i + progress
-        t = 800 *  Math.pow(x, (n*21 / 100))
-        console.log(i, progress, t, ( 1 - Math.pow(1 - x, 3) ))
-
-        $(".counter .views p").html (Math.round(i) );
-        
-        // if (i > 0.9*n ){
-        //     progress = 1;
-        //     t = (15 / (n/100)) * (0.1 + (n/i))
-        // }
-        if (i>=n) { 
-            
-            $(".counter .views p").html (n);}
-        else{
-        setTimeout(() => {
-            upgrade(n, i, t)
-        }, t);
-        }
-
-    }
-
-
-    // var int = setInterval(() => {
-    //     console.log(i)
-    //     i = i + progress;
-
-    //     $(".counter .views p").html (i);
-        
-    //     if (i == 50 ){
-    //         t = 500
-    //     }
-    //     if ((i+progress)>=n) { 
-    //         clearInterval(int);
-    //         $(".counter .views p").html (n);}
-    // }, t);
-}
-
-// -----    COUNTER  REAL TIME   -----
-
-var time_timeout =  2000
-var time_delay = 100
-
-let count_time = 0
-var last_time = 0
-var difference = 0
-var difference_old = 0
-
-
-var list_count = [1,1,1,1,1,1]
-
-var namespace = "domescala2021"
-var key = "countertime1"
-var key2 = "countertime2"
-on = true
-function s() {
-    on = false
-    
-}
-// get_timecount()
-$(".counter .realtime p").html("1");
-// timerefresh();
- list_count = [1,1,1,1,1,1]
-
-
-function average(n) {
-    list_count.shift();
-    list_count.push(n);
-    let m = 0
-    list_count.forEach(e => {m += e });
-    console.log(list_count)
-    return parseInt(m/list_count.length)
-
-}
-console.log("OOOOOOO", localStorage.counterlive)
-if(Number(localStorage.counterlive) > 0){
-    difference = Number(localStorage.counterlive);
-    $(".counter .realtime p").html(difference)
-}
-else{
-    $.getJSON(
-    "https://api.countapi.xyz/hit/"+namespace+"/"+key2,
-        function (data) {
-            console.log(data, "BBBBBBBBBB")
-            difference = data.value
-            $(".counter .realtime p").html(difference);
-            localStorage.counterlive = difference
-        }
-)
-}
-var time_intervall2 = 0.1
-
-
-refreshAll();
-
-function refreshAll() {
-    if (!debug) {
-        refresh()
-    }
-
-}
-
-
-// var a = setInterval(() => {    refresh() }, 1000 * 60);
-var times = -2
-function refresh() {
-console.log(" refresh ")
-
-    let time_start = new Date().getTime()
-
-    $.getJSON("https://api.countapi.xyz/hit/"+namespace+"/"+key,
-            function (data) {
-console.log(" getjson ")
-                
-                var count_time = data.value
-                // difference = count_time - last_time
-
-                console.log("HIT", "last_time", last_time, "difference", difference, "data", data, "times", times )
-
-                if(data.value > 200 && difference == 1){
-                    $.getJSON(
-                        "https://api.countapi.xyz/set/"+namespace+"/"+key+"?value=0",
-                            function (data) {});
-                }
-    console.log(" time++ ")
-
-                times++;
-    console.log(" wait for check ")
-
-                setTimeout(() => {
-
-                    check();
-                }, 10000 );
-            });
-            
- 
-}
- function check(){
-    console.log(" check ")
-
- $.getJSON(
-         "https://api.countapi.xyz/get/"+namespace+"/"+key,
-             function (data) {
-    console.log(" getjson ")
-
-                console.log("check :", "data.value", data.value, "lasttime", last_time, "difference", difference)
-                let count_time = data.value;
-                
-
-                $(".counter .realtime p").html(difference);
-                if (last_time!=0) {
-
-                    difference = count_time - last_time;
-                console.log("last time diversa da zero", difference  )
-
-                }
-                console.log("last time = data.value" , data.value)
-                last_time = data.value ;
-
-                if (difference_old != difference && times > 0){
-
-                    $.getJSON(
-                        "https://api.countapi.xyz/set/"+namespace+"/"+key2+"?value="+difference,
-                            function (data) {
-                                console.log("SET", difference, data )
-                            });
-                    }
-                $(".counter .realtime p").html(difference);
-                console.log("difference_old = difference" , difference)
-
-                difference_old = difference
-                localStorage.counterlive = difference
-             });    
-
- }
-
-// -----  COUNTER VIEWS PROJECT -----
-
-// counter 13_03_2022
-if(document.URL.search("\\?s") != -1){
-    $.getJSON("https://api.countapi.xyz/hit/domescala.portfolio13_03_2022/"+"?  callback=callbackName" + "&callback=?",function () {});
-}
