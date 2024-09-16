@@ -203,7 +203,7 @@ i{
     position: relative;
     transition-property: transform, filter;
     transition-timing-function: cubic-bezier(0.06, 0.81, 0.21, 1.11);
-    cursor: grabbing;
+    cursor: url('data:image/svg+xml,   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="80px" height="80px">   <text x="40" y="40" font-size="40px" dominant-baseline="middle" text-anchor="middle">💣<animateTransform attributeName="transform" attributeType="XML" type="rotate" values="0 20 20; -30 45 35; 0 20 20" dur="0.7s" repeatCount="indefinite" /></text></svg>') 16 16, grabbing;
     
     /* no select */
     -webkit-touch-callout: none; /* iOS Safari */
@@ -216,6 +216,15 @@ i{
 
 }
 
+.cursor_boom_load{
+    cursor: url('data:image/svg+xml,   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="50px" height="50px">   <text x="0" y="40" font-size="40px">🔥</text></svg>') 16 16, grabbing;
+}
+.cursor_boomed{
+    cursor: url('data:image/svg+xml,   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="50px" height="50px">   <text x="0" y="40" font-size="40px">💥</text></svg>') 16 16, grab;
+}
+.cursor_sboom{
+    cursor: url('data:image/svg+xml,   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="50px" height="50px">   <text x="0" y="40" font-size="40px">🧹</text></svg>') 16 16, grab;
+}
 
 /* ---------------------------------------- */
 /* PORTFOLIO */
@@ -282,7 +291,7 @@ margin-left: auto;
     flex-grow: 0;
     width: 100%;
     background-color: rgb(255, 255, 255);
-    height: 450px;
+    height: 500px;
     display:flex;
     align-items: flex-start;
     border-radius: 29px;
@@ -307,9 +316,9 @@ margin-left: auto;
 /* blocco descrizione */
 .projectactive .projectcaption{
     margin-left: 65px;
-    margin-top: 25px;
-    margin-right: 50px;
-    margin-bottom: 25px;
+    margin-top: 40px;
+    margin-right: 65px;
+    margin-bottom: 40px;
     max-width: 525px;
     align-self: stretch;
     display: flex;
@@ -322,6 +331,10 @@ margin-left: auto;
     justify-content: space-between;
     align-items: flex-end;
     
+}
+/* project corpo */
+h2+p{
+
 }
 /* project piè */
 .projectactive .projectcaption .footer{ 
@@ -337,6 +350,7 @@ margin-left: auto;
     margin-left: auto;
     margin-right: 30px;
     order: 6;
+    display: none;
 }
 .projectactive .social a{
     display: block;
@@ -352,11 +366,12 @@ margin-left: auto;
 }
 
 /* testi nelle descrizioni */
-.projectactive p{
+.projectactive h2+p{
     margin-top: 20px;
     margin-bottom: 25px;
-    max-width: 450px;
+    /* max-width: 450px; */
     font-size: 16px;
+    flex-grow: 2;
 }
 .projectactive h2{
     margin-top: 35px;
@@ -381,6 +396,7 @@ margin-left: auto;
     /* width: 0; */
     height: 0;
     opacity: 0.6;
+    display: none;
 }
 .projectactive .boxviews div{
     display: flex;
@@ -483,7 +499,7 @@ margin-left: auto;
     }
     .graph g circle:nth-child(2){
     stroke: #5ed2a1;
-        /* indesign */
+        /* ae */
     stroke-dashoffset: 120;
     animation-duration: 10s;
     
@@ -509,24 +525,24 @@ margin-left: auto;
     animation-duration: 8s;
     
     }
-    .graph text textPath:nth-child(5){
+    .graph text textPath:nth-child(6){
         fill: #9999ff;
     }
-    .graph g circle:nth-child(5){
+    .graph g circle:nth-child(6){
     stroke: #9999ff;
-        /* ae */
-    stroke-dashoffset: 110;
+        /* indesign */
+    stroke-dashoffset: 95;
     animation-duration: 10.5s;
     /* animation-direction: reverse; */
     
     }
-    .graph text textPath:nth-child(6){
+    .graph text textPath:nth-child(5){
         fill: #baa4a4;
     }
-    .graph g circle:nth-child(6){
+    .graph g circle:nth-child(5){
     stroke: #baa4a4;
      /* rhino */
-    stroke-dashoffset: 125;
+    stroke-dashoffset: 120;
     animation-duration: 6s;
     
     }
@@ -536,7 +552,7 @@ margin-left: auto;
     .graph g circle:nth-child(7){
     stroke: #ff3366;
      /* blender */
-    stroke-dashoffset: 140;
+    stroke-dashoffset: 120;
     animation-duration: 5s;
     /* animation-direction: reverse; */
     

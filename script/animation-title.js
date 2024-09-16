@@ -41,6 +41,8 @@ var doc_span = document.querySelectorAll(".textboom")
 var color_boom = [ "#beceff", "#52ffb3", "#fb6985", "#aa68ff", "#9999ff", "#5ed2a1", "#f19237",]
 
 */
+var cursor_boom_load = "url('data:image/svg+xml,   <svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" width=\"50px\" height=\"50px\">   <text x=\"0\" y=\"40\" font-size=\"40px\">🧨</text></svg>') 16 16, grab;"
+var cursor_boomed = "url('data:image/svg+xml,   <svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" width=\"50px\" height=\"50px\">   <text x=\"0\" y=\"40\" font-size=\"40px\">💥</text></svg>') 16 16, grab;"
 var color_boom = [  "#cc5068",  "#6d6dc6", "#7c8ec6"   ]
 var TEST = 0
 function boom(event) {
@@ -106,7 +108,7 @@ function boom(event) {
 
         var r = - rand[i].r / 60
         element.style["transform"] = "translate("+x+"px, "+y+"px) scale("+s+") rotate("+r+"deg)"
-        element.style["cursor"] = "grab"
+        element.classList.add("cursor_boom_load")
         element.style["color"] = color_random
         element.style["filter"] = "hue-rotate(" + (colors_pos[i]*5).toString() + "deg) brightness(" + (((colors_pos[i] + 9)/9)).toString() + ")"
     }
@@ -118,7 +120,7 @@ function boom(event) {
             // element.style["filter"] = "blur("+(1/rand.s)+"px)"
             element.style["transition-timing-function"] = "cubic-bezier(0.06, 0.81, 0.21, 1.06)"
             element.style["transform"] = "translate("+rand[i].x+"px, "+rand[i].y+"px) scale("+rand[i].s+") rotate("+rand[i].r+"deg)"
-            element.style["cursor"] = "grab"
+            element.classList.add("cursor_boomed")
     
             var color = (Math.random()*color_boom.length).toFixed(0)
             
@@ -127,6 +129,15 @@ function boom(event) {
     }, time_rincorsa*1000);
     console.log("boom")
     boomed = true;
+
+    
+    setTimeout(() => {
+        console.log("PARTE?????")
+        doc_span.forEach(element => {
+            element.classList.add("cursor_sboom")
+            
+        });
+    }, time_rincorsa*1000 + 1000);
 }
 
 function color_for_position(index_main_letter){
@@ -189,7 +200,7 @@ function boom3() {
         y = (y / l).toFixed(2).toString()
         var r = - rand[i].r /120
         element.style["transform"] = "translate("+x+"px, "+y+"px) scale("+s+") rotate("+r+"deg)"
-        element.style["cursor"] = "grab"
+        element.classList.add("cursor_boom_load")
     }
     setTimeout(() => {
         for (let i = 0; i < doc_span.length; i++) {
@@ -199,7 +210,7 @@ function boom3() {
             // element.style["filter"] = "blur("+(1/rand.s)+"px)"
             element.style["transition-timing-function"] = "cubic-bezier(0.06, 0.81, 0.21, 1.06)"
             element.style["transform"] = "translate("+rand[i].x+"px, "+rand[i].y+"px) scale("+rand[i].s+") rotate("+rand[i].r+"deg)"
-            element.style["cursor"] = "grab"
+            element.classList.add("cursor_boomed")
     
             var color = (Math.random()*color_boom.length).toFixed(0)
             element.style ["color"] = color_boom[color]
@@ -224,7 +235,7 @@ function boom2() {
         element.style["transition-duration"] = "30s"
         // element.style["filter"] = "blur("+(1/rand.s)+"px)"
         element.style["transform"] = "translate("+rand.x+"px, "+rand.y+"px) scale("+rand.s+") rotate("+rand.r+"deg)"
-        element.style["cursor"] = "grab"
+        element.classList.add("cursor_boom_load")
 
         var color = (Math.random()*color_boom.length).toFixed(0)
         element.style ["color"] = color_boom[color]
@@ -240,10 +251,17 @@ function sboom() {
         element.style["transform"] = ""
         element.style["transition-duration"] = duration+"s"
         element.style["color"] = "unset"
-        element.style["cursor"] = "grabbing"
+        
         
     });
     setTimeout(() => {
+        doc_span.forEach(element => {
+            element.classList.remove("cursor_boom_load")
+            element.classList.remove("cursor_boomed")
+            element.classList.remove("cursor_sboom")
+            
+        });
+
         boomed = false;
     }, duration*1000);
 }
