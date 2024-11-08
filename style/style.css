@@ -260,6 +260,7 @@ i{
     /* overflow: hidden; */
     --project-box-shadow: 0px 0px 10px #0000001f;
 
+    z-index:1000;
     position:relative;
 }
 
