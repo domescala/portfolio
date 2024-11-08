@@ -571,7 +571,6 @@ h2+p{
 .graph{
     transform: scale(1);
     width:40%;
-    display: flex;
     justify-content:center;
     /* overflow: hidden; */
 }
