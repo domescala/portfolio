@@ -153,6 +153,9 @@ i{
 .img_presentation{
     margin-left: 266px;
 }
+body:has(.projectactive) .img_presentation{
+    display: none;
+}
 .photo_presentation{
     width: 100vw;
     max-width: 450px;
