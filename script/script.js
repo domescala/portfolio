@@ -329,9 +329,9 @@ $(".navlink a").click(function () {
 
 // SWIPE per uscire
 
-// document.addEventListener('touchstart', handleTouchStart, false);        
-// document.addEventListener('touchmove',  handleTouchMove, false);
-// document.addEventListener('touchend',   handleTouchEnd, false);
+document.addEventListener('touchstart', handleTouchStart, false);        
+document.addEventListener('touchmove',  handleTouchMove, false);
+document.addEventListener('touchend',   handleTouchEnd, false);
 
 function getTouches(evt) {
   return evt.touches ||             // browser API
