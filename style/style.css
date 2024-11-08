@@ -365,9 +365,6 @@ body:not(body:has(.project_opening)) #containerportfolio .project img.intro_proj
 }
 
 
-.projectactive * {
-    z-index: 10000!important;
-}
 .projectactive{
     order: 2;
     flex-grow: 0;
