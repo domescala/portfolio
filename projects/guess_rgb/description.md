@@ -1,9 +1,10 @@
 <style>
+  
   :root {
             --rgb-pad: 25px;
             --rgb-size: 200px;
-            --rgb-move: 30px;
-            --rgb-scale:1.25;
+            --rgb-move: 15px;
+            --rgb-scale: 1.35;
             --rgb-red: 255;
             --rgb-green: 255;
             --rgb-blue: 255;
@@ -20,7 +21,7 @@
             justify-content: center;
             transition: all 0.5s ease;
             outline: 1px solid rgb(255, 255, 255);
-            scale: var(--rgb-scale)
+            scale: var(--rgb-scale);
         }
 
         #rgb_channel div:nth-child(1) {
@@ -28,28 +29,25 @@
             background: rgb(var(--rgb-red), 0, 0);
             align-items: flex-start;
             justify-content: flex-start;
-            margin-left: calc(-1 * var(--rgb-move));
-            margin-top: calc(-1 * var(--rgb-move));
+            transform: translate3d(calc(-1* var(--rgb-move)), calc(-1* var(--rgb-move)), 0);
         }
         #rgb_channel div:nth-child(2) {
             filter: drop-shadow(0px 0px 10px rgb(0, var(--rgb-green), 0));
-            margin-left: var(--rgb-move);
-            margin-top: calc(-1 * var(--rgb-move));
             background: rgb(0, var(--rgb-green), 0);
             align-items: flex-start;
             justify-content: flex-end;
+            transform: translate3d(var(--rgb-move), calc(-1* var(--rgb-move)), 0);
         }
         #rgb_channel div:nth-child(3) {
             filter: drop-shadow(0px 0px 10px rgb(0, 0, var(--rgb-blue)));
-            margin-left: 0px;
-            margin-top: calc(var(--rgb-move));
             background: rgb(0, 0, var(--rgb-blue));
             align-items: flex-end;
             justify-content: center;
+            transform: translate3d(0, var(--rgb-move), 0);
         }
         #rgb_container * {
             font-family: monospace;
-            
+
         }
         #rgb_container {
             display: flex;
@@ -85,7 +83,7 @@
         }
 
         #rgb_container #rgb_input input{
-            height: 20px;
+            height: 10px;
             filter: saturate(0) invert(0) brightness(1) contrast(2.1);
             margin-bottom: 20px;
         }
@@ -103,35 +101,71 @@
             display: inline-block;
             width: 55px;
         }
-        #rgb_channel:hover *{
-            --rgb-move: 100px;
-            --rgb-scale:1;
+        #rgb_channel:hover * {
+            --rgb-move: 75px;
+            --rgb-scale: 0.95;
         }
-        .rgb_box_example{
-          display:flex; align-items: center;justify-content: center;isolation:isolate;
-          margin-top:10px;
+
+        .rgb_box_example {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            isolation: isolate;
+            margin-top: 10px;
         }
-        .rgb_example{
-        background:currentColor; mix-blend-mode:screen;
-        height:100px; width:100px; translate:40px;
-        border-radius:100%; outline: 1px solid white;
-        box-shadow: 0px 0px 6px 2px currentColor; transition:all 0.5s ease; scale:1;
+
+        .rgb_example {
+            background: currentColor;
+            mix-blend-mode: screen;
+            height: 100px;
+            width: 100px;
+            translate: 40px;
+            border-radius: 100%;
+            outline: 1px solid white;
+            box-shadow: 0px 0px 6px 2px currentColor;
+            transition: all 0.5s ease;
+            scale: 1;
+        }
+
+        .rgb_example+.rgb_example {
+            translate: -40px;
+        }
+        .rgb_box_example:hover .rgb_example {
+            scale: 0.95;
+            translate: 0px;
+        }
+
+
+@media only screen and (max-width: 650px) {
+    #rgb_container #rgb_input {
+        width: 100%;
+        margin-top:25px
     }
-    .rgb_example + .rgb_example{
-      translate:-40px;
+    #rgb_container #rgb_input {
+        width: 100%;
+        margin-top:25px
     }
-    .rgb_box_example:hover .rgb_example{
-      scale:0.95;
-      translate:0px;
+    #rgb_container #rgb_input input{
+        height: 2px;
+        margin-bottom: 10px;
     }
-    
-   
+    #rgb_container #rgb_input span{
+        font-size: 46px;
+    }
+    .pois_pattern{
+        
+    }
+ 
+}
 </style>
+###### *Minigame* *Progetto personale* 
 # Guess the RGB
-### Descrizione 📢
+## Descrizione 📢
 Mini gioco che mette a dura prova la vista e la memoria qualsiasi graphic designer. Saresti in grado di trovare il colore giusto, ma senza guardare? Perché **Guess the RGB** non ti mostrerà la classica interfaccia del color picker, ma dovrai inserire manualmente i valori dei tre canali (rosso, verde e blu) senza poter guardare il colore che stai componendo!
 
-### Gameplay 🎮
+![gameover](guess_rgb_gameover.png)
+*Screenshot di una partita persa: il giocatore doveva trovare il colore giallo, ma ha composto un azzurro. L'accuratezza è completamente nulla nonostante che il valore sul secondo canale (verde) sia azzeccato, questo per via del [calcolo del punteggio 🔗](#punteggio).*
+## Gameplay 🎮
 - Il gioco genera un colore casuale che compare sullo sfondo ed all'interno della carta
 - Il giocatore usando i tre cursori, imposta una quantità di colore per i singoli canali. Da 0 a 255. E preme su conferma 
 - Il gioco rivela il codice del colore generato:
@@ -142,7 +176,7 @@ Mini gioco che mette a dura prova la vista e la memoria qualsiasi graphic design
 - Appare una valutazione finale, per congratularsi o in alcuni casi per incoraggiare il giocatore a riprovare 
 - È poi possibile condividere il risultato o estrarre un nuovo colore
 
-### Ma che cos'è il codice RGB?? 🤔
+## Ma che cos'è il codice RGB?? 🤔
 In breve, un codice RGB contiene tre valori che rappresentano rispettivamente la quantità di rosso, di verde e di blu di un colore. Ognuno di questi puo assumere un valore tra 0 e 255.
 > Ad esempio il nero sarà nullo per tutti i canali:  
 > `rgb(0, 0, 0)`  
@@ -181,9 +215,9 @@ Spesso si utilizza il codice esadecimale per rappresentarli. Ogni canale è rapp
 Per altri dettagli consiglio la lettura di questa [pagina](https://it.wikipedia.org/wiki/RGB).
 
 
-### Strategie per trovarlo 🎯
+## Strategie per trovarlo 🎯
 La strategia migliore è quella di scomporre il colore che vediamo in tre elementi: saturazione, luminosità e tonalità.
-##### Tonalità 🎨
+### Tonalità 🎨
 Per tonalità si intende proprio quello che comunemente chiamiamo "colore": rosso, blu, giallo, verde, azzurro, arancione, viola ecc ecc. In questo caso bisogna individuare il colore "principale" tralasciando se è scuro o chiaro, se è spento o acceso. Da questo bisogna risalire ai colori che lo compongono: 
 > Ad esempio un azzurro (ciano) è composto dalla somma del blu e del verde, in assenza quindi di rosso. Se poi il blu è maggiore del verde si ottiene un vero e proprio azzurro:  
 > <span class="rgb_box_example"><span class="rgb_box_example"><span class="rgb_example" style="color:#00f;"></span><span class="rgb_example" style="color:#0f0;"></span></span><span class="rgb_box_example"><span class="rgb_example" style="color:#00f;"></span><span class="rgb_example" style="color:#070;"></span></span>  </span>  
@@ -198,28 +232,28 @@ Per tonalità si intende proprio quello che comunemente chiamiamo "colore": ross
 
 
 
-##### Luminosità 💡
+### Luminosità 💡
 La luminosità è più immediata da trovare, si tratta di capire se un colore tende più verso il nero o più verso il bianco. Se un colore è tanto luminoso **allora i cursori si troveranno sulla destra** e viceversa.
 > Scala della luminosità sul colore rosso  
-> <span class="pois_pattern" style="background:linear-gradient(to right,#000   0%, #F00 45%,#F00 55%,  #FFF 100%);color:transparent; margin:3px 0;width:100%;display:block"> - </span> 
+> <span class="pois_pattern" style="background:linear-gradient(to right,#000   0%, #F00 45%,#F00 55%,  #FFF 100%);color:transparent;width:100%;display:block;margin-top:15px"> - </span> 
 
-##### Saturazione 🌈
+### Saturazione 🌈
 Per saturazione si intende invece quanto un colore è... *"colorato🥴"*. Ossia quanto è acceso, brillante.
 Per intenderci, un colore possiamo immaginarlo in una scala che va dal grigio a quel colore. Da questa scala si può  notare come il colore diventi sempre piu spento e triste, fino a raggiungere il grigio. Amici, quella è la scala della saturazione.  
 **Più un colore è saturo e più i valori (e quindi i cursori) saranno distanti fra loro, e viceversa.** 
 > Scala della saturazione del rosso:  
-> <span class="pois_pattern" style="background:linear-gradient(to right, #777 0%, #F00 100%);color:transparent; width:100%;display:block"> ----------------------------------------------------------------- </span> 
+> <span class="pois_pattern" style="background:linear-gradient(to right, #777 0%, #F00 100%);color:transparent; width:100%;display:block;margin-top:15px"> ----------------------------------------------------------------- </span> 
 
 > I "grigi" infatti hanno sempre gli stessi valori, lo avevi notato no?   
 
 
-### Funzionamento 
-##### Punteggio 
+## Funzionamento 
+### Punteggio 
 Il punteggio finale è definito da una percentuale di accuratezza. Minore è l'errore e maggiore sarà il punteggio. Tuttavia, diversamente da come si potrebbe pensare, il calcolo non segue una funzione lineare, ovvero errore e punteggio non vanno di pari passo. Il calcolo è il seguente:  
 > Si trovano gli errori, ovvero le differenze tra l'RGB originale e quello inserito dall'utente:  
-> $$ R_{diff} = |R_{gioco} - R_{utente} |  $$
-> $$ G_{diff} = |G_{gioco} - G_{utente} |  $$
-> $$ B_{diff} = |B_{gioco} - B_{utente} |  $$
+> $$R_{diff} = |R_{gioco} - R_{utente} |$$
+> $$G_{diff} = |G_{gioco} - G_{utente} |$$
+> $$B_{diff} = |B_{gioco} - B_{utente} |$$
 
 > Media delle tre differenze:
 > $$ Media = (R_{diff} + G_{diff} + B_{diff})/3 $$

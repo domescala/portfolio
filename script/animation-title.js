@@ -105,11 +105,11 @@ function boom(event) {
         y = (y / l).toFixed(2)
 
         var s = 0.5 + (Math.sqrt( deltaX**2 + deltaY**2))  / 240 
-
         var r = - rand[i].r / 60
         element.style["transform"] = "translate("+x+"px, "+y+"px) scale("+s+") rotate("+r+"deg)"
         element.classList.add("cursor_boom_load")
         element.style["color"] = color_random
+        element.style['textShadow'] =  "0px 0px 10px" + color_random + "91" ;
         element.style["filter"] = "hue-rotate(" + (colors_pos[i]*5).toString() + "deg) brightness(" + (((colors_pos[i] + 9)/9)).toString() + ")"
     }
     setTimeout(() => {

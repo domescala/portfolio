@@ -13,10 +13,11 @@
     <link href="style/style.css" rel="stylesheet" />
     <link href="style/animation.css" rel="stylesheet" />
     <link href="style/markdown.css" rel="stylesheet" />
+    <link href="style/markdown-mobile.css" rel="stylesheet" />
     <title>Domenico Scaletta</title>
 </head>
 <body>
-    <div id="navbar">
+    <div id="navbar" style="visibility: hidden;">
         <div class="navlogo">
             <div class="logo"></div>
             <div class="logotype">
@@ -111,34 +112,79 @@
             <p>
                 La maggior parte delle mie competenze le ho apprese durante lo sviluppo di un progetto che richiedeva un determinato strumento. <br />Apprendo con facilità
                 i nuovi software e raggiungo in breve tempo un ottimo livello di competenza anche nelle feature più avanzate (come ad esempio la sezione di scripting di Blender)
-
-
-
             </p>
             <br />
-            <i>
+            <p class="caption-note">
                 Il grafico rappresenta in percentuale la mia dimestichezza con alcuni software, da <b>Adobe Illustrator</b>
                 fino a <b>Godot Engine</b>
-            </i>
+            </p>
         </div>
     </div>
     <!-- portfolio -->
-    <div id="containerportfolio">
+    <div class="container" id="containerportfolio">
         <div class="titlesection">
             <h2>Portfolio</h2>
         </div>
         <!-- <div id="project_blur">
 
-        </div> -->
+</div> -->
+        <div class="project" id="node_class">
+            <img alt="" class="intro_project_gif" src="projects/node_class/cover.gif" />
+            <div class="markdown-box" insert_py="projects/node_class/description.md">
+                <h6 id="game-design-tesi-universitaria---node_class"><em>Game Design</em> <em>Tesi Universitaria</em></h6>
+                <style>
+                    .markdown-box img.multiple-image {
+                        width: 48%;
+                    }
+
+                    @media only screen and (max-width: 650px) {
+                        .markdown-box img.multiple-image {
+                            width: 100%;
+                            margin: 10px 0;
+                        }
+                    }
+                </style>
+                <h1 id="node-class---node_class">Node Class</h1>
+                <h2 id="descrizione-📢---node_class">Descrizione <span class="emoji">📢</span></h2>
+                <p>Node Class è un gioco educativo che mira ad insegnare i Geometry Nodes di Blender. Diversamente da altri corsi, Node Class sfrutta la componente di intrattenimento per soffermarsi sui dettagli degli argomenti, fornendo una spiegazione esaustiva e completa.</p>
+                <h2 id="scenario-🗺️---node_class">Scenario <span class="emoji">🗺️</span></h2>
+                <p>I geometry nodes sono uno strumento estremamente potente nelle mani degli artisti ed offrono nuove opportunità nella realizzazione di modelli complessi. </p>
+                <div style="display:flex;justify-content:space-evenly; flex-wrap:wrap">
+                    <img class="multiple-image" src="projects\node_class/nodeclass-meme1.jpg" />
+                    <img class="multiple-image" src="projects\node_class/nodeclass-meme2.jpg" />
+                </div>
+                <p>Nonostante la familiarità con l’interfaccia a blocchi, già ben nota alla community per via dei nodi dello shader e del compositor, i GN possono risultare complessi per molti utenti che non mostrano una particolare inclinazione verso la matematica e, di conseguenza,per la programmazione. Pur riuscendo a destreggiarsi con successo, gli utenti sovente non comprendono appieno ciò che fanno. </p>
+                <p>Il progetto di Node Class vuole essere una risorsa esaustiva e dettagliata, ma che sia al contempo accessibile e coinvolgente. </p>
+                <h2 id="concept-🎮---node_class">Concept <span class="emoji">🎮</span></h2>
+                <p>Le componenti di dinamicità e di intrattenimento, collegate a una didattica dettagliata, richiamano gli elementi caratteristici dell'edutainment. La soluzione proposta consiste, pertanto, nello sviluppo di un gioco educativo, in grado di essere dinamico e divertente. </p>
+                <div style="display:flex;justify-content:space-evenly; flex-wrap:wrap">
+                    <img class="multiple-image" src="projects\node_class/nodeclass-split.jpg" />
+                    <img class="multiple-image" src="projects\node_class/nodeclass-sine.jpg" />
+                </div>
+                <p>In seguito ad una accurata ricerca, sono stati definiti il <strong>genere</strong> del gioco, l'<strong>ambientazione</strong>, la <strong>trama</strong>, i <strong>personaggi</strong> e soprattutto un <strong>percorso didattico</strong>.<br />
+                    Questo percorso è stato sintetizzato in 12 argomenti principali riguardo la modellazione, la geometria e i GN, partendo da nozioni semplici, a volte banali, fino a quelle più complesse e difficili.</p>
+                <h2 id="sviluppo-🎨---node_class">Sviluppo <span class="emoji">🎨</span></h2>
+                <p>Ognuno dei 12 capitoli è stato suddiviso in piu sotto argomenti, da trattare in modo approfondito in livello apposito.
+                    La creazione di un livello partiva quindi dagli obiettivi didattici: si definivano enigmi, oggetti, situazioni,spiegazioni e passaggi al fine di rendere chiara l'argomento in questione. </p>
+                <div style="display:flex;justify-content:space-evenly; flex-wrap:wrap">
+                    <img class="multiple-image" src="projects\node_class/nodeclass-primitive.jpg" />
+                    <img class="multiple-image" src="projects\node_class/nodeclass-donut.jpg" />
+                </div>
+                <p>Per <em>sviluppo</em> si intende la realizzazione <strong>completa</strong> degli ambienti 3D delle stanze e di tutti gli oggetti in Blender. Utilizzando proprio i Geometry Nodes per rendere accurate e fedeli tutte le trasformazioni (spesso anche in modo interattivo, proprio sfruttando le animazioni con i Geometry Nodes).</p>
+                <p><img alt="alt" src="projects\node_class/nodeclass-table.jpg">
+                    <em>Nei livelli e nella trama, non mancano riferimenti pop ed easter egg, come famoso Donut di Blender Guru e il Companion Cube di Portal. Lo screenshot riporta il livello in cui si spiega il concetto di istanza e nel quale sono stati utilizzati oggetti molto singolari, diversi da semplici geometrie</em></img>
+                </p>
+            </div>
+        </div>
         <div class="project" id="guess_rgb">
-            <img alt="" class="intro_project_gif" src="img\portfolio_projects\guess_rgb.gif" />
+            <img alt="" class="intro_project_gif" src="projects/guess_rgb/cover.gif" />
             <div class="markdown-box" insert_py="projects/guess_rgb/description.md">
                 <style>
                     :root {
                         --rgb-pad: 25px;
                         --rgb-size: 200px;
-                        --rgb-move: 30px;
-                        --rgb-scale: 1.25;
+                        --rgb-move: 15px;
+                        --rgb-scale: 1.35;
                         --rgb-red: 255;
                         --rgb-green: 255;
                         --rgb-blue: 255;
@@ -156,7 +202,7 @@
                         justify-content: center;
                         transition: all 0.5s ease;
                         outline: 1px solid rgb(255, 255, 255);
-                        scale: var(--rgb-scale)
+                        scale: var(--rgb-scale);
                     }
 
                     #rgb_channel div:nth-child(1) {
@@ -164,26 +210,23 @@
                         background: rgb(var(--rgb-red), 0, 0);
                         align-items: flex-start;
                         justify-content: flex-start;
-                        margin-left: calc(-1 * var(--rgb-move));
-                        margin-top: calc(-1 * var(--rgb-move));
+                        transform: translate3d(calc(-1* var(--rgb-move)), calc(-1* var(--rgb-move)), 0);
                     }
 
                     #rgb_channel div:nth-child(2) {
                         filter: drop-shadow(0px 0px 10px rgb(0, var(--rgb-green), 0));
-                        margin-left: var(--rgb-move);
-                        margin-top: calc(-1 * var(--rgb-move));
                         background: rgb(0, var(--rgb-green), 0);
                         align-items: flex-start;
                         justify-content: flex-end;
+                        transform: translate3d(var(--rgb-move), calc(-1* var(--rgb-move)), 0);
                     }
 
                     #rgb_channel div:nth-child(3) {
                         filter: drop-shadow(0px 0px 10px rgb(0, 0, var(--rgb-blue)));
-                        margin-left: 0px;
-                        margin-top: calc(var(--rgb-move));
                         background: rgb(0, 0, var(--rgb-blue));
                         align-items: flex-end;
                         justify-content: center;
+                        transform: translate3d(0, var(--rgb-move), 0);
                     }
 
                     #rgb_container * {
@@ -227,7 +270,7 @@
                     }
 
                     #rgb_container #rgb_input input {
-                        height: 20px;
+                        height: 10px;
                         filter: saturate(0) invert(0) brightness(1) contrast(2.1);
                         margin-bottom: 20px;
                     }
@@ -247,8 +290,8 @@
                     }
 
                     #rgb_channel:hover * {
-                        --rgb-move: 100px;
-                        --rgb-scale: 1;
+                        --rgb-move: 75px;
+                        --rgb-scale: 0.95;
                     }
 
                     .rgb_box_example {
@@ -280,11 +323,40 @@
                         scale: 0.95;
                         translate: 0px;
                     }
+
+
+                    @media only screen and (max-width: 650px) {
+                        #rgb_container #rgb_input {
+                            width: 100%;
+                            margin-top: 25px
+                        }
+
+                        #rgb_container #rgb_input {
+                            width: 100%;
+                            margin-top: 25px
+                        }
+
+                        #rgb_container #rgb_input input {
+                            height: 2px;
+                            margin-bottom: 10px;
+                        }
+
+                        #rgb_container #rgb_input span {
+                            font-size: 46px;
+                        }
+
+                        .pois_pattern {}
+
+                    }
                 </style>
-                <h1 id="guess-the-rgb">Guess the RGB</h1>
-                <h3 id="descrizione-📢">Descrizione 📢</h3>
+                <h6 id="minigame-progetto-personale---guess_rgb"><em>Minigame</em> <em>Progetto personale</em></h6>
+                <h1 id="guess-the-rgb---guess_rgb">Guess the RGB</h1>
+                <h2 id="descrizione-📢---guess_rgb">Descrizione <span class="emoji">📢</span></h2>
                 <p>Mini gioco che mette a dura prova la vista e la memoria qualsiasi graphic designer. Saresti in grado di trovare il colore giusto, ma senza guardare? Perché <strong>Guess the RGB</strong> non ti mostrerà la classica interfaccia del color picker, ma dovrai inserire manualmente i valori dei tre canali (rosso, verde e blu) senza poter guardare il colore che stai componendo!</p>
-                <h3 id="gameplay-🎮">Gameplay 🎮</h3>
+                <p><img alt="gameover" src="projects\guess_rgb/guess_rgb_gameover.png" />
+                    <em>Screenshot di una partita persa: il giocatore doveva trovare il colore giallo, ma ha composto un azzurro. L'accuratezza è completamente nulla nonostante che il valore sul secondo canale (verde) sia azzeccato, questo per via del <a href="#punteggio---guess_rgb">calcolo del punteggio <span class="emoji">🔗</span></a>.</em>
+                </p>
+                <h2 id="gameplay-🎮---guess_rgb">Gameplay <span class="emoji">🎮</span></h2>
                 <ul>
                     <li>Il gioco genera un colore casuale che compare sullo sfondo ed all'interno della carta</li>
                     <li>Il giocatore usando i tre cursori, imposta una quantità di colore per i singoli canali. Da 0 a 255. E preme su conferma </li>
@@ -296,7 +368,7 @@
                     <li>Appare una valutazione finale, per congratularsi o in alcuni casi per incoraggiare il giocatore a riprovare </li>
                     <li>È poi possibile condividere il risultato o estrarre un nuovo colore</li>
                 </ul>
-                <h3 id="ma-che-cos'è-il-codice-rgb??-🤔">Ma che cos'è il codice RGB?? 🤔</h3>
+                <h2 id="ma-che-cos'è-il-codice-rgb??-🤔---guess_rgb">Ma che cos'è il codice RGB?? <span class="emoji">🤔</span></h2>
                 <p>In breve, un codice RGB contiene tre valori che rappresentano rispettivamente la quantità di rosso, di verde e di blu di un colore. Ognuno di questi puo assumere un valore tra 0 e 255.</p>
                 <blockquote>
                     <p>Ad esempio il nero sarà nullo per tutti i canali:<br />
@@ -334,10 +406,10 @@
                     </p>
                 </blockquote>
                 <p>È importante sapere che, ad eccezione di qualche folle designer, i codici rgb non si compongono "a memoria", ma in tutti i software di grafica è disponibile uno strumento chiamato "RGB Picker" che mostra in tempo reale il colore che si sta creando. </p>
-                <p>Per altri dettagli consiglio la lettura di questa <a href="https://it.wikipedia.org/wiki/RGB">pagina</a>.</p>
-                <h3 id="strategie-per-trovarlo-🎯">Strategie per trovarlo 🎯</h3>
+                <p>Per altri dettagli consiglio la lettura di questa <a href="https://it.wikipedia.org/wiki/RGB" target="_blank">pagina</a>.</p>
+                <h2 id="strategie-per-trovarlo-🎯---guess_rgb">Strategie per trovarlo <span class="emoji">🎯</span></h2>
                 <p>La strategia migliore è quella di scomporre il colore che vediamo in tre elementi: saturazione, luminosità e tonalità.</p>
-                <h5 id="tonalità-🎨">Tonalità 🎨</h5>
+                <h3 id="tonalità-🎨---guess_rgb">Tonalità <span class="emoji">🎨</span></h3>
                 <p>Per tonalità si intende proprio quello che comunemente chiamiamo "colore": rosso, blu, giallo, verde, azzurro, arancione, viola ecc ecc. In questo caso bisogna individuare il colore "principale" tralasciando se è scuro o chiaro, se è spento o acceso. Da questo bisogna risalire ai colori che lo compongono: </p>
                 <blockquote>
                     <p>Ad esempio un azzurro (ciano) è composto dalla somma del blu e del verde, in assenza quindi di rosso. Se poi il blu è maggiore del verde si ottiene un vero e proprio azzurro:<br />
@@ -350,32 +422,32 @@
                         <span class="rgb_box_example"><span class="rgb_box_example"><span class="rgb_example" style="color:#f00;"></span><span class="rgb_example" style="color:#0f0;"></span></span><span class="rgb_box_example"><span class="rgb_example" style="color:#f00;"></span><span class="rgb_example" style="color:#080;"></span></span> </span><br />
                     </p>
                 </blockquote>
-                <h5 id="luminosità-💡">Luminosità 💡</h5>
+                <h3 id="luminosità-💡---guess_rgb">Luminosità <span class="emoji">💡</span></h3>
                 <p>La luminosità è più immediata da trovare, si tratta di capire se un colore tende più verso il nero o più verso il bianco. Se un colore è tanto luminoso <strong>allora i cursori si troveranno sulla destra</strong> e viceversa.</p>
                 <blockquote>
                     <p>Scala della luminosità sul colore rosso<br />
-                        <span class="pois_pattern" style="background:linear-gradient(to right,#000   0%, #F00 45%,#F00 55%,  #FFF 100%);color:transparent; margin:3px 0;width:100%;display:block"> - </span>
+                        <span class="pois_pattern" style="background:linear-gradient(to right,#000   0%, #F00 45%,#F00 55%,  #FFF 100%);color:transparent;width:100%;display:block;margin-top:15px"> - </span>
                     </p>
                 </blockquote>
-                <h5 id="saturazione-🌈">Saturazione 🌈</h5>
+                <h3 id="saturazione-🌈---guess_rgb">Saturazione <span class="emoji">🌈</span></h3>
                 <p>Per saturazione si intende invece quanto un colore è... <em>"colorato🥴"</em>. Ossia quanto è acceso, brillante.
                     Per intenderci, un colore possiamo immaginarlo in una scala che va dal grigio a quel colore. Da questa scala si può notare come il colore diventi sempre piu spento e triste, fino a raggiungere il grigio. Amici, quella è la scala della saturazione.<br />
                     <strong>Più un colore è saturo e più i valori (e quindi i cursori) saranno distanti fra loro, e viceversa.</strong>
                 </p>
                 <blockquote>
                     <p>Scala della saturazione del rosso:<br />
-                        <span class="pois_pattern" style="background:linear-gradient(to right, #777 0%, #F00 100%);color:transparent; width:100%;display:block"> ----------------------------------------------------------------- </span>
+                        <span class="pois_pattern" style="background:linear-gradient(to right, #777 0%, #F00 100%);color:transparent; width:100%;display:block;margin-top:15px"> ----------------------------------------------------------------- </span>
                     </p>
                     <p>I "grigi" infatti hanno sempre gli stessi valori, lo avevi notato no? </p>
                 </blockquote>
-                <h3 id="funzionamento">Funzionamento</h3>
-                <h5 id="punteggio">Punteggio</h5>
+                <h2 id="funzionamento---guess_rgb">Funzionamento</h2>
+                <h3 id="punteggio---guess_rgb">Punteggio</h3>
                 <p>Il punteggio finale è definito da una percentuale di accuratezza. Minore è l'errore e maggiore sarà il punteggio. Tuttavia, diversamente da come si potrebbe pensare, il calcolo non segue una funzione lineare, ovvero errore e punteggio non vanno di pari passo. Il calcolo è il seguente: </p>
                 <blockquote>
                     <p>Si trovano gli errori, ovvero le differenze tra l'RGB originale e quello inserito dall'utente:<br />
-                        <script type="math/tex; mode=display"> R_{diff} = |R_{gioco} - R_{utente} |  </script>
-                        <script type="math/tex; mode=display"> G_{diff} = |G_{gioco} - G_{utente} |  </script>
-                        <script type="math/tex; mode=display"> B_{diff} = |B_{gioco} - B_{utente} |  </script>
+                        <script type="math/tex; mode=display">R_{diff} = |R_{gioco} - R_{utente} |</script>
+                        <script type="math/tex; mode=display">G_{diff} = |G_{gioco} - G_{utente} |</script>
+                        <script type="math/tex; mode=display">B_{diff} = |B_{gioco} - B_{utente} |</script>
                     </p>
                     <p>Media delle tre differenze:
                         <script type="math/tex; mode=display"> Media = (R_{diff} + G_{diff} + B_{diff})/3 </script>
@@ -390,7 +462,7 @@
                         <script type="math/tex; mode=display"> Accuratezza_\% = (x ^ {1 / {x^4} })*100 \% </script>
                     </p>
                 </blockquote>
-                <p>La formula dell'accuratezza cerca di fare una stima della differenza dei due colori. L'andamento non è lineare: quando la differenza tra i due colori è del 50% il risultato sarà pressoché zero. Questo perché già una piccola variazione (anche se è distribuita sui tre canali) modifica drasticamente il colore. Come descritto su wikipedia <a href="https://en.wikipedia.org/wiki/Color_difference">la differenza fra due colori</a> è un argomento complesso, in cui anche la percezione umana è un fattore importante. La formula che calcola il punteggio di <em>Guess the RGB</em> NON è rigorosa, ma è stata creata provando tentativo dopo tentativo.</p>
+                <p>La formula dell'accuratezza cerca di fare una stima della differenza dei due colori. L'andamento non è lineare: quando la differenza tra i due colori è del 50% il risultato sarà pressoché zero. Questo perché già una piccola variazione (anche se è distribuita sui tre canali) modifica drasticamente il colore. Come descritto su wikipedia <a href="https://en.wikipedia.org/wiki/Color_difference" target="_blank">la differenza fra due colori</a> è un argomento complesso, in cui anche la percezione umana è un fattore importante. La formula che calcola il punteggio di <em>Guess the RGB</em> NON è rigorosa, ma è stata creata provando tentativo dopo tentativo.</p>
                 <script>
                     function __update_rgb(prop, el, index) {
                         let v = Math.round(el.value);
@@ -401,88 +473,165 @@
                 </script>
             </div>
         </div>
-        <div class="project">
-            <img alt="" src="img\portfolio_projects\portfolio_aule.gif" />
-            <div class="projectcaption">
-                <div class="boxviews">
-                    <div>
-                        <p></p>
-                    </div>
-                </div>
-                <div class="header">
-                    <h4>UX/UI - script - Redesign</h4>
-                    <h5>progetto personale</h5>
-                </div>
-                <h2>Aule Libere Polito</h2>
-                <p>Progetto indipendente con l'obiettivo di migliorare notevolmente il servizio "aule libere" del Politecnico di Torino, attraverso un efficace redesign della UX/UI.
-                    Nella nuova pagina le aule sono disposte in una lista verticale. Ognuna è suddivisa negli otto slot orari che indicano la disponibilità. A colpo d'occhio l'utente vede quali aule sono disponibili nella fascia corrente e in quelle successive. Un sistema di filtri permette di ordinare in base alla disponibilità, alla zona, al piano, alla capienza e alla superficie.
+        <div class="project" id="aule_libere_polito">
+            <img alt="" class="intro_project_gif" src="projects/aule_libere_polito/cover.gif" />
+            <div class="markdown-box" insert_py="projects/aule_libere_polito/description.md">
+                <h6 id="tool-progetto-personale---aule_libere_polito"><em>Tool</em> <em>Progetto personale</em></h6>
+                <h1 id="aule-libere-polito---aule_libere_polito">Aule Libere Polito</h1>
+                <p>Progetto indipendente con l'obiettivo di migliorare notevolmente il servizio "aule libere" del Politecnico di Torino, attraverso un efficace redesign della UX/UI.</p>
+                <h2 id="il-problema---aule_libere_polito">Il problema</h2>
+                <p>Il sito fornito dal <a href="https://www.swas.polito.it/dotnet/orari_lezione_pub/mobile/ricerca_aule_libere.aspx" target="_blank">portale <span class="emoji">🔗</span></a> non è sempre semplicissimo e comodo da consultare:</p>
+                <h3 id="❌-disposizione-delle-aule---aule_libere_polito"><span class="emoji">❌</span> Disposizione delle aule</h3>
+                <blockquote>
+                    <p>Ogni fascia oraria dispone di un blocco di testo semplice con le aule in ordine alfabetico. L'utente è obbligato a cercare faticosamente nell'elenco di ogni blocco se un'aula, ad esempio, rimane libera per due fasce consecutive.
+                        <img alt="polito_aule_ui.png" src="projects\aule_libere_polito/polito_aule_ui.png" />
+                    </p>
+                </blockquote>
+                <h3 id="❌-elementi-inutili-e-fuorvianti---aule_libere_polito"><span class="emoji">❌</span> Elementi inutili e fuorvianti</h3>
+                <blockquote>
+                    <p>Senza alcun motivo le liste delle aule sono inizialmente nascoste ed è necessario premere il pulsante "⬇" per rivelarle. Da subito invece si mostra un numero che rappresenta inutilmente la quantità di aule libere sul totale. <br />
+                        <img alt="polito_aule_ui2.png" src="projects\aule_libere_polito/polito_aule_ui2.png" />
+                    </p>
+                </blockquote>
+                <h3 id="❌-eccessiva-latenza---aule_libere_polito"><span class="emoji">❌</span> Eccessiva latenza</h3>
+                <blockquote>
+                    <p>La selezione di un giorno o di una sede, il sito può richiedere anche 10 secondi prima di mostrare i risultati. La latenza deriva dal fatto che il server genera da capo l'intero sito ogni volta, con la lista delle nuove aule.</p>
+                </blockquote>
+                <h2 id="redesign---aule_libere_polito">Redesign</h2>
+                <p>Nella nuova pagina le aule sono disposte in una lista verticale. Ognuna è suddivisa negli otto slot orari che indicano la disponibilità. A colpo d'occhio l'utente vede quali aule sono disponibili nella fascia corrente e in quelle successive. Un sistema di filtri permette di ordinare in base alla disponibilità, alla zona, al piano, alla capienza e alla superficie.</p>
+                <p><img src="projects\aule_libere_polito/cover.gif" style="max-height:450px;object-fit:cover;object-position: top;" /></p>
+                <h2 id="nuove-feature---aule_libere_polito">Nuove feature</h2>
+                <ul>
+                    <li><a href="#velocità-di-caricamento-e-consultazione-🏃🏻‍♂️---aule_libere_polito"><span class="emoji">🏃🏻‍♂️</span> Velocità di caricamento e consultazione</a> </li>
+                    <li><a href="#filtri-per-ordinare-le-aule-📊---aule_libere_polito"><span class="emoji">📊</span> Filtri per ordinare le aule in base alla disponibilità, alla zona, al piano, alla capienza e alla superficie</a> </li>
+                    <li>📄 Pagina di recap sulle informazioni generali dell'aula selezionata </li>
+                    <li>🎨 La fascia oraria corrente è evidenziata</li>
+                    <li><a href="#ricerca-aule-🔎---aule_libere_polito"><span class="emoji">🔎</span> Ricerca aule</a></li>
+                    <li>📆 Avvio sul primo giorno consultabile </li>
+                    <li>⚡️ Avviso in caso di prese elettriche assenti </li>
+                    <li><a href="#aule-preferite-⭐---aule_libere_polito"><span class="emoji">⭐</span> Aule preferite</a></li>
+                    <li>🏫 Memorizzazione dell'ultima sede selezionata </li>
+                </ul>
+                <h2 id="funzionamento---aule_libere_polito">Funzionamento</h2>
+                <h3 id="velocità-di-caricamento-e-consultazione-🏃🏻‍♂️---aule_libere_polito">Velocità di caricamento e consultazione <span class="emoji">🏃🏻‍♂️</span></h3>
+                <p>La soluzione migliore al problema della latenza è quella di conservare tutti i dati relativi alle aule già nel client. Per fare ciò è stato necessario sviluppare in python uno script che raccogliesse uno ad uno tutte le liste delle aule disponibili di ogni giorno per ogni sede. Questo script viene eseguito manualmente dal mio PC circa una volta a settimana, e i dati vengono aggiornati sul repository di Github nel file <a href="https://domescala.github.io/aule_libere_polito/js/classrooms_data.js" target="_blank">classrooms_data.js <span class="emoji">🔗</span></a>.<br />
+                    Poiché la disponibilità di ogni aula è suddivisa in <strong>otto fasce</strong> orarie al giorno, ad essa è stato associato un numero binario di <strong>otto cifre</strong> in cui <strong>1</strong> e <strong>0</strong> rappresentano lo stato di disponibilità.</p>
+                <blockquote>
+                    <p><code>11111111</code> -&gt; Aula sempre libera<br />
+                        <code>10001111</code> -&gt; Aula libera per la prima e le ultime 4 fasce<br />
+                        <code>00000000</code> -&gt; Aula sempre occupata
+                    </p>
+                </blockquote>
+                <p>Questo numero è convertito in uno esadecimale a due cifre per salvare spazio</p>
+                <blockquote>
+                    <p><code>11111111</code> -&gt; <code>FF</code><br />
+                        <code>10001111</code> -&gt; <code>AF</code><br />
+                        <code>00000000</code> -&gt; <code>00</code>
+                    </p>
+                </blockquote>
+                <p>Ed infine, poiché le aule rimangono sempre le stesse, nel dizionario non verrà salvato il nome dell'aula:</p>
+                <blockquote>
+                    <p>❌ <code>giorno1: aula1 : "FF", aula2 : "AF"</code> ❌</p>
+                </blockquote>
+                <p>I nomi delle aule sono conservate in un'altra variabile in ordine alfabetico e per ogni giorno si uniranno insieme tutte le disponibilità:</p>
+                <blockquote>
+                    <p><code>"giorno1" : "FFAF00...."</code> 👌🏻</p>
+                </blockquote>
+                <p>E automaticamente il codice prenderà le cifre a due a due ottenendo in codice binario e le disponibilità. Lo script che parsifica il dizionario delle aule si può consultare qui: <a href="https://domescala.github.io/aule_libere_polito/js/parse_classrooms_data.js" target="_blank">parse_classrooms_data.js <span class="emoji">🔗</span></a></p>
+                <h3 id="filtri-per-ordinare-le-aule-📊---aule_libere_polito">Filtri per ordinare le aule <span class="emoji">📊</span></h3>
+                <p>Le informazioni riguardo il piano, la capienza, la superficie, la zona e la eventuale presenza di prese elettriche nelle aule sono disponibili all'interno del <a href="[https://](https://www.polito.it/ateneo/chi-siamo/sedi-e-mappe?bl_id=TO_CEN03&amp;fl_id=XPTE&amp;lang=it&amp;rm_id=D001)" target="_blank">portale <span class="emoji">🔗</span></a>. È stato necessario scaricarli (una tantum) attraverso uno script di scraping in python e caricarli nel repository (<a href="https://domescala.github.io/aule_libere_polito/js/classrooms_info.js" target="_blank">classrooms_info.js <span class="emoji">🔗</span></a>). </p>
+                <p>Ad ogni riga (aula) sono stati inseriti tutti gli attributi (capienza, superficie, piano...) con i relativi valori (300🪑, 250m2, Primo piano...).<br />
+                    <a id="rimando-css-order"></a>
+                    A questo punto per azionare un filtro basterebbe prendere tutti tutte le aule, ordinarle in una lista in base ad un valore (es: capienza) ed assegnare attraverso l'attributo <em>CSS Order</em> un numero progressivo.<br />
+                    Ma per motivi di prestazioni è stata creata una variabile con i valori già ordinati (tutte i valori delle capienze, superfici, piani...). In questo modo per ogni attributo (es: capienza) si cerca il suo valore all'interno della lista ordinata di tutte le capienze. L'attributo CSS <em>Order</em> assumerà quindi l'indice di quella lista.
+                    Infine, solo per aule contrassegnate come preferite si sottrarrà 200 dall'attributo CSS <em>Order</em>, affinché siano visualizzate per prime e conservino tra loro l'ordinamento.
+                    Il filtro sulle fasce libere si comporta in modo diverso durante il giorno corrente perché è influenzato dal tempo, non sono considerate infatti le fasce orarie già passate.
                 </p>
-                <div class="footer">
-                    <h5 class="date">12/09/2023</h5>
-                    <h5>
-                        <a href="https://domescala.github.io/aule_libere_polito/" target="_blank">Cerca delle aule libere</a>
-                    </h5>
-                </div>
-            </div>
-            <div class="social">
-                <a class="buttonModal">share</a>
+                <p>L'attributo delle attuali fasce libere è un numero a 8 cifre. Ogni cifra mostra la somma delle fasce libere totali in quella fascia oraria:</p>
+                <blockquote>
+                    <p><code>1001001</code> -&gt; <code>3222111</code><br />
+                        Ci sono tre fasce libere in totale. Ma solo all'inizio sono tre, poi ne rimangono due ed infine una</p>
+                </blockquote>
+                <h3 id="ricerca-aule-🔎---aule_libere_polito">Ricerca aule <span class="emoji">🔎</span></h3>
+                <p>È stato creato un semplice tag di input, in cui i suggerimenti sono la lista dei nomi delle aule. In tal modo inserendo anche una parte del nome appariranno tutte le aule con quella porzione di testo. Nella lista delle opzioni il nome di ogni aula finisce con il carattere speciale invisibile <code>\u2063</code>, in modo che il listener (che ascolta ogni input) si accorga se è stato premuto una delle opzioni.<br />
+                    Per praticità il tasto di ricerca appare quando l'utente esegue uno scroll, come a dire: "<em>stai cercando un'aula premi qui ;)</em>"</p>
+                <h3 id="aule-preferite-⭐---aule_libere_polito">Aule preferite <span class="emoji">⭐</span></h3>
+                <p>Nel box di informazioni di ogni aula è presente un toggle per salvare l'aula come Preferita. Le aule preferite sono visualizzate sempre per prime nella lista (Come? Al valore <em>CSS order</em> si sottrae 200. Vedi <a href="#rimando-css-order---aule_libere_polito"><em>CSS Order</em></a>). Attraverso il localStorage la lista delle aule preferite è salvata in locale.</p>
             </div>
         </div>
-        <div class="project">
-            <img alt="" src="img\portfolio_projects\portfolio_1.gif" />
-            <div class="projectcaption">
-                <div class="boxviews">
-                    <div>
-                        <p></p>
-                    </div>
-                </div>
-                <div class="header">
-                    <h4>Loop - Motiondesign</h4>
-                    <h5>progetto universitario</h5>
-                </div>
-                <h2>Miss Minutes</h2>
-                <p>Il progetto "Characters in loop" aveva l'obiettivo di animare un personaggio cinematografico in loop per pochi secondi. La mia scelta è ricaduta su Miss Minutes, intelligenza artificiale e mascotte della Time Variance Authority nella serie Loki del MCU.
-                    Il risultato è una camminata continua di Miss Minutes che "attraversa nel tempo", ottenuta intervallando due cambi di visuale: monitor CRT e fumetto in bianco e nero.
+        <div class="project" id="pomofy">
+            <img alt="" class="intro_project_gif" src="projects/pomofy/cover.gif" />
+            <div class="markdown-box" insert_py="projects/pomofy/description.md">
+                <h6 id="tool-progetto-personale---pomofy"><em>tool</em> <em>Progetto personale</em></h6>
+                <h1 id="pomofy---pomofy">Pomofy</h1>
+                <h2 id="descrizione---pomofy">Descrizione</h2>
+                <p>Pomofy è un pomodoro timer che permette all'utente di ascoltare dei brani ambiente durante la sessione di studio/lavoro, mentre durante la sessione di pausa riproduce musica. </p>
+                <p>
+                    <video autoplay="" loop="" muted="">
+                        <source src="projects\pomofy/presentation.mp4" type="video/mp4" />
+                    </video>
+                    <em>Come si presenta Pomofy</em>
                 </p>
-                <div class="footer">
-                    <h5 class="date">05/07/2021</h5>
-                    <h5>
-                        <a href="https://youtu.be/MAq3Sl5aGdY" target="_blank">guarda il video completo</a>
-                    </h5>
-                </div>
-            </div>
-            <div class="social">
-                <a class="buttonModal">share</a>
+                <h2 id="features---pomofy">Features</h2>
+                <ul>
+                    <li>🖼️ Disponibilità di diverse ambientazioni, abbinate a brani ed immagini</li>
+                    <li>⏲ Modalità pomodoro singolo o doppio (25\5 o 50\10)</li>
+                    <li>✨ Dissolvenza tra i brani </li>
+                    <li>📃 Recap dei pomodori svolti e del tempo trascorso</li>
+                    <li>🔙 Storico dei pomodori nei giorni precedenti </li>
+                    <li>⚙️ Creazione di playlist personalizzate scegliendo i brani e gli sfondi</li>
+                    <li>📻 Connessione a Spotify</li>
+                </ul>
+                <h2 id="cos'è-un-pomodoro??-🍅---pomofy">Cos'è un pomodoro?? <span class="emoji">🍅</span></h2>
+                <p>Usare la tecnica del pomodoro favorisce una concentrazione più prolungata, con meno distrazioni. Consiste nel suddividere il tempo di lavoro in "pomodori", sessioni brevi di mezz'ora suddivisa in 25 minuti di effettivo lavoro concentrato e 5 minuti di pausa e totale distrazione.<br />
+                    È un dato di fatto che l'attenzione inizi a calare dopo una trentina di minuti e con questo metodo si ottimizza la concentrazione. Inoltre, quando lo studio o la task che si deve svolgere è noiosa o difficile, il pomodoro ti viene incontro.</p>
+                <ul>
+                    <li>Diventa molto più semplice suddividere il tempo per ciascuna task. </li>
+                    <li>Ogni 25 minuti potrai renderti conto del tuo andamento: se hai iniziato a divagare o se ti sei distratto e ti rimetti in pista. </li>
+                    <li>Interrompere bruscamente la task favorisce la motivazione nel riprenderla dopo la pausa
+                        Inizialmente può sembrare solo una perdita di tempo, di fatto un quinto del tempo di lavoro è mangiato dalle pause. Ma per esperienza posso affermare che il lavoro prodotto da 3 ore suddiviso in pomodori rispetto a 3 ore di fila, è nettamente migliore e spesso è anche più completo. Inoltre è comunque necessario fare delle pause e riprendendo l'esempio, farle alla fine delle tre ore è molto più stressante.</li>
+                </ul>
+                <h2 id="funzionamento---pomofy">Funzionamento</h2>
+                <h3 id="storico---pomofy">Storico</h3>
+                <p>Il documento salva in tempo reale tutti i dati come pomodori completati, tempo trascorso, la traccia che si sta ascoltando eccetera eccetera. In questo modo ricaricando o riaprendo la pagina non si perderanno i progressi fatti, ma si tornerà allo stesso punto.
+                    I dati sono salvati nel localStorage del browser, ovvero in locale. Infatti aprendo il documento con un browser diverso (chrome, firefox, opera...) i progressi saranno diversi. Ne consegue che cancellando i dati del browser si comprometterà la memoria di Pomofy.</p>
+                <h3 id="connessione-a-spotify---pomofy">Connessione a Spotify</h3>
+                <p>Per avere questa funzionalità è necessario avviare la pagina passando dallo script di python Pomofy.py. Lo script infatti lancia DUE browser allo stesso tempo, il primo carica la solita la pagina del pomodoro, il secondo invece mostra il lettore web di spotify (“open.spotify.com”). In questo modo, l'utente inserisce le credenziali e fa il login in una finestra a parte, in cui python “premerà” in modo automatico i tasti di play e di pausa per tenere sotto controllo il lettore.</p>
+                <p><img alt="" src="projects\pomofy/login-spotify.png" />
+                    <em>Premendo il tasto Accedi, Pomofy apre la pagina web di login di Spotify in una finestra a parte, che ospiterà il lettore</em>
+                </p>
+                <p>Questo è un escamotage per aggirare le API ufficiali di spotify, che altrimenti necessiterebbero di una app e di un token per autorizzare ogni singola azione dal login alla funzione play/pausa. </p>
+                <h2 id="storia---pomofy">Storia</h2>
+                <p>Il progetto Pomofy è nato per necessità: serviva uno strumento per mantenere la concentrazione durante lo studio e limitare le distrazioni.<br />
+                    Adottare il metodo del pomodoro è stato un ottimo modo per risolvere quasi totalmente il problema. Rimaneva il fatto che ero sempre vincolato ad un timer, troppo scomodo da usare durante le sessioni di studio, soprattutto quando mi trovavo in biblioteca: non potendo impostare un allarme sonoro, tenevo costantemente sott'occhio il timer per controllare quando terminavano le sessioni di pomodoro e di pausa.</p>
+                <p>Il punto di non ritorno è stato quando ho deciso di scrivere un piccolo script in python che emettesse un piccolo suono al termine delle sessioni che sentivo solamente io con le mie cuffiette. Non contento di questa soluzione “rudimentale” ho cercato online se qualcuno avesse trovato una soluzione migliore e ho scoperto l'esistenza di una moltitudine di video su youtube per lo studio che suddividevano il tempo in pomodori, alcuni con sottofondi musicali, altri con rumori bianchi e ambiance.</p>
+                <p>I rumori bianchi abbinati al metodo del pomodoro sono stati la svolta: diventava impossibile distrarsi. Riprodurre musica durante al termine del pomodoro era un modo meno stressante di interrompersi e fare una pausa, mantenendo viva la motivazione. Ma il dettaglio piu importante era l'automazione: non dovevo più gestire un timer, impostarlo, avviarlo, fermarlo. Era come avere un assistente che ti dice di fare una pausa e ti ricorda più tardi di ricominciare.<br />
+                    Dopo diverso tempo, stufo della latenza del wifi e delle pubblicità di youtube, ho selezionato i brani preferiti e li ho scaricati sul pc per riprodurli in locale. </p>
+                <p>
+                    <video autoplay="" loop="" muted="">
+                        <source src="projects\pomofy/pomofy-legacy.mp4" type="video/mp4" />
+                    </video>
+                    <em>Una primissima versione di progetto con il conteggio dei pomodori e ambientazioni differenti</em>
+                </p>
+                <p>Ho sviluppato così inizialmente una semplice pagina html che includesse i brani scaricati e che tenesse traccia in automatico del tempo trascorso.<br />
+                    Questa pagina si è voluta pian piano, con immagini suggestive per le varie ambientazioni, un sistema per prendere delle note e per creare delle task, ho aggiunto l'integrazione di spotify e molto altro.</p>
             </div>
         </div>
-        <div class="project">
-            <img alt="" src="img\portfolio_projects\portfolio_2.gif" />
-            <div class="projectcaption">
-                <div class="boxviews">
-                    <div>
-                        <p></p>
-                    </div>
-                </div>
-                <div class="header">
-                    <h4>Minigame - Gamedesign</h4>
-                    <h5>progetto personale</h5>
-                </div>
-                <h2>Dodge the craps</h2>
-                <p>Dodge the craps è un minigame basato sull'engine open source Godot 3.
-                    Il gioco contiene un player e tre diversi nemici che vengono generati casualmente ai margini del
-                    campo. L'obiettivo è accumulare più punti possibile schivando gli npc.
-                    Il gioco è realizzato seguendo il corso sul canale youtube GDquest
-                </p>
-                <div class="footer">
-                    <h5 class="date">21/05/2021</h5>
-                </div>
-            </div>
-            <div class="social">
-                <a class="buttonModal">share</a>
+        <div class="project" id="miss_minutes">
+            <img alt="" class="intro_project_gif" src="img\portfolio_projects\portfolio_1.gif" />
+            <div class="markdown-box" insert_py="projects/miss_minutes/description.md">
+                <h6 id="motion-design-progetto-universitario---miss_minutes"><em>MOTION DESIGN</em> <em>PROGETTO UNIVERSITARIO</em></h6>
+                <h1 id="miss-minutes---miss_minutes">Miss Minutes</h1>
+                <p>L'esercitazione "Characters in loop" aveva l'obiettivo di animare un personaggio cinematografico in loop per pochi secondi. La mia scelta è ricaduta su Miss Minutes, una intelligenza artificiale e mascotte della Time Variance Authority nella serie Loki del Marvel Cinematic Universe. </p>
+                <p>Il personaggio cammina in loop, mentre lo sfondo e lo stile cambia con un effetto prima simile ad un vecchio monitor a tubo catodico, poi ad un effetto fumetto bianco e nero su carta. Questo per rappresentare il passaggio di Miss Minutes attraverso i vari periodi storici.</p>
+                <video controls="" loop="">
+                    <source src="projects\miss_minutes/miss_minutes.mp4" type="video/mp4" />
+                </video>
             </div>
         </div>
-        <div class="project">
-            <img alt="" src="img\portfolio_projects\portfolio_3.gif" />
+        <!-- TO DO command -->
+        <div class="project" style="display:none;">
+            <img alt="" class="intro_project_gif" src="img\portfolio_projects\portfolio_3.gif" />
             <div class="projectcaption">
                 <div class="boxviews">
                     <div>
@@ -511,152 +660,200 @@
                 <a class="buttonModal">share</a>
             </div>
         </div>
-        <div class="project">
-            <img alt="" src="img\portfolio_projects\portfolio_4.gif" />
-            <div class="projectcaption">
-                <div class="boxviews">
-                    <div>
-                        <p></p>
-                    </div>
-                </div>
-                <div class="header">
-                    <h4>poster - tipografia</h4>
-                    <h5>progetto universitario</h5>
-                </div>
-                <h2>Dreams is collapsing</h2>
-                <p>
-                    Le lettere descrivono visivamente il titolo del brano di Hans Zimmer “Dream is collapsing”, parte
-                    della colonna sonora di Inception di Christoper Nolan
-                    <br />Il carattere usato è il Bebas per la sua
-                    estrema semplicità.
+        <div class="project" id="poster_tipografici">
+            <img alt="" class="intro_project_gif" src="projects/poster_tipografici/dream_is_collapsing.gif" />
+            <div class="markdown-box" insert_py="projects/poster_tipografici/description.md">
+                <style>
+                    .markdown-box .spoiler p {
+                        transition: filter 1s ease;
+                        filter: blur(0px);
+                    }
 
+                    .markdown-box .spoiler.invisible p {
+                        filter: blur(6px);
+                    }
 
+                    .markdown-box .spoiler.invisible:before {
+                        content: "PREMI PER RIVELARE";
+                        position: absolute;
+                        display: flex;
+                        width: 100%;
+                        height: 100%;
+                        vertical-align: top;
+                        align-content: center;
+                        justify-content: center;
+                        align-items: center;
+                    }
 
+                    .markdown-box img.square_img {
+                        width: 500px;
+                        margin-left: calc(50% - 250px);
+                    }
+                </style>
+                <h6 id="poster-\-tipografia-progetto-universitario---poster_tipografici"><em>POSTER \ TIPOGRAFIA</em> <em>PROGETTO UNIVERSITARIO</em></h6>
+                <h1 id="poster-tipografici---poster_tipografici">Poster tipografici</h1>
+                <p>In questa piccola esercitazione l'obiettivo era formare una composizione per un poster utilizzando solamente caratteri tipografici. </p>
+                <h2 id="yellow-submarine-🚢---poster_tipografici">Yellow Submarine <span class="emoji">🚢</span></h2>
+                <p><img class="square_img" src="projects\poster_tipografici/submarine.gif" /> </p>
+                <p>Le lettere "submarine" compongono un sottomarino giallo citando il singolo "Yellow Submarine" dei Beatles, mentre una serie di lettere "o" con grandezza, inclinazione e trasparenza variabile creano l’effetto delle bollicine sullo sfondo.</p>
+                <p>Il carattere utilizzato è il Rockwell, uno slab-serif con delle grazie in grado di ricordare le tubature e le forme del sottomarino.</p>
+                <h2 id="dream-is-collapsing-⛷️---poster_tipografici">Dream is collapsing <span class="emoji">⛷️</span></h2>
+                <p><img class="square_img" src="projects\poster_tipografici/dream_is_collapsing.gif" /></p>
+                <p>Le lettere descrivono visivamente il titolo del brano di Hans Zimmer <em>Dream is collapsing</em>, parte della colonna sonora per il film Inception di Christoper Nolan.</p>
+                <p>Il font usato è il Bebas, il carattere di tipo condensed si sviluppa piu in verticale, dando la possibilità di compattare un lungo testo (come il titolo del brano) in poco spazio. Inoltre il fatto che sia un carattere molto simmetrico crea un forte contrasto con la disposizione frammentata delle lettere in "caduta libera". Proprio questa disposizione disordinata rimane leggibile grazie alla forte semplicità del Bebas. </p>
+                <h2 id="control-is-an-illusion-👨🏻‍💻---poster_tipografici">Control is an illusion <span class="emoji">👨🏻‍💻</span></h2>
+                <p><img class="square_img" src="projects\poster_tipografici/mr_robot.gif" /></p>
+                <p>Il poster fa riferimento ad una frase e ad una scena del settimo episodio (<em>eps2.5_h4ndshake.sme</em>) in cui avviene un plot twist sconvolgente.
+                    <strong>Questa composizione vuole raccontare proprio questo passaggio narrativo</strong>: i rettangoli colorati sono dei semplici tasti "Ctrl" (control) affiancati ad un solo tasto "Illsn" (illusion). Questi tasti rappresentano proprio i personaggi della scena...
                 </p>
-                <div class="footer">
-                    <h5 class="date">17/05/2020</h5>
+                <p>⚠️ Il prossimo paragrafo contiene spoiler riguardo all'episodio e07s2 e di conseguenza sull'intera seconda stagione. </p>
+                <div class="spoiler invisible">
+                    <p>
+                        Il protagonista, Elliot Alderson, si accorge di esser l'unico a non avere sotto controllo la propria vita ed di aver vissuto in una piccola illusione fino a quel momento. <br /> Durante tutta la seconda stagione infatti, Elliot si trova in carcere, ma la sua mente, per sopportare il dolore e per distrarlo, gli fa credere di essere tornato a casa dalla madre per qualche giorno. <br />I tasti "Ctrl" rappresentano gli altri carcerati che invece sono ben consapevoli della loro condizione e di indossare per l'appunto una tuta "arancione". Il tasto "Illsn" è Elliot, che crede di vestire i suoi soliti panni, per l'appunto "scuri".
+                    </p>
                 </div>
-            </div>
-            <div class="social">
-                <a class="buttonModal">share</a>
+                <script>
+                    document.querySelectorAll(".markdown-box .spoiler").forEach(spoiler => {
+                        spoiler.addEventListener("click", function (event) {
+                            spoiler.classList.toggle("invisible")
+                            console.log("mimmo")
+                        })
+                    });
+                </script>
             </div>
         </div>
-        <div class="project">
-            <img alt="" src="img\portfolio_projects\portfolio_5.gif" />
-            <div class="projectcaption">
-                <div class="boxviews">
-                    <div>
-                        <p></p>
-                    </div>
-                </div>
-                <div class="header">
-                    <h4>Script</h4>
-                    <h5>progetto personale</h5>
-                </div>
-                <h2>Cifrario di Vigenere</h2>
-                <p>A mio parere uno dei migliori cifrari della storia. Facile da comprendere, ma assai complesso da decifrare.
-                    Il meccanismo è quello della somma: la chiave si sovrappone sul messaggio e si somma lettera per
-                    lettera..
+        <div class="project" id="enigma_vigenere">
+            <img alt="" class="intro_project_gif" src="projects/enigma_vigenere/cover.gif" />
+            <div class="markdown-box" insert_py="projects/enigma_vigenere/description.md">
+                <h6 id="tool-progetto-personale---enigma_vigenere"><em>Tool</em> <em>Progetto personale</em></h6>
+                <h1 id="enigma---enigma_vigenere">Enigma</h1>
+                <h2 id="descrizione-📢---enigma_vigenere">Descrizione <span class="emoji">📢</span></h2>
+                <p>Pagina web per criptare e decriptare messaggi attraverso una chiave. Il meccanismo è quello del cifrario di Vigenère, a mio parere uno dei migliori cifrari perché è semplice da applicare ma altrettanto complesso da decifrare, senza utilizzare programmi.
+                    Similmente al cifrario di cesare, questo si basa sulla traslazione delle parole nell'alfabeto, solo con la chiave è possibile riportare ogni lettera "al posto giusto"</p>
+                <p><img src="projects\enigma_vigenere/cover.gif" style="max-height: 500px;object-fit: cover;object-position: 0px -132px;" />
+                    <em>Esempio di un semplice messaggio criptato attraverso la parola "chiave". <a href="https://domescala.github.io/enigma/?jhq%20bekg%C3%B2ecxk%C3%B2w%20eetsirzdflt%20xmhyir%C3%A9sbkq%20kmilvegi?" target="_blank">Link al messaggio <span class="emoji">🔗</span></a></em>
                 </p>
-                <div class="footer">
-                    <h5 class="date">02/06/2021</h5>
-                    <h5>
-                        <a href="https://domescala.github.io/enigma/?jhq%20bekg%C3%B2ecxk%C3%B2w%20eetsirzdflt%20xmhyir%C3%A9sbkq%20kmilvegi?" target="_blank">vai
-                            al cifrario</a>
-                    </h5>
-                </div>
-            </div>
-            <div class="social">
-                <a class="buttonModal">share</a>
+                <h2 id="cifrario-di-cesare-🔒---enigma_vigenere">Cifrario di Cesare <span class="emoji">🔒</span></h2>
+                <p>Partiamo dal cifrario di cesare, che è più semplice. In questo caso i passaggi per criptare una frase sono:</p>
+                <ol>
+                    <li>Scegliere la frase da codificare</li>
+                    <li>Scegliere un numero X da 1 a 21, sarà la chiave di codifica/decodifica</li>
+                    <li>Spostare ogni lettere di X posizione nell'alfabeto</li>
+                    <li>Trascrivere il messaggio con il nuovo alfabeto</li>
+                    <li>Per decodificare, basterà ripetere gli ultimi passaggi all'inverso </li>
+                </ol>
+                <blockquote>
+                    <p>Se prendiamo ad esempio la chiave "2" ogni lettera dell'alfabeto si sposterà di 2 posti:<br />
+                        <code>A B C D E F G ...</code><br />
+                        <code>⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇</code><br />
+                        <code>C D E F G H I...</code>
+                    </p>
+                    <p>Esempio di una frase criptata con la chiave "2"<br />
+                        <code>C E R A U N A V O L T A</code><br />
+                        <code>⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇</code><br />
+                        <code>E G T C Z P C A P N V C</code>
+                    </p>
+                </blockquote>
+                <p>Già così la frase codificata a primo impatto è illeggibile. Ma per forzarla basterebbe fare alcune prove e nel peggiore dei casi si troverebbe la soluzione al ventunesimo tentativo, perchè esistono solamente 21 chiavi possibili.</p>
+                <h2 id="cifrario-di-vigenère-🔏---enigma_vigenere">Cifrario di Vigenère <span class="emoji">🔏</span></h2>
+                <p>Questo un cifrario di cesare potenziato, infatti la chiave non è un singolo numero, ma una serie di numeri: in questo modo le lettere nella frase sono traslate ognuna di un valore differente (o quasi). </p>
+                <p>I passaggi sono:</p>
+                <ol>
+                    <li>Scrivere la frase da criptare</li>
+                    <li>Scegliere una parola da utilizzare come chiave</li>
+                    <li>Scrivere la chiave ripetuta</li>
+                    <li>Criptare la frase: </li>
+                    <li>ad ogni lettera della chiave, trovare la posizione x di tale lettera nell'alfabeto (partendo da zero)</li>
+                    <li>trasla la lettera della frase di x posizioni</li>
+                </ol>
+                <blockquote>
+                    <p>esempio con la frase precedente, utilizzando come chiave la parola "ALCE". La chiave si deve disporre ripetuta per tutto il messaggio:<br />
+                        <code>C E R A U N A V O L T A</code><br />
+                        <code>A L C E A L C E A L C E</code>
+                    </p>
+                    <p>Si convecrtono le lettere della chiave nelle posizioni dell'alfabeto (partendo da zero)<br />
+                        <code>A B C D E F G H ...</code><br />
+                        <code>0 1 2 3 4 5 6 7 ...</code><br />
+                        quindi i valori della chiave saranno: <br />
+                        <code>A L C E</code><br />
+                        <code>0 9 2 4</code>
+                    </p>
+                    <p><code>C E R A U N A V O L T A</code><br />
+                        <code>⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇</code><br />
+                        <code>A L C E A L C E A L C E</code> <br />
+                        <code>⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇</code><br />
+                        <code>0 9 2 4 0 9 2 4 0 9 2 4</code> <br />
+                        <code>⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇</code><br />
+                        <code>C P T E U Z C C O U V E</code>
+                    </p>
+                    <p><code>C + A (+0) = C</code><br />
+                        <code>E + L (+9) = P</code><br />
+                        <code>R + C (+2) = T</code><br />
+                        <code>A + E (+4) = E</code><br />
+                        <code>U + A (+0) = U</code><br />
+                        <code>N + L (+9) = Z</code><br />
+                        <code>A + C (+2) = C</code><br />
+                        <code>V + E (+4) = C</code><br />
+                        <code>O + A (+0) = O</code><br />
+                        <code>L + L (+9) = U</code><br />
+                        <code>T + C (+2) = V</code><br />
+                        <code>A + E (+4) = E</code>
+                    </p>
+                </blockquote>
+                <h2 id="funzionamento-🧪---enigma_vigenere">Funzionamento <span class="emoji">🧪</span></h2>
+                <p>Il meccanismo è esattamente quello del cifrario di Vigenère, ma l'alfabeto utilizzato per traslare le lettere include anche spazi e molte delle lettere accentate. In questo modo i risultati appaiono più "strani" da vedere.</p>
+                <p>Attraverso un Listener, il testo viene criptato o decriptato in tempo reale, man mano che si digita la chiave lettera per lettera. Questo sia per rendere più veloce e fruibile l'esperienza, ma anche per mostrare proprio il cifrario all'opera.</p>
+                <h3 id="procedimento---enigma_vigenere">Procedimento</h3>
+                <p>Il testo si decripta automaticamente mentre si digita la chiave, quindi occorre seguire il procedimento nel giusto ordine.
+                    Per cifrare un testo:</p>
+                <ul>
+                    <li>Scrivi una chiave</li>
+                    <li>Scrivi un messaggio</li>
+                    <li>Cancella la chiave e guarda il messaggio codificarsi poco per volta.</li>
+                    <li>Condividi il link con il messaggio </li>
+                </ul>
+                <p>Per decifrare un testo:</p>
+                <ul>
+                    <li>Scrivi il messaggio cifrato</li>
+                    <li>Inserisci la chiave corretta e guarda il messaggio decodificarsi</li>
+                </ul>
+                <p><br /><br />
+                    <a class="markdown-button" href="https://domescala.github.io/enigma/" target="_blank">Vai al cifrario <span class="emoji">🔗</span></a>
+                </p>
             </div>
         </div>
-        <div class="project">
-            <img alt="" src="img\portfolio_projects\portfolio_6.gif" />
-            <div class="projectcaption">
-                <div class="boxviews">
-                    <div>
-                        <p></p>
-                    </div>
-                </div>
-                <div class="header">
-                    <h4>poster - tipografia</h4>
-                    <h5>progetto universitario</h5>
-                </div>
-                <h2>Yellow Submarine</h2>
-                <p>
-                    Le lettere “submarine” danno forma ad un sottomarino giallo citando il singolo “Yellow Submarine” dei
-                    Beatles, mentre una serie di lettere “o” con grandezza e inclinazione diversa creano l’effetto delle
-                    bollicine sullo sfondo. <br />Il carattere utilizzato è il Rockwell, in grado di ricordare le tubature e le forme del sottomarino.
-
-
-
+        <div class="project" id="shortshare">
+            <img alt="" class="intro_project_gif" src="projects/shortshare/cover.gif" />
+            <div class="markdown-box" insert_py="projects/shortshare/description.md">
+                <h6 id="campagna-di-comunicazione-\-branding-progetto-universitario---shortshare"><em>CAMPAGNA DI COMUNICAZIONE \ BRANDING</em> <em>PROGETTO UNIVERSITARIO</em></h6>
+                <h1 id="shortshare---shortshare">ShortShare</h1>
+                <h2 id="descrizione-📢---shortshare">Descrizione <span class="emoji">📢</span></h2>
+                <p>In questa esercitazione è stato creato il brand Shortshare, ovvero una agenzia che promuove lo sharing a bassa percorrenza, attraverso campagne di comunicazioni sul territorio torinese.</p>
+                <h2 id="contesto-🗺️---shortshare">Contesto <span class="emoji">🗺️</span></h2>
+                <p>Per micromobilità si intendono tutti gli spostamenti brevi si effettuano nel quotidiano all'interno della propria città. Si stima infatti che i percorsi inferiori ai 10 km rappresentano circa il 60% degli spostamenti quotidiani. </p>
+                <p>Mentre le città sono alle prese con l'aumento dell'inquinamento e della congestione, una micromobilità sostenibile può essere una soluzione più pulita ed efficiente per gli spostamenti quotidiani</p>
+                <h2 id="identità-🎨---shortshare">Identità <span class="emoji">🎨</span></h2>
+                <p>Il nome, semplice da memorizzare, è la combinazione di short e share, che rappresentano in modo chiaro il concetto di sharing a bassa percorrenza.<br />
+                    <img alt="alt" src="projects\shortshare/naming.png" /><br />
+                    Il logo evidenzia con un orologio la rapidità dei percorsi, unito al simbolo di una ruota che richiama al contempo i due mezzi principali: la bicicletta e il monopattino elettrico.
+                    <img alt="alt" src="projects\shortshare/logo.png" />
                 </p>
-                <div class="footer">
-                    <h5 class="date">25/05/2020</h5>
-                </div>
-            </div>
-            <div class="social">
-                <a class="buttonModal">share</a>
+                <h2 id="campagna-di-comunicazione-🚲---shortshare">Campagna di comunicazione <span class="emoji">🚲</span></h2>
+                <p><img alt="alt" src="projects\shortshare/mappa_particolare.png" />
+                    È stata pensata una campagna del tipo guerrilla, che includesse tutti i percorsi ciclabili esistenti.
+                    Sono state individuate i principali luoghi di interesse e sono state definite delle linee ciclabili, sullo stile delle linee metropolitane. Ognuna di un colore differente.</p>
+                <p><img alt="alt" src="projects\shortshare/mappa_nomi.png" /> </p>
+                <p>La campagna fa leva su un’aspetto spesso poco curato nei servizi sharing: l’orientamento. Shortshare propone la creazione di 6 nuove linee ciclabili sulle piste già esistenti a Torino. Queste nuove linee ciclabili danno un’importanza notevole alla micromobilità di Torino integrandola maggiormente nel contesto urbano, al pari delle altre linee urbane. </p>
+                <p><img alt="alt" src="projects\shortshare/mockup_sito_app.jpg" /> </p>
+                <p>Questa campagna, simile ad una guerrilla, prevedeva di colorare fisicamente parte delle ciclabili e di distribuire la mappa delle linee, progettata con uno stile volutamente sulla falsa riga delle mappe delle metropolitane.</p>
+                <p><img src="projects\shortshare/mappa_animata.gif" style="max-height:500px;width:revert;margin-left:calc(50% - 150px);margin-right:calc(50% - 150px);" />
+                    <em>Sequenza dei poster progressivi durante la campagna. La mappa si evolve aggiungendo una linea alla volta</em>
+                </p>
             </div>
         </div>
-        <div class="project">
-            <img alt="" src="img\portfolio_projects\portfolio_7.gif" />
-            <div class="projectcaption">
-                <div class="boxviews">
-                    <div>
-                        <p></p>
-                    </div>
-                </div>
-                <div class="header">
-                    <h4>minigame - Gamedesign</h4>
-                    <h5>progetto personale</h5>
-                </div>
-                <h2>Mini-Shooter</h2>
-                <p>
-                    Minigame basato sull'engine open source Godot 3. L'obiettivo del player è quello di evitare di essere toccato dagli npc, con la possibilità di sparare per colpire ed eliminare i nemici.<br />Il progetto non presenta ulteriori meccaniche poiché si tratta dei primi test per sperimentare ed esercitarsi con il godot engine.
-
-
-
-
-
-                </p>
-                <div class="footer">
-                    <h5 class="date">03/05/2021</h5>
-                </div>
-            </div>
-            <div class="social">
-                <a class="buttonModal">share</a>
-            </div>
-        </div>
-        <div class="project">
-            <img alt="" src="img\portfolio_projects\portfolio_8.gif" />
-            <div class="projectcaption">
-                <div class="boxviews">
-                    <div>
-                        <p></p>
-                    </div>
-                </div>
-                <div class="header">
-                    <h4>Logodesign</h4>
-                    <h5>progetto universitario</h5>
-                </div>
-                <h2>Shortshare</h2>
-                <p>
-                    Shortshare è un’azienda che agisce nel campo della micromobilità sharing. <br />Il logo evidenzia con un orologio la rapidità dei percorsi, unito al simbolo di una ruota che
-                    richiama al contempo i due mezzi principali: la bicicletta e il monopattino elettrico.
-
-
-                </p>
-                <div class="footer">
-                    <h5 class="date">09/07/2020</h5>
-                </div>
-            </div>
-            <div class="social">
-                <a class="buttonModal">share</a>
-            </div>
-        </div>
-        <div class="project">
-            <img alt="" src="img\portfolio_projects\portfolio_9.gif" />
+        <!-- TO DO: culla -->
+        <div class="project" style="display:none;">
+            <img alt="" class="intro_project_gif" src="img\portfolio_projects\portfolio_9.gif" />
             <div class="projectcaption">
                 <div class="boxviews">
                     <div>
@@ -681,107 +878,21 @@
                 <a class="buttonModal">share</a>
             </div>
         </div>
-        <div class="project">
-            <img alt="" src="img\portfolio_projects\portfolio_10.gif" />
-            <div class="projectcaption">
-                <div class="boxviews">
-                    <div>
-                        <p></p>
-                    </div>
-                </div>
-                <div class="header">
-                    <h4>3d modeling</h4>
-                    <h5>cooperativa Triciclo</h5>
-                </div>
-                <h2>Gioca, riordina rigioca</h2>
-                <p>Il brief consisteva nel prendere un oggetto dismesso, una sedia, e conferirgli una nuova vita. Durante questa esercitazione sono state approfonditi gli aspetti della progettazione come ricerca di casi studio, analisi delle possibili lavorazioni al fine di trovare una soluzione coerente.
-                    Il mio team ha convertito una vecchia sedia Milano Crocera in un gioco per bambini simile ad un canestro, che in un secondo momento si trasforma in un raccoglitore per i giochi.
-                    A causa della pandemia la parte di costruzione vera e propria è stata spostata in digitale su blender.
-                </p>
-                <div class="footer">
-                    <h5 class="date">27/02/2020</h5>
-                </div>
-            </div>
-            <div class="social">
-                <a class="buttonModal">share</a>
-            </div>
-        </div>
-        <div class="project">
-            <img alt="" src="img\portfolio_projects\portfolio_11.gif" />
-            <div class="projectcaption">
-                <div class="boxviews">
-                    <div>
-                        <p></p>
-                    </div>
-                </div>
-                <div class="header">
-                    <h4>campagna di comunicazione</h4>
-                    <h5>progetto universitario</h5>
-                </div>
-                <h2>Linee ciclabili</h2>
-                <p>La campagna si concentra su un’aspetto spesso poco curato nei servizi sharing: l’orientamento.
-                    Shortshare propone la creazione di 6 nuove linee ciclabili sulle piste già esistenti a Torino.
-                    Queste nuove linee ciclabili danno un’importanza notevole alla micromobilità di Torino integrandola
-                    maggiormente nel contesto urbano, al pari delle altre linee urbane.</p>
-                <div class="footer">
-                    <h5 class="date">09/07/2020</h5>
-                </div>
-            </div>
-            <div class="social">
-                <a class="buttonModal">share</a>
-            </div>
-        </div>
-        <div class="project">
-            <img alt="" src="img\portfolio_projects\portfolio_12.gif" />
-            <div class="projectcaption">
-                <div class="boxviews">
-                    <div>
-                        <p></p>
-                    </div>
-                </div>
-                <div class="header">
-                    <h4>script</h4>
-                    <h5>progetto personale</h5>
-                </div>
-                <h2>Orologio</h2>
-                <p>Un orologio con un aspetto insolito, realizzato in javascript.</p>
-                <div class="footer">
-                    <h5 class="date">10/05/2021</h5>
-                    <h5>
-                        <a href="https://domescala.github.io/orologio/" target="_blank">Guarda che ore sono</a>
-                    </h5>
-                </div>
-            </div>
-            <div class="social">
-                <a class="buttonModal">share</a>
-            </div>
-        </div>
-        <div class="project">
-            <img alt="" src="img\portfolio_projects\portfolio_13.gif" />
-            <div class="projectcaption">
-                <div class="boxviews">
-                    <div>
-                        <p></p>
-                    </div>
-                </div>
-                <div class="header">
-                    <h4>minigame - gamedesign</h4>
-                    <h5>progetto personale</h5>
-                </div>
-                <h2>Don't tap the white</h2>
-                <p>Don't tap the white è un gioco arcade che negli ultimi anni ha spopolato nel web, a regola è una:
-                    premere solo le tessere nere prima che finisca il tempo. Per via minore complessita degli input del
-                    gioco, si è preferito svilupparlo con javascript anziché con un engine.
-                </p>
-                <div class="footer">
-                    <h5 class="date">28/05/2021</h5>
-                    <h5>
-                        <a href="https://domescala.github.io/donttap/" target="_blank">non toccare il bianco!</a>
-                    </h5>
-                </div>
-            </div>
-            <div class="social">
-                <a class="buttonModal">share</a>
+        <div class="project" id="sedia_triciclo">
+            <img alt="" class="intro_project_gif" src="img\portfolio_projects\portfolio_10.gif" />
+            <div class="markdown-box" insert_py="projects/sedia_triciclo/description.md">
+                <h6 id="3d-modelling-progetto-universitario-\-cooperativa-triciclo---sedia_triciclo"><em>3D MODELLING</em> <em>PROGETTO UNIVERSITARIO \ COOPERATIVA TRICICLO</em></h6>
+                <h1 id="gioca,-riordina,-rigioca---sedia_triciclo">Gioca, riordina, rigioca</h1>
+                <h2 id="descrizione-📢---sedia_triciclo">Descrizione <span class="emoji">📢</span></h2>
+                <p>Progetto universitario in collaborazione con la Cooperativa Sociale torinese Triciclo, che si occupa del recupero e riutilizzo di prodotti usati. </p>
+                <p>Il brief consisteva nel prendere un oggetto dismesso, una sedia, e conferirgli una nuova vita. Durante questa esercitazione sono state approfonditi gli aspetti della progettazione come ricerca di casi studio, analisi delle possibili lavorazioni al fine di trovare una soluzione coerente.</p>
+                <h2 id="sviluppo---sedia_triciclo">Sviluppo</h2>
+                <p>In seguito ad una attenta analisi, il mio team ha convertito una vecchia sedia Milano Crocera in un gioco per bambini simile ad un canestro, che in un secondo momento si trasforma in un raccoglitore per i giochi. </p>
+                <p>La sedia Milano è stata recuperata in una vecchia cascina, in cattive condizioni. A causa della pandemia le parti di bricolage veri e propri sono stati in digitale su Blender.</p>
+                <p>Sono state pensate lavorazioni semplici che rientrano nelle disponibilità della cooperativa, come la carteggiatura, foratura, taglio, incastro e tinteggiatura di alcuni elementi. </p>
+                <p>Tutti i componenti vengono disassemblati e riadattati in una nuova struttura: un canestro. I montanti sono sorretti in basso dalle gambe anteriori, incastrate ad angolo. Lo schienale diventa un elemento di giunzione al centro dei montanti. Mentre il cilindro che componeva la seduta è fissato in alto, con gli archi delle due crociere a sorreggerlo.
+                    Gli elementi pitturati sono stati proprio quest'ultimi, lo schienale e il cilindro della seduta, poiché i più voluminosi.
+                    Parte del materiale iniziale è stato, come l'interno della seduta, che in molti casi è la parte piu danneggiata, e una porzione delle crociere (tagliate per occupare il giusto spazio)</p>
             </div>
         </div>
     </div>
@@ -836,8 +947,8 @@
                     Nei miei progetti personali risaltano la pagine per le aule libere del Politecnico, i alcuni supporti per lo studio, biglietti d'auguri interattivi e minigiochi.
                 </p>
                 <!-- <i>
-                    Come è possibile che questa pagina senza un backend abbia un contatore delle visite in tempo reale? 🧐
-                </i> -->
+Come è possibile che questa pagina senza un backend abbia un contatore delle visite in tempo reale? 🧐
+</i> -->
             </div>
         </div>
         <div class="skill left row">

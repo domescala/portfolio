@@ -1,8 +1,9 @@
 // collapse text
-document.querySelectorAll(".markdown-box h3").forEach(element => {
+const Collapse_alt_text = ["Espandi", "Comprimi"]
+document.querySelectorAll(".markdown-box h2").forEach(element => {
     element.addEventListener("click", function () {
         element.classList.toggle("heading_collapsed")
-        collapse_next(element, 3)
+        collapse_next(element, 2)
     })
 });
 
@@ -29,3 +30,21 @@ function end_of_paragraph(next, tag_index) {
 
     }
 }
+
+document.querySelectorAll(".markdown-box *[id]").forEach(element => {
+    
+});
+
+
+document.querySelectorAll(".markdown-box a[href^='#']").forEach(a_tag => {
+    a_tag.addEventListener("click", function () {
+        document.querySelectorAll(".triggered_by_link").forEach(element => {
+            element.classList.remove("triggered_by_link")
+        });
+        var el = document.querySelector(a_tag.getAttribute('href'))
+        el.classList.add("triggered_by_link")
+        console.log(el)
+        console.log("click on tag a")
+        
+    })
+});

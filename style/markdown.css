@@ -1,3 +1,4 @@
+
 :root{
     --text:#4c4d52;
     --main-background:#f6f6f6;
@@ -24,6 +25,10 @@
     --test:#f6f6f6;
 }
 
+@keyframes emoji-shake {
+    0%{}
+    100%{}
+}
 * {
     /* outline: 1px solid #b6b6b6; */
 }
@@ -31,14 +36,14 @@ body{
     background: var(--main-background);
 }
 .markdown-box{
-    width: 700px;
+    width: 700PX;
     margin:0 auto;
     font-family: "Lora";
     line-height: 1.5;
     background: var(--main-background);
+    padding: 50px 0;
 }
 .markdown-box *{
-    /* margin: revert; */
     all:  revert;
     font-family: "Lora";
     font-family: sans-serif;
@@ -62,49 +67,52 @@ body{
     top:-80px;
 }
 .markdown-box h1:after{
-    content:"";
-    display:block;
-    position:absolute;
-    background:var(--test);
-    width: 700px;
-    height: 65px;
-    margin: 0;
-    padding: 0;
-    z-index:1100;
-    /* backdrop-filter: blur(1px); */
-    filter: drop-shadow(0px 15px 7px var(
-    --test));
+    /* content:""; */
+    /* display:block; */
+    /* position:absolute; */
+    /* background:var(--test); */
+    /* width: 700px; */
+    /* height: 65px; */
+    /* margin: 0; */
+    /* padding: 0; */
+    /* z-index:1100; */
+    backdrop-filter: blur(1px);
+    /* filter: drop-shadow(0px 15px 7px var( */
+    /* --test)); */
 }
 
-.markdown-box h2{
-
-}
 .markdown-box h3{
+    
+}
+.markdown-box h2{
+    margin-top:24px;
     font-size: 24px;
-    padding:2px;
+    padding:0px;
     font-family: "riffic";
     letter-spacing: 1px;
     color: var(--blue);
     /* text-shadow: 0px 0px 15px var(--glow-blue); */
     /* filter:drop-shadow(0px 0px 10px var(--glow-blue)); */
     cursor: pointer;
-    translate: 15px 0px;
+    translate: 0px 0px;
     transition: all 0.5s ease;
-    background:var(--test);
-    
-    position: sticky;
-    top: 20px;
+    /* background:var(--test); */
+    /* position: sticky; */
     z-index: 1100;
-    width:80%;
+    width:100%;
+    border-bottom:1px solid var(--lite-blue);
+    text-transform: uppercase;
+    letter-spacing: 3px;
 }
-.markdown-box h3:hover{
-    
+.markdown-box h2:hover{
     /* translate: 20px 0px; */
     color: var(--red);
     /* text-shadow: 0px 0px 15px var(--glow-red); */
+    border-bottom:1px solid var(--glow-red);
+    letter-spacing: 6px;
     /* filter:drop-shadow(0px 0px 10px var(--glow-red)); */
 }
-.markdown-box h3:before{
+.markdown-box h2:before{
     content:">";
     position:absolute;
     margin-left:-30px;
@@ -113,39 +121,49 @@ body{
     /* scale: 0.6; */
     padding: 0px 5px;
     rotate:90deg;
-    background:inherit;
+    /* background:inherit; */
     filter:inherit;
-    
+    letter-spacing: 0px!important;
 }
-.markdown-box h3.heading_collapsed:before{
+.markdown-box h2.heading_collapsed:before{
     rotate:0deg;
 }
 .markdown-box h4{}
-.markdown-box h5{
-    margin:5px 0px;
-    padding:6px 0px;
+.markdown-box h3{
+    margin: 18px 0px 0px;
+    /* padding: 6px 0px 0px; */
     text-transform: uppercase;
     font-weight: bold;
     font-size: 14px;
     /* color: var(--blue); */
-    
-    position: sticky;
-    top: 55px;
+    /* position: sticky; */
+    /* top: 55px; */
     z-index: 1100;
     background:var(--test);
     filter: drop-shadow(0px 10px 4px var(
     --test));
-    
-    
 }
+/* headings (project type)*/
 .markdown-box h6{
-
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    font-size: 12px;
+    text-transform: uppercase;
 }
+.markdown-box h6 em{
+    font-size: inherit;
+    font-style: normal;
+}
+
 .markdown-box p + .markdown-box p {
     margin-top: 5px;
 }
 .markdown-box p{
-    
+    margin:1em 0;
+}
+.markdown-box h3 + p{
+    margin-top: 8px;
 }
 .markdown-box ul{
     all:revert;
@@ -155,18 +173,19 @@ body{
     margin-bottom: 8px;
 }
 .markdown-box blockquote{
+    margin: 26px 40px 36px;
     
 }
 .markdown-box blockquote p {
     border-radius: 5px;
     padding: 15px 25px;
     border-left: 5px solid var(--lite-blue);
-    background:var(--lite-background);
+    background:white;
     font-style: italic;
-    font-size:14px;
+    font-size:16px;
     line-height: 1.25;
     color: var(--text-block);
-    filter:drop-shadow(0px 0px 7px var(--glow-lite-blue))
+    /* filter:drop-shadow(0px 0px 5px var(--glow-lite-blue)) */
 }
 
 .markdown-box code{
@@ -189,7 +208,33 @@ body{
 .markdown-box strong{
     font-weight:bold
 }
-.markdown-box a{}
+.markdown-box a{
+    color: var(--blue);
+    text-decoration: none;
+}
+.markdown-box a.markdown-button{
+    background: var(--blue);
+    filter:drop-shadow(0px 0px 10px var(--glow-blue));
+    color:white;
+    display:inline-block;
+    padding: 0.7em 1em;
+    border-radius: 8px;
+    cursor:pointer;
+    transition: all 0.5s ease;
+}
+
+.markdown-box a:hover{
+    color: var(--red);
+}
+.markdown-box a.markdown-button:hover{
+    background: var(--red);
+    filter:drop-shadow(0px 0px 10px var(--glow-red));
+    color:white;
+    padding: 0.7em 1em;
+    border-radius: 8px;
+    cursor:pointer;
+    scale:1.1;
+}
 .markdown-box em{}
 .markdown-box input[type="color"]{
     /* width: 10px; */
@@ -217,4 +262,79 @@ body{
     margin: 0px;
     padding: 0px;
     border: 0px; */
+}
+
+.markdown-box img, .markdown-box video{
+    display: revert;
+    width:100%;
+    border-radius:5px;
+    filter:drop-shadow(0px 0px 7px var(--glow-lite-blue));
+}
+/* image caption,  image caption AND everything inside */
+.markdown-box img + em, .markdown-box  p video + em {
+    margin: 0px 10px;
+}
+.markdown-box img + em, .markdown-box img + em *,
+.markdown-box video + em, .markdown-box video + em *
+{
+    font-style: italic;
+    font-size: 16px;
+    line-height: 24px;
+    display: inline-block;
+}
+.markdown-box p img, .markdown-box p video{
+    margin:15px 0px;
+    width:100%;
+}
+.markdown-box p:has(img+em) img, .markdown-box p:has(video+em) video{
+    margin-bottom:0;
+}
+
+.markdown-box blockquote img{
+    filter:none
+}
+
+.markdown-box .emoji{
+    font-size: inherit;
+    /* scale: 2; */
+    display: inline-block;
+    transition: scale 1s ease;
+}
+@keyframes anim-emoji-shake{
+    0%  {            }
+    20% {   rotate:  25deg ; scale: 0.8   }
+    40% {   rotate: -25deg       }
+    60% {   rotate:  25deg  ; scale:2      }
+    80% {   rotate: -25deg      }
+    
+}
+@keyframes anim-emoji-shake-bis{
+    0%  {            }
+    20% {   rotate:  25deg ; scale: 0.8   }
+    40% {   rotate: -25deg       }
+    60% {   rotate:  25deg  ; scale:2      }
+    80% {   rotate: -25deg      }
+    
+}
+@keyframes anim-triggered-by-link{
+    0%  {            }
+    20% {   color: var(--red);  scale:1.2 }
+    40% {       }
+    
+}
+.markdown-box .triggered_by_link{
+    animation: anim-triggered-by-link 0.7s ease;
+}
+.markdown-box .triggered_by_link .emoji{
+    animation: anim-emoji-shake-bis 0.7s ease;
+}
+.markdown-box *:has(> .emoji):hover .emoji{
+    animation: anim-emoji-shake 0.5s ease;
+}
+
+
+.MathJax_Display {
+    width:0px!important;
+    left:0;
+    scale:1.3;
 }
