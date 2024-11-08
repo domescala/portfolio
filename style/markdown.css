@@ -140,8 +140,7 @@ body{
     /* top: 55px; */
     z-index: 1100;
     background:var(--test);
-    filter: drop-shadow(0px 10px 4px var(
-    --test));
+    box-shadow: 0px 10px 4px var(--test);
 }
 /* headings (project type)*/
 .markdown-box h6{
@@ -214,7 +213,7 @@ body{
 }
 .markdown-box a.markdown-button{
     background: var(--blue);
-    filter:drop-shadow(0px 0px 10px var(--glow-blue));
+    box-shadow: 0px 0px 10px var(--glow-blue);
     color:white;
     display:inline-block;
     padding: 0.7em 1em;
@@ -228,7 +227,7 @@ body{
 }
 .markdown-box a.markdown-button:hover{
     background: var(--red);
-    filter:drop-shadow(0px 0px 10px var(--glow-red));
+    box-shadow: 0px 0px 10px var(--glow-red);
     color:white;
     padding: 0.7em 1em;
     border-radius: 8px;
@@ -268,7 +267,7 @@ body{
     display: revert;
     width:100%;
     border-radius:5px;
-    filter:drop-shadow(0px 0px 7px var(--glow-lite-blue));
+    box-shadow: 0px 0px 7px var(--glow-lite-blue);
 }
 /* image caption,  image caption AND everything inside */
 .markdown-box img + em, .markdown-box  p video + em {
