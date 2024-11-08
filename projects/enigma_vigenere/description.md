@@ -21,16 +21,17 @@ Partiamo dal cifrario di cesare, che è più semplice. In questo caso i passaggi
 5. Per decodificare, basterà ripetere gli ultimi passaggi all'inverso  
 
 > Se prendiamo ad esempio la chiave "2" ogni lettera dell'alfabeto si sposterà di 2 posti:  
-> `A B C D E F G ...`  
-> `⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇  `  
-> `C D E F G H I...`  
+> `A B C D E F G . . .`  
+> `| | | | | | | `   
+> `C D E F G H I . . .`  
 
 > Esempio di una frase criptata con la chiave "2"  
 > `C E R A U N A V O L T A`  
-> `⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇`  
-> `E G T C Z P C A P N V C`
+> `| | | | | | | | | | | |`   
+> `E G T C Z P C A P N V C`  
 
-Già così la frase codificata a primo impatto è illeggibile. Ma per forzarla basterebbe fare alcune prove e nel peggiore dei casi si troverebbe la soluzione al ventunesimo tentativo, perchè esistono solamente 21 chiavi possibili.
+
+Già così la frase codificata a primo impatto è illeggibile. Ma per forzarla basterebbe fare alcune prove e nel peggiore dei casi si troverebbe la soluzione al ventunesimo tentativo, perché esistono solamente 21 chiavi possibili.
 
 ## Cifrario di Vigenère 🔏
 
@@ -57,11 +58,11 @@ I passaggi sono:
 > `0 9 2 4`
 
 > `C E R A U N A V O L T A`  
-> `⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇`  
+> `| | | | | | | | | | | |`  
 > `A L C E A L C E A L C E`   
-> `⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇`  
+> `| | | | | | | | | | | |`  
 > `0 9 2 4 0 9 2 4 0 9 2 4`    
-> `⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇`  
+> `| | | | | | | | | | | |`  
 > `C P T E U Z C C O U V E`  
 
 > `C + A (+0) = C`  
