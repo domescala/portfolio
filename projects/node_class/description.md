@@ -26,7 +26,7 @@ I geometry nodes sono uno strumento estremamente potente nelle mani degli artist
 <img class="multiple-image" src="nodeclass-meme2.jpg">
 </div>
 
-Nonostante la familiarità con l’interfaccia a blocchi, già ben nota alla community per via dei nodi dello shader e del compositor, i GN possono risultare complessi per molti utenti che non mostrano una particolare inclinazione verso la matematica e, di conseguenza,per la programmazione. Pur riuscendo a destreggiarsi con successo, gli utenti sovente non comprendono appieno ciò che fanno.  
+Nonostante la familiarità con l’interfaccia a blocchi, già ben nota alla community per via dei nodi dello shader e del compositor, i GN possono risultare complessi per molti utenti che non mostrano una particolare inclinazione verso la matematica e di conseguenza per la programmazione. Pur riuscendo a destreggiarsi con successo, gli utenti sovente non comprendono appieno ciò che fanno.  
 
 Il progetto di Node Class vuole essere una risorsa esaustiva e dettagliata, ma che sia al contempo accessibile e coinvolgente. 
 
@@ -44,8 +44,8 @@ Questo percorso è stato sintetizzato in 12 argomenti principali riguardo la mod
 
 ## Sviluppo 🎨
 
-Ognuno dei 12 capitoli è stato suddiviso in piu sotto argomenti, da trattare in modo approfondito in livello apposito.
-La creazione di un livello partiva quindi dagli obiettivi didattici: si definivano enigmi, oggetti, situazioni,spiegazioni e passaggi al fine di rendere chiara l'argomento in questione.  
+Ognuno dei 12 capitoli è stato suddiviso in più sotto argomenti, da trattare in modo approfondito in un livello apposito.
+La creazione di un livello partiva quindi dagli obiettivi didattici: si definivano enigmi, oggetti, situazioni, spiegazioni e passaggi al fine di rendere chiaro l'argomento in questione.  
 
 <div style="display:flex;justify-content:space-evenly; flex-wrap:wrap">
 <img class="multiple-image" src="nodeclass-primitive.jpg">
@@ -55,4 +55,6 @@ La creazione di un livello partiva quindi dagli obiettivi didattici: si definiva
 Per *sviluppo* si intende la realizzazione **completa** degli ambienti 3D delle stanze e di tutti gli oggetti in Blender. Utilizzando proprio i Geometry Nodes per rendere accurate e fedeli tutte le trasformazioni (spesso anche in modo interattivo, proprio sfruttando le animazioni con i Geometry Nodes).
 
 ![alt](nodeclass-table.jpg)
-*Nei livelli e nella trama, non mancano riferimenti pop ed easter egg, come famoso Donut di Blender Guru e il Companion Cube di Portal. Lo screenshot riporta il livello in cui si spiega il concetto di istanza e nel quale sono stati utilizzati oggetti molto singolari, diversi da semplici geometrie*
+*Nei livelli e nella trama, non mancano riferimenti pop ed easter egg, come il famoso Donut di Blender Guru e il Companion Cube di Portal. Lo screenshot riporta il livello in cui si spiega il concetto di istanza e nel quale sono stati utilizzati oggetti molto singolari, diversi da semplici geometrie*
+
+

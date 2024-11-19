@@ -40,7 +40,7 @@ Il carattere utilizzato è il Rockwell, uno slab-serif con delle grazie in grado
 
 <img class="square_img" src="dream_is_collapsing.gif"/>
 
-Le lettere descrivono visivamente il titolo del brano di Hans Zimmer *Dream is collapsing*, parte della colonna sonora per il film Inception di Christoper Nolan.
+Le lettere descrivono visivamente il titolo del brano di Hans Zimmer *Dream is collapsing*, parte della colonna sonora per il film Inception di Christopher Nolan.
  
 Il font usato è il Bebas, il carattere di tipo condensed si sviluppa piu in verticale, dando la possibilità di compattare un lungo testo (come il titolo del brano) in poco spazio. Inoltre il fatto che sia un carattere molto simmetrico crea un forte contrasto con la disposizione frammentata delle lettere in "caduta libera". Proprio questa disposizione disordinata rimane leggibile grazie alla forte semplicità del Bebas. 
 

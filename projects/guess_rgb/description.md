@@ -161,23 +161,23 @@
 ###### *Minigame* *Progetto personale* 
 # Guess the RGB
 ## Descrizione 📢
-Mini gioco che mette a dura prova la vista e la memoria qualsiasi graphic designer. Saresti in grado di trovare il colore giusto, ma senza guardare? Perché **Guess the RGB** non ti mostrerà la classica interfaccia del color picker, ma dovrai inserire manualmente i valori dei tre canali (rosso, verde e blu) senza poter guardare il colore che stai componendo!
+Mini gioco che mette a dura prova la vista e la memoria di qualsiasi graphic designer. Saresti in grado di trovare il colore giusto, ma senza guardare? Perché **Guess the RGB** non ti mostrerà la classica interfaccia del color picker, ma dovrai inserire manualmente i valori dei tre canali (rosso, verde e blu) senza poter guardare il colore che stai componendo!
 
 ![gameover](guess_rgb_gameover.png)
 *Screenshot di una partita persa: il giocatore doveva trovare il colore giallo, ma ha composto un azzurro. L'accuratezza è completamente nulla nonostante che il valore sul secondo canale (verde) sia azzeccato, questo per via del [calcolo del punteggio 🔗](#punteggio).*
 ## Gameplay 🎮
 - Il gioco genera un colore casuale che compare sullo sfondo ed all'interno della carta
-- Il giocatore usando i tre cursori, imposta una quantità di colore per i singoli canali. Da 0 a 255. E preme su conferma 
+- Il giocatore, usando i tre cursori, imposta una quantità di colore per i singoli canali. Da 0 a 255. E preme su conferma 
 - Il gioco rivela il codice del colore generato:
   - Appaiono dei valori che mostrano la differenza di errore, ad apice dei numeri appena inseriti (+30, -20 ecc ...)
-  - Sui cursori appaiono due barre, color rosso e rosso scuro, che mostrano la differenza di errore
+  - Sui cursori appaiono due barre, colore rosso e rosso scuro, che mostrano la differenza di errore
 - Sullo sfondo il colore diventa in un gradiente diagonale, che parte dal colore corretto a quello inserito dal giocatore 
 - Appare una percentuale di accuratezza, calcolata attraverso la formula...
 - Appare una valutazione finale, per congratularsi o in alcuni casi per incoraggiare il giocatore a riprovare 
 - È poi possibile condividere il risultato o estrarre un nuovo colore
 
 ## Ma che cos'è il codice RGB?? 🤔
-In breve, un codice RGB contiene tre valori che rappresentano rispettivamente la quantità di rosso, di verde e di blu di un colore. Ognuno di questi puo assumere un valore tra 0 e 255.
+In breve, un codice RGB contiene tre valori che rappresentano rispettivamente la quantità di rosso, di verde e di blu di un colore. Ognuno di questi può assumere un valore tra 0 e 255.
 > Ad esempio il nero sarà nullo per tutti i canali:  
 > `rgb(0, 0, 0)`  
 > Mentre il bianco l'esatto opposto:  
@@ -239,7 +239,7 @@ La luminosità è più immediata da trovare, si tratta di capire se un colore te
 
 ### Saturazione 🌈
 Per saturazione si intende invece quanto un colore è... *"colorato🥴"*. Ossia quanto è acceso, brillante.
-Per intenderci, un colore possiamo immaginarlo in una scala che va dal grigio a quel colore. Da questa scala si può  notare come il colore diventi sempre piu spento e triste, fino a raggiungere il grigio. Amici, quella è la scala della saturazione.  
+Per intenderci, un colore possiamo immaginarlo in una scala che va dal grigio a quel colore. Da questa scala si può  notare come il colore diventi sempre più spento e triste, fino a raggiungere il grigio. Amici, quella è la scala della saturazione.  
 **Più un colore è saturo e più i valori (e quindi i cursori) saranno distanti fra loro, e viceversa.** 
 > Scala della saturazione del rosso:  
 > <span class="pois_pattern" style="background:linear-gradient(to right, #777 0%, #F00 100%);color:transparent; width:100%;display:block;margin-top:15px"> ----------------------------------------------------------------- </span> 

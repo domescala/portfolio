@@ -35,7 +35,7 @@ Già così la frase codificata a primo impatto è illeggibile. Ma per forzarla b
 
 ## Cifrario di Vigenère 🔏
 
-Questo un cifrario di cesare potenziato, infatti la chiave non è un singolo numero, ma una serie di numeri: in questo modo le lettere nella frase sono traslate ognuna di un valore differente (o quasi).  
+Questo è un cifrario di cesare potenziato, infatti la chiave non è un singolo numero, ma una serie di numeri: in questo modo le lettere nella frase sono traslate ognuna di un valore differente (o quasi).  
 
 I passaggi sono:
 
@@ -43,14 +43,14 @@ I passaggi sono:
 2. Scegliere una parola da utilizzare come chiave
 3. Scrivere la chiave ripetuta
 4. Criptare la frase:  
-   1. ad ogni lettera della chiave, trovare la posizione x di tale lettera nell'alfabeto (partendo da zero)
+   1. ad ogni lettera della chiave, trovare la posizione x di tale lettera dell'alfabeto (partendo da zero)
    2. trasla la lettera della frase di x posizioni
 
 > esempio con la frase precedente, utilizzando come chiave la parola "ALCE". La chiave si deve disporre ripetuta per tutto il messaggio:  
 > `C E R A U N A V O L T A`  
 > `A L C E A L C E A L C E`  
 
-> Si convecrtono le lettere della chiave nelle posizioni dell'alfabeto (partendo da zero)  
+> Si convertono le lettere della chiave nelle posizioni dell'alfabeto (partendo da zero)  
 > `A B C D E F G H ...`  
 > `0 1 2 3 4 5 6 7 ...`  
 > quindi i valori della chiave saranno:   
