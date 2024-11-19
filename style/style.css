@@ -184,28 +184,38 @@ body:has(.projectactive) .img_presentation{
 /* pulsante */
 .telegram-button, .email-button, .cv-button{
    
-    color: #ffffff;
+    /* color: transparent; */
     font-size: 21px;
-    padding: 15px 30px 15px 30px;
+    padding: 15px 20px 15px 20px;
     border-radius: 100px;
     text-decoration: none;
     box-shadow: 0px 0px 15px var(--color);
+    background-color: var(--color);
     display:inline-block!important;
-    margin-right:8px
+    margin-right:7px;
+    margin-bottom:20px
+    
+}
+.telegram-button, .email-button{
+    background-repeat: no-repeat;
+    background-position:center;
+    /* padding:0px; */
+    padding-right:0;
+    padding-left:0;
+    width:50px!important;
 }
 .email-button{
+    --color: #fe83b0;
     background-image: url("../img/contacts/contacts_email.svg");
-    background-repeat: no-repeat;
 }
 .telegram-button{
+    --color: #35a9e4;
     background-image: url("../img/contacts/contacts_telegram.svg");
-    background-repeat: no-repeat;
 }
 
 .cv-button{
-    --color: #f882bf;
+    --color: #BAB0EA;
     color: white;
-    background-color: var(--color);
 }
 .name span{
     font-family: "riffic", "Poppins", sans-serif;
