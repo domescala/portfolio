@@ -26,7 +26,10 @@ PROJECTS.forEach(project => {
             one_active = true
             e.style = ""
         });
-
+        
+        // add the project id as a parameter in the URL
+        window.history.replaceState(null, null, "?project="+ project.id);
+        
         // Animazione scroll
 
 
@@ -415,5 +418,23 @@ function handleTouchEnd(evt){
 }
 
 
-
-
+// open project from link
+window.addEventListener("load", function(){
+    console.log("AAAAAAAAAAAAAAAAA")
+    // get project id from url
+    const urlParams = new URLSearchParams(window.location.search);
+    const project_id = urlParams.get('project');
+    if (project_id){
+        // if it exists -> scroll to the project container, open project and scroll to center it
+        let project = document.getElementById(project_id)
+        project.parentElement.scrollIntoView({ behavior: "instant", block: "start", inline: "nearest" });
+        setTimeout(() => {
+            project.classList.add("projectactive")
+            project.classList.remove("project")
+            setTimeout(() => {
+                project.scrollIntoView({ behavior: "instant", block: "center", inline: "nearest" });
+            }, 100);
+        }, 100);
+    }
+})
+    
