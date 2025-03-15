@@ -426,15 +426,16 @@ window.addEventListener("load", function(){
     const project_id = urlParams.get('project');
     if (project_id){
         // if it exists -> scroll to the project container, open project and scroll to center it
-        let project = document.getElementById(project_id)
-        project.parentElement.scrollIntoView({ behavior: "instant", block: "start", inline: "nearest" });
         setTimeout(() => {
-            project.classList.add("projectactive")
-            project.classList.remove("project")
+            let project = document.getElementById(project_id)
+            project.parentElement.scrollIntoView({ behavior: "instant", block: "start", inline: "nearest" });
             setTimeout(() => {
-                project.scrollIntoView({ behavior: "instant", block: "center", inline: "nearest" });
-            }, 100);
-        }, 100);
+                project.classList.add("projectactive")
+                project.classList.remove("project")
+                setTimeout(() => {
+                    project.scrollIntoView({ behavior: "instant", block: "center", inline: "nearest" });
+                }, 500);
+            }, 300);
+        }, 300);
     }
 })
-    
