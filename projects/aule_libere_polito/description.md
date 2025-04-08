@@ -1,6 +1,7 @@
 ###### *Tool* *Progetto personale*
 # Aule Libere Polito
-Progetto indipendente con l'obiettivo di migliorare notevolmente il servizio "aule libere" del Politecnico di Torino, attraverso un efficace redesign della UX/UI.
+Progetto indipendente con l'obiettivo di migliorare notevolmente il servizio "aule libere" del Politecnico di Torino, attraverso un efficace redesign della UX/UI.  
+[Vai progetto 🔗](https://domescala.github.io/aule_libere_polito)
 
 ## Il problema
 Il sito fornito dal [portale 🔗](https://www.swas.polito.it/dotnet/orari_lezione_pub/mobile/ricerca_aule_libere.aspx) non è sempre semplicissimo e comodo da consultare:
