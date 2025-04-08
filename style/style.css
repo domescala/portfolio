@@ -649,10 +649,10 @@ h2+p{
     
     }
     .graph text textPath:nth-child(2){
-        fill: #5ed2a1;
+        fill: #9999ff;;
     }
     .graph g circle:nth-child(2){
-    stroke: #5ed2a1;
+    stroke: #9999ff;;
         /* ae */
     stroke-dashoffset: 120;
     animation-duration: 10s;
@@ -670,20 +670,20 @@ h2+p{
     
     }
     .graph text textPath:nth-child(4){
-        fill: #f19237;
+        fill: #49ba89;
     }
     .graph g circle:nth-child(4){
-    stroke: #f19237;
-        /* upbge */
-    stroke-dashoffset: 100;
+    stroke: #49ba89;
+        /* vue3 */
+    stroke-dashoffset: 50;
     animation-duration: 8s;
     
     }
     .graph text textPath:nth-child(6){
-        fill: #9999ff;
+        fill: #db3f95;
     }
     .graph g circle:nth-child(6){
-    stroke: #9999ff;
+    stroke: #db3f95;
         /* indesign */
     stroke-dashoffset: 95;
     animation-duration: 10.5s;
@@ -691,10 +691,10 @@ h2+p{
     
     }
     .graph text textPath:nth-child(5){
-        fill: #baa4a4;
+        fill: #9b9b9b;
     }
     .graph g circle:nth-child(5){
-    stroke: #baa4a4;
+    stroke: #9b9b9b;
      /* rhino */
     stroke-dashoffset: 120;
     animation-duration: 6s;
@@ -786,7 +786,7 @@ h2+p{
     display: flex;
     border-radius: 30px;
     overflow: hidden;
-    box-shadow: 0px 0px 10px #00000094;
+    box-shadow: 0px 0px 20px #5533ef26;
     margin-top: 60px;
     max-width: 900px;
     /* justify-content: space-between; */
