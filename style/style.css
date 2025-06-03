@@ -360,7 +360,7 @@ body:has(.project_opening) .project  {
 
 
 /* immagine */
-#containerportfolio .project img.intro_project_gif{
+#containerportfolio .project .intro_project_gif{
     width: 250px;
     /* border-radius: 50px; */
     transform: scale(1.25);
@@ -368,14 +368,14 @@ body:has(.project_opening) .project  {
     filter: var(--project-img-filter);
 }
 
-body:not(body:has(.projectactive)) #containerportfolio .project:hover img.intro_project_gif,
-body:not(body:has(.project_opening)) #containerportfolio .project:hover img.intro_project_gif{
+body:not(body:has(.projectactive)) #containerportfolio .project:hover .intro_project_gif,
+body:not(body:has(.project_opening)) #containerportfolio .project:hover .intro_project_gif{
     filter:  var(--project-hover-img-filter);
 }
 
 /* zoom-out immagine  */
-body:not(body:has(.projectactive)) #containerportfolio .project img.intro_project_gif:hover,
-body:not(body:has(.project_opening)) #containerportfolio .project img.intro_project_gif:hover{
+body:not(body:has(.projectactive)) #containerportfolio .project .intro_project_gif:hover,
+body:not(body:has(.project_opening)) #containerportfolio .project .intro_project_gif:hover{
     transform: scale(1)
 }
 
@@ -457,7 +457,7 @@ body:has(.projectactive), body:has(.project_opening){
     /* display: unset; */
 }
 /* immagine del progetto selezionato */
-#containerportfolio .projectactive img.intro_project_gif{
+#containerportfolio .projectactive .intro_project_gif{
     height: 100%;
     margin-left: 0px;
     border-radius: unset;
@@ -953,7 +953,7 @@ padding: 70px 50px;
         border-radius: 25px;
     }
     /* immagine */
-    #containerportfolio .project img.intro_project_gif{
+    #containerportfolio .project .intro_project_gif{
         width: 125px;
     }
     /* ------------------------------------------ */ 
@@ -966,7 +966,7 @@ padding: 70px 50px;
         width:100vw;
     }
     /* immagine del progetto selezionato */
-    #containerportfolio .projectactive img.intro_project_gif{
+    #containerportfolio .projectactive .intro_project_gif{
         height: unset;
         max-height: 50vh;
         width: 100%;
@@ -1188,7 +1188,7 @@ padding: 70px 50px;
         border-radius: 25px;
     }
     /* immagine */
-    #containerportfolio .project img.intro_project_gif{
+    #containerportfolio .project .intro_project_gif{
         width: 125px;
     }
     .projectactive .projectcaption{

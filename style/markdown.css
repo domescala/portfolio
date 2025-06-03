@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital@0;1&display=swap');
 :root{
     --text:#4c4d52;
     --main-background:#f6f6f6;
@@ -46,8 +46,8 @@ body{
 .markdown-box *{
     all:  revert;
     font-family: "Lora";
-    font-family: sans-serif;
-    font-size:18px;
+    /* font-family: sans-serif; */
+    font-size: 16px;
     color: var(--text);
     z-index:1000;
     position:relative;
@@ -64,7 +64,7 @@ body{
     /* filter:drop-shadow(0px 0px 10px var(--glow-red)) */
 
     position: sticky;
-    top:-80px;
+    top:-200px;
 }
 .markdown-box h1:after{
     /* content:""; */
@@ -85,9 +85,10 @@ body{
     
 }
 .markdown-box h2{
-    margin-top:24px;
+    /* margin-top: 10px; */
     font-size: 24px;
-    padding:0px;
+    line-height: 1;
+    padding-bottom: 6px;
     font-family: "riffic";
     letter-spacing: 1px;
     color: var(--blue);
@@ -140,7 +141,7 @@ body{
     /* top: 55px; */
     z-index: 1100;
     background:var(--test);
-    box-shadow: 0px 10px 4px var(--test);
+    /* box-shadow: 0px 10px 4px var(--test); */
 }
 /* headings (project type)*/
 .markdown-box h6{
@@ -182,8 +183,8 @@ body{
     background:white;
     font-style: italic;
     font-size:16px;
-    line-height: 1.25;
-    color: var(--text-block);
+    /* line-height: 1.25; */
+    /* color: var(--text-block); */
     /* filter:drop-shadow(0px 0px 5px var(--glow-lite-blue)) */
 }
 
@@ -191,11 +192,28 @@ body{
     font-family: monospace;
     /* font-weight: bold; */
     background: var();
-    padding: 0px 5px;
-    border-radius: 5px;
+    padding: 1px 7px 2px;
+    border-radius: 4px;
     font-style: normal;
-    color: #626f7e;
+    /* color: white; */
+    background: #bcbdbd;
+    white-space: nowrap;
 }
+.markdown-box pre:has(code[class]){
+    background: #2d2d2d;
+    padding: 10px;
+    margin: 5px auto;
+    border-radius: 6px;
+}
+.markdown-box pre:has(code[class]) code{
+    color: white;
+    font-size: 16px;
+    text-wrap: wrap;
+    background: revert;
+    white-space: revert;
+    padding: 0;
+}
+
 .markdown-box blockquote code{
     background: none;
     background: revert;
@@ -263,11 +281,14 @@ body{
     border: 0px; */
 }
 
-.markdown-box img, .markdown-box video{
+.markdown-box img, .markdown-box video, .markdown-box iframe{
     display: revert;
     width:100%;
     border-radius:5px;
     box-shadow: 0px 0px 7px var(--glow-lite-blue);
+}
+.markdown-box iframe{
+    border: 0;
 }
 /* image caption,  image caption AND everything inside */
 .markdown-box img + em, .markdown-box  p video + em {
@@ -284,6 +305,11 @@ body{
 .markdown-box p img, .markdown-box p video{
     margin:15px 0px;
     width:100%;
+}
+
+.markdown-box p img, .markdown-box p video {
+    margin: 15px 0px;
+    width: 100%;
 }
 .markdown-box p:has(img+em) img, .markdown-box p:has(video+em) video{
     margin-bottom:0;
