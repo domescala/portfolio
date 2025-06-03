@@ -1,0 +1,102 @@
+<body>
+<style>
+body{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+.button-bevel {
+font-family: Lora, sans-serif;
+font-size: 21px;
+color: rgb(8, 8, 8);
+--background-color: orange;
+--border: 2px;
+--border-color: rgb(12, 12, 12);
+--border-bottom: 10px;
+--bevel: 10px;
+--padding-width: 25px;
+--padding-height: 11px;
+--border-bottom-active: 2px; /* how much the border will decrease when pressed */
+}
+.button-bevel:active {
+--offset-top: var(--border-bottom-active);
+--offset-bottom: calc(var(--border-bottom) - var(--border-bottom-active));
+
+}
+.button-bevel {
+/*RESET */
+margin: 0px;
+padding: 0;
+border: 0;
+/*AVOID SELECTION*/
+-webkit-touch-callout: none; /* iOS Safari */
+-webkit-user-select: none; /* Safari */
+-khtml-user-select: none; /* Konqueror HTML */
+-moz-user-select: none; /* Old versions of Firefox */
+-ms-user-select: none; /* Internet Explorer/Edge */
+user-select: none; /* Non-prefixed version, currently
+supported by Chrome, Edge, Opera and Firefox */
+background: var(--border-color);
+/* size */
+width: fit-content;
+height: fit-content;
+display: block;
+position: relative;
+--offset-bottom: var(--border-bottom);
+--offset-top: 0px;
+padding-top: calc(var(--padding-height) + var(--offset-top));
+padding-bottom: calc(var(--padding-height) + var(--offset-bottom));
+padding-left: var(--padding-width);
+padding-right: var(--padding-width);
+/* CLIP PATH */
+--len: var(--bevel); /* */
+--inv: calc(100% - var(--bevel));
+/* vertical offset top and bottom*/
+--top: var(--offset-top);
+--bot: 0px; /* always zero in the main element */
+clip-path: polygon(
+var(--len) calc(0% + var(--top)),
+var(--inv) calc(0% + var(--top)),
+100% calc(var(--len) + var(--top)),
+100% calc(var(--inv) - var(--bot)),
+var(--inv) calc(100% - var(--bot)),
+var(--len) calc(100% - var(--bot)),
+0% calc(var(--inv) - var(--bot)),
+0% calc(var(--len) + var(--top))
+);
+}
+.button-bevel::after {
+content: "";
+position: absolute;
+background-color: var(--background-color);
+z-index: -1;
+/* SET INSIDE */
+top: var(--border);
+left: var(--border);
+width: calc(100% - calc(var(--border) * 2));
+height: calc(100% - calc(var(--border) * 2));
+
+/* CLIP PATH */
+--inner-bevel: calc(var(--bevel) - calc(var(--border) / 2));
+--len: var(--inner-bevel);
+--inv: calc(100% - var(--inner-bevel));
+/* vertical offset top and bottom*/
+--top: var(--offset-top);
+--bot: var(--offset-bottom);
+clip-path: polygon(
+var(--len) calc(0% + var(--top)),
+var(--inv) calc(0% + var(--top)),
+100% calc(var(--len) + var(--top)),
+100% calc(var(--inv) - var(--bot)),
+var(--inv) calc(100% - var(--bot)),
+var(--len) calc(100% - var(--bot)),
+0% calc(var(--inv) - var(--bot)),
+0% calc(var(--len) + var(--top))
+);
+}
+</style>
+
+    <div class="button-bevel">Pulsante</div>
+</body>

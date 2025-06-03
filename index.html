@@ -178,6 +178,340 @@
                 </p>
             </div>
         </div>
+        <div class="project" id="scoreboard_ticket_to_ride">
+            <video autoplay="" class="intro_project_gif" loop="" muted="">
+                <source src="projects/scoreboard_ticket_to_ride/reel.webm" type="video/webm" />
+            </video>
+            <div class="markdown-box" insert_py="projects/scoreboard_ticket_to_ride/description.md">
+                <style>
+                    .__ttrdiv {
+                        width: 150px;
+                        height: 100px;
+                        background: orange;
+                        margin: 5px auto;
+                        display: flex;
+                        justify-content: center;
+                        align-content: center;
+                    }
+
+                    .__ttr-a {
+                        mask: linear-gradient(135deg, #0000 14px, #000 0%);
+                    }
+
+                    .__ttr-b {
+                        mask: linear-gradient(-135deg, #0000 14px, #000 0%), linear-gradient(135deg, #0000 14px, #000 0%), linear-gradient(-45deg, #0000 14px, #000 0%), linear-gradient(45deg, #0000 14px, #000 0%);
+                        mask-composite: intersect;
+                    }
+
+                    .__ttr-c {
+                        mask: radial-gradient(20px at 0 0, #0000 100%, #000)
+                    }
+
+                    .__ttr-d {
+                        mask: radial-gradient(20px at 0 0, #0000 100%, #000), radial-gradient(20px at 0 100%, #0000 100%, #000), radial-gradient(20px at 100% 0, #0000 100%, #000), radial-gradient(20px at 100% 100%, #0000 100%, #000);
+                        mask-composite: intersect;
+                    }
+
+                    .__ttr-e {
+                        background: black;
+                        mask: radial-gradient(20px at 0 0, #0000 100%, #000), radial-gradient(20px at 0 100%, #0000 100%, #000), radial-gradient(20px at 100% 0, #0000 100%, #000), radial-gradient(20px at 100% 100%, #0000 100%, #000);
+                        mask-composite: intersect;
+                    }
+
+                    .__ttr-e-child {
+                        mask: inherit;
+                        mask-composite: inherit;
+
+                        margin: 15px;
+                        width: calc(100% - 30px);
+                        height: calc(100% - 30px);
+                    }
+
+                    .__ttr-f {
+                        background: black;
+                        --parent-radius: 20px;
+                        --radius: var(--parent-radius);
+                        /* coordinate per le origini dei cerchi*/
+                        --start: 0%;
+                        --end: 100%;
+                        --a: #0000 100%, #000;
+                        /* (è sempre uguale) */
+                        mask:
+                            radial-gradient(var(--radius) at var(--start) var(--start), var(--a)),
+                            radial-gradient(var(--radius) at var(--start) var(--end), var(--a)),
+                            radial-gradient(var(--radius) at var(--end) var(--start), var(--a)),
+                            radial-gradient(var(--radius) at var(--end) var(--end), var(--a));
+                        mask-composite: intersect;
+                    }
+
+                    .__ttr-f-child {
+                        --thick: 15px;
+                        margin: var(--thick);
+                        width: calc(100% - calc(var(--thick) * 2));
+                        height: calc(100% - calc(var(--thick) * 2));
+                        --radius: calc(var(--parent-radius) + var(--thick));
+                        --start: calc(0% - var(--thick));
+                        --end: calc(100% + var(--thick));
+                        mask:
+                            radial-gradient(var(--radius) at var(--start) var(--start), var(--a)),
+                            radial-gradient(var(--radius) at var(--start) var(--end), var(--a)),
+                            radial-gradient(var(--radius) at var(--end) var(--start), var(--a)),
+                            radial-gradient(var(--radius) at var(--end) var(--end), var(--a));
+                        mask-composite: intersect;
+                    }
+
+                    .__ttr-img {
+                        position: relative;
+                    }
+
+                    .__ttr-img img {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        animation: __ttr-img-blink 10s infinite;
+                        opacity: 0;
+                    }
+
+                    .__ttr-img img:nth-child(1) {
+                        position: unset;
+                        animation-delay: 8s;
+                    }
+
+                    .__ttr-img img:nth-child(2) {
+                        animation-delay: 6s;
+                    }
+
+                    .__ttr-img img:nth-child(3) {
+                        animation-delay: 4s;
+                    }
+
+                    .__ttr-img img:nth-child(4) {
+                        animation-delay: 2s;
+                    }
+
+                    @keyframes __ttr-img-blink {
+                        0% {
+                            opacity: 0
+                        }
+
+                        15% {
+                            opacity: 0
+                        }
+
+                        20% {
+                            opacity: 1
+                        }
+
+                        35% {
+                            opacity: 1
+                        }
+
+                        40% {
+                            opacity: 0
+                        }
+
+                        100% {
+                            opacity: 0
+                        }
+                    }
+                </style>
+                <h6 id="web-progetto-personale---scoreboard_ticket_to_ride"><em>web</em> <em>Progetto personale</em></h6>
+                <h1 id="unofficial-ticket-to-ride-scoreboard---scoreboard_ticket_to_ride">Unofficial Ticket to Ride Scoreboard</h1>
+                <h2 id="descrizione-📢---scoreboard_ticket_to_ride">Descrizione <span class="emoji">📢</span></h2>
+                <p>Questa pagina è una sorta di calcolatrice / segnapunti per il gioco da tavolo Ticket to Ride: Europe, che permette ai giocatori di calcolare il punteggio a fine partita in modo semplice e veloce. <br />
+                    L'intero progetto è realizzato con il framework Vuejs 🎉</p>
+                <p style="display: flex; justify-content: center;">
+                    <video autoplay="" loop="" muted="" style="max-width:100%;  aspect-ratio: 2; background: #fafafc;">
+                        <source src="projects\scoreboard_ticket_to_ride/reel.webm" type="video/webm" />
+                    </video>
+                </p>
+                <h2 id="problema-🚩---scoreboard_ticket_to_ride">Problema <span class="emoji">🚩</span></h2>
+                <p>Il conteggio dei punti in ticket to ride avviene alla fine della partita, quando, nella maggior parte dei casi, si è già esauriti. La conta non è così rapida: richiede diverse operazioni matematiche poco entusiasmanti. In breve si sommano i punteggi di ogni linea moltiplicati per il valore della linea, a questi si sommano, i punti delle stazioni, degli obiettivi e i 10 punti bonus a chi ha composto la tratta più lunga. Inevitabilmente si finisce per utilizzare un foglio A4 e una calcolatrice. </p>
+                <h2 id="soluzione-🎉---scoreboard_ticket_to_ride">Soluzione <span class="emoji">🎉</span></h2>
+                <p>Mentre si conta il numero di tratte potrebbe essere utile avere uno strumento con i pulsanti <code>➕</code> <code>➖</code> che in automatico restituisce il punteggio. Questo per ogni tratta, per il numero delle stazioni. Restituendo anche i vagoni rimasti in modo da verificare se i conti non tornano (in tutto sono 45)</p>
+                <p>Per i punteggi dei ticket invece, una possibile soluzione è inserire i nomi delle due città e spuntare la casella se la tratta è stata "completata". </p>
+                <blockquote>
+                    <p>Nelle prime versioni di questo progetto, i biglietti erano calcolati attraverso dei pulsanti anonimi che riportavano i punteggi standard dei ticket (5,6,8,9,10,12,15,21). Questa era una delle soluzioni piu immediate: "Ho completato Palermo-Mosca e sono 21 punti -&gt; click su il tasto 21"<br />
+                        Tuttavia, l'inserimento di questa lista di numeri anonimi diversi tra loro potrebbe diventare problematico in caso di un errore nella digitazione.</p>
+                </blockquote>
+                <p>Per l'assegnazione del bonus invece sarà compito dei giocatori contare sul tabellone qual'è la linea più lunga e sezionare sull'app il giocatore corrispondente. Questa fase è molto apprezzata dai giocatori e sostituirla con algoritmo porterebbe solamente svantaggi.</p>
+                <h2 id="ux-👤---scoreboard_ticket_to_ride">UX <span class="emoji">👤</span></h2>
+                <p>Lo user flow è estremamente semplice. ll giocatore che arriva sulla pagina si soffermerà nel capire il funzionamento (forse) e poi avvierà una partita. Da qui dovrà inserire i nomi dei giocatori per procedere e iniziare la fase di conta. In questo è di fatto un loop in cui si seleziona il giocatore corrente, si setta il punteggio di vagoni o stazioni... e poi si passa al giocatore successivo.infine si passa alla pagina della classifica.</p>
+                <p><img alt="USERFLOW.svg" src="projects\scoreboard_ticket_to_ride/USERFLOW.svg" /></p>
+                <p>In questa bozza per il wireframing si definiscono in modo grezzo come saranno divise le sezioni e come saranno connesse tra loro. Per rendere la conta più coinvolgente si è pensato di lasciare libero il giocatore di seguire l'ordine che preferisce: ovvero contare prima tutti i punti di uno e passare al successivo oppure contare i punti solo delle linee e poi passare al successivo. (in questo modo non c'è un ultimo giocatore che deve aspettare il suo turno annoiandosi)</p>
+                <p>Il Bonus è "fuori" dal loop della conta, perché non è necessario che si ripeta per ogni giocatore.</p>
+                <p><img alt="WIREFRAME.svg" src="projects\scoreboard_ticket_to_ride/WIREFRAME.svg" /></p>
+                <h2 id="ui-🕹️---scoreboard_ticket_to_ride">UI <span class="emoji">🕹️</span></h2>
+                <h3 id="stile-🖌️---scoreboard_ticket_to_ride">STILE <span class="emoji">🖌️</span></h3>
+                <p>Lo stile di <em>Ticket to Ride: Europe</em> si rifà ad una ambientazione ottocentesca, contiene moltissime illustrazioni ricche di dettagli, così come i testi, carichi di ghirigori. Si è definito uno stile che richiami l'ambientazione della rivoluzione industriale, dei treni e dei biglietti, ma mantenendo un aspetto più moderno e colorato. </p>
+                <h3 id="caratteri-🈂️---scoreboard_ticket_to_ride">CARATTERI <span class="emoji">🈂️</span></h3>
+                <p>Per i font si è scelto Lora per il corpo del testo che in qualche modo ricorda i caratteri utilizzati per i biglietti ferroviari e Limelight per i titoli che invece riporta subito ad una ambientazione molto retrò.</p>
+                <p><img alt="font.png" src="projects\scoreboard_ticket_to_ride/font.png" /></p>
+                <h3 id="dom-elements-🎛️---scoreboard_ticket_to_ride">DOM ELEMENTS <span class="emoji">🎛️</span></h3>
+                <p>Per gli elementi della UI (pulsanti, input, checkbox...) si è preso come riferimento la forma di un rettangolo con i bordi e con gli angoli smussati a 45 gradi perché ricorda vagamente la forma di un biglietto 👉🏻🎟️. A questi è stato aggiunto un bordo inferiore molto spesso, simulando un'ombreggiatura, questa è utilizzata anche per creare l'effetto del pulsante premuto.<br />
+                    Per gli input e le card si è utilizzato invece un rettangolo con al fondo un pattern tipo "zigrinatura", mentre l'input del nome dei giocatori altro non è che un vagoncino del colore corrispondente (che si adatta in larghezza al nome)</p>
+                <p><img alt="ui.png" src="projects\scoreboard_ticket_to_ride/ui.png" /></p>
+                <h3 id="icone-🖼️---scoreboard_ticket_to_ride">ICONE <span class="emoji">🖼️</span></h3>
+                <p>Per le icone/illustrazioni si è scelto di stilizzare gli elementi principali del gioco: vagone, stazione, biglietto, "europa" e monete (che rappresentano in realtà il concetto di punteggio) utilizzando come per gli elementi UI un rettangolo smussato come forma di partenza, contorni netti, outline e con un bordo inferiore molto spesso. </p>
+                <p><img alt="icone.png" src="projects\scoreboard_ticket_to_ride/icone.png" /></p>
+                <h3 id="palette-🎨---scoreboard_ticket_to_ride">PALETTE <span class="emoji">🎨</span></h3>
+                <p>I colori richiamano quelli dei 5 giocatori: rosso, blu, verde, giallo e nero. A ciascuno di essi è assegnato una variante più chiara.
+                    <img alt="palette" src="projects\scoreboard_ticket_to_ride/palette.png" />
+                    Durante la conta varie icone assumono il colore del giocatore corrispondente:
+                </p>
+                <p class="__ttr-img">
+                    <img src="projects\scoreboard_ticket_to_ride/icone_colore_blu.svg" />
+                    <img src="projects\scoreboard_ticket_to_ride/icone_colore_rosso.svg" />
+                    <img src="projects\scoreboard_ticket_to_ride/icone_colore_verde.svg" />
+                    <img src="projects\scoreboard_ticket_to_ride/icone_colore_nero.svg" />
+                    <img src="projects\scoreboard_ticket_to_ride/icone_colore_giallo.svg" />
+                </p>
+                <h2 id="funzionamento-🎮---scoreboard_ticket_to_ride">Funzionamento <span class="emoji">🎮</span></h2>
+                <p>Inizialmente i giocatori inseriscono i loro nomi nel vagoncino del proprio colore (rosso, blu, verde, giallo, nero) e avviano il tabellone. I giocatori possono cambiare il loro nome in qualsiasi momento. </p>
+                <h3 id="punteggio-💯---scoreboard_ticket_to_ride">Punteggio <span class="emoji">💯</span></h3>
+                <p>Nella sezione della conta dei vagoni si utilizzano i tasti <code>-</code> e <code>+</code> per aggiungere le proprie linee: le linee possono essere composte da <code>1, 2, 3, 4, 6, 8</code>vagoni. Rispettivamente il punteggio per ciascuna linea è <code>1, 2, 4, 7, 15, 21</code>. (Le linee sul tabellone non sono infinite, ovvero esiste un massimo di linee da 1, da 2, da 3 ecc... ed il contatore impedisce al giocatore in uscire dal range)</p>
+                <p>Allo stesso modo i giocatori impostano la quantità di Stazioni utilizzate durante la partita <code>da 0 a 3 stazioni</code>. Ogni Stazione NON utilizzata vale 4 punti.</p>
+                <p>Per i biglietti, mentre si controlla su tabellone che non ci siano stati errori, il giocatore inserisce il nome delle due stazioni e spunta la casella "completato". (Gli input sono progettati in modo che inserendo ad esempio "Palermo", le possibili città connesse appariranno come suggerimento nel secondo input, inoltre come per le linee, se un biglietto è stato già registrato da un giocatore non sarà più disponibile per gli altri)</p>
+                <p>Per l'assegnazione del bonus (+10 punti) i giocatori devono semplicemente premere sul pulsante del giocatore con la tratta più lunga. In caso di parità è presente un checkbox che permette di assegnare a più giocatori il bonus. </p>
+                <h3 id="classifica-🥇---scoreboard_ticket_to_ride">Classifica <span class="emoji">🥇</span></h3>
+                <p>Infine i giocatori possono accedere alla classifica che viene automaticamente compilata durante il conteggio dei vagoni, stazioni... Dalla classifica è possibile accedere ad un recap dei punteggi divisi in Linee, Stazioni, Ticket e Bonus a loro volta queste sezioni si possono espandere, mostrando nel dettaglio ad esempio quante linee, quali biglietti ecc...</p>
+                <video autoplay="" loop="" muted="">
+                    <source src="projects\scoreboard_ticket_to_ride/ranking.mp4" type="video/mp4" />
+                </video>
+                <h2 id="sviluppo-🧪---scoreboard_ticket_to_ride">Sviluppo <span class="emoji">🧪</span></h2>
+                <p>L'app è stata sviluppata in vue, adottando diverse strategie per la creazione della ui, come i pulsanti smussati <a __relative_path="" href="#__ttr-result" target="_self">(vai al risultato finale)</a>, le illustrazioni con i colori flessibili...</p>
+                <h3 id="angoli-smussati---tentativo-con-clip-path✂️---scoreboard_ticket_to_ride">Angoli smussati - TENTATIVO CON CLIP-PATH✂️</h3>
+                <p>In css non è possibile avere gli angoli di un elemento smussati a 45 gradi in modo "naturale", come avviene con la proprietà border-radius, tanto meno avere un angolo con la curvatura al contrario (proprio come quella dei biglietti). Si può fare ricorso ad alcuni trucchetti come utilizzare <code>clip-path</code>. Definendo infatti una serie di punti è possibile tagliare via gli angoli di un elemento, il primo problema di questa soluzione è la complessità nel creare una formula che calcoli correttamente i punti. Il secondo problema è che un eventuale bordo verrebbe tagliato via negli angoli:</p>
+                <pre><code class="language-css">clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%, 0% 25%)
+                    </code></pre>
+                <blockquote>
+                    <p><span style="display:flex"><span style="border:5px solid #111; margin:15px auto;background:#b9a2ff;; color:black; width:fit-content; padding:30px 10px; border-radius:25px">BORDER RADIUS</span>
+                            <span style="border:5px solid #111; margin:15px auto;background:#b9a2ff;; color:black; width:fit-content; padding:30px 10px; clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%, 0% 25%);">CLIP PATH</span></span></p>
+                </blockquote>
+                <p>L'unica soluzione è quella di annidare piu elementi assegnando a ciascuno dei colori alternati, dando l'illusione di un bordo</p>
+                <blockquote>
+                    <p><span style="display:flex"></span><span style="margin:0 auto;background: #111;width:100px;height: 100px;clip-path: polygon(15% 0%, 85% 0%, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%, 0% 15%);display:flex;justify-content: center;"><span style="all:inherit; margin:auto;width: 94%;height: 94%;background: #b9a2ff;"></span></span> </p>
+                </blockquote>
+                <iframe src="projects\scoreboard_ticket_to_ride/bevel-button.html" style="height:100px;"></iframe>
+                <p>Da questa pagina si puo vedere come sia possibile applicare questo 'bordo smussato' utilizzando clip-path e svariate formule complesse <a __relative_path="" href="projects\scoreboard_ticket_to_ride/bevel-button.html" target="_blank">bevel-border🔗</a>
+                    Sebbene questa sia una soluzione valida risulta davvero tanto complessa da capire e da gestire.</p>
+                <h3 id="angoli-smussati---tentativo-con-mask-🎭---scoreboard_ticket_to_ride">Angoli smussati - TENTATIVO CON MASK <span class="emoji">🎭</span></h3>
+                <p>Una soluzione più efficace è infatti quella di utilizzare delle maschere. Posizionando infatti 4 "triangoli" ai bordi dell'oggetto si possono "tagliare" via gli angoli in modo decisamente più intuitivo, la grandezza dello smusso è la grandezza stessa del triangolo. Inoltre se invece di triangoli si usassero dei cerchi il risultato sarebbe una sorta di border-radius invertito 🎉, impossibile da realizzare con clip-path. In questo modo volendo si può creare una combinazione di bordi flat e curvi.</p>
+                <p>Questi "triangoli" sono in realta dei gradienti lineari</p>
+                <pre><code class="language-css">mask: linear-gradient(135deg, #0000 25px, #000 0%);
+                        background: orange;
+                    </code></pre>
+                <blockquote>
+                    <p><span class="__ttrdiv __ttr-a"></span> </p>
+                </blockquote>
+                <p>Aggiungiamo piu gradienti in modo da coprire tutti gli angoli e utiliziamo <code>mask-composite: intersect</code> (altrimenti i gradienti sovrapposti si annullano) </p>
+                <pre><code class="language-css">mask: linear-gradient(-135deg, #0000 25px, #000 0%),
+                        linear-gradient( 135deg, #0000 25px, #000 0%),
+                        linear-gradient( -45deg, #0000 25px, #000 0%),
+                        linear-gradient( 45deg, #0000 25px, #000 0%);
+                        mask-composite: intersect;
+                    </code></pre>
+                <blockquote>
+                    <p><span class="__ttrdiv __ttr-b"></span></p>
+                </blockquote>
+                <p>in modo simile possiamo ottenere un angolo arrotondato invertito (scoop)</p>
+                <pre><code class="language-css">mask: radial-gradient(35px at 0 0, #0000 100%, #000);
+                    </code></pre>
+                <blockquote>
+                    <p><span class="__ttrdiv __ttr-c"></span></p>
+                </blockquote>
+                <p>utilizzando 4 gradienti possiamo raggiungere tutti e 4 gli angoli. In questo caso utilizziamo le coordinate
+                    <code>at 0 0</code>, <code>at 0 100</code>, <code>at 100 0</code>, <code>at 100 100</code>.
+                </p>
+                <pre><code class="language-css">mask:
+                        radial-gradient(35px at 0 0, #0000 100%, #000),
+                        radial-gradient(35px at 0 100%, #0000 100%, #000),
+                        radial-gradient(35px at 100% 0, #0000 100%, #000),
+                        radial-gradient(35px at 100% 100%, #0000 100%, #000);
+                        mask-composite: intersect;
+                    </code></pre>
+                <blockquote>
+                    <p><span class="__ttrdiv __ttr-d"></span></p>
+                    <p>Tra lo smusso piatto e quello curvo cambia la grandezza del raggio:
+                        <img alt="scoop" src="projects\scoreboard_ticket_to_ride/scoop141.png" />
+                    </p>
+                </blockquote>
+                <p>Annidiamo due oggetti:</p>
+                <blockquote>
+                    <p><span class="__ttrdiv __ttr-e"><span class="__ttrdiv __ttr-e-child"></span></span></p>
+                </blockquote>
+                <pre><code class="language-css">.parent{
+                        background:black;
+                        mask:
+                        radial-gradient(20px at 0 0,#0000 100%,#000),
+                        radial-gradient(20px at 0 100%,#0000 100%,#000),
+                        radial-gradient(20px at 100% 0,#0000 100%,#000),
+                        radial-gradient(20px at 100% 100%,#0000 100%,#000);
+                        mask-composite: intersect;
+                        }
+                        .child{
+                        mask:inherit;
+                        mask-composite: inherit;
+                        /* simulazione del bordo */
+                        --thick: 15px;
+                        margin: var(--thick);
+                        width: calc(100% - calc(var(--thick) * 2));
+                        height: calc(100% - calc(var(--thick) * 2));
+                        }
+                    </code></pre>
+                <p>Come si puo notare se il <code>child</code> eredita la maschera così com'è lo smusso appare decentrato. Questo perché l'origine dello smusso fa riferimento all'angolo del <code>child</code> anzichè del <code>parent</code> e perché il raggio utilizzato è lo stesso.<br />
+                    A rigor di logica i cerchi devono essere sempre concentrici, posizionati negli angoli del <code>parent</code>, e il loro raggio deve aumentare con lo spessore del "bordo" </p>
+                <pre><code class="language-javascript">radius = parent-radius + thickness
+                        coord_start = 0 - thickness
+                        coord_end = 100 + thickness
+                    </code></pre>
+                <p><img alt="alt" src="projects\scoreboard_ticket_to_ride/scoop-parent-radius.svg" /> </p>
+                <pre><code class="language-css">.parent {
+                        background: black;
+                        --parent-radius: 20px;
+                        --radius: var(--parent-radius);
+                        /* coordinate per le origini dei cerchi */
+                        --start: 0%;
+                        --end: 100%;
+                        --a: #0000 100%, #000; /* (è sempre uguale) */
+                        mask:
+                        radial-gradient(var(--radius) at var(--start) var(--start), var(--a)),
+                        radial-gradient(var(--radius) at var(--start) var(--end), var(--a)),
+                        radial-gradient(var(--radius) at var(--end) var(--start), var(--a)),
+                        radial-gradient(var(--radius) at var(--end) var(--end), var(--a));
+                        mask-composite: intersect;
+                        }
+
+                        .child {
+                        /* spessore del "bordo" */
+                        --thick: 15px;
+                        /* simulazione del bordo con margin */
+                        margin: var(--thick);
+                        /* dimensionamento */
+                        width: calc(100% - calc(var(--thick) * 2));
+                        height: calc(100% - calc(var(--thick) * 2));
+                        /* il raggio si somma al raggio precendete */
+                        --radius: calc(var(--parent-radius) + var(--thick));
+                        /* l'origine dei cerchi è negli angoli del parent! */
+                        --start: calc(0% - var(--thick));
+                        --end: calc(100% + var(--thick));
+                        mask:
+                        radial-gradient(var(--radius) at var(--start) var(--start), var(--a)),
+                        radial-gradient(var(--radius) at var(--start) var(--end), var(--a)),
+                        radial-gradient(var(--radius) at var(--end) var(--start), var(--a)),
+                        radial-gradient(var(--radius) at var(--end) var(--end), var(--a));
+                        mask-composite: intersect;
+                        }
+                    </code></pre>
+                <p>Aggiungiamo un effetto di anti-aliasing per rimuovere la fastidiosa scalettatura sui bordi, sarà sufficente sfumare di un pixel il bordo. Anzichè <code>100%</code> avremo <code>100% - 1px</code></p>
+                <pre><code class="language-css">.anti-aliasing {
+                        --a: #0000 calc(100% - 1px), #000;
+                        }
+                    </code></pre>
+                <p>Ed ecco il risultato:</p>
+                <iframe id="__ttr-result" src="projects\scoreboard_ticket_to_ride/bevel-scoop-parametric.html" style="height:500px;"></iframe>
+            </div>
+        </div>
         <div class="project" id="guess_rgb">
             <img alt="" class="intro_project_gif" src="projects/guess_rgb/cover.gif" />
             <div class="markdown-box" insert_py="projects/guess_rgb/description.md">
@@ -1013,8 +1347,8 @@ Come è possibile che questa pagina senza un backend abbia un contatore delle vi
     <br />
     <br />
     <br />
-    <br>
-    <br>
+    <br />
+    <br />
     <br />
     <br />
     <br />
@@ -1054,6 +1388,5 @@ Come è possibile che questa pagina senza un backend abbia un contatore delle vi
     <script src="script/animation-title.js"></script>
     <script src="script/markdown.js"></script>
     <script src="script/script.js"></script>
-    </br></br>
 </body>
 </html>

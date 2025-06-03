@@ -1,0 +1,140 @@
+<html>
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-family: monospace;
+            /*AVOID SELECTION*/
+-webkit-touch-callout: none; /* iOS Safari */
+-webkit-user-select: none; /* Safari */
+-khtml-user-select: none; /* Konqueror HTML */
+-moz-user-select: none; /* Old versions of Firefox */
+-ms-user-select: none; /* Internet Explorer/Edge */
+user-select: none; /* Non-prefixed version, currently
+supported by Chrome, Edge, Opera and Firefox */
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        input[type=range] {
+            height: 2px;
+        }
+
+        .controls-box {
+            width: 50%;
+        }
+
+        .parent {
+            width: 50%;
+            height: 50%;
+        }
+
+        input[type=range] {
+            width: 50vw;
+        }
+      
+        .parent {
+            background: black;
+            --parent-radius: 50px;
+            --radius: var(--parent-radius);
+            /* coordinate per le origini dei cerchi*/
+            --start: 0%;
+            --end: 100%;
+            --anti-aliasing: 0px;
+            --a: #0000 calc(100% - var(--anti-aliasing)), #000;
+
+            /* (è sempre uguale) */
+            mask:
+                radial-gradient(var(--radius) at var(--start) var(--start), var(--a)),
+                radial-gradient(var(--radius) at var(--start) var(--end), var(--a)),
+                radial-gradient(var(--radius) at var(--end) var(--start), var(--a)),
+                radial-gradient(var(--radius) at var(--end) var(--end), var(--a));
+            mask-composite: intersect;
+        }
+        .parent.anti-aliasing{
+            --anti-aliasing: 1px;
+        }
+        .child {
+            --thick: 25px;
+            background: orange;
+            /* spessore del "bordo" */
+            /* simulazione del bordo con margin */
+            margin: var(--thick);
+            /* dimensionamento */
+            width: calc(100% - calc(var(--thick) * 2));
+            height: calc(100% - calc(var(--thick) * 2));
+            /* il raggio si somma al raggio precendete */
+            --radius: calc(var(--parent-radius) + var(--thick));
+            /* l'origine dei cerchi è negli angoli del parent! */
+            --start: calc(0% - var(--thick));
+            --end: calc(100% + var(--thick));
+            /* maschera */
+            mask:
+                radial-gradient(var(--radius) at var(--start) var(--start), var(--a)),
+                radial-gradient(var(--radius) at var(--start) var(--end), var(--a)),
+                radial-gradient(var(--radius) at var(--end) var(--start), var(--a)),
+                radial-gradient(var(--radius) at var(--end) var(--end), var(--a));
+            mask-composite: intersect;
+        }
+
+        .label {
+            margin: 15px 0px 10px;
+            font-size: 14px;
+            display: inline-block;
+        }
+
+        .label span {
+            font-size: 28px;
+        }
+    </style>
+    <div class="parent anti-aliasing">
+        <div class="child">
+
+        </div>
+    </div>
+    <div class="controls-box">
+        <p class="label" id="thick-label">thickness:<span>25px</span></p>
+        <input id="thick-range" type="range" value="50">
+        <p class="label" id="radius-label">radius:<span>50px</span></p>
+        <input id="radius-range" type="range" value="50">
+        <div>
+            <p class="label" id="anti-aliasing-label">anti-aliasing:</p> <input id="anti-aliasing-check" type="checkbox" checked="1">
+        </div>
+
+    </div>
+    <script>
+        const INPUT_THICK = document.querySelector("#thick-range")
+        const INPUT_RADIUS = document.querySelector("#radius-range")
+        const INPUT_ANTIALIASING = document.querySelector("#anti-aliasing-check")
+        const PARENT = document.querySelector(".parent")
+        const CHILD = document.querySelector(".child")
+        const LABEL_THICK = document.querySelector("#thick-label span")
+        const LABEL_RADIUS = document.querySelector("#radius-label span")
+        const body = document.querySelector("body")
+        INPUT_THICK.addEventListener("input", e => {
+            const value = Math.round(e.target.value / 2)
+            CHILD.style = `--thick:${value}px`
+            LABEL_THICK.innerHTML = `${value}px`
+        })
+        INPUT_RADIUS.addEventListener("input", e => {
+            const value = e.target.value
+            PARENT.style = `--parent-radius:${value}px`
+            LABEL_RADIUS.innerHTML = `${value}px`
+        })
+        INPUT_ANTIALIASING.addEventListener("input", e => {
+            e.target.checked ?
+                PARENT.classList.add("anti-aliasing") :
+                PARENT.classList.remove("anti-aliasing")
+        })
+    </script>
+</body>
+</html>
