@@ -65,6 +65,7 @@ body{
     position: sticky;
     top:-200px;
     line-height: 1.2;
+    margin-top: 18px;
 }
 .markdown-box h1:after{
     /* content:""; */
@@ -186,6 +187,7 @@ body{
     /* line-height: 1.25; */
     /* color: var(--text-block); */
     /* filter:drop-shadow(0px 0px 5px var(--glow-lite-blue)) */
+    overflow: hidden;
 }
 
 .markdown-box code{
