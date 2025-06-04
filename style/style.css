@@ -1,5 +1,6 @@
 :root{
     --text:#4c4d52;
+    color-scheme: only light;
 }
 
 body{
@@ -294,6 +295,7 @@ body:has(.projectactive) .img_presentation{
 }
 
 /* project per ogni progetto */
+@media (hover: hover) {
 #containerportfolio:has(.project:hover){
     --project-img-filter: blur(1px);
     --project-filter: blur(4px);
@@ -305,14 +307,13 @@ body:has(.projectactive) .img_presentation{
     
     --project-box-shadow: none;
 }
+}
 body:has(.projectactive) *,
 body:has(.project_opening) *{
     --project-img-filter: blur(1px);
     --project-filter: blur(4px);
-    
     --project-hover-filter: blur(1px);
     --project-hover-img-filter: blur(4px);
-    
     --project-hover-scaling: 1.25;
     --project-hover-scaling: 0.9;
 }
@@ -343,6 +344,7 @@ body:has(.project_opening) *{
     100%{rotate: 4deg;}
     
 }
+@media (hover: hover) {
 body:not(body:has(.projectactive)) .project:hover,
 body:not(body:has(.project_opening)) .project:hover{
     filter: var(--project-hover-filter);
@@ -350,6 +352,7 @@ body:not(body:has(.project_opening)) .project:hover{
     box-shadow: 0px 0px 20px #000000a1;
     z-index: 4;
     animation: anim-project-hover 2s cubic-bezier(.37,3.12,.47,.26) infinite;
+}
 }
 body:has(.projectactive) .project,
 body:has(.project_opening) .project  { 
@@ -367,7 +370,7 @@ body:has(.project_opening) .project  {
     transition: transform 0.5s cubic-bezier(.37,1.12,.47,.26);
     filter: var(--project-img-filter);
 }
-
+@media (hover: hover) {
 body:not(body:has(.projectactive)) #containerportfolio .project:hover .intro_project_gif,
 body:not(body:has(.project_opening)) #containerportfolio .project:hover .intro_project_gif{
     filter:  var(--project-hover-img-filter);
@@ -377,6 +380,7 @@ body:not(body:has(.project_opening)) #containerportfolio .project:hover .intro_p
 body:not(body:has(.projectactive)) #containerportfolio .project .intro_project_gif:hover,
 body:not(body:has(.project_opening)) #containerportfolio .project .intro_project_gif:hover{
     transform: scale(1)
+}
 }
 
 /* spengo i div delle descrizioni dei progetti */
@@ -724,16 +728,19 @@ h2+p{
     #containerabout .container{
         padding: none;
     }
+    @media (hover: hover) {
     .graph text textPath:hover{
         fill: black !important;
+    }
     }
     .graph g circle{
         mix-blend-mode: color;
     }
+    @media (hover: hover) {
     .graph g circle:hover{
         /* stroke: #1f1f1f !important; */
         mix-blend-mode: difference;
-
+    }
     }
     .graph * {
         /* no select */
@@ -960,7 +967,7 @@ padding: 70px 50px;
     /* DESCRIZIONI PORTFOLIO */
     /* project del progetto selezionato */
     .projectactive{
-        height: 100%;
+        /* height: 100%; */
         display:flex;
         flex-direction: column;
         width:100vw;
