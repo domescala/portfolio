@@ -98,13 +98,13 @@ Per l'assegnazione del bonus invece sarà compito dei giocatori contare sul tabe
 
 Lo userflow è relativamente semplice. ll giocatore che arriva sulla pagina si soffermerà nel capire il funzionamento (forse) e poi avvierà una partita. Da qui dovrà inserire i nomi dei giocatori per procedere con la conta. Questa è di fatto un loop in cui si seleziona il giocatore, si setta il punteggio di vagoni o stazioni... e poi si passa al giocatore successivo. Alla fine si passa alla pagina della classifica.
 
-![USERFLOW](USERFLOW.svg)
+![USERFLOW](assets/USERFLOW.svg)
 
 In questa bozza per il wireframing si definiscono in modo grezzo come saranno divise le sezioni e come saranno connesse tra loro. Ad esempio per rendere la conta più coinvolgente si è pensato di lasciare liberi gli utenti di seguire l'ordine che preferiscono: contare prima tutti i punti di un giocatore e poi passare al successivo oppure contare prima i punti solo delle linee e poi passare al successivo, poi le stazioni e cosi via. In questo modo non c'è un ultimo giocatore che deve aspettare il suo turno.
 
 Il Bonus è "fuori" dal loop della conta, perché non è necessario che si ripeta per ogni giocatore.
 
-![WIREFRAME](WIREFRAME.svg)
+![WIREFRAME](assets/WIREFRAME.svg)
 
 ## UI 🕹&#xFE0F;
 
@@ -113,26 +113,26 @@ Lo stile di *Ticket to Ride: Europe* si rifà ad una ambientazione ottocentesca,
 ### CARATTERI 🈂&#xFE0F;
 Per i font si è scelto **Lora** per il corpo del testo che in qualche modo ricorda i caratteri utilizzati per i biglietti ferroviari e **Limelight** per i titoli che invece riporta subito ad una ambientazione molto retrò.
 
-![font](font.svg)
+<iframe src="assets/font.html" style="aspect-ratio:2" ></iframe>
 
 ### DOM ELEMENTS 🎛&#xFE0F;
 Per gli elementi della UI (pulsanti, input, checkbox...) si è preso come riferimento la forma di un rettangolo con i bordi e con gli angoli smussati a 45 gradi perché ricorda vagamente  biglietto 👉🏻🎟&#xFE0F;. A questi è stato aggiunto un bordo inferiore molto spesso, simulando un'ombreggiatura, questa è utilizzata anche per creare l'effetto del pulsante premuto.  
 Per gli input e le card si è utilizzato invece un rettangolo con al fondo un pattern tipo "zigrinatura", mentre l'input del nome dei giocatori altro non è che un vagoncino del colore corrispondente che si adatta in larghezza in base al nome.
 
-![elementi ui](ui.svg)
+<iframe src="assets/ui.html" style="aspect-ratio:1.4" ></iframe>
 
 ### ICONE 🖼&#xFE0F;
 Per le icone/illustrazioni si è scelto di stilizzare gli elementi principali del gioco: vagone, stazione, biglietto, "europa" e monete (che rappresentano in realtà il concetto di punteggio) utilizzando come per gli elementi UI un rettangolo smussato come forma di partenza, contorni netti, outline e con un bordo inferiore molto spesso.   
 
-![icone principali](icone.svg)
+![icone principali](assets/icone.svg)
 
 ### PALETTE 🎨
 
 I colori richiamano quelli dei 5 giocatori: rosso, blu, verde, giallo e nero. A ciascuno di essi è assegnato una variante più chiara. 
-![palette](palette.svg)
+<iframe src="assets/palette.html" style="aspect-ratio:2" ></iframe>
 Durante la conta, le varie icone assumono il colore del giocatore corrispondente:
 
-![icone colorate](icone_colore.svg)
+![icone colorate](assets/icone_colore.svg)
 
 
 
@@ -154,14 +154,11 @@ Per l'assegnazione del bonus (+10 punti) i giocatori devono semplicemente premer
 
 Infine i giocatori possono accedere alla classifica che viene automaticamente compilata durante il conteggio. Dalla classifica è possibile accedere ad un recap dei punteggi divisi in Linee, Stazioni, Ticket e Bonus a loro volta queste sezioni si possono espandere, mostrando nel dettaglio ad esempio quante linee e quali biglietti.
 
-<video autoplay muted loop><source src="ranking.mp4" type="video/mp4"></video>
+<video autoplay muted loop><source src="assets/ranking.mp4" type="video/mp4"></video>
 
-<style>
-
-</style>
 <p class="two-image-row">
-<img src="ticket-won.svg"/>
-<img src="ticket-lost.svg"/>
+<iframe src="assets/ticket-won.html" style="aspect-ratio:1.4"></iframe>
+<iframe src="assets/ticket-lost.html" style="aspect-ratio:1.4"></iframe>
 </p>
 
 ## Sviluppo 🧪
@@ -180,7 +177,7 @@ L'unica soluzione è quella di annidare piu elementi assegnando a ciascuno dei c
 
 > <span style="display:flex"></span></span><span style="margin:0 auto;background: #111;width:100px;height: 100px;clip-path: polygon(15% 0%, 85% 0%, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%, 0% 15%);display:flex;justify-content: center;"><span style="all:inherit; margin:auto;width: 94%;height: 94%;background: #b9a2ff;"></span></span></span>  
 
-<iframe src="bevel-button.html" style="height:100px;"></iframe>
+<iframe src="iframe-pages/bevel-button.html" style="height:100px;"></iframe>
 
 Da questa pagina si può vedere il codice per realizzare questo 'bordo smussato', utilizzando clip-path e svariate formule complesse: <a __relative_path href="bevel-button.html">bevel-border🔗</a>  
 Sebbene questa sia una soluzione valida, risulta davvero tanto complessa da capire e da gestire.
@@ -229,7 +226,8 @@ mask-composite: intersect;
 > <span class="__ttrdiv __ttr-d"></span>
 
 > Attenzione! Tra lo smusso piatto e quello curvo cambia la grandezza del raggio:
-![scoop](scoop141.svg)
+
+<iframe src="assets/scoop141.html" style="aspect-ratio:1.97" ></iframe>
 
 Infine andiamo due oggetti:
 > <span class="__ttrdiv __ttr-e"><span class="__ttrdiv __ttr-e-child"></span></div>
@@ -267,8 +265,8 @@ radius = parentRadius + thickness
 start  =   0% - thickness  
 end    = 100% + thickness  
 ```
-![differenza dei due raggi](scoop-parent-radius.svg)  
-![differenza delle coordinate](parent-coordinates.svg)  
+<iframe src="assets/scoop-parent-radius.html" style="aspect-ratio:1.4" ></iframe>
+<iframe src="assets/parent-coordinates.html" style="aspect-ratio:1.22" ></iframe>
 
 ``` css
 .parent {
@@ -318,5 +316,5 @@ Aggiungiamo un effetto di anti-aliasing per rimuovere la fastidiosa scalettatura
 ```
 
 Ed ecco il risultato:
-<iframe id="__ttr-result" src="bevel-scoop-parametric.html" style="height:500px;"></iframe>
+<iframe id="__ttr-result" src="iframe-pages/bevel-scoop-parametric.html" style="height:500px;"></iframe>
 

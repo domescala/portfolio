@@ -298,7 +298,7 @@ body{
     display:flex;
     justify-content:space-between;
 }
-.markdown-box .two-image-row img{
+.markdown-box .two-image-row *{
     width: calc(50% - 15px);
 }
 .markdown-box iframe{

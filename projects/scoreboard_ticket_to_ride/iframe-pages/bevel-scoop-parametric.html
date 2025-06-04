@@ -21,7 +21,7 @@ supported by Chrome, Edge, Opera and Firefox */
             align-items: center;
             flex-direction: column;
             justify-content: center;
-            width: 100vw;
+            /* width: 100vw; */
             height: 100vh;
         }
 
@@ -30,16 +30,22 @@ supported by Chrome, Edge, Opera and Firefox */
         }
 
         .controls-box {
-            width: 50%;
+            width: 80%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .parent {
-            width: 50%;
-            height: 50%;
+            max-width: 343px;
+            height: 300px;
+            /* min-width: 300px; */
+            width: 90%;
         }
 
         input[type=range] {
-            width: 50vw;
+            width: 100%;
         }
       
         .parent {
@@ -107,7 +113,8 @@ supported by Chrome, Edge, Opera and Firefox */
         <p class="label" id="radius-label">radius:<span>50px</span></p>
         <input id="radius-range" type="range" value="50">
         <div>
-            <p class="label" id="anti-aliasing-label">anti-aliasing:</p> <input id="anti-aliasing-check" type="checkbox" checked="1">
+            <br>
+            <p class="label" id="anti-aliasing-label">anti-aliasing:</p> <input id="anti-aliasing-check" type="checkbox">
         </div>
 
     </div>

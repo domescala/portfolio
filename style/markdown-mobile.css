@@ -244,7 +244,7 @@
         /* justify-content:space-between; */
         flex-wrap:wrap;
     }
-    .markdown-box .two-image-row img{
+    .markdown-box .two-image-row *{
         width: 100%;
         margin-top: 5px;
         margin-bottom: 5px;
