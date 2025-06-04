@@ -202,7 +202,8 @@ In breve, un codice RGB contiene tre valori che rappresentano rispettivamente la
     </div>
 </div>
 
-Spesso si utilizza il codice esadecimale per rappresentarli. Ogni canale è rappresentato da una coppia di cifre da `0` ad `F` (la base esadecimale è così: `0 1 2 3 4 5 6 7 8 9 A B C D E F 10 11 12...`).
+Spesso si utilizza il codice esadecimale per rappresentarli. Ogni canale è rappresentato da una coppia di cifre da `0` ad `F` (la base esadecimale è così: `0` `1` `2` `3` `4` `5` `6` `7` `8` `9` `A` `B` `C` `D` `E` `F` `10` `11` `12`...)
+
 > Ad esempio il verde-acqua di prima è:  
 > `RGB(000,180,160)`  
 > `R: 000 -> 00`  
