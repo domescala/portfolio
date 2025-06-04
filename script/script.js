@@ -5,6 +5,7 @@ var test = ""
 var timeouts = []
 var project_opened = false
 
+
 PROJECTS.forEach(project => {
     project.addEventListener("click", function (event) {
 
@@ -28,7 +29,8 @@ PROJECTS.forEach(project => {
         });
         
         // add the project id as a parameter in the URL
-        window.history.replaceState(null, null, "?project="+ project.id);
+        // window.history.replaceState(null, null, "?project="+ project.id);
+        history.pushState({}, "", "?project="+ project.id);
         
         // Animazione scroll
 
@@ -438,4 +440,9 @@ window.addEventListener("load", function(){
             }, 300);
         }, 300);
     }
+})
+
+window.addEventListener('popstate', function (event) {
+    // history.pushState({}, "", "");
+    close_project()
 })
