@@ -92,7 +92,7 @@ Per i punteggi dei ticket invece, una possibile soluzione è quella di inserire 
 
 > Nelle prime versioni di questo progetto, i biglietti erano calcolati attraverso dei pulsanti anonimi che riportavano i punteggi standard dei ticket (5, 6, 8, 9, 10, 12, 15, 21). Questa era una delle soluzioni più immediate. Tuttavia, usando questi pulsanti non si aveva un riscontro della lista dei biglietti, utile per evitare di commettere errori.
 
-Per l'assegnazione del bonus invece sarà compito dei giocatori contare sul tabellone qual'è la linea più lunga e sezionare sull'app il giocatore corrispondente. Questa fase è molto apprezzata dai giocatori e sostituirla con algoritmo porterebbe solamente svantaggi.
+Per l'assegnazione del bonus invece sarà compito dei giocatori contare sul tabellone qual è la linea più lunga e sezionare sull'app il giocatore corrispondente. Questa fase è molto apprezzata dai giocatori e sostituirla con algoritmo porterebbe solamente svantaggi.
 
 ## UX 👤
 
