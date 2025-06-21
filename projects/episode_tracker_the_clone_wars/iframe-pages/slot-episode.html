@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>slot episode</title>
+  </head>
+  <body>
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+      :root {
+        --black-alt: #232323;
+        --gray-alt: #706363;
+        --blue-alt: #6488fe;
+        --purple-alt: #8400ff;
+        --red-alt: #e21d12;
+        --orange-alt: #ff700a;
+        --yellow-alt: #ffdd15;
+        --green-alt: #23c238;
+        --black: #141414;
+        --gray: #747474;
+        --blue: #3c73ff;
+        --purple: #af52ec;
+        --red: #fd2121;
+        --orange: #fd521e;
+        --yellow: #ffbe0b;
+        --green: #1bbb48;
+    }
+    
+    body {
+        --text-main: var(--black);
+        --text-alt: var(--white);
+        --bg-main: var(--black);
+        --bg-alt: var(--black-alt);
+        --c: cubic-bezier(0.58, -1.29, 0, 1.82);
+        justify-content: center;
+        height: 100vh;
+        background: #fff;
+        display: flex;
+        align-items: center;
+      }
+      * {
+        -webkit-tap-highlight-color: transparent;
+        --text-main: var(--black);
+        --text-alt: var(--white);
+        --white: #f6f6f6;
+        --yellow: #ffdf04;
+        --black: #100f14;
+        --glow-text: 0 0px 10px var(--bg-main);
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-family: var(--font-sw);
+        font-family: var(--font-title);
+        font-family: var(--font-body);
+        font-family: 'Oswald', sans-serif;
+        line-height: 1;
+        text-decoration: none;
+        --check-active: url("data:image/svg+xml,%3Csvg height='80' width='40' xmlns='http://www.w3.org/2000/svg' %3E%3Crect width='8' height='8' x='-4' y='-4' fill='%23fff' transform='translate(20,60) rotate(45)' /%3E%3Crect width='8' height='8' x='-4' y='-4' fill='%23fff' transform='translate(20,60) rotate(45)' filter='blur(5px)' /%3E%3C/svg%3E");
+        --fn-flicker: linear(0 0%, 0.01 11.76%, 0.08 22.79%, 0.2 27.94%, 0.67 28.68%, 0.31 36.03%, 0.68 38.24%, 0.52 43.38%, 0.76 45.59%, 0.73 52.21%, 0.92 58.09%, 0.84 67.65%, 0.95 77.21%, 1 100%);
+        --fn-elastic: linear( 0 0%, 0 1.8%, 0.01 3.6%, 0.03 6.35%, 0.07 9.1%, 0.13 11.4%, 0.19 13.4%, 0.27 15%, 0.34 16.1%, 0.54 18.35%, 0.66 20.6%, 0.72 22.4%, 0.77 24.6%, 0.81 27.3%, 0.85 30.4%, 0.88 35.1%, 0.92 40.6%, 0.94 47.2%, 0.96 55%, 0.98 64%, 0.99 74.4%, 1 86.4%, 1 100%);
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      .ep {
+        /* max-width: calc(100% - 25px); */
+        width: 100%;
+        flex-grow: 2;
+        height: 60px;
+        border-radius: 6px;
+        overflow: hidden;
+        outline: 1px solid var(--text-main);
+        background-image: linear-gradient(
+          100deg,
+          var(--bg-main) 25%,
+          var(--bg-alt) 50%,
+          transparent 50%
+        );
+        background-size: 0%;
+        background-repeat: no-repeat;
+        filter: drop-shadow(0 0 0px var(--bg-main));
+      }
+      .ep:not(.current):hover:has(
+          .watch:not(:hover)
+        ) {
+        scale: 0.97;
+      }
+      .ep:not(.current):active {
+        scale: 0.97;
+      }
+      .w.ep {
+        outline: 1px solid transparent;
+        background-size: 205%;
+        filter: drop-shadow(0px 0px 8px var(--bg-main));
+      }
+      .ep {
+        --t-height: height 0.25s ease;
+        --t-bg: var(--t-bg-out);
+        --t-outline: var(--t-outline-out);
+        --t-glow: var(--t-glow-out);
+        --t-text: var(--t-text-out);
+        transition: var(--t-height), var(--t-bg), var(--t-outline),
+          var(--t-glow), scale 0.2s ease;
+          --t-glow-in: filter 1.8s var(--fn-flicker);
+        --t-outline-in: outline 0.5s 0.8s ease;
+        --t-text-in: all ease 1s 0.9s;
+        --t-bg-in: background-size 1s 0.8s var(--fn-elastic);
+        --t-bg-out: background-size 1s 0s var(--fn-elastic);
+        --t-text-out: all ease 1s 0.2s;
+        --t-glow-out: filter 0.5s 0.5s var(--fn-flicker);
+        --t-outline-out: outline 1s 0.5s ease;
+      }
+      .w.ep {
+        --t-bg: var(--t-bg-in);
+        --t-outline: var(--t-outline-in);
+        --t-glow: var(--t-glow-in);
+        --t-text: var(--t-text-in);
+      }
+      .order,
+      .rating,
+      .title,
+      .subtitle {
+        transition: var(--t-text);
+      }
+      .ep {
+        --anim-text: aa-text-b 2s ease;
+        --anim-stroke: aa-stroke-b 2s ease;
+        --anim-outline: aa-outline-b 2s ease;
+        animation: var(--anim-outline);
+      }
+      .w.ep {
+        --anim-text: aa-text 2s ease;
+        --anim-stroke: aa-stroke 2s ease;
+        --anim-outline: aa-outline 2s ease;
+      }
+      .ep.current {
+        --anim-text: aa-text 0s linear;
+        --anim-stroke: aa-stroke 0s linear;
+        --anim-outline: aa-outline 0s linear;
+      }
+      .title,
+      .subtitle {
+        animation: var(--anim-text);
+      }
+      .order {
+        animation: var(--anim-stroke);
+      }
+      @keyframes aa-text {
+        0% {
+          color: var(--text-main);
+        }
+        50% {
+          color: var(--bg-main);
+        }
+      }
+      @keyframes aa-stroke {
+        0% {
+          -webkit-text-stroke: 1px var(--black);
+          text-stroke: 1px var(--black);
+          border-right: 0.75px solid var(--black);
+        }
+        50% {
+          -webkit-text-stroke: 1px var(--bg-main);
+          text-stroke: 1px var(--bg-main);
+          border-right: 0.75px solid var(--bg-main);
+        }
+      }
+      @keyframes aa-outline {
+        0% {
+          outline: 1px solid var(--black);
+        }
+        50% {
+          outline: 1px solid var(--bg-main);
+        }
+      }
+      @keyframes aa-text-b {
+        0% {
+          color: var(--white);
+        }
+        50% {
+          color: var(--bg-main);
+        }
+      }
+      @keyframes aa-stroke-b {
+        0% {
+          -webkit-text-stroke: 1px transparent;
+          text-stroke: 1px var(--white);
+          border-right: 0.75px solid var(--white);
+        }
+        50% {
+          -webkit-text-stroke: 1px var(--bg-main);
+          text-stroke: 1px var(--bg-main);
+          border-right: 0.75px solid var(--bg-main);
+        }
+      }
+      @keyframes aa-outline-b {
+        0% {
+          outline: 1px solid transparent;
+        }
+        50% {
+          outline: 1px solid var(--bg-main);
+        }
+      }
+      .ep.current {
+        height: 350px;
+      }
+      .row-box {
+        width: 100%;
+        height: 60px;
+        display: flex;
+        position: relative;
+        z-index: 10;
+        color: var(--text-main);
+        transition: background-image 0.5s ease;
+      }
+      .w .row-box {
+        color: var(--text-alt);
+      }
+      .order {
+        width: 58px;
+        font-size: 38px;
+        font-weight: 900;
+        margin: 4px 0;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        border-right: 0.75px solid var(--text-main);
+        color: var(--text-alt);
+        -webkit-text-stroke: 1px var(--text-main);
+        text-stroke: 1px var(--text-main);
+        cursor: pointer;
+        filter: none;
+      }
+      .w .order {
+        -webkit-text-stroke: 1px transparent;
+        text-stroke: 1px transparent;
+      }
+      .w .order {
+        border-right: 0.75px solid var(--text-alt);
+      }
+      .rating {
+        position: absolute;
+        bottom: 4px;
+        width: 58px;
+        text-align: center;
+        font-size: 8px;
+        display: flex;
+        justify-content: center;
+      }
+      .rating span {
+        width: 6px;
+        height: 10px;
+        margin: 0px 1.5px;
+        display: block;
+        transition: inherit;
+      }
+      .rating .ra {
+        background: var(--bg-main);
+      }
+      .rating .rb {
+        background: var(--bg-main);
+        opacity: 0.3;
+      }
+      .w .rating .ra {
+        box-shadow: unset;
+      }
+      .w .rating .ra,
+      .w .rating .rb {
+        background: var(--text-alt);
+        box-shadow: unset;
+      }
+      .title-box {
+        padding-left: 10px;
+        flex-grow: 2;
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        cursor: pointer;
+      }
+      .title {
+        font-size: 26px;
+        font-weight: 200;
+        height: 36px;
+        display: flex;
+        white-space: nowrap;
+        align-items: flex-end;
+        position: absolute;
+      }
+      .subtitle {
+        font-size: 14px;
+        margin-top: 39px;
+        font-weight: 700;
+        margin-right: 10px;
+      }
+      .watch {
+        width: 36px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.4s var(--c);
+      }
+      .watch:hover .icon {
+        scale: 2;
+      }
+      .watch:active .icon {
+        scale: 1.3;
+      }
+      .icon {
+        width: 20px;
+        height: 20px;
+        background: #aaa var(--check-active);
+        background-size: 100%;
+        background-position: 0 0;
+        border-radius: 100%;
+        cursor: pointer;
+        filter: grayscale(1);
+        transition: all 0.6s var(--c),
+          background-color 0.6s 0.6s var(--c),
+          filter 1s 1s var(--c);
+        scale: 1.5;
+        position: relative;
+        overflow: hidden;
+      }
+      .w .icon {
+        filter: grayscale(0);
+        background: var(--bg-main) var(--check-active);
+        background-position: -12px 36px;
+        background-size: 200%;
+        background-position: 0 20px;
+        background-size: 100%;
+        opacity: 1;
+        transition: all 0.6s var(--c),
+          background-color 0.6s 0s var(--c),
+          filter 1s 0s var(--c);
+        z-index: 1111;
+        scale: 1.55;
+      }
+      .icon::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        outline: 5px dashed #aaa;
+        border-radius: 100%;
+        position: absolute;
+        display: block;
+        z-index: 10;
+        left: 0;
+        top: 0;
+        scale: 0.5;
+        transition: outline 0.6s 0.6s var(--c),
+          rotate 0.6s var(--c);
+      }
+      .w .icon::after {
+        outline: 5px dashed var(--bg-main);
+        transition: outline 0.6s 0s var(--c),
+          rotate 0.6s var(--c);
+        rotate: 105deg;
+      }
+      .icon::before {
+        content: '';
+        width: calc(100% - 0px);
+        height: calc(100% - 0px);
+        outline: 5px solid var(--white);
+        border-radius: 100%;
+        position: absolute;
+        display: block;
+        z-index: 10;
+        left: 0;
+        top: 0;
+        scale: 0.6;
+        transition: outline 0.6s 0s var(--c),
+          rotate 0.6s var(--c);
+      }
+      .w .icon::before {
+        outline: 5px solid var(--white);
+        transition: outline 0.6s 0s var(--c),
+          rotate 0.6s var(--c);
+        rotate: 0deg;
+      }
+      .expand {
+        width: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 8px;
+        transition: scale 0.25s ease;
+      }
+      .icon2 {
+        width: 11px;
+        height: 11px;
+        rotate: 45deg;
+        border-bottom: 1px var(--black) solid;
+        border-right: 1px var(--black) solid;
+        transition: translate 0.25s ease;
+        translate: 0px -3px;
+        cursor: pointer;
+      }
+      .w .icon2 {
+        translate: 0px -3px;
+        border-bottom: 1px var(--white) solid;
+        border-right: 1px var(--white) solid;
+      }
+      .icon:active{
+        scale: 0.96;
+      }
+      .container{
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        max-width: calc(100% - 25px);
+        width: 450px;
+        flex-direction: column;
+      }
+      .first-slot .remove-if-first{display: none;}
+      .second-slot .remove-if-second{display: none;}
+    </style>
+    <div class="container">
+        <div
+          class="ep first-slot"
+          onclick="this.classList.toggle('w')"
+        >
+          <div class="row-box">
+            <p class="order">42</p>
+            <p class="rating">
+              <span class="ra"> </span>
+              <span class="ra"> </span>
+              <span class="ra"> </span>
+              <span class="ra remove-if-first"> </span>
+              <span class="rb remove-if-second"> </span>
+              <span class="rb "> </span>
+            </p>
+           
+            <div class="title-box">
+              <p class="title">The Lawless</p>
+              <p class="subtitle code">5x16</p>
+            </div>
+            <div class="watch">
+              <div class="icon"></div>
+            </div>
+            <div class="expand">
+              <div class="icon2"></div>
+            </div>
+          </div>
+        </div>
+    </div>
+      <script>
+        let timeout, interval, isRun, first, second, timer;
+       
+        const startLoop = () => {
+          isRun = true;
+          loop()
+          clearInterval(interval);
+
+        };
+        const loop = () => {
+            if(!isRun){return}
+            first.classList.toggle('w');
+            timer = setTimeout(()=>{
+                second.classList.toggle('w');
+                    loop()
+            },  3000)
+        }
+        const stopLoop = () => {
+          clearTimeout(timeout);
+          clearTimeout(timer);
+          if (!isRun) {
+            return
+          }
+          isRun = false;
+          timeout = setTimeout(() => {
+            startLoop();
+          }, 15000);
+        };
+        window.addEventListener('load', () => {
+           
+            const ep = document.querySelector(".ep").outerHTML
+            document.querySelector(".container").innerHTML += ep
+            requestAnimationFrame(()=>{
+                first = document.querySelectorAll(".ep")[0]
+                second = document.querySelectorAll(".ep")[1]
+                second.classList.remove("first-slot")
+                second.classList.add("second-slot")
+                second.querySelector(".order").innerHTML = "45"
+                second.querySelector(".title").innerHTML = "To Catch a Jedi"
+                second.querySelector(".subtitle").innerHTML = "5x19"
+                randomColor();
+                startLoop();
+            })
+        });
+        window.addEventListener('click', () => {
+          stopLoop()
+        });
+        
+
+
+        const colors = [
+            "red",
+            "purple",
+            "blue",
+            "green",
+        ]
+        
+        const randomColor = ()=>{
+           document.querySelectorAll(".ep").forEach((e, i) => {
+            // const color = colors[i]
+            const color = colors.sort(function() { return 0.5 - Math.random();}).pop();
+            e.style = `--bg-main: var(--${color}); --bg-alt: var(--${color}-alt)`
+           })
+        }
+        
+      </script>
+  </body>
+</html>

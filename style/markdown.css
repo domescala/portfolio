@@ -36,18 +36,19 @@ body{
     background: var(--main-background);
 }
 .markdown-box{
-    width: 700PX;
+    width: 900px;
+    max-width: calc(100% - 170px);
     margin:0 auto;
     font-family: "Lora";
     line-height: 1.5;
     background: var(--main-background);
-    padding: 50px 0;
+    padding: 50px 0 50px;
 }
 .markdown-box *{
     all:  revert;
     font-family: "Lora";
     /* font-family: sans-serif; */
-    font-size: 16px;
+    font-size: 18px;
     color: var(--text);
     z-index:1000;
     position:relative;
@@ -198,14 +199,16 @@ body{
     border-radius: 4px;
     font-style: normal;
     /* color: white; */
-    background: #bcbdbd;
+    background: rgb(221 231 240);
     white-space: nowrap;
+    font-size: 0.95em;
 }
 .markdown-box pre:has(code[class]){
     background: #2d2d2d;
     padding: 10px;
     margin: 5px auto;
     border-radius: 6px;
+    overflow-wrap: anywhere;
 }
 .markdown-box pre:has(code[class]) code{
     color: white;

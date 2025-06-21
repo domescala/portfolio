@@ -116,13 +116,13 @@ Per i font si è scelto **Lora** per il corpo del testo che in qualche modo rico
 <iframe src="assets/font.html" style="aspect-ratio:2" ></iframe>
 
 ### DOM ELEMENTS 🎛&#xFE0F;
-Per gli elementi della UI (pulsanti, input, checkbox...) si è preso come riferimento la forma di un rettangolo con i bordi e con gli angoli smussati a 45 gradi perché ricorda vagamente  biglietto 👉🏻🎟&#xFE0F;. A questi è stato aggiunto un bordo inferiore molto spesso, simulando un'ombreggiatura, questa è utilizzata anche per creare l'effetto del pulsante premuto.  
-Per gli input e le card si è utilizzato invece un rettangolo con al fondo un pattern tipo "zigrinatura", mentre l'input del nome dei giocatori altro non è che un vagoncino del colore corrispondente che si adatta in larghezza in base al nome.
+Per gli elementi della UI (pulsanti, input, checkbox...) si è preso come riferimento un rettangolo con i bordi e con gli angoli smussati a 45 gradi che ricordano la forma di un biglietto 👉🏻🎟&#xFE0F;. È stato aggiunto un bordo inferiore molto spesso simulando un'ombreggiatura, utilizzata anche per il feedback del pulsante premuto.  
+Per gli input e le card si è utilizzato invece un rettangolo con al fondo un pattern tipo "zigrinatura", mentre l'input del nome dei giocatori altro non è che un vagoncino del colore corrispondente che si adatta in larghezza al nome inserito.
 
 <iframe src="assets/ui.html" style="aspect-ratio:1.4" ></iframe>
 
 ### ICONE 🖼&#xFE0F;
-Per le icone/illustrazioni si è scelto di stilizzare gli elementi principali del gioco: vagone, stazione, biglietto, "europa" e monete (che rappresentano in realtà il concetto di punteggio) utilizzando come per gli elementi UI un rettangolo smussato come forma di partenza, contorni netti, outline e con un bordo inferiore molto spesso.   
+Per le icone/illustrazioni si è scelto di stilizzare gli elementi principali del gioco: vagone, stazione, biglietto, "Europa" e monete (che rappresentano in realtà il concetto di punteggio) utilizzando come per gli elementi UI un rettangolo smussato come forma di partenza, contorni netti, outline e bordo inferiore molto spesso.   
 
 ![icone principali](assets/icone.svg)
 
@@ -142,17 +142,17 @@ Inizialmente i giocatori inseriscono i loro nomi nel vagoncino del proprio color
 
 ### Punteggio 💯
 
-Nella sezione della conta dei vagoni si utilizzano i tasti `-` e `+` per aggiungere le proprie linee: le linee possono essere composte da `1, 2, 3, 4, 6, 8` vagoni. Rispettivamente il punteggio per ciascuna linea è `1, 2, 4, 7, 15, 21`. (Le linee sul tabellone non sono infinite, ovvero ci sono solo 4 linee da 1 vagone, 35 da 2 vagoni... ed il contatore impedisce al giocatore in uscire dal range)
+Nella sezione della conta dei vagoni si utilizzano i tasti `-` e `+` per aggiungere le proprie linee, che possono essere composte da `1, 2, 3, 4, 6 o 8` vagoni. Rispettivamente il punteggio per ciascuna linea è `1, 2, 4, 7, 15 e 21`. (Le linee sul tabellone non sono infinite, ovvero ci sono solo 4 linee da 1 vagone, 35 da 2 vagoni... ed il contatore impedisce al giocatore in uscire dal range).
 
-Allo stesso modo i giocatori impostano la quantità di Stazioni utilizzate durante la partita `da 0 a 3 stazioni`. Ogni Stazione NON utilizzata vale 4 punti.
+Allo stesso modo i giocatori impostano la quantità di Stazioni utilizzate durante la partita: da `0 a 3`. Ogni Stazione NON utilizzata vale 4 punti.
 
-Per i biglietti, mentre gli altri controllano sul tabellone che non ci siano stati errori, un giocatore inserisce il nome delle due stazioni e spunta la casella "completato". Gli input sono progettati in modo che inserendo ad esempio "Palermo", le possibili città connesse appariranno come suggerimento nel secondo input, inoltre come per le linee, se un biglietto è stato già registrato da un giocatore non sarà più disponibile per gli altri.
+Per i biglietti, mentre gli altri controllano sul tabellone che non ci siano stati errori, un giocatore inserisce il nome delle due stazioni di partenza e arrivo e spunta la casella "completato". Gli input sono progettati in modo che inserendo ad esempio "Palermo", le possibili città connesse appariranno come suggerimento nel secondo input, inoltre come per le linee, se un biglietto è stato già registrato da un giocatore non sarà più disponibile per gli altri.
 
-Per l'assegnazione del bonus (+10 punti) i giocatori devono semplicemente premere sul pulsante del giocatore con la tratta più lunga. In caso di parità è presente un checkbox che permette di assegnare il bonus a più giocatori. 
+Per l'assegnazione del bonus (`+10 punti`) i giocatori devono semplicemente premere sul pulsante del giocatore con la tratta più lunga. In caso di parità è presente un checkbox che permette di assegnare il bonus a più giocatori. 
 
 ### Classifica 🥇
 
-Infine i giocatori possono accedere alla classifica che viene automaticamente compilata durante il conteggio. Dalla classifica è possibile accedere ad un recap dei punteggi divisi in Linee, Stazioni, Ticket e Bonus a loro volta queste sezioni si possono espandere, mostrando nel dettaglio ad esempio quante linee e quali biglietti.
+Infine i giocatori possono accedere alla classifica che viene automaticamente compilata durante il conteggio. Dalla classifica è possibile accedere ad un recap dei punteggi divisi in: Linee, Stazioni, Ticket e Bonus. A loro volta queste sezioni si possono espandere, mostrando nel dettaglio le quantità di linee e biglietti e i punteggi per ciascuno di essi.
 
 <video autoplay muted loop><source src="assets/ranking.mp4" type="video/mp4"></video>
 
@@ -163,19 +163,19 @@ Infine i giocatori possono accedere alla classifica che viene automaticamente co
 
 ## Sviluppo 🧪
 
-L'app è stata sviluppata in vue, adottando diverse strategie per la creazione della ui, come i pulsanti smussati <a __relative_path href="#__ttr-result" target="_self">(vai al risultato finale)</a>, le illustrazioni con i colori flessibili, gli input e i suggerimenti...
+L'app è stata sviluppata in Vuejs💚, adottando diverse strategie per la creazione della ui, come i pulsanti smussati <a __relative_path href="#__ttr-result" target="_self">(vai al risultato finale)</a>, le illustrazioni con i colori flessibili, gli input e i suggerimenti...
 
 ### Angoli smussati - TENTATIVO CON CLIP-PATH✂&#xFE0F;
 In CSS non è possibile avere gli angoli di un elemento smussati a 45 gradi in modo "naturale", come avviene con la proprietà border-radius, tanto meno avere un angolo con la curvatura al contrario (proprio come quella dei biglietti). Si può fare ricorso ad alcuni trucchetti come utilizzare `clip-path`. Definendo infatti una serie di punti è possibile tagliare via gli angoli di un elemento, il primo problema di questa soluzione è la complessità nel creare una formula che calcoli correttamente i punti. Il secondo problema è che un eventuale bordo verrebbe tagliato via negli angoli:
 ``` css
 clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%, 0% 25%)
 ```
-> <span style="display:flex"><span style="border:5px solid #111; margin:15px auto;background:#b9a2ff;; color:black; width:fit-content; padding:30px 10px; border-radius:25px">BORDER RADIUS</span>
-<span style="border:5px solid #111; margin:15px auto;background:#b9a2ff;; color:black; width:fit-content; padding:30px 10px; clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%, 0% 25%);">CLIP PATH</span></span>
+> <span style="display:flex"><span style="border:5px solid #111; margin:15px auto;background:#ffb01f; color:black; width:fit-content; padding:30px 10px; border-radius:25px">BORDER RADIUS</span>
+<span style="border:5px solid #111; margin:15px auto;background:#ffb01f; color:black; width:fit-content; padding:30px 10px; clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%, 0% 25%);">CLIP PATH</span></span>
 
 L'unica soluzione è quella di annidare piu elementi assegnando a ciascuno dei colori alternati, dando l'illusione di un bordo
 
-> <span style="display:flex"></span></span><span style="margin:0 auto;background: #111;width:100px;height: 100px;clip-path: polygon(15% 0%, 85% 0%, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%, 0% 15%);display:flex;justify-content: center;"><span style="all:inherit; margin:auto;width: 94%;height: 94%;background: #b9a2ff;"></span></span></span>  
+> <span style="display:flex"></span></span><span style="margin:0 auto;background: #111;width:100px;height: 100px;clip-path: polygon(15% 0%, 85% 0%, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%, 0% 15%);display:flex;justify-content: center;"><span style="all:inherit; margin:auto;width: 94%;height: 94%;background:#ffb01f;"></span></span></span>  
 
 <iframe src="iframe-pages/bevel-button.html" style="height:100px;"></iframe>
 
@@ -316,5 +316,5 @@ Aggiungiamo un effetto di anti-aliasing per rimuovere la fastidiosa scalettatura
 ```
 
 Ed ecco il risultato:
-<iframe id="__ttr-result" src="iframe-pages/bevel-scoop-parametric.html" style="height:500px;"></iframe>
+<iframe id="__ttr-result" src="iframe-pages/bevel-scoop-parametric.html" style="height:600px;"></iframe>
 

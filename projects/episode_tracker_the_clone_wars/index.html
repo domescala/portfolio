@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html data-theme="light" lang="it" style="color-scheme: only light">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../../style/reset.css" rel="stylesheet"/>
+<link href="../../style/fonts.css" rel="stylesheet"/>
+<link href="../../style/markdown.css" rel="stylesheet"/>
+<link href="../../style/markdown-mobile.css" rel="stylesheet"/>
+<script defer="" type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [["$", "$"], ["\\\\(", "\\\\)"]],displayMath: [["$$", "$$"], ["\\[", "\\]"]],processEscapes: true},config: ["MMLorHTML.js"],jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],extensions: ["MathMenu.js", "MathZoom.js"],});
+    </script>
+<script defer="" src="../../script/markdown.js"></script>
+<title>Document</title>
+</head>
+<body class="markdown-box">
+<p id="alert-banner" style="display: none;">
+      Hei! Questa pagina fa parte <a href="../../index.html">del mio portfolio :)</a>
+</p>
+<script>
+      if(window.self === window.top){
+        document.querySelector("#alert-banner").style = ""
+      }
+    </script>
+<style>
+  p.--tcw-linear-func{
+    margin: 25px auto 0 ;
+    width: fit-content;
+  }
+  p.--tcw-linear-func span{
+    background:url("data:image/svg+xml, %3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke-width='0.5px' fill='transparent' stroke='black' d='M0 100 L0 100 L22.70 95 L32.30 84 L41.91 92 L47.79 73 L54.41 76 L56.62 52 L61.76 68 L63.97 31 L71.32 67 L72.06 20 L77.21 8 L88.24 1' /%3E%3C/svg%3E") no-repeat;
+    height: 136px;
+    background-size: contain;
+    width: 224px;
+    padding: 14px;
+    background-position: 12px;
+    background-size: 100% calc(100% - 20px);
+    border-radius: 10px;
+    outline: 1px dashed var(--semidark-background);
+    display: block;
+  }
+.--tcw-backgrounds,
+.--tcw-backgrounds-2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    width: 100%;
+}
+.--tcw-backgrounds-2 span,
+.--tcw-backgrounds span {
+    text-align: center;
+    display: block;
+    --label-pos: 25px;
+    margin: 0 0 20px;
+    /* outline: 1px solid black; */
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #fff;
+    background-image: linear-gradient(
+    90deg,
+    orange 50%,
+    transparent 50%
+    );
+    background-repeat: no-repeat;
+    animation: pos-to-end 5s ease infinite alternate-reverse;
+    height: 50px;
+}
+.--tcw-backgrounds-2 span i,
+.--tcw-backgrounds span i {
+    margin: 0;
+    display: block;
+    position: relative;
+    bottom: -52px;
+}
+
+.--tcw-backgrounds span:nth-child(1) {
+    --end: 0%;
+}
+.--tcw-backgrounds span:nth-child(2),
+.--tcw-backgrounds-2 span:nth-child(1) {
+    --end: 100%;
+}
+.--tcw-backgrounds span:nth-child(3),
+.--tcw-backgrounds-2 span:nth-child(2) {
+    --end: 200%;
+}
+.--tcw-backgrounds-2 span:nth-child(3) {
+    --end: 205%;
+}
+
+.--tcw-backgrounds-2 span {
+    background-image: linear-gradient(
+    100deg,
+    rgb(73 101 255) 25%,
+    rgb(104 144 255) 50%,
+    transparent calc(50% + 1px)
+    );
+}
+@keyframes pos-to-end {
+    0%,
+    30% {
+    background-size: 0%;
+    }
+    70%,
+    100% {
+    background-size: var(--end);
+    }
+}
+
+
+</style>
+<h6 id="🌐web-/-episode-tracker-progetto-personale"><em>🌐web / Episode Tracker</em> <em>Progetto personale</em></h6>
+<h1 id="guida-galattica-agli-episodi-di-the-clone-wars">Guida galattica agli episodi di The Clone Wars</h1>
+<h2 id="descrizione">Descrizione</h2>
+<p>Questa guida (non ufficiale) altro non è che un <strong>Episode Tracker</strong> per la serie The Clone Wars, con filtri per ordinare gli episodi, checkbox per tenere traccia di quelli guardati e molto altro.</p>
+<p style="display: flex; justify-content: center;">
+<video autoplay="" loop="" muted="" style="width: 100%; max-height: 400px; aspect-ratio: 1; background: #fff;"><source src="reel.m4v" type="video/mp4"/></video>
+</p>
+<h2 id="contesto-🗺️">Contesto <span class="emoji">🗺️</span></h2>
+<h3 id="la-guerra-dei-cloni">La Guerra dei Cloni</h3>
+<p>La serie conta un totale di 133 episodi divisi 7 stagioni ed un film. È stata trasmessa dal 2008 al 2020 e tratta le vicende della famosa Guerra dei Cloni collocata tra <strong><em>Episodio Due</em></strong> ed <strong><em>Episodio Tre</em></strong>. </p>
+<h3 id="star-wars-e-il-disordine-cronologico">Star Wars e il disordine cronologico</h3>
+<p>Inizialmente si trattava di una sorta di antologia, motivo per cui molti episodi non sono stati distribuiti senza seguire l'ordine degli eventi (molto StarWarsiana come cosa). Molti infatti suggeriscono la visione seguendo l'ordine <em>cronologico</em> degli eventi, disponibile in una <a href="https://www.starwars.com/news/star-wars-the-clone-wars-chronological-episodeorder" target="_blank">lista sul sito ufficiale <span class="emoji">🔗</span></a>. Gli episodi infatti sono stati pensati per archi narrativi da due o più puntate connesse tra loro. Non tutte portano avanti la trama principale della serie in modo diretto, ma sono comunque interessanti per i temi trattati, i luoghi, i personaggi approfonditi e le sequenze di azione.<br/>
+Molti prodotti Star Wars successivi fanno riferimento a personaggi o trame introdotte per la prima volta in <em>The Clone Wars</em>, come <em>The Mandalorian</em>, <em>Ahsoka</em>, <em>Rebels</em>, <em>Rogue One</em>, <em>Andor</em> , <em>The Bad Batch</em> (sequel)</p>
+<h3 id="le-guide">Le guide</h3>
+<p>A causa della grande quantità di episodi,  l'ordine sparso e il tono a volte infantile della serie, molti abbandonano la serie subito o non la iniziano proprio.<br/>
+I fan, per incentivare la visione di questo piccolo capolavoro, hanno creato delle guide suggerendo quali, secondo loro, sono gli archi narrativi più <strong>essenziali</strong> per la trama principale, spiegando caso per caso i motivi. </p>
+<h2 id="problema-🚩">Problema <span class="emoji">🚩</span></h2>
+<p>Come già detto, le guide raccomandano la visione degli episodi seguendo un preciso ordine, diverso da quello ufficiale, ma sulla piattaforma di DisneyPlus non si puo impostare un ordine personalizzato, si deve cercare episodio per episodio. (Il primo episodio da guardare sarebbe il 16esimo della terza stagione...)</p>
+<p>La soluzione più immediata è una lista di link diretti agli episodi. <a href="https://www.starwars.com/news/star-wars-the-clone-wars-chronological-episodeorder" target="_blank">La pagina ufficiale <span class="emoji">🔗</span></a> fa proprio questo, ma: </p>
+<ol>
+<li>È <strong>un semplice elenco</strong> che contiene solamente il titolo, il link a DisneyPlus e alla guida ufficiale dell'episodio. Non indica gli archi narrativi, quelli consigliati e altre informazioni utili.  </li>
+<li>Essendo una pagina "statica" non è possibile <strong>tenere traccia</strong> degli episodi già guardati direttamente lì, occorre salvare l'elenco da qualche parte (un blocco note, o un foglio di calcolo) per contrassegnare gli episodi guardati.</li>
+</ol>
+<p>D'altra parte le liste non ufficiali redatte dai fan forniscono un'attenta descrizione degli archi narrativi, evidenziando quali sono quelli essenziali con attente motivazioni, ma:</p>
+<ol>
+<li><strong>Non contengono link</strong> diretti agli episodi .</li>
+<li>Come per la guida ufficiale, non offre la possibilità di <strong>tenere traccia</strong> degli episodi guardati.</li>
+</ol>
+<h2 id="soluzione">Soluzione</h2>
+<p>La soluzione è un <strong>Episode Tracker</strong> sviluppato in pagina html interattiva, che salva i progressi in locale del browser (utilizzando il localStorage).<br/>
+Per ogni episodio si riassumono le informazioni essenziali come titolo, codice dell'episodio, il link DisneyPlus e alla guida ufficiale e soprattutto un checkbox per contrassegnarlo come <strong>guardato</strong>.</p>
+<h3 id="features:">Features:</h3>
+<ul>
+<li>🖼️ Immagine cover di riferimento per ogni episodio</li>
+<li>⭐ Valutazioni </li>
+<li>📈 Suddivisione in archi narrativi con tanto di spiegazioni della rilevanza per la trama principale </li>
+<li>▶️ Link allo streaming ufficiale (DisneyPlus)</li>
+<li>📖 Link alla guida ufficiale dell'episodio</li>
+<li>Scroll automatico al prossimo episodio da guardare appena si apre la pagina</li>
+<li>☑️ Check "guardato/non guardato"</li>
+<li>↕️️ Frecce per scorrere all'episodio corrente</li>
+<li>📊 Filtro per ordinare gli episodio in modo cronologico (per archi narrativi) o per data d'uscita</li>
+<li>📊 Filtro per mostrare tutti gli episodi o solo quelli considerati essenziali</li>
+<li>🕹️ Animazioni e feedback nella ui</li>
+</ul>
+<h2 id="stile-e-ui-ux">Stile e UI-UX</h2>
+<p>I colori, le animazioni e molti degli elementi del DOM fanno in qualche modo riferimento all'ambientazione di <em>Star Wars</em>. </p>
+<h3 id="checkbox-ingranaggio">Checkbox ingranaggio</h3>
+<p>Il checkbox per contrassegnare l'episodio come visto ha la forma di un ingranaggio (tipico di <em>Star Wars</em>) e ruota su se stesso quando attivato. La forma dell'ingranaggio è l'unione di un cerchio con il bordo spesso e bianco ed uno con il bordo tratteggiato colorato, sovrapposti sull'elemento principale <code>Element</code>. </p>
+<p>I due cerchi non sono altro che le pseudo-classi <code>::after</code> e <code>::before</code> di <code>Element</code> mentre il piccolo rettangolo luminoso fa parte invece dello sfondo <code>background-image</code> e si muove attraverso la proprietà <code>background-position</code>. (I due "cerchi" sono vuoti proprio per poter vedere lo sfondo sottostante).</p>
+<p class="interattive-iframe">
+<iframe src="./iframe-pages/checkbox.html" style=" max-height: 550px; min-width: 100%; aspect-ratio: 1;"></iframe>
+<em>Questo frame è interattivo! Premi sui pulsanti per attivare o per espandere il checkbox</em>
+</p>
+<h3 id="animazione-delle-campiture">Animazione delle campiture</h3>
+<p>Sia gli slot degli episodi che i pulsanti per i filtri quanto attivati si colorano con una animazione che ricorda l'accensione di una <em>Spada Laser</em>. </p>
+<p>
+<iframe src="./iframe-pages/slot-episode.html" style="width: 100%; aspect-ratio: 2;"></iframe>
+<em>Questo frame è interattivo! Premi sugli slot per vedere l'animazione</em>
+</p>
+<p>L'animazione segue questi step:</p>
+<ol>
+<li>Le scritte e i bordi prendono colore ed emettono del glow con uno sfarfallio, suggerendo l'accensione di qualcosa di potente.</li>
+<li>Lo sfondo si colora da sinistra verso destra.</li>
+<li>Le scritte diventano bianche.  </li>
+</ol>
+<p>Il glow è generato con il filtro <code>dropshadow</code> mentre lo sfarfallio è simulato attraverso una funzione lineare altalenante. </p>
+<pre><code class="language-css"><span class="css-prop">filter</span><span class="css-value">: dropshadow(0 0 10px blue);</span><br/><span class="css-prop">transition</span><span class="css-value">: filter 1s  linear(0 0%, 0.01 11.76%, 0.08 22.79%, 0.2 27.94%, 0.67 28.68%, 0.31 36.03%, 0.68 38.24%, 0.52 43.38%, 0.76 45.59%, 0.73 52.21%, 0.92 58.09%, 0.84 67.65%, 0.95 77.21%, 1 100%);</span><br/><br/></code></pre>
+<p class="--tcw-linear-func">
+<span></span>
+<em>funzione altalenante</em>
+</p>
+<p>Lo sfondo del rettangolo invece è un gradiente lineare, inizialmente colorato solo per metà e largo <code>0%</code>. L'animazione si baserà sulla proprietà della dimensione, passando da <code>0%</code> a <code>200%</code> (in modo da superare la metà arrivare alla fine).</p>
+<pre><code class="language-css"><span class="css-prop">background-image</span><span class="css-value">: </span><br/>    linear-gradient(<br/>        90deg, <br/>        orange 50%, <br/>        transparent 50%);<br/><span class="css-prop">background-repeat</span><span class="css-value">: no-repeat;</span><br/><span class="css-prop">background-size</span><span class="css-value">: 0%; </span><br/><br/></code></pre>
+<p class="--tcw-backgrounds">
+<span><i>0%</i></span>
+<span><i>100%</i></span>
+<span><i>200%</i></span>
+</p>
+<p>Aggiungiamo due colori simili per dare una piccola sfumatura ed impostiamo una inclinazione di <code>100deg</code> per dare un taglio obliquo allo sfondo. Di conseguenza dovremo spostare la dimensione finale a <code>205%</code> e spostiamo il punto del trasparente a <code>50% + 1px</code>, sufficiente a rendere più morbido lo sfondo evitando una fastidiosa scalettatura (anti-aliasing).</p>
+<pre><code class="language-css"><span class="css-prop">background-image</span><span class="css-value">: </span><br/>    linear-gradient(<br/>        100deg, <br/>        var(--main) 25%, <br/>        var(--alt)  50%, <br/>        transparent calc(50% + 1px));<br/><span class="css-prop">background-size</span><span class="css-value">: 0%; /* spento */</span><br/><span class="css-prop">background-size</span><span class="css-value">: 205%; /* acceso */</span><br/><br/></code></pre>
+<p class="--tcw-backgrounds-2">
+<span><i>100%</i></span>
+<span><i>200%</i></span>
+<span><i>205%</i></span>
+</p>
+<h2 id="sviluppo">Sviluppo</h2>
+<p>Il progetto è stato sviluppato con il framework Vuejs💚. 
+La lista degli episodi è generata utilizzando la potentissima <strong>direttiva</strong> <code>v-for</code>, che per ogni elemento di un lista genera direttamente i blocchi nel DOM in modo reattivo. Modificando infatti la variabile della lista (con un filtro ad esempio), l'elenco nel DOM si aggiornerà in tempo reale.</p>
+<p>Esempio (approssimativo) di come funziona v-for. <code>list</code> è un Array di oggetti e ogni oggetto ha un <code>title</code>, una <code>cover</code>...:</p>
+<pre><code class="language-html">&lt;div v-for="episode in list"&gt;
+  &lt;p&gt;{{ episode.title }}&lt;/p&gt;
+  &lt;p&gt;{{ episode.code }}&lt;/p&gt;
+  &lt;img :src="episode.cover" alt=""&gt;
+  &lt;a :href="episode.play"&gt;Guarda su DisneyPlus&lt;/a&gt;
+  &lt;a :href="episode.guide"&gt;Guida&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Se applicassimo la funzione <code>filter()</code> su <code>list</code>, selezionando ad esempio solo gli episodi essenziali (<code>episode.must == true</code>) la direttiva <code>v-for</code> aggiornerebbe immediatamente l'elenco di elementi.<br/>
+<code>list</code> è infatti di tipo <code>Ref</code>, una classe reattiva di <strong>vue</strong> per cui ogni sua modifica viene aggiornata in ogni punto del documento.</p>
+<p>Esempio di un episodio nella lista <code>EPISODES</code></p>
+<pre><code class="language-js">{
+  order: "76",
+  id: "4x10",
+  arc: 34,
+  guide:
+    "https://www.starwars.com/tv-shows/clone-wars/carnage-of-krell-episode-guide",
+  title: {
+    it: "La carneficina di Krell",
+    en: "Carnage of Krell"
+  },
+  play: "https://www.disneyplus.com/video/3ea87b6f-c298-4847-a69d-05d6ec748f59",
+  must: true,
+  img: "https://...",
+  rate: 4,
+}
+...
+</code></pre>
+<p>Il valore di <code>order</code> è l'indice dell'episodio nell'ordine cronologico, mentre <code>id</code> fa riferimento al codice (stagione)X(episodio). Questo è utilizzato proprio per riordinare seguendo la data d'uscita.<br/>
+Il <code>rate</code> contiene il giudizio critico, in una scala da 0 a 5.
+L'attributo <code>arc</code> contiene l'indice dell'arco narrativo di cui fa parte l'episodio. Questi sono raccolti in una seconda lista di oggetti <code>ARCS</code>.</p>
+<p>Esempio di un arco narrativo nella relativa lista <code>ARCS</code>:</p>
+<pre><code class="language-javascript">{
+  title: "L'assedio di Umbara",
+  episodes: ["4x07", "4x08", "4x09", "4x10"],
+  must: 5,
+  rate: 4,
+  reason:
+    'Questo arco è ampiamente considerato &lt;b&gt;essenziale&lt;/b&gt; e cruciale per lo sviluppo dei cloni, in particolare di Rex. Sotto il comando del generale Krell si trovano infatti in una situazione morale e militare molto complessa, che mette alla prova le loro lealtà e la loro individualità.',
+}
+</code></pre>
+<p>Ci sono due tipi di valutazione, quella critica <code>rate</code> e quella della rilevanza per la trama <code>must</code>. Entrambe esprimono un voto da 0 a 5.
+In <code>reason</code> si spiega principalmente il motivo della valutazione <code>must</code>, raccontando quello che è il contesto degli episodi, personaggi, luoghi ecc ecc, anticipando le relative connessioni con episodi successivi o le serie tv e film successivi.<br/>
+Questo paragrafo è importante per <strong>lasciare la libertà all'utente</strong> di scegliere se guardare o ignorare quell'arco narrativo, sulla base dei propri interessi. Ad esempio alcuni potrebbero ritenere noioso un episodio incentrato sulla politica e preferire quelli sui combattimenti, mentre altri sono più interessati magari ad episodi più lenti e strategici. Alcuni sono interessati ad episodi che approfondiscono certi personaggi e luoghi...</p>
+<h4 id="compressione">Compressione</h4>
+<p>Siccome gli episodi sono 133 e gli archi 52, le due liste occupano molto spazio nel file <code>episodes-data.js</code>. Si è quindi pensato di compattare il piu possibile, sostituendo le ripetizioni con delle variabili. </p>
+<p>Ad esempio i link iniziano sempre nello stesso modo:</p>
+<pre><code class="language-javascript">guide: "https://www.disneyplus.com/video/...[id-streaming]",
+play: "https://www.starwars.com/tv-shows/clone-wars/...[id-guide]"
+</code></pre>
+<p>Se sostituissimo la parte iniziale con una variabile diminuiremmo drasticamente i caratteri ripetutti su tutto il file:</p>
+<pre><code class="language-javascript">guide: a + "...[id-streaming]",
+play: b + "...[id-guide]"
+</code></pre>
+<p>Tuttavia anche le parole chiave dell'oggetto (<code>guide</code>, <code>play</code>, <code>rate</code>...) sono ripetute in ogni oggetto, quindi 133 volte! Ma non possiamo rinunciare ad avere un oggetto, perché diventerebbe scomodissimo reperire le informazioni. L'idea è quindi trasformare la lista di oggetti in una lista di array e creare l'oggetto in un secondo momento.</p>
+<pre><code class="language-javascript">/* informazioni dell'episodio in un Object */
+{
+  order: "13",
+  id: "1x09",
+  arc: 7,
+  guide:
+    "https://www.starwars.com/tv-shows/clone-wars/cloak-of-darkness-episode-guide",
+  title: { it: "Il velo dell'oscurità", en: "Cloak of Darkness" },
+  play: "https://www.disneyplus.com/video/96574cf0-9dd5-48f4-9625-545a13cff7db?cid=DTCI-Synergy-DDNrs-US-...",
+  must: false,
+  img: "https://lumiere-a.akamaihd.net/v1/images/image_17a3b5fc.jpeg?region=0%2C0%2C1560%2C878",
+  rate: 3,
+  3,
+} 
+</code></pre>
+<p><em>come si presentava l'oggetto prima della "compressione"</em></p>
+<p>Mettiamo le tutte le informazioni dell'episodio dentro delle liste e al fondo inseriamo una funzione <code>map()</code> che crea l'oggetto:</p>
+<pre><code class="language-javascript">const EPISODES = 
+[
+  /*[...], [...], [...], ... */  
+  [
+    13,
+    "1x09",
+    7,
+    a + "cloak-of-darkness" + c,
+    ["Il velo dell'oscurità", "Cloak of Darkness"],
+    d + "96574cf0-9dd5-48f4-9625-545a13cff7db" + f,
+    F,
+    e + g + "17a3b5fc" + h + "0%2C0%2C1560%2C878",
+  ],
+   /*... [...], [...], [...]*/  
+].map((e) =&gt; {
+  return {
+    order: e[0].toString(),
+       id: e[1],
+      arc: e[2],
+    guide: e[3],
+    title: { 
+              it: e[4][0],
+              en: e[4][1]
+           },
+     play: e[5],
+     must: e[6],
+      img: e[7],
+     rate: e[8],
+  };
+});
+</code></pre>
+<p>Stesso procedimento anche per la lista <code>ARCS</code>.</p>
+<p>Il risultato è quasi un dimezzamento della dimensione del file, da circa <code>100 KB</code>  iniziali a <code>54 KB</code>. I caratteri passano da <code>102.079</code> a <code>55.697</code> (spazi ed indentazioni incluse).</p>
+<h4 id="memoria-in-locale">Memoria in locale</h4>
+<p>La pagina salva i progressi dell'utente nel localStorage del browser, ovvero in locale e non sono quindi sincronizzati con un database. Questi non vengono persi ricaricando o abbandonando la pagina, ma solo se l'utente resetta il proprio browser.</p>
+<p>Script che gestisce la sincronizzazione in locale:</p>
+<pre><code class="language-javascript">const KEY_STORAGE = "clone-wars-0.1";
+
+export const saveStorage = (s) =&gt; {
+  localStorage[KEY_STORAGE] = JSON.stringify(s);
+};
+
+export const loadStorage = () =&gt; {
+  let storage;
+  try {
+    storage = JSON.parse(localStorage[KEY_STORAGE]);
+  } catch (error) {
+    storage = [];
+  }
+  if (!Array.isArray(storage)) {
+    storage = [];
+  }
+  saveStorage(storage)
+  return storage;
+};
+</code></pre>
+<p>Ogni qualvolta l'utente contrassegna un episodio come visto, si aggiorna l'array <code>watchList</code> e lo si butta nel <code>localStorage</code>.</p>
+<p>Quando l'utente accede alla pagina si fa un tentativo di recuperare dal <code>localStorage</code> la lista <code>watchList</code>, se la lista non esiste o se è corrotta ne viene creata una nuova vuota.</p>
+<h4 id="sincronizzazione-manuale">Sincronizzazione manuale</h4>
+<p>Si utilizza il <code>localStorage</code> perché si prevede che l'utente accederà alla pagina sempre dallo stesso dispositivo. Tuttavia è possibile salvare i propri progressi e sincronizzarli con un metodo quasi "manuale".</p>
+<p>Premendo su <code>esporta</code> si genera un link, in cui come parametro c'è proprio la lista degli episodi. Aprendo quel link su un altro dispositivo o browser la pagina sincronizzerà il proprio localStorage. </p>
+<p>In aggiunta alla lista degli episodi c'è anche un timestamp, per evitare di sincronizzare i progressi vecchi su quelli nuovi. In questo caso la pagina chiede all'utente se vuole sovrascrivere con un salvataggio precedente, suggerendo di non farlo.</p></body>
+</html>

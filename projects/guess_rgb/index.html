@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html data-theme="light" lang="it" style="color-scheme: only light">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../../style/reset.css" rel="stylesheet"/>
+<link href="../../style/fonts.css" rel="stylesheet"/>
+<link href="../../style/markdown.css" rel="stylesheet"/>
+<link href="../../style/markdown-mobile.css" rel="stylesheet"/>
+<script defer="" type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [["$", "$"], ["\\\\(", "\\\\)"]],displayMath: [["$$", "$$"], ["\\[", "\\]"]],processEscapes: true},config: ["MMLorHTML.js"],jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],extensions: ["MathMenu.js", "MathZoom.js"],});
+    </script>
+<script defer="" src="../../script/markdown.js"></script>
+<title>Document</title>
+</head>
+<body class="markdown-box">
+<p id="alert-banner" style="display: none;">
+      Hei! Questa pagina fa parte <a href="../../index.html">del mio portfolio :)</a>
+</p>
+<script>
+      if(window.self === window.top){
+        document.querySelector("#alert-banner").style = ""
+      }
+    </script>
+<style>
+
+  :root {
+            --rgb-pad: 25px;
+            --rgb-size: 200px;
+            --rgb-move: 15px;
+            --rgb-scale: 1.35;
+            --rgb-red: 255;
+            --rgb-green: 255;
+            --rgb-blue: 255;
+        }
+        #rgb_channel div {
+            width: var(--rgb-size);
+            height: var(--rgb-size);
+            padding: var(--rgb-pad);
+            position: absolute;
+            border-radius: 100%;
+            mix-blend-mode: screen;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.5s ease;
+            outline: 1px solid rgb(255, 255, 255);
+            scale: var(--rgb-scale);
+        }
+
+        #rgb_channel div:nth-child(1) {
+            filter: drop-shadow(0px 0px 10px rgb(var(--rgb-red), 0, 0));
+            background: rgb(var(--rgb-red), 0, 0);
+            align-items: flex-start;
+            justify-content: flex-start;
+            transform: translate3d(calc(-1* var(--rgb-move)), calc(-1* var(--rgb-move)), 0);
+        }
+        #rgb_channel div:nth-child(2) {
+            filter: drop-shadow(0px 0px 10px rgb(0, var(--rgb-green), 0));
+            background: rgb(0, var(--rgb-green), 0);
+            align-items: flex-start;
+            justify-content: flex-end;
+            transform: translate3d(var(--rgb-move), calc(-1* var(--rgb-move)), 0);
+        }
+        #rgb_channel div:nth-child(3) {
+            filter: drop-shadow(0px 0px 10px rgb(0, 0, var(--rgb-blue)));
+            background: rgb(0, 0, var(--rgb-blue));
+            align-items: flex-end;
+            justify-content: center;
+            transform: translate3d(0, var(--rgb-move), 0);
+        }
+        #rgb_container * {
+            font-family: monospace;
+
+        }
+        #rgb_container {
+            display: flex;
+            flex-wrap: wrap;
+            isolation: isolate;
+            margin: 50px 0;
+            justify-content: space-around;
+            width: 100%;
+        }
+        #rgb_channel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 350px;
+            height: 350px;
+        }
+        #rgb_container #rgb_input {
+            display: flex;
+            flex-wrap: wrap;
+            width: 225px;
+            align-content: flex-start;
+        }
+
+        #rgb_container #rgb_input input {
+            height: 50px;
+
+        }
+
+        #rgb_container #rgb_input * {
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #rgb_container #rgb_input input{
+            height: 10px;
+            filter: saturate(0) invert(0) brightness(1) contrast(2.1);
+            margin-bottom: 20px;
+        }
+
+        #rgb_container #rgb_input span{
+            font-size: 52px;
+            padding: 0px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        #rgb_container #rgb_input span i {
+            font-size: 12px;
+            display: inline-block;
+            width: 55px;
+        }
+        #rgb_channel:hover * {
+            --rgb-move: 75px;
+            --rgb-scale: 0.95;
+        }
+
+        .rgb_box_example {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            isolation: isolate;
+            margin-top: 10px;
+        }
+
+        .rgb_example {
+            background: currentColor;
+            mix-blend-mode: screen;
+            height: 100px;
+            width: 100px;
+            translate: 40px;
+            border-radius: 100%;
+            outline: 1px solid white;
+            box-shadow: 0px 0px 6px 2px currentColor;
+            transition: all 0.5s ease;
+            scale: 1;
+        }
+
+        .rgb_example+.rgb_example {
+            translate: -40px;
+        }
+        .rgb_box_example:hover .rgb_example {
+            scale: 0.95;
+            translate: 0px;
+        }
+
+
+@media only screen and (max-width: 650px) {
+    #rgb_container #rgb_input {
+        width: 100%;
+        margin-top:25px
+    }
+    #rgb_container #rgb_input {
+        width: 100%;
+        margin-top:25px
+    }
+    #rgb_container #rgb_input input{
+        height: 2px;
+        margin-bottom: 10px;
+    }
+    #rgb_container #rgb_input span{
+        font-size: 46px;
+    }
+    .pois_pattern{
+
+    }
+
+}
+</style>
+<h6 id="minigame-progetto-personale"><em>Minigame</em> <em>Progetto personale</em></h6>
+<h1 id="guess-the-rgb">Guess the RGB</h1>
+<h2 id="descrizione-📢">Descrizione <span class="emoji">📢</span></h2>
+<p>Mini gioco che mette a dura prova la vista e la memoria di qualsiasi graphic designer. Saresti in grado di trovare il colore giusto, ma senza guardare? Perché <strong>Guess the RGB</strong> non ti mostrerà la classica interfaccia del color picker, ma dovrai inserire manualmente i valori dei tre canali (rosso, verde e blu) senza poter guardare il colore che stai componendo!</p>
+<p><img alt="gameover" src="guess_rgb_gameover.png"/>
+<em>Screenshot di una partita persa: il giocatore doveva trovare il colore giallo, ma ha composto un azzurro. L'accuratezza è completamente nulla nonostante che il valore sul secondo canale (verde) sia azzeccato, questo per via del <a href="#punteggio">calcolo del punteggio <span class="emoji">🔗</span></a>.</em></p>
+<h2 id="gameplay-🎮">Gameplay <span class="emoji">🎮</span></h2>
+<ul>
+<li>Il gioco genera un colore casuale che compare sullo sfondo ed all'interno della carta</li>
+<li>Il giocatore, usando i tre cursori, imposta una quantità di colore per i singoli canali. Da 0 a 255. E preme su conferma </li>
+<li>Il gioco rivela il codice del colore generato:</li>
+<li>Appaiono dei valori che mostrano la differenza di errore, ad apice dei numeri appena inseriti (+30, -20 ecc ...)</li>
+<li>Sui cursori appaiono due barre, colore rosso e rosso scuro, che mostrano la differenza di errore</li>
+<li>Sullo sfondo il colore diventa in un gradiente diagonale, che parte dal colore corretto a quello inserito dal giocatore </li>
+<li>Appare una percentuale di accuratezza, calcolata attraverso la formula...</li>
+<li>Appare una valutazione finale, per congratularsi o in alcuni casi per incoraggiare il giocatore a riprovare </li>
+<li>È poi possibile condividere il risultato o estrarre un nuovo colore</li>
+</ul>
+<h2 id="ma-che-cos'è-il-codice-rgb??-🤔">Ma che cos'è il codice RGB?? <span class="emoji">🤔</span></h2>
+<p>In breve, un codice RGB contiene tre valori che rappresentano rispettivamente la quantità di rosso, di verde e di blu di un colore. Ognuno di questi può assumere un valore tra 0 e 255.</p>
+<blockquote>
+<p>Ad esempio il nero sarà nullo per tutti i canali:<br/>
+<code>rgb(0, 0, 0)</code><br/>
+Mentre il bianco l'esatto opposto:<br/>
+<code>rgb(255, 255, 255)</code><br/>
+Oppure un colore verde-acqua avrà i valori dei canali blu e verde molto più alti rispetto al rosso. Come ad esempio:<br/>
+<code>rgb(0,180,160)</code>
+<br/></p>
+</blockquote>
+<div id="rgb_container">
+<div id="rgb_channel">
+<div></div>
+<div></div>
+<div></div>
+</div>
+<div id="rgb_input">
+<span><i>ROSSO</i>255</span>
+<input max="255" oninput="__update_rgb('--rgb-red',this, 0)" type="range" value="255"/>
+<span><i>VERDE</i>255</span>
+<input max="255" oninput="__update_rgb('--rgb-green',this, 1)" type="range" value="255"/>
+<span><i>BLUE</i>255</span>
+<input max="255" oninput="__update_rgb('--rgb-blue',this, 2)" type="range" value="255"/>
+</div>
+</div>
+<p>Spesso si utilizza il codice esadecimale per rappresentarli. Ogni canale è rappresentato da una coppia di cifre da <code>0</code> ad <code>F</code> (la base esadecimale è così: <code>0</code> <code>1</code> <code>2</code> <code>3</code> <code>4</code> <code>5</code> <code>6</code> <code>7</code> <code>8</code> <code>9</code> <code>A</code> <code>B</code> <code>C</code> <code>D</code> <code>E</code> <code>F</code> <code>10</code> <code>11</code> <code>12</code>...)</p>
+<blockquote>
+<p>Ad esempio il verde-acqua di prima è:<br>
+<code>RGB(000,180,160)</code><br/>
+<code>R: 000 -&gt; 00</code><br/>
+<code>G: 180 -&gt; B4</code><br/>
+<code>B: 160 -&gt; A0</code><br/>
+Hex: <code>#00B4A0</code> </br></p>
+</blockquote>
+<p>È importante sapere che, ad eccezione di qualche folle designer, i codici rgb non si compongono "a memoria", ma in tutti i software di grafica è disponibile uno strumento chiamato "RGB Picker" che mostra in tempo reale il colore che si sta creando.  </p>
+<p>Per altri dettagli consiglio la lettura di questa <a href="https://it.wikipedia.org/wiki/RGB" target="_blank">pagina</a>.</p>
+<h2 id="strategie-per-trovarlo-🎯">Strategie per trovarlo <span class="emoji">🎯</span></h2>
+<p>La strategia migliore è quella di scomporre il colore che vediamo in tre elementi: saturazione, luminosità e tonalità.</p>
+<h3 id="tonalità-🎨">Tonalità <span class="emoji">🎨</span></h3>
+<p>Per tonalità si intende proprio quello che comunemente chiamiamo "colore": rosso, blu, giallo, verde, azzurro, arancione, viola ecc ecc. In questo caso bisogna individuare il colore "principale" tralasciando se è scuro o chiaro, se è spento o acceso. Da questo bisogna risalire ai colori che lo compongono: </p>
+<blockquote>
+<p>Ad esempio un azzurro (ciano) è composto dalla somma del blu e del verde, in assenza quindi di rosso. Se poi il blu è maggiore del verde si ottiene un vero e proprio azzurro:<br/>
+<span class="rgb_box_example"><span class="rgb_box_example"><span class="rgb_example" style="color:#00f;"></span><span class="rgb_example" style="color:#0f0;"></span></span><span class="rgb_box_example"><span class="rgb_example" style="color:#00f;"></span><span class="rgb_example" style="color:#070;"></span></span> </span> </p>
+<p>Per il viola si sommano prima blu e rosso, ottenendo un magenta, poi si diminuisce la quantità di rosso:
+<span class="rgb_box_example"><span class="rgb_box_example"><span class="rgb_example" style="color:#00f;"></span><span class="rgb_example" style="color:#f00;"></span></span><span class="rgb_box_example"><span class="rgb_example" style="color:#00f;"></span><span class="rgb_example" style="color:#700;"></span></span> </span> </p>
+<p>Allo stesso modo il giallo nasce dal rosso e dal verde. Se poi il verde diminuisce il colore finale diventa arancione:
+<span class="rgb_box_example"><span class="rgb_box_example"><span class="rgb_example" style="color:#f00;"></span><span class="rgb_example" style="color:#0f0;"></span></span><span class="rgb_box_example"><span class="rgb_example" style="color:#f00;"></span><span class="rgb_example" style="color:#080;"></span></span> </span><br/>
+</p>
+</blockquote>
+<h3 id="luminosità-💡">Luminosità <span class="emoji">💡</span></h3>
+<p>La luminosità è più immediata da trovare, si tratta di capire se un colore tende più verso il nero o più verso il bianco. Se un colore è tanto luminoso <strong>allora i cursori si troveranno sulla destra</strong> e viceversa.</p>
+<blockquote>
+<p>Scala della luminosità sul colore rosso<br/>
+<span class="pois_pattern" style="background:linear-gradient(to right,#000   0%, #F00 45%,#F00 55%,  #FFF 100%);color:transparent;width:100%;display:block;margin-top:15px"> - </span> </p>
+</blockquote>
+<h3 id="saturazione-🌈">Saturazione <span class="emoji">🌈</span></h3>
+<p>Per saturazione si intende invece quanto un colore è... <em>"colorato🥴"</em>. Ossia quanto è acceso, brillante.
+Per intenderci, un colore possiamo immaginarlo in una scala che va dal grigio a quel colore. Da questa scala si può  notare come il colore diventi sempre più spento e triste, fino a raggiungere il grigio. Amici, quella è la scala della saturazione.<br/>
+<strong>Più un colore è saturo e più i valori (e quindi i cursori) saranno distanti fra loro, e viceversa.</strong> </p>
+<blockquote>
+<p>Scala della saturazione del rosso:<br/>
+<span class="pois_pattern" style="background:linear-gradient(to right, #777 0%, #F00 100%);color:transparent; width:100%;display:block;margin-top:15px"> ----------------------------------------------------------------- </span> </p>
+<p>I "grigi" infatti hanno sempre gli stessi valori, lo avevi notato no?   </p>
+</blockquote>
+<h2 id="funzionamento">Funzionamento</h2>
+<h3 id="punteggio">Punteggio</h3>
+<p>Il punteggio finale è definito da una percentuale di accuratezza. Minore è l'errore e maggiore sarà il punteggio. Tuttavia, diversamente da come si potrebbe pensare, il calcolo non segue una funzione lineare, ovvero errore e punteggio non vanno di pari passo. Il calcolo è il seguente:  </p>
+<blockquote>
+<p>Si trovano gli errori, ovvero le differenze tra l'RGB originale e quello inserito dall'utente:<br/>
+<script type="math/tex; mode=display">R_{diff} = |R_{gioco} - R_{utente} |</script>
+<script type="math/tex; mode=display">G_{diff} = |G_{gioco} - G_{utente} |</script>
+<script type="math/tex; mode=display">B_{diff} = |B_{gioco} - B_{utente} |</script>
+</p>
+<p>Media delle tre differenze:
+<script type="math/tex; mode=display"> Media = (R_{diff} + G_{diff} + B_{diff})/3 </script>
+</p>
+<p>Normalizzazione -&gt; si ottiene un valore da zero a uno
+<script type="math/tex; mode=display"> n = Media / 255 </script>
+</p>
+<p>Si capovolge la direzione dell'intervallo: ( <code>1</code> rappresenta l'assenza di errori)
+<script type="math/tex; mode=display"> x = 1 - n </script>
+</p>
+<p>Stima dell'accuratezza:<br/>
+<script type="math/tex; mode=display"> Accuratezza_\% = (x ^ {1 / {x^4} })*100 \% </script>
+</p>
+</blockquote>
+<p>La formula dell'accuratezza cerca di fare una stima della differenza dei due colori. L'andamento non è lineare: quando la differenza tra i due colori è del 50% il risultato sarà pressoché zero. Questo perché già una  piccola variazione (anche se è distribuita sui tre canali) modifica drasticamente il colore. Come descritto su wikipedia <a href="https://en.wikipedia.org/wiki/Color_difference" target="_blank">la differenza fra due colori</a> è un argomento complesso, in cui anche la percezione umana è un fattore importante. La formula che calcola il punteggio di <em>Guess the RGB</em> NON è rigorosa, ma è stata creata provando tentativo dopo tentativo.</p>
+<script>
+    function __update_rgb(prop, el, index) {
+        let v = Math.round(el.value);
+        document.documentElement.style.setProperty(prop, v);
+        let channel = "<i>" + ["ROSSO", "VERDE", "BLU"][index] + "</i>";
+        el.parentElement.querySelectorAll("span")[index].innerHTML = channel + "\t" + v;
+    }
+</script>
+<script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [["$", "$"], ["\\\\(", "\\\\)"]],displayMath: [["$$", "$$"], ["\\[", "\\]"]],processEscapes: true},config: ["MMLorHTML.js"],jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],extensions: ["MathMenu.js", "MathZoom.js"],});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js" type="text/javascript"></script>
+<script>
+onload = () => {
+    if(!history.state?.reload && !location.href.endsWith("?reloaded")){
+        history.pushState({reload:true}, "", "?reloaded")
+        location.reload()
+    }
+}
+
+</script></body>
+</html>

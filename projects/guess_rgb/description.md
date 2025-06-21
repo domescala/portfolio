@@ -281,3 +281,16 @@ La formula dell'accuratezza cerca di fare una stima della differenza dei due col
         el.parentElement.querySelectorAll("span")[index].innerHTML = channel + "\t" + v;
     }
 </script>
+<script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [["$", "$"], ["\\\\(", "\\\\)"]],displayMath: [["$$", "$$"], ["\\[", "\\]"]],processEscapes: true},config: ["MMLorHTML.js"],jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],extensions: ["MathMenu.js", "MathZoom.js"],});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js" type="text/javascript"></script>
+<script>
+onload = () => {
+    if(!history.state?.reload && !location.href.endsWith("?reloaded")){
+        history.pushState({reload:true}, "", "?reloaded")
+        location.reload()
+    }
+}
+
+</script>

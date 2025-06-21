@@ -17,10 +17,14 @@ for (let index = 0; index < text.length; index++) {
     element.classList = "textboom t"+index
 
     element.innerHTML = text[index]
-    $(element).click(function (e) {
-        if(!boomed){    boom(e) }
+    element.addEventListener("click", (e)=>{
+         if(!boomed){    boom(e) }
         else{           sboom()}
-    });
+    })
+    // $(element).click(function (e) {
+    //     if(!boomed){    boom(e) }
+    //     else{           sboom()}
+    // });
 
     if (element.innerHTML == " " || flag_namecontainer) {
         text_boom.appendChild(namecontainer_span2).appendChild(element)

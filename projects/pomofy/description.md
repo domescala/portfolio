@@ -29,8 +29,9 @@ Usare la tecnica del pomodoro favorisce una concentrazione più prolungata, con 
 
 - Diventa molto più semplice suddividere il tempo per ciascuna task. 
 - Ogni 25 minuti potrai renderti conto del tuo andamento: se hai iniziato a divagare o se ti sei distratto e ti rimetti in pista.   
-- Interrompere bruscamente la task favorisce la motivazione nel riprenderla dopo la pausa 
-  Inizialmente può sembrare solo una perdita di tempo, di fatto un quinto del tempo di lavoro è mangiato dalle pause. Ma per esperienza posso affermare che il lavoro prodotto da 3 ore suddiviso in pomodori rispetto a 3 ore di fila, è nettamente migliore e spesso è anche più completo. Inoltre è comunque necessario fare delle pause e riprendendo l'esempio, farle alla fine delle tre ore è molto più stressante.
+- Interrompere bruscamente la task favorisce la motivazione nel riprenderla dopo la pausa  
+
+Inizialmente può sembrare solo una perdita di tempo, di fatto un quinto del tempo di lavoro è mangiato dalle pause. Ma per esperienza posso affermare che il lavoro prodotto da 3 ore suddiviso in pomodori rispetto a 3 ore di fila, è nettamente migliore e spesso è anche più completo. Inoltre è comunque necessario fare delle pause e riprendendo l'esempio, farle alla fine delle tre ore è molto più stressante.
 
 ## Funzionamento
 
