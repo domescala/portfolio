@@ -5,12 +5,43 @@ for (let index = 0; index < text_boom.innerHTML.length; index++) {
     text.push(text_boom.innerHTML[index])
 }
 text_boom.innerHTML = ""
+function rgbToHsl(r, g, b){
+    r /= 255, g /= 255, b /= 255;
+    let max = Math.max(r, g, b), min = Math.min(r, g, b);
+    let h, s, l = (max + min) / 2;
+
+    if(max == min){
+        h = s = 0; // achromatic
+    }else{
+        let d = max - min;
+        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+        switch(max){
+            case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+            case g: h = (b - r) / d + 2; break;
+            case b: h = (r - g) / d + 4; break;
+        }
+        h /= 6;
+    }
+    h = Math.floor(h * 360)
+    s = Math.floor(s * 100)
+    l = Math.floor(l * 100)
+    return { h, s ,l };
+}
+
+
+const addSpongeBackground = () => {
+    const delay = Math.round(Math.random() * 100) / 100
+    return ";;--animated-bg-from-js: url(data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='80px' height='80px'%3E%3Ctext x='40' y='40' font-size='40px' dominant-baseline='middle' text-anchor='middle'%3E🧽%3CanimateTransform attributeName='transform' attributeType='XML' type='rotate' values='0 20 20; -30 45 35; 0 20 20' dur='0.7s' begin='"+delay+"s' repeatCount='indefinite'/%3E%3C/text%3E%3C/svg%3E);;"
+}
 
 var boomed = false;
 var boom_in_process = false
 var namecontainer_span1 = document.createElement("SPAN")
 var namecontainer_span2 = document.createElement("SPAN")
 var flag_namecontainer = false
+document.querySelector('.box-cursor').addEventListener("click", (e)=>{
+    !boomed ? boom(e) : sboom()
+})
 for (let index = 0; index < text.length; index++) {
     
     const element = document.createElement("SPAN")
@@ -21,6 +52,8 @@ for (let index = 0; index < text.length; index++) {
          if(!boomed){    boom(e) }
         else{           sboom()}
     })
+    randDelay = Math.round(Math.random()*100) /100
+    element.style = `--animated-cursor-broom:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='80px' height='80px'%3E%3Ctext x='40' y='40' font-size='40px' dominant-baseline='middle' text-anchor='middle'%3E🧹%3CanimateTransform attributeName='transform' attributeType='XML' type='rotate' values='0 20 20; -30 45 35; 0 20 20' dur='0.7s' begin='${randDelay}s' repeatCount='indefinite'/%3E%3C/text%3E%3C/svg%3E")`
     // $(element).click(function (e) {
     //     if(!boomed){    boom(e) }
     //     else{           sboom()}
@@ -45,12 +78,20 @@ var doc_span = document.querySelectorAll(".textboom")
 var color_boom = [ "#beceff", "#52ffb3", "#fb6985", "#aa68ff", "#9999ff", "#5ed2a1", "#f19237",]
 
 */
+
+const hsl_toString = (hsl) => {
+    return `hsl( ${hsl[0]}deg, ${hsl[1]}%, ${hsl[2]}%)`
+}
 var cursor_boom_load = "url('data:image/svg+xml,   <svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" width=\"50px\" height=\"50px\">   <text x=\"0\" y=\"40\" font-size=\"40px\">🧨</text></svg>') 16 16, grab;"
 var cursor_boomed = "url('data:image/svg+xml,   <svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" width=\"50px\" height=\"50px\">   <text x=\"0\" y=\"40\" font-size=\"40px\">💥</text></svg>') 16 16, grab;"
-var color_boom = [  "#cc5068",  "#6d6dc6", "#7c8ec6"   ]
+var color_boom = [
+    // [348.39, 54.87, 55.69],
+     [240, 43.84, 60.2],
+      [225.41, 39.36, 63.14]
+    ]
 var TEST = 0
 function boom(event) {
-    color_random = color_boom[Math.round((Math.random()*(color_boom.length-1)))]
+    const color_random = color_boom[Math.round((Math.random()*(color_boom.length-1)))]
 
     TEST = event
     var point_click = {x:event.pageX, y:event.pageY}
@@ -110,9 +151,19 @@ function boom(event) {
         var r = - rand[i].r / 60
         element.style["transform"] = "translate("+x+"px, "+y+"px) scale("+s+") rotate("+r+"deg)"
         element.classList.add("cursor_boom_load")
-        element.style["color"] = color_random
-        element.style['textShadow'] =  "0px 0px 10px" + color_random + "91" ;
-        element.style["filter"] = "hue-rotate(" + (colors_pos[i]*5).toString() + "deg) brightness(" + (((colors_pos[i] + 9)/9)).toString() + ")"
+        console.log(color_random.toString())
+        const hsl = [
+            color_random[0] +(  colors_pos[i] + 10),
+            color_random[1] +( (colors_pos[i] * 5)),
+            color_random[2] +( (colors_pos[i] * 5))
+        ]
+        
+        console.log(hsl.toString(), hsl_toString(hsl) , element)
+
+        element.style["color"] = hsl_toString(hsl)
+        // element.style["color"] = 'red'
+
+
     }
     setTimeout(() => {
         for (let i = 0; i < doc_span.length; i++) {
@@ -213,7 +264,7 @@ function boom3() {
             element.classList.add("cursor_boomed")
     
             var color = Math.round((Math.random()*(color_boom.length-1)))
-            element.style ["color"] = color_boom[color]
+            element.style ["color"] = hsl_toString(color_boom[color])
         }
     }, time_rincorsa*1000);
    
@@ -237,7 +288,7 @@ function boom2() {
         element.classList.add("cursor_boom_load")
 
         var color = Math.round((Math.random()*(color_boom.length-1)))
-        element.style ["color"] = color_boom[color]
+        element.style ["color"] = hsl_toString(color_boom[color])
     }
     boomed = true;
     }, 400);
@@ -250,8 +301,6 @@ function sboom() {
         element.style["transform"] = ""
         element.style["transition-duration"] = duration+"s"
         element.style["color"] = "unset"
-        
-        
     });
     setTimeout(() => {
         document.querySelector("body").classList.remove("is-sboom")
@@ -302,15 +351,16 @@ let t
 const cursor_boom_pending = document.querySelector('.box-cursor')
 window.addEventListener("load", () => {
 
-    text_boom.addEventListener("mouseover", (e) => {
+    text_boom.addEventListener("pointermove", (e) => {
         // clearTimeout(t)
         // t = setTimeout(()=>{
-
+        requestAnimationFrame(()=>{
             cursor_boom_pending.style.top =  window.pageYOffset +e.y + "px"
             cursor_boom_pending.style.left =  window.pageXOffset + e.x + "px"
+        })})
         // }, 10)
        
-    })
+    // })
     setTimeout(() => {
         const {top, left, width, height} = text_boom.getBoundingClientRect()
         cursor_boom_pending.style.top =   ( top + height/2) + window.pageYOffset + "px"

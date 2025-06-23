@@ -1,12 +1,23 @@
 :root{
     --text:#4c4d52;
     color-scheme: only light;
+
+
+
+    --animated-cursor-bomb:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='80px' height='80px'%3E%3Ctext x='40' y='40' font-size='40px' dominant-baseline='middle' text-anchor='middle'%3E💣%3CanimateTransform attributeName='transform' attributeType='XML' type='rotate' values='0 20 20; -30 45 35; 0 20 20' dur='0.7s' repeatCount='indefinite'/%3E%3C/text%3E%3C/svg%3E");
+    --animated-cursor-explosion:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='80px' height='80px'%3E%3Ctext x='40' y='40' font-size='40px' dominant-baseline='middle' text-anchor='middle'%3E💥%3CanimateTransform attributeName='transform' attributeType='XML' type='rotate' values='0 20 20; -30 45 35; 0 20 20' dur='0.7s' repeatCount='indefinite'/%3E%3C/text%3E%3C/svg%3E");
+    --animated-cursor-soap:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='80px' height='80px'%3E%3Ctext x='40' y='40' font-size='40px' dominant-baseline='middle' text-anchor='middle'%3E🧼%3CanimateTransform attributeName='transform' attributeType='XML' type='rotate' values='0 20 20; -30 45 35; 0 20 20' dur='0.7s' repeatCount='indefinite'/%3E%3C/text%3E%3C/svg%3E");
+    /* --animated-cursor-broom:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='80px' height='80px'%3E%3Ctext x='40' y='40' font-size='40px' dominant-baseline='middle' text-anchor='middle'%3E🧽%3CanimateTransform attributeName='transform' attributeType='XML' type='rotate' values='0 20 20; -30 45 35; 0 20 20' dur='0.7s' repeatCount='indefinite'/%3E%3C/text%3E%3C/svg%3E"); */
+    --cursor-dot: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='10' fill='%230005' /%3E%3C/svg%3E")  0 0, auto;
+
+    --cursor-🔥: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='33' height='33' viewport='0 0 100 100' style='fill:black;font-size:25px; text-align:center;'><text y='25px'>🔥</text></svg>") 16 0, auto;
 }
 
 body{
     /* padding: 25px 50px 0px 50px; */
     overflow-x: hidden;
     overflow-y: scroll;
+    cursor: var(--cursor-dot);
 }
 
 /* -------------------------------------- */
@@ -77,21 +88,7 @@ i{
     background: linear-gradient(0deg, #4fa7ff, #a598ff, #fa78ff);
     
 }
- /* .loading-wrapper::after {
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background:  radial-gradient(#ffffff 3%, transparent calc(3% + 1px));
-    background-size: 25px 25px;
-    opacity: 0.2;
-    rotate: 25deg;
-} */
-/*
-@keyframes loading-text {
-0%{content:'\2800░'}6%{content:'\2800\2800'}11%{content:'\2800\2800'}17%{content:'\2800░'}22%{content:'\2800l\2800'}28%{content:'\2800lo\2800'}33%{content:'\2800loa░'}39%{content:'\2800load\2800'}44%{content:'\2800loadi\2800'}50%{content:'\2800loadin░'}56%{content:'\2800loading\2800'}61%{content:'\2800loading.\2800'}67%{content:'\2800loading..░'}72%{content:'\2800loading...\2800'}78%{content:'\2800loading...▓'}83%{content:'\2800loading...░'}89%{content:'\2800loading...▓'}94%{content:'\2800loading...▓'}100%{content:'\2800loading...░'}
-}
-*/
+ 
 @keyframes rotate-loading {
     100%{rotate: 360deg;}
 } 
@@ -264,23 +261,27 @@ body:has(.current-project) .img_presentation{
     color: white;
 }
 .name span{
+    text-shadow: 0 0 2px rgb(135 112 255);
     font-family: "riffic", "Poppins", sans-serif;
     font-weight: 900;
     font-size: 72px;
     display: flex;
+    /* padding: 50px; */
+    /* margin: -50px; */
+    pointer-events: all;
+    /* padding: 20px;
+    margin: -20px; */
 }
 .name{
     display: flex;
     flex-wrap: wrap;
     width: 350px;
     transition-property:transform;
-    /* transition-duration: 0.6s; */
-    /* transition-timing-function: cubic-bezier(0, 1.23, 0.87, 1.22); */
-    /* cursor: pointer; */
-    /* cursor: url(../img/cursor.png) 20 20, auto; */
-    cursor: none;
+    cursor: var(--cursor-🔥);
 }
-
+.name:has(.cursor_boom_load){
+    cursor: var(--cursor-dot);
+}
 /* .name:active{
     transform: scale(0.50);
 } */
@@ -288,7 +289,8 @@ body:has(.current-project) .img_presentation{
     position: relative;
     transition-property: transform, filter;
     transition-timing-function: cubic-bezier(0.06, 0.81, 0.21, 1.11);
-    
+    /* padding: 5px;
+    margin: -5px; */
     /* no select */
     -webkit-touch-callout: none; /* iOS Safari */
       -webkit-user-select: none; /* Safari */
@@ -297,7 +299,27 @@ body:has(.current-project) .img_presentation{
           -ms-user-select: none; /* Internet Explorer/Edge */
               user-select: none; /* Non-prefixed version, currently
                                     supported by Chrome and Opera */
-
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+body.is-sboom 
+.textboom:nth-child(even):after{
+    content: "";
+    width: 2em;
+    height: 2em;
+    position: absolute;
+    background-image: var(--animated-cursor-broom);
+    background-position: 0px 0px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* opacity: 0.5; */
+    /* left: -28%; */
+    /* top: 0; */
+    /* background-color: red; */
+}
+.t8::after{
+    content: revert !important;
 }
 .box-cursor{
     width: 47px;
@@ -309,10 +331,11 @@ body:has(.current-project) .img_presentation{
     position: absolute;
     top: -40;
     left: -40;
-    transition: top 0.3s ease, left 0.3s ease, scale 1s ease;
-    pointer-events: none;
+    transition: top 0.1s ease, left 0.1s ease, scale 1s ease;
+    /* pointer-events: none; */
     cursor: none;
-    background-image: url('data:image/svg+xml,   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="80px" height="80px">   <text x="40" y="40" font-size="40px" dominant-baseline="middle" text-anchor="middle">💣<animateTransform attributeName="transform" attributeType="XML" type="rotate" values="0 20 20; -30 45 35; 0 20 20" dur="0.7s" repeatCount="indefinite" /></text></svg>');
+    z-index: -1;
+    background-image: var(--animated-cursor-bomb);
 }
 
 body:has(.cursor_boom_load) .box-cursor{
@@ -323,18 +346,23 @@ body:has(.cursor_boom_load) .box-cursor{
         scale: 1.5;
     }
     80%{
-        background-image: url('data:image/svg+xml,   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="80px" height="80px">   <text x="40" y="40" font-size="40px" dominant-baseline="middle" text-anchor="middle">💣<animateTransform attributeName="transform" attributeType="XML" type="rotate" values="0 20 20; -30 45 35; 0 20 20" dur="0.7s" repeatCount="indefinite" /></text></svg>');
+        background-image: var(--animated-cursor-bomb);
     }
     81%, 100%{
         scale: 3;
-        background-image: url('data:image/svg+xml,   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="80px" height="80px">   <text x="40" y="40" font-size="40px" dominant-baseline="middle" text-anchor="middle">💥<animateTransform attributeName="transform" attributeType="XML" type="rotate" values="0 20 20; -30 45 35; 0 20 20" dur="0.7s" repeatCount="indefinite" /></text></svg>') ;}
+        background-image: var(--animated-cursor-explosion);
+    }
 }
 body:has(.cursor_boomed) .box-cursor{
     transition: top 0.3s ease, left 0.3s ease, scale 1s ease, background-image 0s 2s;
-    background-image:url('data:image/svg+xml,   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="80px" height="80px">   <text x="40" y="40" font-size="40px" dominant-baseline="middle" text-anchor="middle">🧹<animateTransform attributeName="transform" attributeType="XML" type="rotate" values="0 20 20; -30 45 35; 0 20 20" dur="0.7s" repeatCount="indefinite" /></text></svg>') ;
+    background-image: var(--animated-cursor-soap);
+    z-index: 9999;
 }
 body.is-sboom .box-cursor{
    scale: 4;
+}
+body.is-sboom  .name, body:has(.cursor_boomed) .name{
+    cursor: var(--cursor-🧽);
 }
 
 /* .cursor_boom_load{
@@ -423,6 +451,9 @@ body:has(.project_opening) *{
 }
 .project .markdown-box{
     display: none;
+}
+.transition-project{
+    will-change: top, left, width, height;
 }
 body:has(.transition-project) .project:not(.transition-project){
     filter: blur(10px);
@@ -1360,7 +1391,7 @@ padding: 70px 50px;
     /* sottotitolo */
     .presentation_text h5{
         font-size: 14px;
-        margin-bottom: 26px;
+        margin-bottom: 14px;
     }
     /* piccola descrizione */
     .presentation_text p{
@@ -1373,7 +1404,7 @@ padding: 70px 50px;
         font-size: 14px;
     }
     .name span{
-        font-size: 32px;
+        font-size: 42px;
         margin-bottom: 5px;
     }
     .name{

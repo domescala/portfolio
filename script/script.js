@@ -46,13 +46,14 @@ const openProject = (project, index) => {
   project.style['transform'] = 'none';
   project.style['animation'] = 'none';
   iframe.style['opacity'] = '0';
-  iframe.style['transition'] = 'opacity 1s 0.6s linear';
-  gif.style['transition'] = 'opacity 0.5s linear';
+  iframe.style['transition'] = 'opacity 0.5s 0s linear';
+  iframe.style['display'] = 'none';
+  gif.style['transition'] = 'opacity 0s linear';
   gif.style['opacity'] = '0';
 
   const rect = project.getBoundingClientRect(); // -> this function force DOM update
   // set fixed position: coordinates and size appear the same
-  project.style['transition'] = 'all ' + timeTransition + 'ms ' + func;
+  project.style['transition'] = 'all 0.2s ease';
   project.style['position'] = 'fixed';
   project.style['top'] = rect.top + 'px';
   project.style['left'] = rect.left + 'px';
@@ -91,18 +92,22 @@ const openProject = (project, index) => {
   //   set opacity on gif image and iframe
   requestAnimationFrame(() => {
     gif.style['opacity'] = '0';
-    iframe.style['opacity'] = '1';
+    // iframe.style['opacity'] = '1';
   });
   // transition-duration is 1 second, after that remove all inline style (Except the flex order)
   setTimeout(() => {
     project.style = 'order:' + project.style['order'];
     headerButtons.style['opacity'] = "1"  
     project.classList.remove('transition-project')
+    iframe.style['display'] = 'flex';
+    requestAnimationFrame(()=>{
+        iframe.style['opacity'] = '1';
+    })
 
     // project.classList.remove('project_opening');
     // remove gif
     // gif.style['display'] = 'none';
-  }, timeTransition + 100);
+  }, 300);
 };
 
 document.querySelectorAll('.project').forEach((project) => {});
