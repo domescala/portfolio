@@ -75,8 +75,6 @@ function boom(event) {
             r: (Math.random()*360 + 720) * (Math.round(Math.random()) * 2 - 1 ) ,
         }
         rand[i] = random_pos
-        console.log(random_pos)
-        console.log(max_X, max_Y)
     }
         
     for (let i = 0; i < doc_span.length; i++) {
@@ -131,12 +129,10 @@ function boom(event) {
             // element.style["filter"] = "aaaaaaaaaaaaaaaaaaaaaaaaaaaa"
         }
     }, time_rincorsa*1000);
-    console.log("boom")
     boomed = true;
 
     
     setTimeout(() => {
-        console.log("PARTE?????")
         doc_span.forEach(element => {
             element.classList.add("cursor_sboom")
             
@@ -220,7 +216,6 @@ function boom3() {
             element.style ["color"] = color_boom[color]
         }
     }, time_rincorsa*1000);
-    console.log("boom")
    
 }
 function boom2() {
@@ -244,7 +239,6 @@ function boom2() {
         var color = Math.round((Math.random()*(color_boom.length-1)))
         element.style ["color"] = color_boom[color]
     }
-    console.log("boom")
     boomed = true;
     }, 400);
 }
@@ -285,19 +279,16 @@ const title_wide_tf = [true, true, true, true, true ]
 var only_first_time = true;
 var only_first_timeB = true;
 document.addEventListener("scroll", function () {
-    // console.log(title_wide_tf)
     for (let i = 0; i < title_wide.length; i++) {
         var y = title_wide[i].getBoundingClientRect().y
         
         if ( title_wide_tf[i] && y < 600 && y > 350 ) {
-            // console.log("i",i, title_wide[i], y)
             title_wide[i].classList.add ("wide_text_animation")
             if (title_wide[i].innerHTML == "Followami") {
                 title_wide[i+1].classList.add ("wide_text_animation")
             }
             title_wide_tf[i] = false
             return "" //ferma la funzione
-            console.log("ciao")
         }
         else if(!title_wide_tf[i]  && (y > 1000 || y < 0)){
             title_wide[i].classList.remove ("wide_text_animation")
@@ -315,10 +306,15 @@ window.addEventListener("load", () => {
         // clearTimeout(t)
         // t = setTimeout(()=>{
 
-            // console.log("ooo")
-            cursor_boom_pending.style.top =  e.y + "px"
-            cursor_boom_pending.style.left =  e.x + "px"
+            cursor_boom_pending.style.top =  window.pageYOffset +e.y + "px"
+            cursor_boom_pending.style.left =  window.pageXOffset + e.x + "px"
         // }, 10)
        
-    })})
+    })
+    setTimeout(() => {
+        const {top, left, width, height} = text_boom.getBoundingClientRect()
+        cursor_boom_pending.style.top =   ( top + height/2) + window.pageYOffset + "px"
+            cursor_boom_pending.style.left =  left + width/2 + "px"
+    }, 2500)
+})
     

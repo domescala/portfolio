@@ -306,7 +306,7 @@ body:has(.current-project) .img_presentation{
     margin-left: -25px;
     background-position: -16px 0px;
     background-repeat: no-repeat;
-    position: fixed;
+    position: absolute;
     top: -40;
     left: -40;
     transition: top 0.3s ease, left 0.3s ease, scale 1s ease;
