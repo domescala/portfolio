@@ -7,10 +7,7 @@
     --animated-cursor-bomb:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='80px' height='80px'%3E%3Ctext x='40' y='40' font-size='40px' dominant-baseline='middle' text-anchor='middle'%3E💣%3CanimateTransform attributeName='transform' attributeType='XML' type='rotate' values='0 20 20; -30 45 35; 0 20 20' dur='0.7s' repeatCount='indefinite'/%3E%3C/text%3E%3C/svg%3E");
     --animated-cursor-explosion:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='80px' height='80px'%3E%3Ctext x='40' y='40' font-size='40px' dominant-baseline='middle' text-anchor='middle'%3E💥%3CanimateTransform attributeName='transform' attributeType='XML' type='rotate' values='0 20 20; -30 45 35; 0 20 20' dur='0.7s' repeatCount='indefinite'/%3E%3C/text%3E%3C/svg%3E");
     --animated-cursor-soap:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='80px' height='80px'%3E%3Ctext x='40' y='40' font-size='40px' dominant-baseline='middle' text-anchor='middle'%3E🧼%3CanimateTransform attributeName='transform' attributeType='XML' type='rotate' values='0 20 20; -30 45 35; 0 20 20' dur='0.7s' repeatCount='indefinite'/%3E%3C/text%3E%3C/svg%3E");
-    /* --animated-cursor-broom:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='80px' height='80px'%3E%3Ctext x='40' y='40' font-size='40px' dominant-baseline='middle' text-anchor='middle'%3E🧽%3CanimateTransform attributeName='transform' attributeType='XML' type='rotate' values='0 20 20; -30 45 35; 0 20 20' dur='0.7s' repeatCount='indefinite'/%3E%3C/text%3E%3C/svg%3E"); */
     --cursor-dot: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='10' fill='%230005' /%3E%3C/svg%3E")  0 0, auto;
-
-    --cursor-🔥: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='33' height='33' viewport='0 0 100 100' style='fill:black;font-size:25px; text-align:center;'><text y='25px'>🔥</text></svg>") 16 0, auto;
 }
 
 body{
@@ -246,6 +243,7 @@ body:has(.current-project) .img_presentation{
     padding-right:0;
     padding-left:0;
     width:50px!important;
+    color: transparent;
 }
 .email-button{
     --color: #fe83b0;
@@ -874,8 +872,21 @@ h2+p{
     #baa4a4
     
     */
+    .graph text textPath{
+        animation: animation-text-path 12s ease infinite;
+    }
+    @keyframes animation-text-path {
+        3%, 10%{
+            fill: black
+        }
+        13%, 100%{
+            fill: var(--fill);
+        }
+    }
     .graph text textPath:nth-child(1){
-        fill: #478cbf;
+        --fill:#478cbf;
+        fill: var(--fill);
+        animation-delay: 1.5s !important;
     }
     .graph g circle:nth-child(1){
     stroke: #478cbf;
@@ -886,7 +897,10 @@ h2+p{
     
     }
     .graph text textPath:nth-child(2){
-        fill: #9999ff;;
+        --fill: #9999ff;;
+        fill: var(--fill);
+        animation-delay: 2.5s !important;
+
     }
     .graph g circle:nth-child(2){
     stroke: #9999ff;;
@@ -896,7 +910,10 @@ h2+p{
     
     }
     .graph text textPath:nth-child(3){
-        fill: #31a8ff;
+        --fill: #31a8ff;
+        fill: var(--fill);
+        animation-delay: 3.5s !important;
+
     }
     .graph g circle:nth-child(3){
     stroke: #31a8ff;
@@ -907,7 +924,10 @@ h2+p{
     
     }
     .graph text textPath:nth-child(4){
-        fill: #49ba89;
+        --fill: #49ba89;
+        fill: var(--fill);
+        animation-delay: 4.5s !important;
+
     }
     .graph g circle:nth-child(4){
     stroke: #49ba89;
@@ -917,7 +937,10 @@ h2+p{
     
     }
     .graph text textPath:nth-child(6){
-        fill: #db3f95;
+        --fill: #db3f95;
+        fill: var(--fill);
+        animation-delay: 6.5s !important;
+
     }
     .graph g circle:nth-child(6){
     stroke: #db3f95;
@@ -928,7 +951,10 @@ h2+p{
     
     }
     .graph text textPath:nth-child(5){
-        fill: #9b9b9b;
+        --fill: #9b9b9b;
+        fill: var(--fill);
+        animation-delay: 5.5s !important;
+
     }
     .graph g circle:nth-child(5){
     stroke: #9b9b9b;
@@ -938,7 +964,10 @@ h2+p{
     
     }
     .graph text textPath:nth-child(7){
-        fill: #ff3366;
+        --fill: #ff3366;
+        fill: var(--fill);
+        animation-delay: 7.5s !important;
+
     }
     .graph g circle:nth-child(7){
     stroke: #ff3366;
@@ -949,7 +978,10 @@ h2+p{
     
     }
     .graph text textPath:nth-child(8){
-        fill: #ffd85a;
+        --fill: #ffd85a;
+        fill: var(--fill);
+        animation-delay: 8.5s !important;
+
     }
     .graph g circle:nth-child(8){
     stroke: #ffd85a;

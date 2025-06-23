@@ -1,68 +1,11 @@
 body:has(.current-project){
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='33' height='33' viewport='0 0 100 100' style='fill:black;font-size:25px; text-align:center;'><text y='25px'>✖</text></svg>") 16 0, auto;
+    cursor: var(--cursor-✖);
 }
-.cursor-🎮 {
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='33' height='33' viewport='0 0 100 100' style='fill:black;font-size:25px; text-align:center;'><text y='25px'>🎮</text></svg>") 16 0, auto;
-}
-
-.cursor-🚂 {
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='33' height='33' viewport='0 0 100 100' style='fill:black;font-size:25px; text-align:center;'><text y='25px'>🚂</text></svg>") 16 0, auto;
-}
-
-.cursor-🚀 {
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='33' height='33' viewport='0 0 100 100' style='fill:black;font-size:25px; text-align:center;'><text y='25px'>🚀</text></svg>") 16 0, auto;
-}
-
-.cursor-🎨 {
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='33' height='33' viewport='0 0 100 100' style='fill:black;font-size:25px; text-align:center;'><text y='25px'>🎨</text></svg>") 16 0, auto;
-}
-
-.cursor-📖 {
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='33' height='33' viewport='0 0 100 100' style='fill:black;font-size:25px; text-align:center;'><text y='25px'>📖</text></svg>") 16 0, auto;
-}
-
-.cursor-🍅 {
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='33' height='33' viewport='0 0 100 100' style='fill:black;font-size:25px; text-align:center;'><text y='25px'>🍅</text></svg>") 16 0, auto;
-}
-
-.cursor-🕑 {
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='33' height='33' viewport='0 0 100 100' style='fill:black;font-size:25px; text-align:center;'><text y='25px'>🕑</text></svg>") 16 0, auto;
-}
-
-.cursor-🔡 {
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='33' height='33' viewport='0 0 100 100' style='fill:black;font-size:25px; text-align:center;'><text y='25px'>🔡</text></svg>") 16 0, auto;
-}
-
-.cursor-🔑 {
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='33' height='33' viewport='0 0 100 100' style='fill:black;font-size:25px; text-align:center;'><text y='25px'>🔑</text></svg>") 16 0, auto;
-}
-
-.cursor-🚴🏻‍♀️ {
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='33' height='33' viewport='0 0 100 100' style='fill:black;font-size:25px; text-align:center;'><text y='25px'>🚴🏻‍♀️</text></svg>") 16 0, auto;
-}
-
-.cursor-🪑 {
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='33' height='33' viewport='0 0 100 100' style='fill:black;font-size:25px; text-align:center;'><text y='25px'>🪑</text></svg>") 16 0, auto;
-}
-.cursor-🤳🏻 {
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='33' height='33' viewport='0 0 100 100' style='fill:black;font-size:25px; text-align:center;'><text y='25px'>🤳🏻</text></svg>") 16 0, auto;
-}
-.cursor-🦉 {
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='33' height='33' viewport='0 0 100 100' style='fill:black;font-size:25px; text-align:center;'><text y='25px'>🦉</text></svg>") 16 0, auto;
-}
-.cursor-📃 {
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='33' height='33' viewport='0 0 100 100' style='fill:black;font-size:25px; text-align:center;'><text y='25px'>📃</text></svg>") 16 0, auto;
-}
-
-
-
-
-
 
 input {
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='33' height='33' viewport='0 0 100 100' style='fill:black;font-size:25px; text-align:center;'><text y='25px'>👆🏻</text></svg>") 8 2, auto !important;
+    cursor: var(--url-emoji-👆🏻) 8 2, auto !important;
 }
 
 input:active {
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='33' height='33' viewport='0 0 100 100' style='fill:black;font-size:25px; text-align:center'><text y='25px'>👌🏻</text></svg>") 0 15, auto !important;
+    cursor: var(--url-emoji-👌🏻) 0 15, auto !important;
 }

@@ -1,3 +1,4 @@
 .prettierrc
 __*
 .vscode
+server.*
