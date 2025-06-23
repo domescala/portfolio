@@ -30,6 +30,10 @@
     }
 
 </style>
+
+<meta name="description" content="Composizioni ispirate ai Beatles, Inception e Mr. Robot, utilizzando solamente solo caratteri tipografici per una esercitazione universitaria.">
+<favicon-emoji>🔠</favicon-emoji>
+
 ###### *POSTER \ TIPOGRAFIA* *PROGETTO UNIVERSITARIO*
 
 # Poster tipografici

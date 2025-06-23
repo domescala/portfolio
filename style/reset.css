@@ -28,6 +28,7 @@ time, mark, audio, video {
 }
 *{
     -webkit-tap-highlight-color: transparent;
+    scrollbar-width: none;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 

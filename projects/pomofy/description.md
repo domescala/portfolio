@@ -1,3 +1,6 @@
+<meta name="description" content="Analisi e sviluppo di 'Pomofy', un timer pomodoro per ascoltare brani ambient durante la sessione di studio/lavoro e musica durante la pausa attraverso Spotify">
+<favicon-emoji>🍅</favicon-emoji>
+
 ###### *tool* *Progetto personale*
 
 # Pomofy

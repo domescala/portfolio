@@ -2,8 +2,6 @@ const PROJECTS = document.querySelectorAll(
   '#containerportfolio .project:not(.project-placeholder)'
 );
 
-
-
 let func = 'cubic-bezier(0, 1, 0.2, 1)';
 let test = '';
 let timeouts = [];
@@ -29,11 +27,11 @@ PROJECTS.forEach((project, index) => {
 });
 
 const openProject = (project, index) => {
-  const timeTransition = 1000;
+  const timeTransition = 1500;
   const gif = project.querySelector('.intro_project_gif');
   const iframe = project.querySelector('iframe');
-  const exitButton = project.querySelector('.project-exit');
-  exitButton.style.opacity = "0"  
+  const headerButtons = project.querySelector('.project-header-buttons');
+  headerButtons.style.opacity = '0';
   // add the project id as a parameter in the URL
   // window.history.replaceState(null, null, "?project="+ project.id);
   history.pushState({}, '', '?project=' + project.id);
@@ -43,11 +41,14 @@ const openProject = (project, index) => {
   //   project.classList.add('project_opening');
 
   // stop the hover animation
+  project.classList.add('transition-project')
   project.style['transition'] = 'none';
   project.style['transform'] = 'none';
   project.style['animation'] = 'none';
   iframe.style['opacity'] = '0';
-  iframe.style['transition'] = 'opacity 1s 0.5s linear';
+  iframe.style['transition'] = 'opacity 1s 0.6s linear';
+  gif.style['transition'] = 'opacity 0.5s linear';
+  gif.style['opacity'] = '0';
 
   const rect = project.getBoundingClientRect(); // -> this function force DOM update
   // set fixed position: coordinates and size appear the same
@@ -57,6 +58,7 @@ const openProject = (project, index) => {
   project.style['left'] = rect.left + 'px';
   project.style['width'] = rect.width + 'px';
   project.style['height'] = rect.height + 'px';
+  project.style['z-index'] = '99999';
 
   // move the placeholder under the project active
   const PLACEHOLDER = document.querySelector('.project-placeholder');
@@ -64,6 +66,7 @@ const openProject = (project, index) => {
   PLACEHOLDER.style['order'] = project.style['order'];
   // force DOM update
   project.getBoundingClientRect();
+  const windowWidth = window.innerWidth;
 
   // switch classes and remove inline style: the .current-project class have already these properties: fixed, top, width, height and left ...
   project.classList.remove('project');
@@ -79,7 +82,6 @@ const openProject = (project, index) => {
   //      max-width: 100vw
   // if windowWidth in under 900px ->> left: zero
   // else then left ->> ( windowWidth - 900px ) / 2
-  const windowWidth = window.innerWidth;
   const left = windowWidth < 900 ? 0 : (windowWidth - 900) / 2;
   project.style['left'] = left + 'px';
 
@@ -94,12 +96,13 @@ const openProject = (project, index) => {
   // transition-duration is 1 second, after that remove all inline style (Except the flex order)
   setTimeout(() => {
     project.style = 'order:' + project.style['order'];
-    exitButton.style.opacity = "1"  
+    headerButtons.style['opacity'] = "1"  
+    project.classList.remove('transition-project')
 
     // project.classList.remove('project_opening');
     // remove gif
     // gif.style['display'] = 'none';
-  }, timeTransition);
+  }, timeTransition + 100);
 };
 
 document.querySelectorAll('.project').forEach((project) => {});
@@ -121,8 +124,8 @@ function close_project() {
   const PLACEHOLDER = document.querySelector('.project-placeholder');
   const gif = project.querySelector('.intro_project_gif');
   const iframe = project.querySelector('iframe');
-  const exitButton = project.querySelector('.project-exit');
-  exitButton.style.opacity = "0"
+  const headerButtons = project.querySelector('.project-header-buttons');
+  headerButtons.style.opacity = '0';
   history.pushState({}, '', '?');
   timeouts.forEach((t) => {
     clearTimeout(t);
@@ -172,12 +175,12 @@ function close_project() {
 
   // the body has "overflow:hidden" to prevent scroll!
   // But when at the end of this animation the body lose "overflow:hidden", the scrollbar will appear, causing an annoying shift. Its better to force to remove "overflow:hidden" (with overflow:revert) before closing so that that shift is covered by the project
-  document.querySelector("body").style.overflow = "revert"
+  document.querySelector('body').style.overflow = 'revert';
   // TRANSITION
   // html is transitioning from fixed "open" position to "closed" position
   timeouts.push(
     setTimeout(() => {
-        document.querySelector("body").style.overflow = ""
+      document.querySelector('body').style.overflow = '';
 
       project.classList.add('project');
       project.classList.remove('current-project');
@@ -188,98 +191,6 @@ function close_project() {
       iframe.style = '';
     }, 900)
   );
-}
-
-// SWIPE per uscire
-
-document.addEventListener('touchstart', handleTouchStart, false);
-document.addEventListener('touchmove', handleTouchMove, false);
-document.addEventListener('touchend', handleTouchEnd, false);
-
-function getTouches(evt) {
-  return (
-    evt.touches || // browser API
-    evt.originalEvent.touches
-  ); // jQuery
-}
-
-var pos_start = { x: null, y: null };
-var pos_move = { x: null, y: null };
-var touch_stop = false;
-var touch_start = false;
-var main_direction = 0;
-
-function handleTouchStart(evt) {
-  console.log(evt.target.tagName);
-  if (!document.querySelector('.current-project')) {
-    return;
-  }
-  if (evt.target.tagName == 'INPUT') {
-    return;
-  }
-
-  const firstTouch = getTouches(evt)[0];
-  pos_start = {
-    x: firstTouch.clientX,
-    y: firstTouch.clientY
-  };
-  touch_stop = false;
-  touch_start = true;
-}
-
-function handleTouchMove(evt) {
-  if (!document.querySelector('.current-project')) {
-    return;
-  }
-  pos_move = {
-    x: evt.touches[0].clientX,
-    y: evt.touches[0].clientY
-  };
-  var delta = {
-    x: Math.abs(pos_move.x - pos_start.x),
-    y: Math.abs(pos_move.y - pos_start.y)
-  };
-
-  if (touch_stop) {
-    return;
-  }
-
-  if (touch_start) {
-    main_direction = delta.y > delta.x;
-    touch_start = false;
-  }
-  if (main_direction) {
-    console.log('vertical');
-  } else {
-    console.log('pos_start', pos_start, 'pos_move', pos_move);
-    if (pos_start.x > pos_move.x) {
-      console.log('111');
-
-      translate = 'translateX(-' + delta.x ** 0.5 * 5 + 'px)';
-      document.querySelector('.current-project').style['transition'] = 'none';
-      document.querySelector('.current-project').style['transform'] = translate;
-      console.log(document.querySelector('.current-project').style['left']);
-    } else {
-      console.log('222');
-    }
-  }
-
-  console.log('');
-}
-
-function handleTouchEnd(evt) {
-  const project = document.querySelector('.current-project');
-  if (!project) {
-    return;
-  }
-  touch_stop = true;
-  if (pos_start.x - pos_move.x > 200) {
-    close_project();
-  } else {
-    document.querySelector('.current-project').style['transition'] = '0.3s';
-    document.querySelector('.current-project').style['transform'] =
-      'translateX(0)';
-  }
 }
 
 const removeLoading = () => {
@@ -375,13 +286,34 @@ onload = () => {
     }
   });
 
+  PROJECTS.forEach((p) => {
+    const link = p.querySelector('.meta-description a').getAttribute('href');
 
-  PROJECTS.forEach(p => {
-    const div = document.createElement("div")
-    div.innerHTML = "<p><span>👈🏻</span> torna indietro</p>"
-    div.classList.add("project-exit")
-    div.classList.add("markdown-box")
-    div.addEventListener("click", close_project)
-    p.prepend(div)
-  })
+    const title = p.querySelector('.meta-description a').innerHTML;
+    const div = document.createElement('div');
+    div.innerHTML = `<p><span>👈🏻</span>torna indietro</p><p><span>🤙🏻</span>condividi</p><a style="display:none" target="_blank" href=${link}>${link}</a`;
+    div.classList.add('project-header-buttons');
+    div.classList.add('markdown-box');
+    p.prepend(div);
+    requestAnimationFrame(() => {
+      div.querySelectorAll('p')[0].addEventListener('click', close_project);
+    });
+    requestAnimationFrame(() => {
+      div.querySelectorAll('p')[1].addEventListener('click', (event) => {
+        // trigger native share box
+        if ('share' in navigator) {
+          navigator
+            .share({
+              title: title,
+              url: location.href
+            })
+            .then(() => {});
+        }
+        // if it's not compatible simulate click on link
+        else {
+          div.querySelector('a').click();
+        }
+      });
+    });
+  });
 };

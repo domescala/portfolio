@@ -11,6 +11,11 @@
         }
     }
 </style>
+
+
+<meta name="description" content="Presentazione di 'Node Class' un videogioco educativo che mira ad insegnare i Geometry Nodes di Blender, ideato e progettato per la mia Tesi di Laurea">
+<favicon-emoji>🎮</favicon-emoji>
+
 # Node Class
 
 ## Descrizione 📢

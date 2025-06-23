@@ -50,12 +50,12 @@ var cursor_boomed = "url('data:image/svg+xml,   <svg version=\"1.1\" xmlns=\"htt
 var color_boom = [  "#cc5068",  "#6d6dc6", "#7c8ec6"   ]
 var TEST = 0
 function boom(event) {
-    color_random = color_boom[Math.round(Math.random()*color_boom.length-1)]
+    color_random = color_boom[Math.round((Math.random()*(color_boom.length-1)))]
 
     TEST = event
     var point_click = {x:event.pageX, y:event.pageY}
     // text_boom.style.transform = "scale(0.8)"
-    var time_rincorsa = 0.5 // in secondi
+    var time_rincorsa =  1 // in secondi
     text_boom.style.transform = ""
     var rand =  []
     var colors_pos = color_for_position(event)
@@ -126,7 +126,7 @@ function boom(event) {
             element.style["transform"] = "translate("+rand[i].x+"px, "+rand[i].y+"px) scale("+rand[i].s+") rotate("+rand[i].r+"deg)"
             element.classList.add("cursor_boomed")
     
-            var color = (Math.random()*color_boom.length).toFixed(0)
+            var color = Math.round((Math.random()*(color_boom.length-1)))
             
             // element.style["filter"] = "aaaaaaaaaaaaaaaaaaaaaaaaaaaa"
         }
@@ -216,7 +216,7 @@ function boom3() {
             element.style["transform"] = "translate("+rand[i].x+"px, "+rand[i].y+"px) scale("+rand[i].s+") rotate("+rand[i].r+"deg)"
             element.classList.add("cursor_boomed")
     
-            var color = (Math.random()*color_boom.length).toFixed(0)
+            var color = Math.round((Math.random()*(color_boom.length-1)))
             element.style ["color"] = color_boom[color]
         }
     }, time_rincorsa*1000);
@@ -241,7 +241,7 @@ function boom2() {
         element.style["transform"] = "translate("+rand.x+"px, "+rand.y+"px) scale("+rand.s+") rotate("+rand.r+"deg)"
         element.classList.add("cursor_boom_load")
 
-        var color = (Math.random()*color_boom.length).toFixed(0)
+        var color = Math.round((Math.random()*(color_boom.length-1)))
         element.style ["color"] = color_boom[color]
     }
     console.log("boom")
@@ -251,6 +251,7 @@ function boom2() {
 
 function sboom() {
     var duration = 5 // in seconds
+    document.querySelector("body").classList.add("is-sboom")
     doc_span.forEach(element => {
         element.style["transform"] = ""
         element.style["transition-duration"] = duration+"s"
@@ -259,6 +260,7 @@ function sboom() {
         
     });
     setTimeout(() => {
+        document.querySelector("body").classList.remove("is-sboom")
         doc_span.forEach(element => {
             element.classList.remove("cursor_boom_load")
             element.classList.remove("cursor_boomed")
@@ -305,3 +307,18 @@ document.addEventListener("scroll", function () {
 
     }
 })
+let t
+const cursor_boom_pending = document.querySelector('.box-cursor')
+window.addEventListener("load", () => {
+
+    text_boom.addEventListener("mouseover", (e) => {
+        // clearTimeout(t)
+        // t = setTimeout(()=>{
+
+            // console.log("ooo")
+            cursor_boom_pending.style.top =  e.y + "px"
+            cursor_boom_pending.style.left =  e.x + "px"
+        // }, 10)
+       
+    })})
+    

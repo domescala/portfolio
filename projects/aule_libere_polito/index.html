@@ -3,17 +3,19 @@
 <html data-theme="light" lang="it" style="color-scheme: only light">
 <head>
 <meta charset="utf-8"/>
+<meta content="Analisi e sviluppo di 'Aule Libere Polito', un progetto indipendente con l'obiettivo di migliorare notevolmente il servizio 'aule libere' del Politecnico di Torino, attraverso un efficace redesign della UX/UI." name="description"/>
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../style/reset.css" rel="stylesheet"/>
 <link href="../../style/fonts.css" rel="stylesheet"/>
 <link href="../../style/markdown.css" rel="stylesheet"/>
 <link href="../../style/markdown-mobile.css" rel="stylesheet"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewport='0 0 1 1' style='fill:black;font-size:8px; text-align:center;'%3E%3Ctext y='8px'%3E📚%3C/text%3E%3C/svg%3E" rel="icon" type="image/svg+xml"/>
 <script defer="" type="text/x-mathjax-config">
       MathJax.Hub.Config({tex2jax: {inlineMath: [["$", "$"], ["\\\\(", "\\\\)"]],displayMath: [["$$", "$$"], ["\\[", "\\]"]],processEscapes: true},config: ["MMLorHTML.js"],jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],extensions: ["MathMenu.js", "MathZoom.js"],});
     </script>
 <script defer="" src="../../script/markdown.js"></script>
-<title>Document</title>
+<title>Aule Libere Polito</title>
 </head>
 <body class="markdown-box">
 <p id="alert-banner" style="display: none;">
@@ -49,15 +51,22 @@
 <p><img src="cover.gif" style="max-height:450px;object-fit:cover;object-position: top;"/></p>
 <h2 id="nuove-feature">Nuove feature</h2>
 <ul>
-<li><a href="#velocità-di-caricamento-e-consultazione-🏃🏻‍♂️"><span class="emoji">🏃🏻‍♂️</span> Velocità di caricamento e consultazione</a> </li>
-<li><a href="#filtri-per-ordinare-le-aule-📊"><span class="emoji">📊</span> Filtri per ordinare le aule in base alla disponibilità, alla zona, al piano, alla capienza e alla superficie</a> </li>
-<li>📄 Pagina di recap sulle informazioni generali dell'aula selezionata </li>
-<li>🎨 La fascia oraria corrente è evidenziata</li>
-<li><a href="#ricerca-aule-🔎"><span class="emoji">🔎</span> Ricerca aule</a></li>
-<li>📆 Avvio sul primo giorno consultabile </li>
-<li>⚡️ Avviso in caso di prese elettriche assenti </li>
-<li><a href="#aule-preferite-⭐"><span class="emoji">⭐</span> Aule preferite</a></li>
-<li>🏫 Memorizzazione dell'ultima sede selezionata </li>
+<li><a href="#aule-libere-polito">Aule Libere Polito</a></li>
+<li><a href="#il-problema">Il problema</a><ul>
+<li><a href="#-disposizione-delle-aule"><span class="emoji">❌</span> Disposizione delle aule</a></li>
+<li><a href="#-elementi-inutili-e-fuorvianti"><span class="emoji">❌</span> Elementi inutili e fuorvianti</a></li>
+<li><a href="#-eccessiva-latenza"><span class="emoji">❌</span> Eccessiva latenza</a></li>
+</ul>
+</li>
+<li><a href="#redesign">Redesign</a></li>
+<li><a href="#nuove-feature">Nuove feature</a></li>
+<li><a href="#funzionamento">Funzionamento</a><ul>
+<li><a href="#velocità-di-caricamento-e-consultazione-️">Velocità di caricamento e consultazione <span class="emoji">🏃🏻‍♂️</span></a></li>
+<li><a href="#filtri-per-ordinare-le-aule-">Filtri per ordinare le aule <span class="emoji">📊</span></a></li>
+<li><a href="#ricerca-aule-">Ricerca aule <span class="emoji">🔎</span></a></li>
+<li><a href="#aule-preferite-">Aule preferite <span class="emoji">⭐</span></a></li>
+</ul>
+</li>
 </ul>
 <h2 id="funzionamento">Funzionamento</h2>
 <h3 id="velocità-di-caricamento-e-consultazione-🏃🏻‍♂️">Velocità di caricamento e consultazione <span class="emoji">🏃🏻‍♂️</span></h3>

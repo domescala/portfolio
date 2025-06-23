@@ -1,3 +1,6 @@
+<meta name="description" content="Pagina web per criptare e decriptare messaggi attraverso il cifrario di Vigenère">
+<favicon-emoji>🔐</favicon-emoji>
+
 ###### *Tool* *Progetto personale*
 
 # Enigma

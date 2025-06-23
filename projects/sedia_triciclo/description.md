@@ -1,3 +1,7 @@
+
+<meta name="description" content="Presentazione di un progetto universitario di modellazione 3D ed economia circolare, in collaborazione con la Cooperativa Sociale torinese Triciclo.">
+<favicon-emoji>🪑</favicon-emoji>
+
 ###### *3D MODELLING* *PROGETTO UNIVERSITARIO \ COOPERATIVA TRICICLO*
 
 

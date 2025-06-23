@@ -278,7 +278,9 @@ body:has(.current-project) .img_presentation{
     /* transition-timing-function: cubic-bezier(0, 1.23, 0.87, 1.22); */
     /* cursor: pointer; */
     /* cursor: url(../img/cursor.png) 20 20, auto; */
+    cursor: none;
 }
+
 /* .name:active{
     transform: scale(0.50);
 } */
@@ -286,7 +288,6 @@ body:has(.current-project) .img_presentation{
     position: relative;
     transition-property: transform, filter;
     transition-timing-function: cubic-bezier(0.06, 0.81, 0.21, 1.11);
-    cursor: url('data:image/svg+xml,   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="80px" height="80px">   <text x="40" y="40" font-size="40px" dominant-baseline="middle" text-anchor="middle">💣<animateTransform attributeName="transform" attributeType="XML" type="rotate" values="0 20 20; -30 45 35; 0 20 20" dur="0.7s" repeatCount="indefinite" /></text></svg>') 16 16, grabbing;
     
     /* no select */
     -webkit-touch-callout: none; /* iOS Safari */
@@ -298,8 +299,45 @@ body:has(.current-project) .img_presentation{
                                     supported by Chrome and Opera */
 
 }
+.box-cursor{
+    width: 47px;
+    height: 65px;
+    margin-top: -25px;
+    margin-left: -25px;
+    background-position: -16px 0px;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: -40;
+    left: -40;
+    transition: top 0.3s ease, left 0.3s ease, scale 1s ease;
+    pointer-events: none;
+    cursor: none;
+    background-image: url('data:image/svg+xml,   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="80px" height="80px">   <text x="40" y="40" font-size="40px" dominant-baseline="middle" text-anchor="middle">💣<animateTransform attributeName="transform" attributeType="XML" type="rotate" values="0 20 20; -30 45 35; 0 20 20" dur="0.7s" repeatCount="indefinite" /></text></svg>');
+}
 
-.cursor_boom_load{
+body:has(.cursor_boom_load) .box-cursor{
+    animation: cursor-boom-load 1.2s ease;
+}
+@keyframes cursor-boom-load {
+    70%{
+        scale: 1.5;
+    }
+    80%{
+        background-image: url('data:image/svg+xml,   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="80px" height="80px">   <text x="40" y="40" font-size="40px" dominant-baseline="middle" text-anchor="middle">💣<animateTransform attributeName="transform" attributeType="XML" type="rotate" values="0 20 20; -30 45 35; 0 20 20" dur="0.7s" repeatCount="indefinite" /></text></svg>');
+    }
+    81%, 100%{
+        scale: 3;
+        background-image: url('data:image/svg+xml,   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="80px" height="80px">   <text x="40" y="40" font-size="40px" dominant-baseline="middle" text-anchor="middle">💥<animateTransform attributeName="transform" attributeType="XML" type="rotate" values="0 20 20; -30 45 35; 0 20 20" dur="0.7s" repeatCount="indefinite" /></text></svg>') ;}
+}
+body:has(.cursor_boomed) .box-cursor{
+    transition: top 0.3s ease, left 0.3s ease, scale 1s ease, background-image 0s 2s;
+    background-image:url('data:image/svg+xml,   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="80px" height="80px">   <text x="40" y="40" font-size="40px" dominant-baseline="middle" text-anchor="middle">🧹<animateTransform attributeName="transform" attributeType="XML" type="rotate" values="0 20 20; -30 45 35; 0 20 20" dur="0.7s" repeatCount="indefinite" /></text></svg>') ;
+}
+body.is-sboom .box-cursor{
+   scale: 4;
+}
+
+/* .cursor_boom_load{
     cursor: url('data:image/svg+xml,   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="50px" height="50px">   <text x="0" y="40" font-size="40px">🔥</text></svg>') 16 16, grabbing;
 }
 .cursor_boomed{
@@ -307,7 +345,7 @@ body:has(.current-project) .img_presentation{
 }
 .cursor_sboom{
     cursor: url('data:image/svg+xml,   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="50px" height="50px">   <text x="0" y="40" font-size="40px">🧹</text></svg>') 16 16, grab;
-}
+} */
 
 /* ---------------------------------------- */
 /* PORTFOLIO */
@@ -385,6 +423,10 @@ body:has(.project_opening) *{
 }
 .project .markdown-box{
     display: none;
+}
+body:has(.transition-project) .project:not(.transition-project){
+    filter: blur(10px);
+    opacity: 0.5;
 }
 /* zoom-in project*/
 @keyframes anim-project-hover {
@@ -485,13 +527,15 @@ body:not(body:has(.project_opening)) #containerportfolio .project:hover .intro_p
     justify-content: center;
     background-color: #f6f6f6;
     align-items: center;
+    cursor: auto !important;
 }
 
-.project-exit{
-    display: none;
+.project-header-buttons{
+    display: flex;
+    justify-content: space-between;
     font-size: 20px;
     width: 100%;
-    padding: 10px 0;
+    padding: 10px 85px;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -503,7 +547,7 @@ body:not(body:has(.project_opening)) #containerportfolio .project:hover .intro_p
     z-index: 999999;
     top: 0;
 }
-.project-exit p{
+.project-header-buttons p{
     background: #f6f6f6;
     padding: 4px 9px 4px;
     line-height: 1;
@@ -512,30 +556,39 @@ body:not(body:has(.project_opening)) #containerportfolio .project:hover .intro_p
     outline: 1px solid black;
     font-family: lora;
     cursor: pointer;
-    margin-right: 5px;
     display: flex;
     align-items: center;
-    margin-left: 80px;
     font-size: 14px;
   }
   
-.project-exit span{
+.project-header-buttons span{
     /* line-height: 1; */
     margin-right: 5px;
 }
+.project-header-buttons a{
+    /* line-height: 1; */
+    text-decoration: none;
+}
+
 
 @media only screen and (max-width: 650px) {
-    .project-exit p{
-        margin-left: 10px;
+    .project-header-buttons {
+        padding-left: 15px;
+        padding-right: 15px;
     }
 }
-@media only screen and (max-width: 1100px) {
-    .project-exit{
-        display: flex;
+@media only screen and (min-width: 1100px) {
+    .project-header-buttons{
+        /* display: none; */
+        padding-top: 20px;
+        padding-bottom:20px ;
+    }
+    .iframe-project{
+        margin-top: 35px;
     }
 }
 
-.project-exit:active{
+.project-header-buttons p:active{
     scale: 0.95;
 }
 .current-project .iframe-project, .project_opening .iframe-project{
@@ -551,6 +604,10 @@ body:not(body:has(.project_opening)) #containerportfolio .project:hover .intro_p
 }
 .project_opening{
     overflow: hidden;
+}
+
+.meta-description{
+    display: none;
 }
 
 /* #containerportfolio .project_opening .intro_project_gif,  */

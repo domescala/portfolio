@@ -86,6 +86,9 @@
             
 </style>
 
+<meta name="description" content="Progettazione di una Guida non ufficiale per la serie tv The Clone Wars. Con strumenti come Episode Tracker, filtri per ordinare gli episodi e molto altro">
+<favicon-emoji>🚀</favicon-emoji>
+
 ###### *🌐web / Episode Tracker* *Progetto personale*
 
 # Guida galattica agli episodi di The Clone Wars

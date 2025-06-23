@@ -1,3 +1,6 @@
+<meta name="description" content="Analisi e sviluppo di 'Aule Libere Polito', un progetto indipendente con l'obiettivo di migliorare notevolmente il servizio 'aule libere' del Politecnico di Torino, attraverso un efficace redesign della UX/UI.">
+<favicon-emoji>📚</favicon-emoji>
+
 ###### *Tool* *Progetto personale*
 # Aule Libere Polito
 Progetto indipendente con l'obiettivo di migliorare notevolmente il servizio "aule libere" del Politecnico di Torino, attraverso un efficace redesign della UX/UI.  
@@ -19,15 +22,18 @@ Nella nuova pagina le aule sono disposte in una lista verticale. Ognuna è suddi
 <img src="cover.gif" style="max-height:450px;object-fit:cover;object-position: top;">
 
 ## Nuove feature
-- [🏃🏻‍♂️ Velocità di caricamento e consultazione](#velocità-di-caricamento-e-consultazione-🏃🏻‍♂️) 
-- [📊 Filtri per ordinare le aule in base alla disponibilità, alla zona, al piano, alla capienza e alla superficie](#filtri-per-ordinare-le-aule-📊)   
-- 📄 Pagina di recap sulle informazioni generali dell'aula selezionata 
-- 🎨 La fascia oraria corrente è evidenziata
-- [🔎 Ricerca aule](#ricerca-aule-🔎)
-- 📆 Avvio sul primo giorno consultabile 
-- ⚡&#xFE0F; Avviso in caso di prese elettriche assenti 
-- [⭐ Aule preferite](#aule-preferite-⭐)
-- 🏫 Memorizzazione dell'ultima sede selezionata 
+- [Aule Libere Polito](#aule-libere-polito)
+  - [Il problema](#il-problema)
+    - [❌ Disposizione delle aule](#-disposizione-delle-aule)
+    - [❌ Elementi inutili e fuorvianti](#-elementi-inutili-e-fuorvianti)
+    - [❌ Eccessiva latenza](#-eccessiva-latenza)
+  - [Redesign](#redesign)
+  - [Nuove feature](#nuove-feature)
+  - [Funzionamento](#funzionamento)
+    - [Velocità di caricamento e consultazione 🏃🏻‍♂️](#velocità-di-caricamento-e-consultazione-️)
+    - [Filtri per ordinare le aule 📊](#filtri-per-ordinare-le-aule-)
+    - [Ricerca aule 🔎](#ricerca-aule-)
+    - [Aule preferite ⭐](#aule-preferite-)
 ## Funzionamento
 ### Velocità di caricamento e consultazione 🏃🏻‍♂️
 La soluzione migliore al problema della latenza è quella di conservare tutti i dati relativi alle aule già nel client. Per fare ciò è stato necessario sviluppare in python uno script che raccogliesse uno ad uno tutte le liste delle aule disponibili di ogni giorno per ogni sede. Questo script viene eseguito manualmente dal mio PC circa una volta a settimana, e i dati vengono aggiornati sul repository di Github  nel file [classrooms_data.js 🔗](https://domescala.github.io/aule_libere_polito/js/classrooms_data.js).  

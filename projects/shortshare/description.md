@@ -1,3 +1,6 @@
+<meta name="description" content="Progetto universitario di branding per ShortShare: un'agenzia che promuove lo sharing a bassa percorrenza, attraverso campagne di comunicazioni sul territorio torinese..">
+<favicon-emoji>🚴🏻‍♀️</favicon-emoji>
+
 ###### *CAMPAGNA DI COMUNICAZIONE \ BRANDING* *PROGETTO UNIVERSITARIO*
 
 # ShortShare

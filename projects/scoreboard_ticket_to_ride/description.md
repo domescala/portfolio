@@ -65,6 +65,10 @@ radial-gradient(var(--radius) at var(--end)   var(--end),   var(--a));
 mask-composite: intersect;
 }
 </style>
+
+<meta name="description" content="Analisi e sviluppo di tool segnapunti per il gioco Ticket to Ride: Europe, per calcolare il punteggio a fine partita in modo semplice e veloce.">
+<favicon-emoji>🚂</favicon-emoji>
+
 ###### *web* *Progetto personale*
 
 # Unofficial Ticket to Ride Scoreboard
