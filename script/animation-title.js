@@ -53,7 +53,9 @@ for (let index = 0; index < text.length; index++) {
         else{           sboom()}
     })
     randDelay = Math.round(Math.random()*100) /100
-    element.style = `--animated-cursor-broom:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='80px' height='80px'%3E%3Ctext x='40' y='40' font-size='40px' dominant-baseline='middle' text-anchor='middle'%3E🧹%3CanimateTransform attributeName='transform' attributeType='XML' type='rotate' values='0 20 20; -30 45 35; 0 20 20' dur='0.7s' begin='${randDelay}s' repeatCount='indefinite'/%3E%3C/text%3E%3C/svg%3E")`
+    element.style = `--animated-cursor-broom:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='80px' height='80px'%3E%3Ctext x='40' y='40' font-size='40px' dominant-baseline='middle' text-anchor='middle'%3E🧹%3CanimateTransform attributeName='transform' attributeType='XML' type='rotate' values='0 20 20; -30 45 35; 0 20 20' dur='0.7s' begin='${randDelay}s' repeatCount='indefinite'/%3E%3C/text%3E%3C/svg%3E");
+    --animated-cursor-star:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='80px' height='80px'%3E%3Ctext x='40' y='40' font-size='40px' dominant-baseline='middle' text-anchor='middle'%3E✨%3CanimateTransform attributeName='transform' attributeType='XML' type='rotate' values='0 20 20; -30 45 35; 0 20 20' dur='0.7s' begin='${randDelay}s' repeatCount='indefinite'/%3E%3C/text%3E%3C/svg%3E");
+    `
     // $(element).click(function (e) {
     //     if(!boomed){    boom(e) }
     //     else{           sboom()}

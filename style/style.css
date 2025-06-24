@@ -6,7 +6,8 @@
 
     --animated-cursor-bomb:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='80px' height='80px'%3E%3Ctext x='40' y='40' font-size='40px' dominant-baseline='middle' text-anchor='middle'%3E💣%3CanimateTransform attributeName='transform' attributeType='XML' type='rotate' values='0 20 20; -30 45 35; 0 20 20' dur='0.7s' repeatCount='indefinite'/%3E%3C/text%3E%3C/svg%3E");
     --animated-cursor-explosion:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='80px' height='80px'%3E%3Ctext x='40' y='40' font-size='40px' dominant-baseline='middle' text-anchor='middle'%3E💥%3CanimateTransform attributeName='transform' attributeType='XML' type='rotate' values='0 20 20; -30 45 35; 0 20 20' dur='0.7s' repeatCount='indefinite'/%3E%3C/text%3E%3C/svg%3E");
-    --animated-cursor-soap:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='80px' height='80px'%3E%3Ctext x='40' y='40' font-size='40px' dominant-baseline='middle' text-anchor='middle'%3E🧼%3CanimateTransform attributeName='transform' attributeType='XML' type='rotate' values='0 20 20; -30 45 35; 0 20 20' dur='0.7s' repeatCount='indefinite'/%3E%3C/text%3E%3C/svg%3E");
+    --animated-cursor-stars:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='80px' height='80px'%3E%3Ctext x='40' y='40' font-size='40px' dominant-baseline='middle' text-anchor='middle'%3E✨%3CanimateTransform attributeName='transform' attributeType='XML' type='rotate' values='0 20 20; -10 45 35; 0 20 20' dur='1s' repeatCount='indefinite'/%3E%3C/text%3E%3C/svg%3E");
+    --animated-cursor-wizard:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='80px' height='80px'%3E%3Ctext x='40' y='40' font-size='40px' dominant-baseline='middle' text-anchor='middle'%3E🧙🏻‍♂️%3CanimateTransform attributeName='transform' attributeType='XML' type='rotate' values='0 20 20; -10 45 35; 0 20 20' dur='0.7s' repeatCount='indefinite'/%3E%3C/text%3E%3C/svg%3E");
     --cursor-dot: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='10' fill='%230005' /%3E%3C/svg%3E")  0 0, auto;
 }
 
@@ -301,8 +302,7 @@ body:has(.current-project) .img_presentation{
     justify-content: center;
     align-items: center;
 }
-body.is-sboom 
-.textboom:nth-child(even):after{
+body.is-sboom .textboom:nth-child(even)::before{
     content: "";
     width: 2em;
     height: 2em;
@@ -316,11 +316,28 @@ body.is-sboom
     /* top: 0; */
     /* background-color: red; */
 }
+body.is-sboom .textboom:nth-child(even)::after{
+    content: "";
+    width: 0.5em;
+    height: 0.5em;
+    position: absolute;
+    background-image: var(--animated-cursor-stars);
+    background-position: 0px 0em;
+    bottom: -0em;
+    left: -0.25em;
+    scale: 1.2;
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* opacity: 0.5; */
+    /* left: -28%; */
+    /* top: 0; */
+    /* background-color: red; */
+}
 .t8::after{
     content: revert !important;
 }
 .box-cursor{
-    width: 47px;
+    width: 65px;
     height: 65px;
     margin-top: -25px;
     margin-left: -25px;
@@ -335,9 +352,15 @@ body.is-sboom
     z-index: -1;
     background-image: var(--animated-cursor-bomb);
 }
-
+.box-cursor::after{
+    content: "tssss"
+}
 body:has(.cursor_boom_load) .box-cursor{
     animation: cursor-boom-load 1.2s ease;
+}
+
+body:has(.cursor_boom_load) .box-cursor::after{
+    animation: cursor-boom-load-after 1.2s ease;
 }
 @keyframes cursor-boom-load {
     70%{
@@ -351,17 +374,92 @@ body:has(.cursor_boom_load) .box-cursor{
         background-image: var(--animated-cursor-explosion);
     }
 }
-body:has(.cursor_boomed) .box-cursor{
-    transition: top 0.3s ease, left 0.3s ease, scale 1s ease, background-image 0s 2s;
-    background-image: var(--animated-cursor-soap);
+@keyframes cursor-boom-after {
+    0%, 100%{
+        content: "";
+        display: none;
+    }
+}
+body:has(.cursor_boomed) .box-cursor, body.is-sboom .box-cursor{
+    transition: top 0.3s ease, left 0.3s ease, scale 1s ease, background-image 0s 10s;
+    background-image: var(--animated-cursor-wizard);
     z-index: 9999;
 }
 body.is-sboom .box-cursor{
    scale: 4;
 }
-body.is-sboom  .name, body:has(.cursor_boomed) .name{
-    cursor: var(--cursor-🧽);
+body .box-cursor::after, body .box-cursor::before{
+    content: "";
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: calc(-50% - 9px);
+    /* padding: 5px 4px; */
+    /* border-radius: 10px; */
+    width: 200%;
+    font-family: lora;
+    text-align: center;
+    transition: opacity 0.5s 0.5s ease;
 }
+body:has(.cursor_boomed) .box-cursor::after{
+    opacity: 1;
+    content: "suvvia, rimetti in ordine✨" !important;
+    /* background: #ffffff75; */
+    /* padding: 5px; */
+    /* width: 200%; */
+    text-shadow: 0px 0px 4px #ffffff;
+    font-weight:900;
+    color: var(--text);
+}
+body.is-sboom .box-cursor::after{
+    opacity: 1;
+}
+body.is-sboom .box-cursor::before{
+    opacity: 1;
+    background: no;
+    /* all: inherit; */
+    content: "" !important;
+    /* top:  75%  !important; */
+    /* left: 75%  !important; */
+    /* scale: 0.6 !important; */
+    background-image: var(--animated-cursor-stars) !important;
+    width: 50%;
+    /* font-size: 8px; */
+    /* padding-top: 35px; */
+    margin-top: -60px;
+    text-align: center;
+    margin-left: 21px;
+    height: 50%;
+    /* outline: red solid; */
+    background-repeat: no-repeat;
+    background-position: -6px -4px;
+    scale: 1;
+    background-size: 134%;
+}
+
+body.is-sboom .box-cursor::after{
+    background: no;
+    /* all: inherit; */
+    content: "hockety-pockety wockety-wack" !important;
+    /* top:  75%  !important; */
+    /* left: 75%  !important; */
+    /* scale: 0.6 !important; */
+    background-image: var(--animated-cursor-stars) !important;
+    width: 200%;
+    font-size: 6px;
+    padding-top: 50px;
+    margin-top: -50px;
+    text-align: center;
+    margin-left: 2px;
+    height: 100%;
+    /* outline: red solid; */
+    background-repeat: no-repeat;
+    background-position: 59px 15px;
+    scale: 1;
+    background-size: 37%;
+}
+
+
 
 /* .cursor_boom_load{
     cursor: url('data:image/svg+xml,   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="50px" height="50px">   <text x="0" y="40" font-size="40px">🔥</text></svg>') 16 16, grabbing;
