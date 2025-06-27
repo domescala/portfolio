@@ -7,6 +7,15 @@ let test = '';
 let timeouts = [];
 let project_opened = false;
 
+const switchPreventSrc = (el, setLazy) => {
+  el.setAttribute('src', el.getAttribute('prevent-src'));
+  el.removeAttribute('prevent-src'); // remove
+  // set loading lazy
+  setLazy ? el.setAttribute('loading', 'lazy') : '';
+  // force reload for video element
+  el.tagName == 'SOURCE' ? el.parentElement.load() : '';
+};
+
 let project = document.querySelectorAll('.project')[10];
 PROJECTS.forEach((project, index) => {
   project.style['order'] = index;
@@ -30,6 +39,7 @@ const openProject = (project, index) => {
   const timeTransition = 1500;
   const gif = project.querySelector('.intro_project_gif');
   const iframe = project.querySelector('iframe');
+  iframe.getAttribute('prevent-src') ? switchPreventSrc(iframe) : '' // avoid loading until now!
   const headerButtons = project.querySelector('.project-header-buttons');
   headerButtons.style.opacity = '0';
   // add the project id as a parameter in the URL
@@ -41,7 +51,7 @@ const openProject = (project, index) => {
   //   project.classList.add('project_opening');
 
   // stop the hover animation
-  project.classList.add('transition-project')
+  project.classList.add('transition-project');
   project.style['transition'] = 'none';
   project.style['transform'] = 'none';
   project.style['animation'] = 'none';
@@ -97,12 +107,12 @@ const openProject = (project, index) => {
   // transition-duration is 1 second, after that remove all inline style (Except the flex order)
   setTimeout(() => {
     project.style = 'order:' + project.style['order'];
-    headerButtons.style['opacity'] = "1"  
-    project.classList.remove('transition-project')
+    headerButtons.style['opacity'] = '1';
+    project.classList.remove('transition-project');
     iframe.style['display'] = 'flex';
-    requestAnimationFrame(()=>{
-        iframe.style['opacity'] = '1';
-    })
+    requestAnimationFrame(() => {
+      iframe.style['opacity'] = '1';
+    });
 
     // project.classList.remove('project_opening');
     // remove gif
@@ -230,14 +240,7 @@ if (project_id) {
 
   const project = document.getElementById(project_id);
   // assign the real src to all images and videos in current project
-  project.querySelectorAll('[prevent-src]').forEach((e) => {
-    e.setAttribute('src', e.getAttribute('prevent-src'));
-    e.removeAttribute('prevent-src'); // remove
-    if (e.tagName == 'SOURCE') {
-      // force reload for video element
-      e.parentElement.load();
-    }
-  });
+  project.querySelectorAll('[prevent-src]').forEach((e) => switchPreventSrc(e));
 
   project.parentElement.scrollIntoView({
     behavior: 'instant',
@@ -266,14 +269,9 @@ if (project_id) {
     inline: 'nearest'
   });
 } else {
-  document.querySelectorAll('#presentation [prevent-src]').forEach((e) => {
-    e.setAttribute('src', e.getAttribute('prevent-src'));
-    e.removeAttribute('prevent-src'); // remove
-    if (e.tagName == 'SOURCE') {
-      // reload for video element
-      e.parentElement.load();
-    }
-  });
+  document
+    .querySelectorAll('#presentation [prevent-src]')
+    .forEach((e) => switchPreventSrc(e));
 }
 
 // when the images in current project are ready the page will fire the onload event
@@ -281,15 +279,9 @@ onload = () => {
   console.log('load');
   removeLoading();
   // assign real src to all img with prevent-src
-  document.querySelectorAll('[prevent-src]').forEach((e) => {
-    e.setAttribute('src', e.getAttribute('prevent-src'));
-    e.removeAttribute('prevent-src'); // remove
-    e.setAttribute('loading', 'lazy'); // set loading lazy
-    if (e.tagName == 'SOURCE') {
-      // reload for video element
-      e.parentElement.load();
-    }
-  });
+  document
+    .querySelectorAll(':not(iframe)[prevent-src]')
+    .forEach((e) => switchPreventSrc(e, true));
 
   PROJECTS.forEach((p) => {
     const link = p.querySelector('.meta-description a').getAttribute('href');
