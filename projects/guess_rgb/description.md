@@ -176,7 +176,6 @@ Mini gioco che mette a dura prova la vista e la memoria di qualsiasi graphic des
   - Appaiono dei valori che mostrano la differenza di errore, ad apice dei numeri appena inseriti (+30, -20 ecc ...)
   - Sui cursori appaiono due barre, colore rosso e rosso scuro, che mostrano la differenza di errore
 - Sullo sfondo il colore diventa in un gradiente diagonale, che parte dal colore corretto a quello inserito dal giocatore 
-- Appare una percentuale di accuratezza, calcolata attraverso la formula...
 - Appare una valutazione finale, per congratularsi o in alcuni casi per incoraggiare il giocatore a riprovare 
 - È poi possibile condividere il risultato o estrarre un nuovo colore
 
