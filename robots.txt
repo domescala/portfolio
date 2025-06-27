@@ -1,4 +1,9 @@
 User-agent: *
-Disallow:
 Allow: /
+Disallow: /img/presentation_0b.png
+Disallow: /img/presentation_1-blur.png
+Disallow: /img/presentation_2-blur.png
+Disallow: /img/presentation_3-blur.png
+Disallow: /img/presentation.png
+
 Sitemap: https://domescala.github.io/portfolio/sitemap.xml
