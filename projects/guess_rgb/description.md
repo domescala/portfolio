@@ -159,7 +159,7 @@
 }
 </style>
 
-<meta name="description" content="Analisi e sviluppo di 'Guess the RGB': minigame che mette alla vista e la memoria di qualsiasi graphic designer.">
+<meta name="description" content="Analisi e sviluppo di 'Guess the RGB': minigame che mette alla prova la vista e la memoria di qualsiasi graphic designer.">
 <favicon-emoji>📚</favicon-emoji>
 
 ###### *Minigame* *Progetto personale* 
