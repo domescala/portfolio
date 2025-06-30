@@ -655,6 +655,7 @@ body:not(body:has(.project_opening)) #containerportfolio .project:hover .intro_p
     background-color: #f6f6f6;
     align-items: center;
     cursor: auto !important;
+    flex-direction: column;
 }
 
 .project-header-buttons{
@@ -670,9 +671,9 @@ body:not(body:has(.project_opening)) #containerportfolio .project:hover .intro_p
     -ms-user-select: none;
     user-select: none;
     background: #f6f6f6;
-    position: absolute;
+    /* position: absolute; */
     z-index: 999999;
-    top: 0;
+    /* top: 0; */
 }
 .project-header-buttons p{
     background: #f6f6f6;

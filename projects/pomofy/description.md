@@ -1,4 +1,7 @@
-<meta name="description" content="Analisi e sviluppo di 'Pomofy', un timer pomodoro per ascoltare brani ambient durante la sessione di studio/lavoro e musica durante la pausa attraverso Spotify">
+<compileMeta 
+  description="Analisi e sviluppo di 'Pomofy', un timer pomodoro per ascoltare brani ambient durante la sessione di studio/lavoro e musica durante la pausa attraverso Spotify"
+  image="cover.gif" 
+/>
 <favicon-emoji>🍅</favicon-emoji>
 
 ###### *tool* *Progetto personale*
@@ -17,12 +20,12 @@ Pomofy è un pomodoro timer che permette all'utente di ascoltare dei brani ambie
 
 ## Features
 
-- 🖼&#xFE0F; Disponibilità di diverse ambientazioni, abbinate a brani ed immagini
-- ⏲ Modalità pomodoro singolo o doppio (25\5 o 50\10)
+- 🖼️ Disponibilità di diverse ambientazioni, abbinate a brani ed immagini
+- ⏲️ Modalità pomodoro singolo o doppio (25\5 o 50\10)
 - ✨ Dissolvenza tra i brani 
 - 📃 Recap dei pomodori svolti e del tempo trascorso
 - 🔙 Storico dei pomodori nei giorni precedenti 
-- ⚙&#xFE0F; Creazione di playlist personalizzate scegliendo i brani e gli sfondi
+- ⚙️ Creazione di playlist personalizzate scegliendo i brani e gli sfondi
 - 📻 Connessione a Spotify
 
 ## Cos'è un pomodoro?? 🍅

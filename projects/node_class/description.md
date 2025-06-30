@@ -12,8 +12,10 @@
     }
 </style>
 
-
-<meta name="description" content="Presentazione di 'Node Class' un videogioco educativo che mira ad insegnare i Geometry Nodes di Blender, ideato e progettato per la mia Tesi di Laurea">
+<compileMeta 
+  description="Presentazione di 'Node Class' un videogioco educativo che mira ad insegnare i Geometry Nodes di Blender, ideato e progettato per la mia Tesi di Laurea"
+  image="nodeclass-donut.jpg" 
+/>
 <favicon-emoji>🎮</favicon-emoji>
 
 # Node Class
@@ -22,7 +24,7 @@
 
 Node Class è un gioco educativo che mira ad insegnare i Geometry Nodes di Blender. Diversamente da altri corsi, Node Class sfrutta la componente di intrattenimento per soffermarsi sui dettagli degli argomenti, fornendo una spiegazione esaustiva e completa.
 
-## Scenario 🗺&#xFE0F;
+## Scenario 🗺️
 
 I geometry nodes sono uno strumento estremamente potente nelle mani degli artisti ed offrono nuove opportunità nella realizzazione di modelli complessi. 
 

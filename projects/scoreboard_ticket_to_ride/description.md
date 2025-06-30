@@ -65,8 +65,10 @@ radial-gradient(var(--radius) at var(--end)   var(--end),   var(--a));
 mask-composite: intersect;
 }
 </style>
-
-<meta name="description" content="Analisi e sviluppo di tool segnapunti per il gioco Ticket to Ride: Europe, per calcolare il punteggio a fine partita in modo semplice e veloce.">
+<compileMeta 
+  description="Analisi e sviluppo di tool segnapunti per il gioco Ticket to Ride: Europe, per calcolare il punteggio a fine partita in modo semplice e veloce."
+  image="assets/cover.png" 
+/>
 <favicon-emoji>🚂</favicon-emoji>
 
 ###### *web* *Progetto personale*
@@ -110,22 +112,22 @@ Il Bonus è "fuori" dal loop della conta, perché non è necessario che si ripet
 
 ![WIREFRAME](assets/WIREFRAME.svg)
 
-## UI 🕹&#xFE0F;
+## UI 🕹️
 
-### STILE 🖌&#xFE0F;
+### STILE 🖌️
 Lo stile di *Ticket to Ride: Europe* si rifà ad una ambientazione ottocentesca, contiene moltissime illustrazioni ricche di dettagli, così come i testi, carichi di ghirigori. Si è definito uno stile che richiami l'ambientazione della rivoluzione industriale, dei treni e dei biglietti, ma mantenendo un aspetto più moderno e colorato. 
-### CARATTERI 🈂&#xFE0F;
+### CARATTERI 🈂️
 Per i font si è scelto **Lora** per il corpo del testo che in qualche modo ricorda i caratteri utilizzati per i biglietti ferroviari e **Limelight** per i titoli che invece riporta subito ad una ambientazione molto retrò.
 
 <iframe src="assets/font.html" style="aspect-ratio:2" ></iframe>
 
-### DOM ELEMENTS 🎛&#xFE0F;
-Per gli elementi della UI (pulsanti, input, checkbox...) si è preso come riferimento un rettangolo con i bordi e con gli angoli smussati a 45 gradi che ricordano la forma di un biglietto 👉🏻🎟&#xFE0F;. È stato aggiunto un bordo inferiore molto spesso simulando un'ombreggiatura, utilizzata anche per il feedback del pulsante premuto.  
+### DOM ELEMENTS 🎛️
+Per gli elementi della UI (pulsanti, input, checkbox...) si è preso come riferimento un rettangolo con i bordi e con gli angoli smussati a 45 gradi che ricordano la forma di un biglietto 👉🏻🎟️. È stato aggiunto un bordo inferiore molto spesso simulando un'ombreggiatura, utilizzata anche per il feedback del pulsante premuto.  
 Per gli input e le card si è utilizzato invece un rettangolo con al fondo un pattern tipo "zigrinatura", mentre l'input del nome dei giocatori altro non è che un vagoncino del colore corrispondente che si adatta in larghezza al nome inserito.
 
 <iframe src="assets/ui.html" style="aspect-ratio:1.4" ></iframe>
 
-### ICONE 🖼&#xFE0F;
+### ICONE 🖼️
 Per le icone/illustrazioni si è scelto di stilizzare gli elementi principali del gioco: vagone, stazione, biglietto, "Europa" e monete (che rappresentano in realtà il concetto di punteggio) utilizzando come per gli elementi UI un rettangolo smussato come forma di partenza, contorni netti, outline e bordo inferiore molto spesso.   
 
 ![icone principali](assets/icone.svg)
@@ -169,7 +171,7 @@ Infine i giocatori possono accedere alla classifica che viene automaticamente co
 
 L'app è stata sviluppata in Vuejs💚, adottando diverse strategie per la creazione della ui, come i pulsanti smussati <a __relative_path href="#__ttr-result" target="_self">(vai al risultato finale)</a>, le illustrazioni con i colori flessibili, gli input e i suggerimenti...
 
-### Angoli smussati - TENTATIVO CON CLIP-PATH✂&#xFE0F;
+### Angoli smussati - TENTATIVO CON CLIP-PATH✂️
 In CSS non è possibile avere gli angoli di un elemento smussati a 45 gradi in modo "naturale", come avviene con la proprietà border-radius, tanto meno avere un angolo con la curvatura al contrario (proprio come quella dei biglietti). Si può fare ricorso ad alcuni trucchetti come utilizzare `clip-path`. Definendo infatti una serie di punti è possibile tagliare via gli angoli di un elemento, il primo problema di questa soluzione è la complessità nel creare una formula che calcoli correttamente i punti. Il secondo problema è che un eventuale bordo verrebbe tagliato via negli angoli:
 ``` css
 clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%, 0% 25%)
@@ -200,7 +202,7 @@ background: orange;
 
 Aggiungiamo più gradienti in modo da coprire tutti gli angoli e utiliziamo `mask-composite: intersect` affinché i gradienti sovrapposti non si annullino.  
 
-``` css  
+``` css
 mask: 
  linear-gradient(-135deg, #0000 25px, #000 0%),
  linear-gradient( 135deg, #0000 25px, #000 0%),

@@ -1,4 +1,7 @@
-<meta name="description" content="Progetto universitario di branding per ShortShare: un'agenzia che promuove lo sharing a bassa percorrenza, attraverso campagne di comunicazioni sul territorio torinese..">
+<compileMeta 
+  description="Progetto universitario di branding per ShortShare: un'agenzia che promuove lo sharing a bassa percorrenza, attraverso campagne di comunicazioni sul territorio torinese."
+  image="mappa_particolare.png" 
+/>
 <favicon-emoji>🚴🏻‍♀️</favicon-emoji>
 
 ###### *CAMPAGNA DI COMUNICAZIONE \ BRANDING* *PROGETTO UNIVERSITARIO*
@@ -7,7 +10,7 @@
 ## Descrizione 📢
 In questa esercitazione è stato creato il brand Shortshare, ovvero un'agenzia che promuove lo sharing a bassa percorrenza, attraverso campagne di comunicazioni sul territorio torinese.
 
-## Contesto 🗺&#xFE0F
+## Contesto 🗺️
 Per micromobilità si intendono tutti gli spostamenti brevi si effettuano nel quotidiano all'interno della propria città. Si stima infatti che i percorsi inferiori ai 10 km rappresentano circa il 60% degli spostamenti quotidiani. 
 
 Mentre le città sono alle prese con l'aumento dell'inquinamento e della congestione, una micro mobilità sostenibile può essere una soluzione più pulita ed efficiente per gli spostamenti quotidiani
@@ -35,5 +38,5 @@ Questa campagna, simile ad una guerrilla, prevedeva di colorare fisicamente part
 
 
 
-<img src="mappa_animata.gif" style="max-height:500px;width:revert;margin-left:calc(50% - 150px);margin-right:calc(50% - 150px);">
+<img src="mappa_animata.gif" style="max-height:500px">
 *Sequenza dei poster progressivi durante la campagna. La mappa si evolve aggiungendo una linea alla volta*

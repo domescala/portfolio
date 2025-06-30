@@ -1,77 +1,237 @@
 <!DOCTYPE html>
+<html lang="it" data-theme="light" style="color-scheme: only light">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pomofy</title>
+    <meta
+      name="description"
+      content="Analisi e sviluppo di 'Pomofy', un timer pomodoro per ascoltare brani ambient durante la sessione di studio/lavoro e musica durante la pausa attraverso Spotify"
+    />
 
-<html data-theme="light" lang="it" style="color-scheme: only light">
-<head>
-<meta charset="utf-8"/>
-<meta content="Analisi e sviluppo di 'Pomofy', un timer pomodoro per ascoltare brani ambient durante la sessione di studio/lavoro e musica durante la pausa attraverso Spotify" name="description"/>
-<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="../../style/reset.css" rel="stylesheet"/>
-<link href="../../style/fonts.css" rel="stylesheet"/>
-<link href="../../style/markdown.css" rel="stylesheet"/>
-<link href="../../style/markdown-mobile.css" rel="stylesheet"/>
-<link href="favicon.ico" rel="icon"/>
-<script defer="" type="text/x-mathjax-config">
-      MathJax.Hub.Config({tex2jax: {inlineMath: [["$", "$"], ["\\\\(", "\\\\)"]],displayMath: [["$$", "$$"], ["\\[", "\\]"]],processEscapes: true},config: ["MMLorHTML.js"],jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],extensions: ["MathMenu.js", "MathZoom.js"],});
-    </script>
-<script defer="" src="../../script/markdown.js"></script>
-<title>Pomofy</title>
-</head>
-<body class="markdown-box">
-<p id="alert-banner" style="display: none;">
-      Hei! Questa pagina fa parte <a href="../../index.html">del mio portfolio :)</a>
-</p>
-<script>
-      if(window.self === window.top){
-        document.querySelector("#alert-banner").style = ""
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+    <link href="../../style/reset.css" rel="stylesheet" />
+    <link href="../../style/fonts.css" rel="stylesheet" />
+    <link href="../../style/markdown.css" rel="stylesheet" />
+    <link href="../../style/markdown-mobile.css" rel="stylesheet" />
+    <link rel="icon" href="favicon.ico" />
+    <script src="../../script/markdown.js" defer=""></script>
+
+    <!-- opengraph meta tags -->
+    <meta
+      property="og:url"
+      content="https://domescala.github.io/portfolio/projects/pomofy/"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Pomofy" />
+    <meta
+      property="og:description"
+      content="Analisi e sviluppo di 'Pomofy', un timer pomodoro per ascoltare brani ambient durante la sessione di studio/lavoro e musica durante la pausa attraverso Spotify"
+    />
+    <meta
+      property="og:image"
+      content="https://domescala.github.io/portfolio/projects/pomofy/cover.gif"
+    />
+    <meta property="og:site_name" content="domescala.github.io" />
+    <!-- twitter meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="domescala.github.io" />
+    <meta
+      property="twitter:url"
+      content="https://domescala.github.io/portfolio/projects/pomofy/"
+    />
+    <meta name="twitter:title" content="Pomofy" />
+    <meta
+      name="twitter:description"
+      content="Analisi e sviluppo di 'Pomofy', un timer pomodoro per ascoltare brani ambient durante la sessione di studio/lavoro e musica durante la pausa attraverso Spotify"
+    />
+    <meta
+      name="twitter:image"
+      content="https://domescala.github.io/portfolio/projects/pomofy/cover.gif"
+    />
+  </head>
+  <body class="markdown-box">
+    <p id="alert-banner" style="display: none">
+      Hei! Questa pagina fa parte
+      <a href="../../index.html">del mio portfolio :)</a>
+    </p>
+    <script>
+      if (window.self === window.top) {
+        document.querySelector("#alert-banner").style = "";
       }
     </script>
-<h6 id="tool-progetto-personale"><em>tool</em> <em>Progetto personale</em></h6>
-<h1 id="pomofy">Pomofy</h1>
-<h2 id="descrizione">Descrizione</h2>
-<p>Pomofy è un pomodoro timer che permette all'utente di ascoltare dei brani ambient durante la sessione di studio o lavoro, mentre durante la sessione di pausa riproduce musica. </p>
-<p>
-<video autoplay="" loop="" muted=""><source src="presentation.mp4" type="video/mp4"/></video>
-<em>Come si presenta Pomofy</em>
-</p>
-<h2 id="features">Features</h2>
-<ul>
-<li>🖼️ Disponibilità di diverse ambientazioni, abbinate a brani ed immagini</li>
-<li>⏲ Modalità pomodoro singolo o doppio (25\5 o 50\10)</li>
-<li>✨ Dissolvenza tra i brani </li>
-<li>📃 Recap dei pomodori svolti e del tempo trascorso</li>
-<li>🔙 Storico dei pomodori nei giorni precedenti </li>
-<li>⚙️ Creazione di playlist personalizzate scegliendo i brani e gli sfondi</li>
-<li>📻 Connessione a Spotify</li>
-</ul>
-<h2 id="cos'è-un-pomodoro??-🍅">Cos'è un pomodoro?? <span class="emoji">🍅</span></h2>
-<p>Usare la tecnica del pomodoro favorisce una concentrazione più prolungata, con meno distrazioni. Consiste nel suddividere il tempo di lavoro in "pomodori", sessioni brevi di mezz'ora suddivisa in 25 minuti di effettivo lavoro concentrato e 5 minuti di pausa e totale distrazione.<br/>
-È un dato di fatto che l'attenzione inizi a calare dopo una trentina di minuti e con questo metodo si ottimizza la concentrazione. Inoltre, quando lo studio o la task che si deve svolgere è noiosa o difficile, il pomodoro ti viene incontro.</p>
-<ul>
-<li>Diventa molto più semplice suddividere il tempo per ciascuna task. </li>
-<li>Ogni 25 minuti potrai renderti conto del tuo andamento: se hai iniziato a divagare o se ti sei distratto e ti rimetti in pista.   </li>
-<li>Interrompere bruscamente la task favorisce la motivazione nel riprenderla dopo la pausa  </li>
-</ul>
-<p>Inizialmente può sembrare solo una perdita di tempo, di fatto un quinto del tempo di lavoro è mangiato dalle pause. Ma per esperienza posso affermare che il lavoro prodotto da 3 ore suddiviso in pomodori rispetto a 3 ore di fila, è nettamente migliore e spesso è anche più completo. Inoltre è comunque necessario fare delle pause e riprendendo l'esempio, farle alla fine delle tre ore è molto più stressante.</p>
-<h2 id="funzionamento">Funzionamento</h2>
-<h3 id="storico">Storico</h3>
-<p>Il documento salva in tempo reale tutti i dati come pomodori completati, tempo trascorso, la traccia che si sta ascoltando eccetera eccetera. In questo modo ricaricando o riaprendo la pagina non si perderanno i progressi fatti, ma si tornerà allo stesso punto. 
-I dati sono salvati nel localStorage del browser, ovvero in locale. Infatti aprendo il documento con un browser diverso (chrome, firefox, opera...) i progressi saranno diversi. Ne consegue che cancellando i dati del browser si compromette la memoria di Pomofy.</p>
-<h3 id="connessione-a-spotify">Connessione a Spotify</h3>
-<p>Per avere questa funzionalità è necessario avviare la pagina passando dallo script di python Pomofy.py. Lo script infatti lancia DUE browser allo stesso tempo, il primo carica la solita pagina del pomodoro, il secondo invece mostra il lettore web di spotify (“open.spotify.com”). In questo modo, l'utente inserisce le credenziali e fa il login in una finestra a parte, in cui python “premerà” in modo automatico i tasti di play e di pausa per tenere sotto controllo il lettore.</p>
-<p><img alt="" src="login-spotify.png"/>
-<em>Premendo il tasto Accedi, Pomofy apre la pagina web di login di Spotify in una finestra a parte, che ospiterà il lettore</em></p>
-<p>Questo è un escamotage per aggirare le API ufficiali di spotify, che altrimenti necessiterebbero di una app e di un token per autorizzare ogni singola azione dal login alla funzione play/pausa. </p>
-<h2 id="storia">Storia</h2>
-<p>Il progetto Pomofy è nato per necessità: serviva uno strumento per mantenere la concentrazione durante lo studio e limitare le distrazioni.<br/>
-Adottare il metodo del pomodoro è stato un ottimo modo per risolvere quasi totalmente il problema. Rimaneva il fatto che ero sempre vincolato ad un timer, troppo scomodo da usare durante le sessioni di studio, soprattutto quando mi trovavo in biblioteca: non potendo impostare un allarme sonoro, tenevo costantemente sott'occhio il timer per controllare quando terminavano le sessioni di pomodoro e di pausa.</p>
-<p>Il punto di non ritorno è stato quando ho deciso di scrivere un piccolo script in python che emettesse un piccolo suono al termine delle sessioni che sentivo solamente io con le mie cuffiette. Non contento di questa soluzione “rudimentale” ho cercato online se qualcuno avesse trovato una soluzione migliore e ho scoperto l'esistenza di una moltitudine di video su youtube per lo studio che dividevano il tempo in pomodori, alcuni con sottofondi musicali, altri con rumori bianchi e ambiance.</p>
-<p>I rumori bianchi abbinati al metodo del pomodoro sono stati la svolta: diventava impossibile distrarsi. Riprodurre musica durante al termine del pomodoro era un modo meno stressante di interrompersi e fare una pausa, mantenendo viva la motivazione. Ma il dettaglio piu importante era l'automazione: non dovevo più gestire un timer, impostarlo, avviarlo, fermarlo. Era come avere un assistente che ti dice di fare una pausa e ti ricorda più tardi di ricominciare.<br/>
-Dopo diverso tempo, stufo della latenza del wifi e delle pubblicità di youtube, ho selezionato i brani preferiti e li ho scaricati sul pc per riprodurli in locale.  </p>
-<p>
-<video autoplay="" loop="" muted=""><source src="pomofy-legacy.mp4" type="video/mp4"/></video>
-<em>Una primissima versione di progetto con il conteggio dei pomodori e ambientazioni differenti</em>
-</p>
-<p>Ho sviluppato così inizialmente una semplice pagina html che includesse i brani scaricati e che tenesse traccia in automatico del tempo trascorso.<br/>
-Questa pagina si è voluta pian piano, con immagini suggestive per le varie ambientazioni, un sistema per prendere delle note e per creare delle task, ho aggiunto l'integrazione di spotify e molto altro.</p></body>
+
+    <h6 id="tool-progetto-personale">
+      <em>tool</em> <em>Progetto personale</em>
+    </h6>
+    <h1 id="pomofy">Pomofy</h1>
+    <p></p>
+
+    <h2 id="descrizione">Descrizione</h2>
+    <section>
+      <p>
+        Pomofy è un pomodoro timer che permette all'utente di ascoltare dei
+        brani ambient durante la sessione di studio o lavoro, mentre durante la
+        sessione di pausa riproduce musica.
+      </p>
+      <p>
+        <video autoplay="" muted="" loop="">
+          <source src="presentation.mp4" type="video/mp4" />
+        </video>
+        <em>Come si presenta Pomofy</em>
+      </p>
+    </section>
+
+    <h2 id="features">Features</h2>
+    <section>
+      <ul>
+        <li>
+          🖼️ Disponibilità di diverse ambientazioni, abbinate a brani ed
+          immagini
+        </li>
+        <li>⏲️ Modalità pomodoro singolo o doppio (25\5 o 50\10)</li>
+        <li>✨ Dissolvenza tra i brani</li>
+        <li>📃 Recap dei pomodori svolti e del tempo trascorso</li>
+        <li>🔙 Storico dei pomodori nei giorni precedenti</li>
+        <li>
+          ⚙️ Creazione di playlist personalizzate scegliendo i brani e gli
+          sfondi
+        </li>
+        <li>📻 Connessione a Spotify</li>
+      </ul>
+    </section>
+
+    <h2 id="cosè-un-pomodoro-🍅">
+      Cos'è un pomodoro?? <span class="emoji">🍅</span>
+    </h2>
+    <section>
+      <p>
+        Usare la tecnica del pomodoro favorisce una concentrazione più
+        prolungata, con meno distrazioni. Consiste nel suddividere il tempo di
+        lavoro in "pomodori", sessioni brevi di mezz'ora suddivisa in 25 minuti
+        di effettivo lavoro concentrato e 5 minuti di pausa e totale
+        distrazione.<br />
+        È un dato di fatto che l'attenzione inizi a calare dopo una trentina di
+        minuti e con questo metodo si ottimizza la concentrazione. Inoltre,
+        quando lo studio o la task che si deve svolgere è noiosa o difficile, il
+        pomodoro ti viene incontro.
+      </p>
+      <ul>
+        <li>
+          Diventa molto più semplice suddividere il tempo per ciascuna task.
+        </li>
+        <li>
+          Ogni 25 minuti potrai renderti conto del tuo andamento: se hai
+          iniziato a divagare o se ti sei distratto e ti rimetti in pista.
+        </li>
+        <li>
+          Interrompere bruscamente la task favorisce la motivazione nel
+          riprenderla dopo la pausa
+        </li>
+      </ul>
+      <p>
+        Inizialmente può sembrare solo una perdita di tempo, di fatto un quinto
+        del tempo di lavoro è mangiato dalle pause. Ma per esperienza posso
+        affermare che il lavoro prodotto da 3 ore suddiviso in pomodori rispetto
+        a 3 ore di fila, è nettamente migliore e spesso è anche più completo.
+        Inoltre è comunque necessario fare delle pause e riprendendo l'esempio,
+        farle alla fine delle tre ore è molto più stressante.
+      </p>
+    </section>
+
+    <h2 id="funzionamento">Funzionamento</h2>
+    <section>
+      <h3 id="storico">Storico</h3>
+      <p>
+        Il documento salva in tempo reale tutti i dati come pomodori completati,
+        tempo trascorso, la traccia che si sta ascoltando eccetera eccetera. In
+        questo modo ricaricando o riaprendo la pagina non si perderanno i
+        progressi fatti, ma si tornerà allo stesso punto. I dati sono salvati
+        nel localStorage del browser, ovvero in locale. Infatti aprendo il
+        documento con un browser diverso (chrome, firefox, opera…) i progressi
+        saranno diversi. Ne consegue che cancellando i dati del browser si
+        compromette la memoria di Pomofy.
+      </p>
+      <h3 id="connessione-a-spotify">Connessione a Spotify</h3>
+      <p>
+        Per avere questa funzionalità è necessario avviare la pagina passando
+        dallo script di python Pomofy.py. Lo script infatti lancia DUE browser
+        allo stesso tempo, il primo carica la solita pagina del pomodoro, il
+        secondo invece mostra il lettore web di spotify (“open.spotify.com”). In
+        questo modo, l'utente inserisce le credenziali e fa il login in una
+        finestra a parte, in cui python “premerà” in modo automatico i tasti di
+        play e di pausa per tenere sotto controllo il lettore.
+      </p>
+      <p>
+        <img src="login-spotify.png" alt="" />
+        <em
+          >Premendo il tasto Accedi, Pomofy apre la pagina web di login di
+          Spotify in una finestra a parte, che ospiterà il lettore</em
+        >
+      </p>
+      <p>
+        Questo è un escamotage per aggirare le API ufficiali di spotify, che
+        altrimenti necessiterebbero di una app e di un token per autorizzare
+        ogni singola azione dal login alla funzione play/pausa.
+      </p>
+    </section>
+
+    <h2 id="storia">Storia</h2>
+    <section>
+      <p>
+        Il progetto Pomofy è nato per necessità: serviva uno strumento per
+        mantenere la concentrazione durante lo studio e limitare le
+        distrazioni.<br />
+        Adottare il metodo del pomodoro è stato un ottimo modo per risolvere
+        quasi totalmente il problema. Rimaneva il fatto che ero sempre vincolato
+        ad un timer, troppo scomodo da usare durante le sessioni di studio,
+        soprattutto quando mi trovavo in biblioteca: non potendo impostare un
+        allarme sonoro, tenevo costantemente sott'occhio il timer per
+        controllare quando terminavano le sessioni di pomodoro e di pausa.
+      </p>
+      <p>
+        Il punto di non ritorno è stato quando ho deciso di scrivere un piccolo
+        script in python che emettesse un piccolo suono al termine delle
+        sessioni che sentivo solamente io con le mie cuffiette. Non contento di
+        questa soluzione “rudimentale” ho cercato online se qualcuno avesse
+        trovato una soluzione migliore e ho scoperto l'esistenza di una
+        moltitudine di video su youtube per lo studio che dividevano il tempo in
+        pomodori, alcuni con sottofondi musicali, altri con rumori bianchi e
+        ambiance.
+      </p>
+      <p>
+        I rumori bianchi abbinati al metodo del pomodoro sono stati la svolta:
+        diventava impossibile distrarsi. Riprodurre musica durante al termine
+        del pomodoro era un modo meno stressante di interrompersi e fare una
+        pausa, mantenendo viva la motivazione. Ma il dettaglio piu importante
+        era l'automazione: non dovevo più gestire un timer, impostarlo,
+        avviarlo, fermarlo. Era come avere un assistente che ti dice di fare una
+        pausa e ti ricorda più tardi di ricominciare.<br />
+        Dopo diverso tempo, stufo della latenza del wifi e delle pubblicità di
+        youtube, ho selezionato i brani preferiti e li ho scaricati sul pc per
+        riprodurli in locale.
+      </p>
+      <p>
+        <video autoplay="" muted="" loop="">
+          <source src="pomofy-legacy.mp4" type="video/mp4" />
+        </video>
+        <em
+          >Una primissima versione di progetto con il conteggio dei pomodori e
+          ambientazioni differenti</em
+        >
+      </p>
+      <p>
+        Ho sviluppato così inizialmente una semplice pagina html che includesse
+        i brani scaricati e che tenesse traccia in automatico del tempo
+        trascorso.<br />
+        Questa pagina si è voluta pian piano, con immagini suggestive per le
+        varie ambientazioni, un sistema per prendere delle note e per creare
+        delle task, ho aggiunto l'integrazione di spotify e molto altro.
+      </p>
+    </section>
+  </body>
 </html>

@@ -31,7 +31,10 @@
 
 </style>
 
-<meta name="description" content="Composizioni ispirate ai Beatles, Inception e Mr. Robot, utilizzando solamente solo caratteri tipografici per una esercitazione universitaria.">
+<compileMeta 
+  description="Composizioni ispirate ai Beatles, Inception e Mr. Robot, utilizzando solamente solo caratteri tipografici per una esercitazione universitaria."
+  image="cover.gif" 
+/>
 <favicon-emoji>🔠</favicon-emoji>
 
 ###### *POSTER \ TIPOGRAFIA* *PROGETTO UNIVERSITARIO*
@@ -49,7 +52,7 @@ Le lettere "submarine" compongono un sottomarino giallo citando il singolo "Yell
 
 Il carattere utilizzato è il Rockwell, uno slab-serif con delle grazie in grado di ricordare le tubature e le forme del sottomarino.
 
-## Dream is collapsing ⛷&#xFE0F;
+## Dream is collapsing ⛷️
 
 <p class="square_img">
 <img src="dream_is_collapsing.gif"/>
@@ -69,7 +72,7 @@ Il font usato è il Bebas, il carattere di tipo condensed si sviluppa piu in ver
 Il poster fa riferimento ad una frase e ad una scena del settimo episodio (*eps2.5_h4ndshake.sme*) in cui avviene un plot twist sconvolgente.
 **Questa composizione vuole raccontare proprio questo passaggio narrativo**: i rettangoli colorati sono dei semplici tasti "Ctrl" (control) affiancati ad un solo tasto "Illsn" (illusion). Questi tasti rappresentano proprio i personaggi della scena...
 
-⚠&#xFE0F; Il prossimo paragrafo contiene spoiler riguardo all'episodio e07s2 e di conseguenza sull'intera seconda stagione.  
+⚠️ Il prossimo paragrafo contiene spoiler riguardo all'episodio e07s2 e di conseguenza sull'intera seconda stagione.  
 
 <div class="spoiler invisible"><p>
 Il protagonista, Elliot Alderson, si accorge di esser l'unico a non avere sotto controllo la propria vita ed di aver vissuto in una piccola illusione fino a quel momento. <br> Durante tutta la seconda stagione infatti, Elliot si trova in carcere, ma la sua mente, per sopportare il dolore e per distrarlo, gli fa credere di essere tornato a casa dalla madre per qualche giorno. <br>I tasti "Ctrl" rappresentano gli altri carcerati che invece sono ben consapevoli della loro condizione e di indossare per l'appunto una tuta "arancione". Il tasto "Illsn" è Elliot, che crede di vestire i suoi soliti panni, per l'appunto "scuri".

@@ -85,9 +85,10 @@
 
             
 </style>
-
-<meta name="description" content="Progettazione di una Guida non ufficiale per la serie tv The Clone Wars. Con strumenti come Episode Tracker, filtri per ordinare gli episodi e molto altro">
-<favicon-emoji>🚀</favicon-emoji>
+<compileMeta 
+  description="Progettazione di una Guida non ufficiale per la serie tv The Clone Wars. Con strumenti come Episode Tracker, filtri per ordinare gli episodi e molto altro." 
+  image="assets/checker.png"
+/>
 
 ###### *🌐web / Episode Tracker* *Progetto personale*
 
@@ -101,7 +102,7 @@ Questa guida (non ufficiale) altro non è che un **Episode Tracker** per la seri
 <video style="width: 100%; max-height: 400px; aspect-ratio: 1; background: #fff;" autoplay loop muted><source src="reel.m4v" type="video/mp4"></video>
 </p>
 
-## Contesto 🗺&#xFE0F;
+## Contesto 🗺️
 
 ### La Guerra dei Cloni
 
@@ -140,17 +141,17 @@ Per ogni episodio si riassumono le informazioni essenziali come titolo, codice d
 
 ### Features:
 
-- 🖼&#xFE0F; Immagine cover di riferimento per ogni episodio
+- 🖼️ Immagine cover di riferimento per ogni episodio
 - ⭐ Valutazioni 
 - 📈 Suddivisione in archi narrativi con tanto di spiegazioni della rilevanza per la trama principale 
-- ▶&#xFE0F; Link allo streaming ufficiale (DisneyPlus)
+- ▶️ Link allo streaming ufficiale (DisneyPlus)
 - 📖 Link alla guida ufficiale dell'episodio
 - Scroll automatico al prossimo episodio da guardare appena si apre la pagina
-- ☑&#xFE0F; Check "guardato/non guardato"
+- ☑️ Check "guardato/non guardato"
 - ↕️️ Frecce per scorrere all'episodio corrente
 - 📊 Filtro per ordinare gli episodio in modo cronologico (per archi narrativi) o per data d'uscita
 - 📊 Filtro per mostrare tutti gli episodi o solo quelli considerati essenziali
-- 🕹&#xFE0F; Animazioni e feedback nella ui
+- 🕹️ Animazioni e feedback nella ui
 
 ## Stile e UI-UX
 
@@ -193,6 +194,7 @@ transition: filter 1s  linear(0 0%, 0.01 11.76%, 0.08 22.79%, 0.2 27.94%, 0.67 2
 
 Lo sfondo del rettangolo invece è un gradiente lineare, inizialmente colorato solo per metà e largo `0%`. L'animazione si baserà sulla proprietà della dimensione, passando da `0%` a `200%` (in modo da superare la metà arrivare alla fine).
 
+![Immagine.png](Immagine.png)
 ``` css
 background-image: 
     linear-gradient(
@@ -272,7 +274,7 @@ L'attributo `arc` contiene l'indice dell'arco narrativo di cui fa parte l'episod
 
 Esempio di un arco narrativo nella relativa lista `ARCS`:
 
-```javascript
+```js
 {
   title: "L'assedio di Umbara",
   episodes: ["4x07", "4x08", "4x09", "4x10"],
@@ -287,20 +289,20 @@ Ci sono due tipi di valutazione, quella critica `rate` e quella della rilevanza 
 In `reason` si spiega principalmente il motivo della valutazione `must`, raccontando quello che è il contesto degli episodi, personaggi, luoghi ecc ecc, anticipando le relative connessioni con episodi successivi o le serie tv e film successivi.  
 Questo paragrafo è importante per **lasciare la libertà all'utente** di scegliere se guardare o ignorare quell'arco narrativo, sulla base dei propri interessi. Ad esempio alcuni potrebbero ritenere noioso un episodio incentrato sulla politica e preferire quelli sui combattimenti, mentre altri sono più interessati magari ad episodi più lenti e strategici. Alcuni sono interessati ad episodi che approfondiscono certi personaggi e luoghi...
 
-#### Compressione
+### Compressione
 
 Siccome gli episodi sono 133 e gli archi 52, le due liste occupano molto spazio nel file `episodes-data.js`. Si è quindi pensato di compattare il piu possibile, sostituendo le ripetizioni con delle variabili. 
 
 Ad esempio i link iniziano sempre nello stesso modo:
 
-```javascript
+```js
 guide: "https://www.disneyplus.com/video/...[id-streaming]",
 play: "https://www.starwars.com/tv-shows/clone-wars/...[id-guide]"
 ```
 
-Se sostituissimo la parte iniziale con una variabile diminuiremmo drasticamente i caratteri ripetutti su tutto il file:
+Se sostituissimo la parte iniziale con una variabile diminuiremmo drasticamente i caratteri ripetuti su tutto il file:
 
-```javascript
+```js
 guide: a + "...[id-streaming]",
 play: b + "...[id-guide]"
 ```
@@ -308,8 +310,8 @@ play: b + "...[id-guide]"
 Tuttavia anche le parole chiave dell'oggetto (`guide`, `play`, `rate`...) sono ripetute in ogni oggetto, quindi 133 volte! Ma non possiamo rinunciare ad avere un oggetto, perché diventerebbe scomodissimo reperire le informazioni. L'idea è quindi trasformare la lista di oggetti in una lista di array e creare l'oggetto in un secondo momento.
 
 
-```javascript
-/* informazioni dell'episodio in un Object */
+```js
+/* informazioni dell’episodio in un Object */
 {
   order: "13",
   id: "1x09",
@@ -328,7 +330,7 @@ Tuttavia anche le parole chiave dell'oggetto (`guide`, `play`, `rate`...) sono r
 
 Mettiamo le tutte le informazioni dell'episodio dentro delle liste e al fondo inseriamo una funzione `map()` che crea l'oggetto:
 
-```javascript
+```js
 const EPISODES = 
 [
   /*[...], [...], [...], ... */  
@@ -365,13 +367,13 @@ Stesso procedimento anche per la lista `ARCS`.
 
 Il risultato è quasi un dimezzamento della dimensione del file, da circa `100 KB`  iniziali a `54 KB`. I caratteri passano da `102.079` a `55.697` (spazi ed indentazioni incluse).
 
-#### Memoria in locale
+### Memoria in locale
 
 La pagina salva i progressi dell'utente nel localStorage del browser, ovvero in locale e non sono quindi sincronizzati con un database. Questi non vengono persi ricaricando o abbandonando la pagina, ma solo se l'utente resetta il proprio browser.
 
 Script che gestisce la sincronizzazione in locale:
 
-```javascript
+```js
 const KEY_STORAGE = "clone-wars-0.1";
 
 export const saveStorage = (s) => {
@@ -397,7 +399,7 @@ Ogni qualvolta l'utente contrassegna un episodio come visto, si aggiorna l'array
 
 Quando l'utente accede alla pagina si fa un tentativo di recuperare dal `localStorage` la lista `watchList`, se la lista non esiste o se è corrotta ne viene creata una nuova vuota.
 
-#### Sincronizzazione manuale
+### Sincronizzazione manuale
 
 Si utilizza il `localStorage` perché si prevede che l'utente accederà alla pagina sempre dallo stesso dispositivo. Tuttavia è possibile salvare i propri progressi e sincronizzarli con un metodo quasi "manuale".
 

@@ -1,113 +1,321 @@
 <!DOCTYPE html>
+<html lang="it" data-theme="light" style="color-scheme: only light">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aule Libere Polito</title>
+    <meta
+      name="description"
+      content="Progetto indipendente con l'obiettivo di migliorare notevolmente il servizio aule libere del Politecnico di Torino, attraverso un efficace redesign della UX/UI.🚀"
+    />
 
-<html data-theme="light" lang="it" style="color-scheme: only light">
-<head>
-<meta charset="utf-8"/>
-<meta content="Analisi e sviluppo di 'Aule Libere Polito', un progetto indipendente con l'obiettivo di migliorare notevolmente il servizio 'aule libere' del Politecnico di Torino, attraverso un efficace redesign della UX/UI." name="description"/>
-<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="../../style/reset.css" rel="stylesheet"/>
-<link href="../../style/fonts.css" rel="stylesheet"/>
-<link href="../../style/markdown.css" rel="stylesheet"/>
-<link href="../../style/markdown-mobile.css" rel="stylesheet"/>
-<link href="favicon.ico" rel="icon"/>
-<script defer="" type="text/x-mathjax-config">
-      MathJax.Hub.Config({tex2jax: {inlineMath: [["$", "$"], ["\\\\(", "\\\\)"]],displayMath: [["$$", "$$"], ["\\[", "\\]"]],processEscapes: true},config: ["MMLorHTML.js"],jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],extensions: ["MathMenu.js", "MathZoom.js"],});
-    </script>
-<script defer="" src="../../script/markdown.js"></script>
-<title>Aule Libere Polito</title>
-</head>
-<body class="markdown-box">
-<p id="alert-banner" style="display: none;">
-      Hei! Questa pagina fa parte <a href="../../index.html">del mio portfolio :)</a>
-</p>
-<script>
-      if(window.self === window.top){
-        document.querySelector("#alert-banner").style = ""
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+    <link href="../../style/reset.css" rel="stylesheet" />
+    <link href="../../style/fonts.css" rel="stylesheet" />
+    <link href="../../style/markdown.css" rel="stylesheet" />
+    <link href="../../style/markdown-mobile.css" rel="stylesheet" />
+    <link rel="icon" href="favicon.ico" />
+    <script src="../../script/markdown.js" defer=""></script>
+
+    <!-- opengraph meta tags -->
+    <meta
+      property="og:url"
+      content="https://domescala.github.io/portfolio/projects/aule_libere_polito/"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Aule Libere Polito" />
+    <meta
+      property="og:description"
+      content="Progetto indipendente con l'obiettivo di migliorare notevolmente il servizio aule libere del Politecnico di Torino, attraverso un efficace redesign della UX/UI.🚀"
+    />
+    <meta
+      property="og:image"
+      content="https://domescala.github.io/portfolio/projects/aule_libere_polito/cover.gif"
+    />
+    <meta property="og:site_name" content="domescala.github.io" />
+    <!-- twitter meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="domescala.github.io" />
+    <meta
+      property="twitter:url"
+      content="https://domescala.github.io/portfolio/projects/aule_libere_polito/"
+    />
+    <meta name="twitter:title" content="Aule Libere Polito" />
+    <meta
+      name="twitter:description"
+      content="Progetto indipendente con l'obiettivo di migliorare notevolmente il servizio aule libere del Politecnico di Torino, attraverso un efficace redesign della UX/UI.🚀"
+    />
+    <meta
+      name="twitter:image"
+      content="https://domescala.github.io/portfolio/projects/aule_libere_polito/cover.gif"
+    />
+  </head>
+  <body class="markdown-box">
+    <p id="alert-banner" style="display: none">
+      Hei! Questa pagina fa parte
+      <a href="../../index.html">del mio portfolio :)</a>
+    </p>
+    <script>
+      if (window.self === window.top) {
+        document.querySelector("#alert-banner").style = "";
       }
     </script>
-<h6 id="tool-progetto-personale"><em>Tool</em> <em>Progetto personale</em></h6>
-<h1 id="aule-libere-polito">Aule Libere Polito</h1>
-<p>Progetto indipendente con l'obiettivo di migliorare notevolmente il servizio "aule libere" del Politecnico di Torino, attraverso un efficace redesign della UX/UI.<br/>
-<a href="https://domescala.github.io/aule_libere_polito" target="_blank">Vai progetto <span class="emoji">🔗</span></a></p>
-<h2 id="il-problema">Il problema</h2>
-<p>Il sito fornito dal <a href="https://www.swas.polito.it/dotnet/orari_lezione_pub/mobile/ricerca_aule_libere.aspx" target="_blank">portale <span class="emoji">🔗</span></a> non è sempre semplicissimo e comodo da consultare:</p>
-<h3 id="❌-disposizione-delle-aule"><span class="emoji">❌</span> Disposizione delle aule</h3>
-<blockquote>
-<p>Ogni fascia oraria dispone di un blocco di testo semplice con le aule in ordine alfabetico. L'utente è obbligato a cercare faticosamente nell'elenco di ogni blocco se un'aula, ad esempio, rimane libera per due fasce consecutive.
-<img alt="polito_aule_ui.png" src="polito_aule_ui.png"/></p>
-</blockquote>
-<h3 id="❌-elementi-inutili-e-fuorvianti"><span class="emoji">❌</span> Elementi inutili e fuorvianti</h3>
-<blockquote>
-<p>Senza alcun motivo le liste delle aule sono inizialmente nascoste ed è necessario premere il pulsante "⬇" per rivelarle. Da subito invece si mostra un numero che rappresenta inutilmente la quantità di aule libere sul totale. <br/>
-<img alt="polito_aule_ui2.png" src="polito_aule_ui2.png"/></p>
-</blockquote>
-<h3 id="❌-eccessiva-latenza"><span class="emoji">❌</span> Eccessiva latenza</h3>
-<blockquote>
-<p>La selezione di un giorno o di una sede, il sito può richiedere anche 10 secondi prima di mostrare i risultati. La latenza deriva dal fatto che il server genera da capo l'intero sito ogni volta, con la lista delle nuove aule.</p>
-</blockquote>
-<h2 id="redesign">Redesign</h2>
-<p>Nella nuova pagina le aule sono disposte in una lista verticale. Ognuna è suddivisa negli otto slot orari che indicano la disponibilità. A colpo d'occhio l'utente vede quali aule sono disponibili nella fascia corrente e in quelle successive. Un sistema di filtri permette di ordinare in base alla disponibilità, alla zona, al piano, alla capienza e alla superficie.</p>
-<p><img src="cover.gif" style="max-height:450px;object-fit:cover;object-position: top;"/></p>
-<h2 id="nuove-feature">Nuove feature</h2>
-<ul>
-<li><a href="#aule-libere-polito">Aule Libere Polito</a></li>
-<li><a href="#il-problema">Il problema</a><ul>
-<li><a href="#-disposizione-delle-aule"><span class="emoji">❌</span> Disposizione delle aule</a></li>
-<li><a href="#-elementi-inutili-e-fuorvianti"><span class="emoji">❌</span> Elementi inutili e fuorvianti</a></li>
-<li><a href="#-eccessiva-latenza"><span class="emoji">❌</span> Eccessiva latenza</a></li>
-</ul>
-</li>
-<li><a href="#redesign">Redesign</a></li>
-<li><a href="#nuove-feature">Nuove feature</a></li>
-<li><a href="#funzionamento">Funzionamento</a><ul>
-<li><a href="#velocità-di-caricamento-e-consultazione-️">Velocità di caricamento e consultazione <span class="emoji">🏃🏻‍♂️</span></a></li>
-<li><a href="#filtri-per-ordinare-le-aule-">Filtri per ordinare le aule <span class="emoji">📊</span></a></li>
-<li><a href="#ricerca-aule-">Ricerca aule <span class="emoji">🔎</span></a></li>
-<li><a href="#aule-preferite-">Aule preferite <span class="emoji">⭐</span></a></li>
-</ul>
-</li>
-</ul>
-<h2 id="funzionamento">Funzionamento</h2>
-<h3 id="velocità-di-caricamento-e-consultazione-🏃🏻‍♂️">Velocità di caricamento e consultazione <span class="emoji">🏃🏻‍♂️</span></h3>
-<p>La soluzione migliore al problema della latenza è quella di conservare tutti i dati relativi alle aule già nel client. Per fare ciò è stato necessario sviluppare in python uno script che raccogliesse uno ad uno tutte le liste delle aule disponibili di ogni giorno per ogni sede. Questo script viene eseguito manualmente dal mio PC circa una volta a settimana, e i dati vengono aggiornati sul repository di Github  nel file <a href="https://domescala.github.io/aule_libere_polito/js/classrooms_data.js" target="_blank">classrooms_data.js <span class="emoji">🔗</span></a>.<br/>
-Poiché la disponibilità di ogni aula è suddivisa in <strong>otto fasce</strong> orarie al giorno, ad essa è stato associato un numero binario di <strong>otto cifre</strong> in cui <strong>1</strong> e <strong>0</strong> rappresentano lo stato di disponibilità.</p>
-<blockquote>
-<p><code>11111111</code> -&gt; Aula sempre libera<br/>
-<code>10001111</code> -&gt; Aula libera per la prima e le ultime 4 fasce<br/>
-<code>00000000</code> -&gt; Aula sempre occupata  </p>
-</blockquote>
-<p>Questo numero è convertito in uno esadecimale a due cifre per salvare spazio</p>
-<blockquote>
-<p><code>11111111</code> -&gt; <code>FF</code><br/>
-<code>10001111</code> -&gt; <code>AF</code><br/>
-<code>00000000</code> -&gt; <code>00</code></p>
-</blockquote>
-<p>Ed infine, poiché le aule rimangono sempre le stesse, nel dizionario non verrà salvato il nome dell'aula:</p>
-<blockquote>
-<p>❌ <code>giorno1: aula1 : "FF", aula2 : "AF"</code> ❌</p>
-</blockquote>
-<p>I nomi delle aule sono conservate in un'altra variabile in ordine alfabetico e per ogni giorno si uniranno insieme tutte le disponibilità:</p>
-<blockquote>
-<p><code>"giorno1" : "FFAF00...."</code> 👌🏻</p>
-</blockquote>
-<p>E automaticamente il codice prenderà le cifre a due a due ottenendo in codice binario e le disponibilità. Lo script che parsifica il dizionario delle aule si può consultare qui: <a href="https://domescala.github.io/aule_libere_polito/js/parse_classrooms_data.js" target="_blank">parse_classrooms_data.js <span class="emoji">🔗</span></a></p>
-<h3 id="filtri-per-ordinare-le-aule-📊">Filtri per ordinare le aule <span class="emoji">📊</span></h3>
-<p>Le informazioni riguardo il piano, la capienza, la superficie, la zona e la eventuale presenza di prese elettriche nelle aule sono disponibili all'interno del <a href="[https://](https://www.polito.it/ateneo/chi-siamo/sedi-e-mappe?bl_id=TO_CEN03&amp;fl_id=XPTE&amp;lang=it&amp;rm_id=D001)" target="_blank">portale <span class="emoji">🔗</span></a>. È stato necessario scaricarli (una tantum) attraverso uno script di scraping in python e caricarli nel repository (<a href="https://domescala.github.io/aule_libere_polito/js/classrooms_info.js" target="_blank">classrooms_info.js <span class="emoji">🔗</span></a>). </p>
-<p>Ad ogni riga (aula) sono stati inseriti tutti gli attributi (capienza, superficie, piano...) con i relativi valori (300🪑, 250m2, Primo piano...).<br/>
-<a id="rimando-css-order"></a>
-A questo punto per azionare un filtro basterebbe prendere tutti tutte le aule, ordinarle in una lista in base ad un valore (es: capienza) ed assegnare attraverso l'attributo <em>CSS Order</em> un numero progressivo.<br/>
-Ma per motivi di prestazioni è stata creata una variabile con i valori già ordinati (tutte i valori delle capienze, superfici, piani...). In questo modo per ogni attributo (es: capienza) si cerca il suo valore all'interno della lista ordinata di tutte le capienze. L'attributo CSS <em>Order</em> assumerà quindi l'indice di quella lista.
-Infine, solo per aule contrassegnate come preferite si sottrarrà 200 dall'attributo CSS <em>Order</em>, affinché siano visualizzate per prime e conservino tra loro l'ordinamento.
-Il filtro sulle fasce libere si comporta in modo diverso durante il giorno corrente perché è influenzato dal tempo, non sono considerate infatti le fasce orarie già passate.</p>
-<p>L'attributo delle attuali fasce libere è un numero a 8 cifre. Ogni cifra mostra la somma delle fasce libere totali in quella fascia oraria:</p>
-<blockquote>
-<p><code>1001001</code> -&gt; <code>3222111</code><br/>
-Ci sono tre fasce libere in totale. Ma solo all'inizio sono tre, poi ne rimangono due ed infine una</p>
-</blockquote>
-<h3 id="ricerca-aule-🔎">Ricerca aule <span class="emoji">🔎</span></h3>
-<p>È stato creato un semplice tag di input, in cui i suggerimenti sono la lista dei nomi delle aule. In tal modo inserendo anche una parte del nome appariranno tutte le aule con quella porzione di testo. Nella lista delle opzioni il nome di ogni aula finisce con il carattere speciale invisibile <code>\u2063</code>, in modo che il listener (che ascolta ogni input) si accorga se è stato premuto una delle opzioni.<br/>
-Per praticità il tasto di ricerca appare quando l'utente esegue uno scroll, come a dire: "<em>stai cercando un'aula premi qui ;)</em>"</p>
-<h3 id="aule-preferite-⭐">Aule preferite <span class="emoji">⭐</span></h3>
-<p>Nel box di informazioni di ogni aula è presente un toggle per salvare l'aula come Preferita. Le aule preferite sono visualizzate sempre per prime nella lista (Come? Al valore <em>CSS order</em> si sottrae 200. Vedi <a href="#rimando-css-order"><em>CSS Order</em></a>). Attraverso il localStorage la lista delle aule preferite è salvata in locale.</p></body>
+
+    <h6 id="tool-progetto-personale">
+      <em>Tool</em> <em>Progetto personale</em>
+    </h6>
+    <h1 id="aule-libere-polito">Aule Libere Polito</h1>
+    <p>
+      Progetto indipendente con l'obiettivo di migliorare notevolmente il
+      servizio "aule libere" del Politecnico di Torino, attraverso un efficace
+      redesign della UX/UI.<br />
+      <a href="https://domescala.github.io/aule_libere_polito" target="_blank"
+        >Vai progetto <span class="emoji">🔗</span></a
+      >
+      <img
+        src="cover.gif"
+        style="max-height: 450px; object-fit: cover; object-position: top"
+      />
+    </p>
+    <p></p>
+
+    <h2 id="il-problema🚩">Il problema<span class="emoji">🚩</span></h2>
+    <section>
+      <p>
+        Il sito fornito dal
+        <a
+          href="https://www.swas.polito.it/dotnet/orari_lezione_pub/mobile/ricerca_aule_libere.aspx"
+          target="_blank"
+          >portale <span class="emoji">🔗</span></a
+        >
+        non è sempre semplicissimo e comodo da consultare:
+      </p>
+      <h3 id="❌-disposizione-delle-aule">
+        <span class="emoji">❌</span> Disposizione delle aule
+      </h3>
+      <blockquote>
+        <p>
+          Ogni fascia oraria dispone di un blocco di testo semplice con le aule
+          in ordine alfabetico. L'utente è obbligato a cercare faticosamente
+          nell'elenco di ogni blocco se un'aula, ad esempio, rimane libera per
+          due fasce consecutive.
+          <img src="polito_aule_ui.png" alt="polito_aule_ui.png" />
+        </p>
+      </blockquote>
+      <h3 id="❌-elementi-inutili-e-fuorvianti">
+        <span class="emoji">❌</span> Elementi inutili e fuorvianti
+      </h3>
+      <blockquote>
+        <p>
+          Senza alcun motivo le liste delle aule sono inizialmente nascoste ed è
+          necessario premere il pulsante
+          <span style="font-style: normal">⬇️</span> per rivelarle. Da subito
+          invece si mostra un numero che rappresenta inutilmente la quantità di
+          aule libere sul totale.<br />
+          <img src="polito_aule_ui2.png" alt="polito_aule_ui2.png" />
+        </p>
+      </blockquote>
+      <h3 id="❌-eccessiva-latenza">
+        <span class="emoji">❌</span> Eccessiva latenza
+      </h3>
+      <blockquote>
+        <p>
+          La selezione di un giorno o di una sede, il sito può richiedere anche
+          10 secondi prima di mostrare i risultati. La latenza deriva dal fatto
+          che il server genera da capo l'intero sito ogni volta, con la lista
+          delle nuove aule.
+        </p>
+      </blockquote>
+    </section>
+
+    <h2 id="redesign🔀">Redesign<span class="emoji">🔀</span></h2>
+    <section>
+      <p>
+        Nella nuova pagina le aule sono disposte in una lista verticale. Ognuna
+        è suddivisa negli otto slot orari che indicano la disponibilità. A colpo
+        d'occhio l'utente vede quali aule sono disponibili nella fascia corrente
+        e in quelle successive. Un sistema di filtri permette di ordinare in
+        base alla disponibilità, alla zona, al piano, alla capienza e alla
+        superficie.
+      </p>
+    </section>
+
+    <h2 id="nuove-feature🚀">Nuove feature<span class="emoji">🚀</span></h2>
+    <section>
+      <ul>
+        <li>
+          <a href="#velocità-di-caricamento-e-consultazione-🏃🏻‍♂️"
+            ><span class="emoji">🏃🏻‍♂️</span> Velocità di caricamento e
+            consultazione</a
+          >
+        </li>
+        <li>
+          <a href="#filtri-per-ordinare-le-aule-📊"
+            ><span class="emoji">📊</span> Filtri per ordinare le aule in base
+            alla disponibilità, alla zona, al piano, alla capienza e alla
+            superficie</a
+          >
+        </li>
+        <li>
+          📄 Pagina di recap sulle informazioni generali dell'aula selezionata
+        </li>
+        <li>🎨 La fascia oraria corrente è evidenziata</li>
+        <li>
+          <a href="#ricerca-aule-🔎"
+            ><span class="emoji">🔎</span> Ricerca aule</a
+          >
+        </li>
+        <li>📆 Avvio sul primo giorno consultabile</li>
+        <li>⚡ Avviso in caso di prese elettriche assenti</li>
+        <li>
+          <a href="#aule-preferite-⭐"
+            ><span class="emoji">⭐</span> Aule preferite</a
+          >
+        </li>
+        <li>🏫 Memorizzazione dell'ultima sede selezionata</li>
+      </ul>
+    </section>
+
+    <h2 id="funzionamento⚙️">Funzionamento<span class="emoji">⚙️</span></h2>
+    <section>
+      <h3 id="velocità-di-caricamento-e-consultazione-🏃🏻‍♂️">
+        Velocità di caricamento e consultazione <span class="emoji">🏃🏻‍♂️</span>
+      </h3>
+      <p>
+        La soluzione migliore al problema della latenza è quella di conservare
+        tutti i dati relativi alle aule già nel client. Per fare ciò è stato
+        necessario sviluppare in python uno script che raccogliesse uno ad uno
+        tutte le liste delle aule disponibili di ogni giorno per ogni sede.
+        Questo script viene eseguito manualmente dal mio PC circa una volta a
+        settimana, e i dati vengono aggiornati sul repository di Github nel file
+        <a
+          href="https://domescala.github.io/aule_libere_polito/js/classrooms_data.js"
+          target="_blank"
+          >classrooms_data.js <span class="emoji">🔗</span></a
+        >.<br />
+        Poiché la disponibilità di ogni aula è suddivisa in
+        <strong>otto fasce</strong> orarie al giorno, ad essa è stato associato
+        un numero binario di <strong>otto cifre</strong> in cui
+        <strong>1</strong> e <strong>0</strong> rappresentano lo stato di
+        disponibilità.
+      </p>
+      <blockquote>
+        <p>
+          <code>11111111</code> -&gt; Aula sempre libera<br />
+          <code>10001111</code> -&gt; Aula libera per la prima e le ultime 4
+          fasce<br />
+          <code>00000000</code> -&gt; Aula sempre occupata
+        </p>
+      </blockquote>
+      <p>
+        Questo numero è convertito in uno esadecimale a due cifre per salvare
+        spazio
+      </p>
+      <blockquote>
+        <p>
+          <code>11111111</code> -&gt; <code>FF</code><br />
+          <code>10001111</code> -&gt; <code>AF</code><br />
+          <code>00000000</code> -&gt; <code>00</code>
+        </p>
+      </blockquote>
+      <p>
+        Ed infine, poiché le aule rimangono sempre le stesse, nel dizionario non
+        verrà salvato il nome dell'aula:
+      </p>
+      <blockquote>
+        <p>❌ <code>giorno1: aula1 : "FF", aula2 : "AF"</code> ❌</p>
+      </blockquote>
+      <p>
+        I nomi delle aule sono conservate in un'altra variabile in ordine
+        alfabetico e per ogni giorno si uniranno insieme tutte le disponibilità:
+      </p>
+      <blockquote>
+        <p><code>"giorno1" : "FFAF00...."</code> 👌🏻</p>
+      </blockquote>
+      <p>
+        E automaticamente il codice prenderà le cifre a due a due ottenendo in
+        codice binario e le disponibilità. Lo script che parsifica il dizionario
+        delle aule si può consultare qui:
+        <a
+          href="https://domescala.github.io/aule_libere_polito/js/parse_classrooms_data.js"
+          target="_blank"
+          >parse-classrooms-data.js <span class="emoji">🔗</span></a
+        >
+      </p>
+      <h3 id="filtri-per-ordinare-le-aule-📊">
+        Filtri per ordinare le aule <span class="emoji">📊</span>
+      </h3>
+      <p>
+        Le informazioni riguardo il piano, la capienza, la superficie, la zona e
+        la eventuale presenza di prese elettriche nelle aule sono disponibili
+        all'interno del
+        <a
+          href="[https://](https://www.polito.it/ateneo/chi-siamo/sedi-e-mappe?bl_id=TO_CEN03&amp;fl_id=XPTE&amp;lang=it&amp;rm_id=D001)"
+          target="_blank"
+          >portale <span class="emoji">🔗</span></a
+        >. È stato necessario scaricarli (una tantum) attraverso uno script di
+        scraping in python e caricarli nel repository (<a
+          href="https://domescala.github.io/aule_libere_polito/js/classrooms_info.js"
+          target="_blank"
+          >classrooms_info.js <span class="emoji">🔗</span></a
+        >).
+      </p>
+      <p>
+        Ad ogni riga (aula) sono stati inseriti tutti gli attributi (capienza,
+        superficie, piano…) con i relativi valori (300🪑, 250m2, Primo
+        piano…).<br />
+        <a id="rimando-css-order"></a>
+        A questo punto per azionare un filtro basterebbe prendere tutti tutte le
+        aule, ordinarle in una lista in base ad un valore (es: capienza) ed
+        assegnare attraverso l'attributo <em>CSS Order</em> un numero
+        progressivo.<br />
+        Ma per motivi di prestazioni è stata creata una variabile con i valori
+        già ordinati (tutte i valori delle capienze, superfici, piani…). In
+        questo modo per ogni attributo (es: capienza) si cerca il suo valore
+        all'interno della lista ordinata di tutte le capienze. L'attributo CSS
+        <em>Order</em> assumerà quindi l'indice di quella lista. Infine, solo
+        per aule contrassegnate come preferite si sottrarrà 200 dall'attributo
+        CSS <em>Order</em>, affinché siano visualizzate per prime e conservino
+        tra loro l'ordinamento. Il filtro sulle fasce libere si comporta in modo
+        diverso durante il giorno corrente perché è influenzato dal tempo, non
+        sono considerate infatti le fasce orarie già passate.
+      </p>
+      <p>
+        L'attributo delle attuali fasce libere è un numero a 8 cifre. Ogni cifra
+        mostra la somma delle fasce libere totali in quella fascia oraria:
+      </p>
+      <blockquote>
+        <p>
+          <code>1001001</code> -&gt; <code>3222111</code><br />
+          Ci sono tre fasce libere in totale. Ma solo all'inizio sono tre, poi
+          ne rimangono due ed infine una
+        </p>
+      </blockquote>
+      <h3 id="ricerca-aule-🔎">Ricerca aule <span class="emoji">🔎</span></h3>
+      <p>
+        È stato creato un semplice tag di input, in cui i suggerimenti sono la
+        lista dei nomi delle aule. In tal modo inserendo anche una parte del
+        nome appariranno tutte le aule con quella porzione di testo. Nella lista
+        delle opzioni il nome di ogni aula finisce con il carattere speciale
+        invisibile <code>\u2063</code>, in modo che il listener (che ascolta
+        ogni input) si accorga se è stato premuto una delle opzioni.<br />
+        Per praticità il tasto di ricerca appare quando l'utente esegue uno
+        scroll, come a dire: "<em>stai cercando un'aula premi qui ;)</em>"
+      </p>
+      <h3 id="aule-preferite-⭐">
+        Aule preferite <span class="emoji">⭐</span>
+      </h3>
+      <p>
+        Nel box di informazioni di ogni aula è presente un toggle per salvare
+        l'aula come Preferita. Le aule preferite sono visualizzate sempre per
+        prime nella lista (Come? Al valore <em>CSS order</em> si sottrae 200.
+        Vedi <a href="#rimando-css-order">CSS Order</a>). Attraverso il
+        localStorage la lista delle aule preferite è salvata in locale.
+      </p>
+    </section>
+  </body>
 </html>

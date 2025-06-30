@@ -69,10 +69,13 @@
             flex-wrap: wrap;
             width: 225px;
             align-content: flex-start;
+            justify-content:center;
         }
 
         #rgb_container #rgb_input input {
-            height: 50px;
+            height: 1.5px !important;
+            scale: 1.5 !important;
+            width: calc(100% / 1.5) !important;
 
         }
 
@@ -159,17 +162,19 @@
 }
 </style>
 
-<meta name="description" content="Analisi e sviluppo di 'Guess the RGB': minigame che mette alla prova la vista e la memoria di qualsiasi graphic designer.">
-<favicon-emoji>📚</favicon-emoji>
+<compileMeta 
+  description="Analisi e sviluppo di 'Guess the RGB': minigame che mette alla prova la vista e la memoria di qualsiasi graphic designer."
+  image="guess_rgb_gameover.png" 
+/>
 
 ###### *Minigame* *Progetto personale* 
 # Guess the RGB
-## Descrizione 📢
+## Descrizione📢
 Mini gioco che mette a dura prova la vista e la memoria di qualsiasi graphic designer. Saresti in grado di trovare il colore giusto, ma senza guardare? Perché **Guess the RGB** non ti mostrerà la classica interfaccia del color picker, ma dovrai inserire manualmente i valori dei tre canali (rosso, verde e blu) senza poter guardare il colore che stai componendo!
 
 ![gameover](guess_rgb_gameover.png)
 *Screenshot di una partita persa: il giocatore doveva trovare il colore giallo, ma ha composto un azzurro. L'accuratezza è completamente nulla nonostante che il valore sul secondo canale (verde) sia azzeccato, questo per via del [calcolo del punteggio 🔗](#punteggio).*
-## Gameplay 🎮
+## Gameplay🎮
 - Il gioco genera un colore casuale che compare sullo sfondo ed all'interno della carta
 - Il giocatore, usando i tre cursori, imposta una quantità di colore per i singoli canali. Da 0 a 255. E preme su conferma 
 - Il gioco rivela il codice del colore generato:
@@ -179,7 +184,7 @@ Mini gioco che mette a dura prova la vista e la memoria di qualsiasi graphic des
 - Appare una valutazione finale, per congratularsi o in alcuni casi per incoraggiare il giocatore a riprovare 
 - È poi possibile condividere il risultato o estrarre un nuovo colore
 
-## Ma che cos'è il codice RGB?? 🤔
+## Ma cos'è il codice RGB?🤔
 In breve, un codice RGB contiene tre valori che rappresentano rispettivamente la quantità di rosso, di verde e di blu di un colore. Ognuno di questi può assumere un valore tra 0 e 255.
 > Ad esempio il nero sarà nullo per tutti i canali:  
 > `rgb(0, 0, 0)`  
@@ -219,7 +224,7 @@ Spesso si utilizza il codice esadecimale per rappresentarli. Ogni canale è rapp
 Per altri dettagli consiglio la lettura di questa [pagina](https://it.wikipedia.org/wiki/RGB).
 
 
-## Strategie per trovarlo 🎯
+## Strategie per trovarlo🎯
 La strategia migliore è quella di scomporre il colore che vediamo in tre elementi: saturazione, luminosità e tonalità.
 ### Tonalità 🎨
 Per tonalità si intende proprio quello che comunemente chiamiamo "colore": rosso, blu, giallo, verde, azzurro, arancione, viola ecc ecc. In questo caso bisogna individuare il colore "principale" tralasciando se è scuro o chiaro, se è spento o acceso. Da questo bisogna risalire ai colori che lo compongono: 
@@ -251,7 +256,7 @@ Per intenderci, un colore possiamo immaginarlo in una scala che va dal grigio a 
 > I "grigi" infatti hanno sempre gli stessi valori, lo avevi notato no?   
 
 
-## Funzionamento 
+## Funzionamento⚙️
 ### Punteggio 
 Il punteggio finale è definito da una percentuale di accuratezza. Minore è l'errore e maggiore sarà il punteggio. Tuttavia, diversamente da come si potrebbe pensare, il calcolo non segue una funzione lineare, ovvero errore e punteggio non vanno di pari passo. Il calcolo è il seguente:  
 > Si trovano gli errori, ovvero le differenze tra l'RGB originale e quello inserito dall'utente:  
@@ -284,10 +289,7 @@ La formula dell'accuratezza cerca di fare una stima della differenza dei due col
         el.parentElement.querySelectorAll("span")[index].innerHTML = channel + "\t" + v;
     }
 </script>
-<script type="text/x-mathjax-config">
-      MathJax.Hub.Config({tex2jax: {inlineMath: [["$", "$"], ["\\\\(", "\\\\)"]],displayMath: [["$$", "$$"], ["\\[", "\\]"]],processEscapes: true},config: ["MMLorHTML.js"],jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],extensions: ["MathMenu.js", "MathZoom.js"],});
-</script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js" type="text/javascript"></script>
+
 <script>
 onload = () => {
     if(!history.state?.reload && !location.href.endsWith("?reloaded")){

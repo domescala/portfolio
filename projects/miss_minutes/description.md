@@ -1,4 +1,7 @@
-<meta name="description" content="Progetto universitario di animazione 2D in loop del personaggio Miss Minutes, tratto dalla serie Loki.">
+<compileMeta 
+  description="Progetto universitario di animazione 2D in loop del personaggio Miss Minutes, tratto dalla serie Loki."
+  image="cover.gif" 
+/>
 <favicon-emoji>🕒</favicon-emoji>
 
 ###### *MOTION DESIGN* *PROGETTO UNIVERSITARIO* 
