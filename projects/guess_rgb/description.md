@@ -184,7 +184,7 @@ Mini gioco che mette a dura prova la vista e la memoria di qualsiasi graphic des
 - Appare una valutazione finale, per congratularsi o in alcuni casi per incoraggiare il giocatore a riprovare 
 - È poi possibile condividere il risultato o estrarre un nuovo colore
 
-## Ma cos'è il codice RGB?🤔
+## Cos'è sto RGB?🤔
 In breve, un codice RGB contiene tre valori che rappresentano rispettivamente la quantità di rosso, di verde e di blu di un colore. Ognuno di questi può assumere un valore tra 0 e 255.
 > Ad esempio il nero sarà nullo per tutti i canali:  
 > `rgb(0, 0, 0)`  

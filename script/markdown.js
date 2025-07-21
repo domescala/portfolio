@@ -40,11 +40,9 @@ const collapse = (SECTION) => {
   requestAnimationFrame(() => {
     SECTION.style.height = '0px';
   });
-  SECTION.style.contain = 'paint';
 };
 const unCollapse = (SECTION) => {
   SECTION.style.height = 'var(--height)';
-  SECTION.style.contain = '';
 };
 
 function end_of_paragraph(next, tag_index) {

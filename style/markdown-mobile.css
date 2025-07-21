@@ -53,6 +53,7 @@
     }
     .markdown-box h2{
         font-size: 18px;
+        padding-left: 15px;
         /* padding:2px; */
         /* font-family: "riffic"; */
         /* letter-spacing: 1px; */
@@ -79,18 +80,14 @@
         /* /* filter:drop-shadow(0px 0px 10px var(--glow-red)); */
     }
     .markdown-box h2:before{
-        /* content:">"; */
+       left:-5px;
+       width: 10px;
+    }
+    .markdown-box h2:after{
         font-size:16px;
-        /* position:absolute; */
-        margin-left:-18px;
-        /* /* rotate:-90deg; */
-        /* display:inline-block; */
-        /* /* scale: 0.6; */
-        /* padding: 0px 5px; */
-        /* rotate:90deg; */
-        /* /* background:inherit; */
-        /* filter:inherit; */
-        /* letter-spacing: 0px!important; */
+        left:-5px;
+        width: 10px;
+        
     }
     .markdown-box h2.heading_collapsed:before{
         /* rotate:0deg; */

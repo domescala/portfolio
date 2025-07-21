@@ -73,7 +73,7 @@
 
     }
     100%{
-        letter-spacing: 0px;
+        /* letter-spacing: 0px; */
     } 
     
 }
@@ -143,6 +143,7 @@
     animation-duration: 1s;
     animation-timing-function: ease;
     /* color: brown; */
+    width: 100%;
 }
 .social_title {
     animation-delay: 0.5s;
