@@ -333,7 +333,7 @@ document.addEventListener("scroll", function () {
     for (let i = 0; i < title_wide.length; i++) {
         var y = title_wide[i].getBoundingClientRect().y
         
-        if ( title_wide_tf[i] && y < 600 && y > 350 ) {
+        if ( title_wide_tf[i] && y < 800 && y > 350 ) {
             title_wide[i].classList.add ("wide_text_animation")
             if (title_wide[i].innerHTML == "Followami") {
                 title_wide[i+1].classList.add ("wide_text_animation")
