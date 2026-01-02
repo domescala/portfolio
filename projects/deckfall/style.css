@@ -1,0 +1,115 @@
+.videos-squared {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  gap: 8px;
+}
+.videos-squared video {
+  object-fit: cover;
+  min-height: 221px;
+  object-position: center;
+}
+#deckfall-jingle-audio {
+  cursor: pointer;
+}
+#deckfall-jingle-audio.audio-playing span:nth-child(1),
+#deckfall-jingle-audio span:nth-child(2) {
+  display: none;
+}
+#deckfall-jingle-audio.audio-playing span:nth-child(2) {
+  display: revert;
+  background-image: linear-gradient(
+    45deg,
+    #f551d8 0%,
+    #695cfd 50%,
+    #f551d8 100%
+  );
+  background-size: 200%;
+  color: transparent;
+  background-clip: text;
+  animation: jingle-audio-colors 2s infinite linear;
+  font-weight: 900;
+}
+@keyframes jingle-audio-colors {
+  0% {
+    background-position-x: 0%;
+    background-position-y: 0%;
+  }
+  100% {
+    background-position-x: 200%;
+    background-position-y: 200%;
+  }
+}
+
+blockquote .spoiler {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background: var(--red) !important;
+  color: white !important;
+  --lite-blue: var(--dark-red);
+}
+.spoiler .spoiler-content {
+  filter: blur(10px);
+  transition: filter 2s ease;
+  color: inherit;
+}
+.spoiler.reveal .spoiler-content {
+  filter: blur(0px);
+}
+section.spoiler:not(.reveal) .spoiler-content {
+  height: 500px;
+  overflow: hidden;
+}
+section.spoiler i.spoiler-alert {
+  margin-top: 50px;
+  z-index: 9999;
+}
+.spoiler i.spoiler-alert {
+  position: absolute;
+  display: block;
+  opacity: 1;
+  transition: opacity 1s ease;
+  color: inherit;
+}
+.spoiler.reveal i.spoiler-alert {
+  opacity: 0;
+}
+.spoiler p:has(video),
+.spoiler p:has(img) {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.spoiler.reveal p:has(video),
+.spoiler.reveal p:has(img) {
+  opacity: 1;
+}
+
+.markdown-box img.multiple-image {
+  width: 48%;
+  object-fit: cover;
+}
+@media only screen and (max-width: 650px) {
+  .markdown-box img.multiple-image {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+.markdown-box img:not(.prevent-cover),
+.markdown-box video:not(.prevent-cover) {
+  object-fit: cover;
+  max-height: 350px;
+  /* object-position: top !important; */
+}
+
+#solution-video {
+  transition: opacity 1s ease;
+}
+
+#trailer {
+  cursor: pointer;
+}
+#trailer::after{
+  content:"mimmo";
+}
