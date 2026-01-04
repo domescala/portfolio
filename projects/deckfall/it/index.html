@@ -88,568 +88,666 @@
     </p>
     <p></p>
 
-    <h2 id="descrizione-📢">Descrizione <span class="emoji">📢</span></h2>
     <section>
-      <p>
-        Deckfall è un puzzle game in prima persona, sviluppato in
-        <strong>Godot Engine</strong> e ispirato ad un livello di
-        <em>Superliminal</em>. Il giocatore si trova su una astronave sul punto
-        di collassare e dovrà percorrere un corridoio (quasi) infinito in cerca
-        di una via d'uscita.
-      </p>
-      <p>
-        Il gioco è disponibile sia ITCHIO (come build) che su github (progetto
-        completo e build)
-      </p>
-    </section>
-
-    <h2 id="come-giocare">Come giocare</h2>
-    <section>
-      <p>
-        Per i sistemi windows è sufficiente scaricare e avviare il file
-        eseguibile <code>deckfall.exe</code>. Per gli altri sistemi si può
-        avviare il gioco all'interno dell'editor di Godot 4.4.1!
-      </p>
-      <h3 id="windows">Windows</h3>
-      <ol>
-        <li>
-          Scarica il file esegubile <code>deckfall.exe</code> dal repository:
-          <a href="/licence" target="_blank">link404</a>
-        </li>
-        <li>Avvialo e gioca</li>
-      </ol>
-      <h3 id="windows--macos--linux">Windows / macOs / linux</h3>
-      <ol>
-        <li>
-          Scarica <code>Godot 4.4.1</code> dal sito ufficiale:
-          <a
-            href="https://godotengine.org/download/archive/4.4.1-stable/"
-            target="_blank"
-            >https://godotengine.org/download/archive/4.4.1-stable/</a
-          >
-        </li>
-        <li>
-          Scarica <code>deckfall-v1.0.zip</code> dal repository:
-          <a
-            href="https://github.com/domescala/deckfall-beta/archive/refs/tags/v0.1-beta.zip"
-            target="_blank"
-            >https://github.com/domescala/deckfall-beta/archive/refs/tags/v0.1-beta.zip</a
-          >
-        </li>
-        <li>
-          Avvia <code>Godot_v4.4.1</code> e <strong>trascina</strong> il file
-          <code>deckfall-v1.0.zip</code> all'interno della finestra
-        </li>
-        <li>
-          Fai click su <code>install</code> e Godot spacchetterà in automatico
-          il progetto: attendi qualche in qualche minuto
-        </li>
-        <li>
-          Avvia il gioco premendo il tasto <code>F5</code> o il pulsante ▶️ in
-          alto a destra
-        </li>
-        <li>Gioca!</li>
-      </ol>
-      <h3 id="impostazioni">Impostazioni</h3>
-      <p>
-        Il gioco è disponibile in italiano e in inglese, questa impostazione si
-        trova solo nel menù iniziale: non sarà modificabile a gioco avviato. Dal
-        menù di pausa (premi <code>ESC</code>) è possibile aggiustare la
-        sensibilità del mouse e modificare il livello di qualità.
-      </p>
-    </section>
-
-    <h2 id="lincenze-e-crediti">Lincenze e Crediti</h2>
-    <section>
-      <p>
-        Il progetto è rilasciato con diverse licenze definite nel dettaglio
-        all'interno del file <a href="/licence" target="_blank">LICENCE404</a>.
-        Riassumendo le licenze si dividono in:
-      </p>
-      <ol>
-        <li>
-          <strong>Gioco compilato (Build)</strong><br />
-          Siccome sono stati utilizzati assets di terze parti con varie licenze
-          tra cui "ShareAlike", il gioco compilato (build) è distribuito con
-          licenza di Attribuzione e ShareALike (CC BY-SA 4.0).
-        </li>
-        <li>
-          <strong>Codice</strong><br />
-          Gli script sono sotto Licenza MIT
-        </li>
-        <li>
-          <strong>Asset originali</strong><br />
-          Gli asset creati ad hoc per il progetto hanno la sola licenza di
-          Attribuzione (CC BY 4.0).
-        </li>
-      </ol>
-      <p>
-        Tutte le risorse sono accreditate nel file
-        <a href="/licence" target="_blank">CREDITS404</a>
-      </p>
-    </section>
-
-    <h2 id="modelli-3d">Modelli 3D</h2>
-    <section>
-      <p>
-        Per gli elementi strutturali (muri, pavimenti, scalini, porte…) e per i
-        dettagli (tubi, barili, monitor…) sono stati utilizzati gli asset della
-        libreria Sci-fi "Space Station Kit" di Kenney (licenza CC0). Mentre i
-        modelli specifici e "dinamici" come i numeri luminosi pixelati e la leva
-        d'emergenza sono stati modellati ad hoc in Blender.
-      </p>
-      <p class="videos-squared">
-        <video autoplay="" muted="" loop="">
-          <source src="../assets/pixel_numbers.mp4" type="video/mp4" />
-        </video>
-        <video style="filter: brightness(1.5)" autoplay="" muted="" loop="">
-          <source src="../assets/floorsign.mp4" type="video/mp4" />
-        </video>
-        <video style="filter: brightness(1.5)" autoplay="" muted="" loop="">
-          <source src="../assets/lever.mp4" type="video/mp4" />
-        </video>
-        <em>...</em>
-      </p>
-      <h3 id="stanze">Stanze</h3>
-      <p>
-        La creazione delle stanze è stata svolta direttamente all'interno
-        dell'engine
-      </p>
-      <p>
-        <img
-          src="../assets/room_corridor_front.webp"
-          alt="vista sul corridoio principale"
-        />
-        <em>Corridoio principale</em>
-      </p>
-      <p>
-        <img
-          src="../assets/room_corridor_window.webp"
-          alt="finestra del corridoio principale"
-        />
-        <img
-          src="../assets/room_corridor_full.webp"
-          alt="vista corriodio principale, con il monitor degli errori e la finestra in fondo"
-        />
-      </p>
-      <p>
-        <img
-          src="../assets/room_left_corridor.webp"
-          alt="corridoio di sinistra con porta bloccata dai detriti e indicazione luminosa EXIT che punta in quella direzione"
-        />
-        <em>Vista sul corridoio che porta verso l'uscita di sinistra</em>
-      </p>
-      <p>
-        <img
-          src="../assets/room_corridor_obstacles.webp"
-          alt="ostacoli e destriti che fuoriescono dalla porta bloccata"
-        />
-        <em>Ostacoli che bloccano la porta</em>
-      </p>
-      <p>
-        <img src="../assets/room_exit.webp" alt="stanza ad angolo" />
-        <em
-          >stanza ad angolo con scale che danno verso il corridoio
-          successivo</em
-        >
-      </p>
-      <p>
-        <img
-          src="../assets/room_endgame.webp"
-          alt="stanza finale priva di luce"
-        />
-        <em>Ponte Zero, stanza finale</em>
-      </p>
-    </section>
-
-    <h2 id="musiche">Musiche</h2>
-    <section>
-      <h3 id="colonna-sonora">Colonna sonora</h3>
-      <p>
-        Per il sottofondo musicale è stato scelto il brano
-        <em>"A Few Jumps Away"</em> di Arthur Vyncke selezionato attraverso il
-        sito <em>BreakingCopyright</em> (licenza CC BY-SA 3.0).<br />
-        Il sound <strong>elettronico</strong> e la leggera melodia al pianoforte
-        riprende l'ambientazione sci-fi, con un ritmo ciclico tipico dei puzzle
-        game.
-      </p>
-      <h3 id="loop-e-musica-dinamica">Loop e musica dinamica</h3>
-      <p>
-        Il brano è stato adattato amplificando i volumi nell'introduzione e
-        riducendoli nel ritornello, per creare un loop omogeneo e costante.
-        Durante il menù di start e per tutto il primo livello, si riproducono in
-        loop solo i primi 20 secondi, caratterizzati da un accompagnamento
-        ritmato senza la melodia. Entrando nel livello successivo la musica
-        continua nella seconda parte, con la melodia al pianoforte e lo sviluppo
-        vero e proprio del brano.
-      </p>
-      <h3 id="jingle">Jingle</h3>
-      <p>
-        Durante la cutscene iniziale si puo sentire un Jingle proveniente dal
-        monitor durante il messaggio promozionale della compagnia spaziale. I
-        brano <em>"Crystals"</em> di envirOmaniac2 (CC0), selezionato per il suo
-        sound estremamente <strong>allegro</strong>, completamente in contrasto
-        con la situazione <strong>tragica e allarmante</strong>.
-      </p>
-      <p id="deckfall-jingle-audio">
-        <span>▶️ Ascolta il jingle!</span>
-        <span>🔵 premi per fermare</span>
-        <audio
-          loop=""
-          src="../assets/audio_jingle_394293__enviromaniac2__crystals.wav"
-          title="Title"
-        ></audio>
-      </p>
-      <p>
-        <img
-          src="../assets/monitor_corporate_message.webp"
-          alt="monitor che mostra il messaggio promozionale della compagnia in cui si invitano i clienti a lasciare una recensione positiva"
-        />
-      </p>
-    </section>
-
-    <h2 id="easter-eggs-e-riferimenti">Easter eggs e riferimenti</h2>
-    <section>
-      <h3 id="graffiti">Graffiti</h3>
-      <p>
-        Sul muro di fronte alle scale la scritta <em>This Way</em> aiuta il
-        giocatore a capire di doversi buttare di sotto per proseguire il gioco.
-        Inoltre questa prima scritta incisa suggerisce che ne esistano anche
-        altre.
-        <img src="../assets/graffiti_thisway.webp" alt='graffito "this way"' />
-      </p>
-      <p>
-        Sul muro sopra la finestra da cui si vede lo spazio, è presente una
-        frase incisa che recita
-        <em>"You're looking in the wrong direction"</em>. È un riferimento ad un
-        graffito Torinese scritto su un muro di fronte alla Mole Antonelliana.
-      </p>
-      <div
-        style="
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          grid-template-rows: repeat(1, 1fr);
-          gap: 8px;
-        "
-      >
-        <img
-          style="height: 100%"
-          src="../assets/graffiti_wrongdirection.webp"
-          alt="graffito nel gioco"
-        />
-        <img
-          style="height: 100%"
-          src="../assets/graffiti_wrongdirection_turin.webp"
-          alt="graffito originale"
-        />
-      </div>
-      <blockquote>
-        <p class="spoiler">
-          <i class="spoiler-alert">ATTENZIONE SPOILER! (premi per rivelare)</i>
-          <span class="spoiler-content"
-            >La frase rivela la soluzione del puzzle, infatti il graffito è
-            visibile solo dopo che il giocatore avrà sbagliato per la prima
-            volta
-          </span>
+      <h2 id="descrizione-📢">Descrizione <span class="emoji">📢</span></h2>
+      <section>
+        <p>
+          Deckfall è un puzzle game in prima persona, sviluppato in
+          <strong>Godot Engine</strong> e ispirato ad un livello di
+          <em>Superliminal</em>. Il giocatore si trova su una astronave sul
+          punto di collassare e dovrà percorrere un corridoio (quasi) infinito
+          in cerca di una via d'uscita.
         </p>
-      </blockquote>
-      <p>
-        Sui muri delle stanze ad angolo è riportato in tempo reale il conteggio
-        dei tentativi del giocatore, con una incisione nello stile dei tally
-        marks.
-        <img
-          src="../assets/graffiti_tallymarks.webp"
-          alt="contatore tentativi"
-        />
-      </p>
-      <h3 id="lomino-che-corre">L'omino che corre</h3>
-      <p>
-        Il segnale luminoso che indica l’uscita, mostra un omino di corsa
-        identico a quello usato dal nodo CharacterBody3D del Godot Engine. Lo
-        stesso omino è ripreso anche nel logo del gioco e nel segnale
-        <em>pavimento fragile</em>, in cui però è raffigurato mentre precipita.
-      </p>
-      <div
-        style="
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          grid-template-rows: repeat(2, 1fr);
-          gap: 8px;
-        "
-      >
-        <img
-          style="height: 100%"
-          src="../assets/monitor_exit.webp"
-          alt="monitor che contiene l'indicazione luminosa EXIT con una freccia verso sinistra"
-        />
-        <img
-          style="height: 100%"
-          src="../assets/icon_characterbody3d.png"
-          alt="icona del Character Body 3D"
-        />
+        <p>
+          Il gioco è disponibile sia su itch.io (come build) che su github
+          (progetto completo e build)
+        </p>
+      </section>
+    </section>
+
+    <section>
+      <h2 id="come-giocare">Come giocare</h2>
+      <section>
+        <p>
+          Deckfall gira su Windows, macOS e Linux. Per i sistemi Windows è
+          sufficiente scaricare e avviare il file eseguibile
+          <code>deckfall.exe</code>. Per gli altri sistemi si può avviare il
+          gioco all'interno dell'editor di Godot 4.4.1!
+        </p>
+        <h3 id="avvia-il-gioco-con-leseguibile-windows">
+          Avvia il gioco con l'eseguibile (Windows)
+        </h3>
+        <ol>
+          <li>
+            Scarica l'ultima versione di dalla sezione release:
+            <ul>
+              <li>
+                <a
+                  href="https://github.com/domescala/deckfall/releases"
+                  target="_blank"
+                  ><span class="emoji">🗃️</span> Sezione release</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/domescala/deckfall/releases/download/v1.0/deckfall-v1.0.exe"
+                  target="_blank"
+                  ><span class="emoji">🚀</span> Download diretto v1.0</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>Avvia il file <code>deckfall-v1.0.exe</code></li>
+          <li>Gioca!</li>
+        </ol>
+        <h3 id="avvia-il-gioco-dallengine-windowsmacoslinux">
+          Avvia il gioco dall'engine (Windows/macOS/linux)
+        </h3>
+        <ol>
+          <li>
+            Prima scarica il motore alla versione 4.4.1 dal sito ufficiale di
+            Godot:
+            <ul>
+              <li>
+                <a
+                  href="https://godotengine.org/download/archive/4.4.1-stable/"
+                  target="_blank"
+                  ><span class="emoji">🗃️</span> Sezione Download</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://downloads.godotengine.org/?version=4.4.1&amp;flavor=stable&amp;slug=linux.x86_64.zip&amp;platform=linux.64"
+                  target="_blank"
+                  ><span class="emoji">🚀</span> Download diretto per Linux</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://downloads.godotengine.org/?version=4.4.1&amp;flavor=stable&amp;slug=win64.exe.zip&amp;platform=windows.64"
+                  target="_blank"
+                  ><span class="emoji">🚀</span> Download diretto per Windows</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://downloads.godotengine.org/?version=4.4.1&amp;flavor=stable&amp;slug=macos.universal.zip&amp;platform=macos.universal"
+                  target="_blank"
+                  ><span class="emoji">🚀</span> Download diretto per macOS</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            Scarica l'ultima versione del gioco dalla sezione release:
+            <ul>
+              <li>
+                <a
+                  href="https://github.com/domescala/deckfall/releases"
+                  target="_blank"
+                  ><span class="emoji">🗃️</span> Sezione release</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/domescala/deckfall/archive/refs/tags/v1.0.zip"
+                  target="_blank"
+                  ><span class="emoji">🚀</span> Download diretto v1.0</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            Avvia <code>Godot_v4.4.1</code> e <strong>trascina</strong> il file
+            <code>deckfall.zip</code> nella finestra
+          </li>
+          <li>
+            Premi su <code>installa</code>: il motore spacchetterà e caricherà
+            automaticamente il gioco in qualche minuto.
+          </li>
+          <li>
+            Una volta pronto, per avviare il gioco premi sul bottone play (▶️)
+            in alto a destra, oppure premi <code>F5</code> se sei su windows o
+            <code>Command + D</code> se sei su macOS
+          </li>
+          <li>Gioca!</li>
+        </ol>
+        <h3 id="⚙️-impostazioni"><span class="emoji">⚙️</span> Impostazioni</h3>
+        <p>
+          Il gioco è disponibile in italiano e in inglese, questa impostazione
+          si trova solo nel menù iniziale e non sarà modificabile a gioco
+          avviato. Inoltre dal menù di pausa (premi <code>ESC</code>) è
+          possibile aggiustare la sensibilità del mouse e modificare il livello
+          di qualità.
+        </p>
+      </section>
+    </section>
+
+    <section>
+      <h2 id="licenze-e-crediti-🏷️">
+        Licenze e Crediti <span class="emoji">🏷️</span>
+      </h2>
+      <section>
+        <p>
+          Il progetto è rilasciato con diverse licenze definite nel dettaglio
+          all'interno del file
+          <a
+            href="https://github.com/domescala/deckfall/blob/main/LICENSE.md"
+            target="_blank"
+            >LICENSE<span class="emoji">📃</span></a
+          >. Riassumendo, le licenze si dividono in:
+        </p>
+        <ol>
+          <li>
+            <strong>Gioco compilato (Build)</strong><br />
+            Siccome sono stati utilizzati assets di terze parti con varie
+            licenze tra cui "ShareAlike", il gioco compilato (build) è
+            distribuito con licenza di Attribuzione e ShareALike (CC BY-SA 4.0).
+          </li>
+          <li>
+            <strong>Codice</strong><br />
+            Gli script sono sotto Licenza MIT
+          </li>
+          <li>
+            <strong>Asset originali</strong><br />
+            Gli asset creati ad hoc per il progetto hanno la sola licenza di
+            Attribuzione (CC BY 4.0).
+          </li>
+        </ol>
+        <p>
+          Tutte le risorse di terze parti sono accreditate nel file
+          <a
+            href="https://github.com/domescala/deckfall/blob/main/CREDITS.md"
+            target="_blank"
+            >CREDITS<span class="emoji">📃</span></a
+          >
+        </p>
+      </section>
+    </section>
+
+    <section>
+      <h2 id="modelli-3d">Modelli 3D</h2>
+      <section>
+        <p>
+          Per gli elementi strutturali (muri, pavimenti, scalini, porte…) e per
+          i dettagli (tubi, barili, monitor…) sono stati utilizzati gli asset
+          della libreria Sci-fi "Space Station Kit" di Kenney (licenza CC0).
+          Mentre i modelli specifici e "dinamici" come i numeri luminosi
+          pixellati e la leva d'emergenza sono stati modellati ad hoc in
+          Blender.
+        </p>
+        <p class="videos-squared">
+          <video autoplay="" muted="" loop="">
+            <source src="../assets/pixel_numbers.mp4" type="video/mp4" />
+          </video>
+          <video style="filter: brightness(1.5)" autoplay="" muted="" loop="">
+            <source src="../assets/floorsign.mp4" type="video/mp4" />
+          </video>
+          <video style="filter: brightness(1.5)" autoplay="" muted="" loop="">
+            <source src="../assets/lever.mp4" type="video/mp4" />
+          </video>
+          <em>...</em>
+        </p>
+        <h3 id="stanze-🏗️">Stanze <span class="emoji">🏗️</span></h3>
+        <p>
+          La creazione delle stanze è stata svolta direttamente all'interno
+          dell'engine
+        </p>
+        <p>
+          <img
+            src="../assets/room_corridor_front.webp"
+            alt="vista sul corridoio principale"
+          />
+          <em>Corridoio principale</em>
+        </p>
+        <p>
+          <img
+            src="../assets/room_corridor_window.webp"
+            alt="finestra del corridoio principale"
+          />
+          <img
+            src="../assets/room_corridor_full.webp"
+            alt="vista corridoio principale, con il monitor degli errori e la finestra in fondo"
+          />
+        </p>
+        <p>
+          <img
+            src="../assets/room_left_corridor.webp"
+            alt="corridoio di sinistra con porta bloccata dai detriti e indicazione luminosa EXIT che punta in quella direzione"
+          />
+          <em>Vista sul corridoio che porta verso l'uscita di sinistra</em>
+        </p>
+        <p>
+          <img
+            src="../assets/room_corridor_obstacles.webp"
+            alt="ostacoli e detriti che fuoriescono dalla porta bloccata"
+          />
+          <em>Ostacoli che bloccano la porta</em>
+        </p>
+        <p>
+          <img src="../assets/room_exit.webp" alt="stanza ad angolo" />
+          <em
+            >stanza ad angolo con scale che danno verso il corridoio
+            successivo</em
+          >
+        </p>
+        <p>
+          <img
+            src="../assets/room_endgame.webp"
+            alt="stanza finale priva di luce"
+          />
+          <em>Ponte Zero, stanza finale</em>
+        </p>
+      </section>
+    </section>
+
+    <section>
+      <h2 id="musiche-📻">Musiche <span class="emoji">📻</span></h2>
+      <section>
+        <h3 id="colonna-sonora">Colonna sonora</h3>
+        <p>
+          Per il sottofondo musicale è stato scelto il brano
+          <em>"A Few Jumps Away"</em> di Arthur Vyncke selezionato attraverso il
+          sito <em>BreakingCopyright</em> (licenza CC BY-SA 3.0).<br />
+          Il sound <strong>elettronico</strong> e la leggera melodia al
+          pianoforte riprende l'ambientazione sci-fi, con un ritmo ciclico
+          tipico dei puzzle game.
+        </p>
+        <h3 id="loop-e-musica-dinamica">Loop e musica dinamica</h3>
+        <p>
+          Il brano è stato adattato amplificando i volumi nell'introduzione e
+          riducendoli nel ritornello, per creare un loop omogeneo e costante.
+          Durante il menù di start e per tutto il primo livello, si riproducono
+          in loop solo i primi 20 secondi, caratterizzati da un accompagnamento
+          ritmato senza la melodia. Entrando nel livello successivo la musica
+          continua nella seconda parte, con la melodia al pianoforte e lo
+          sviluppo vero e proprio del brano.
+        </p>
+        <h3 id="jingle">Jingle</h3>
+        <p>
+          Durante la cutscene iniziale si può sentire un Jingle proveniente dal
+          monitor durante il messaggio promozionale della compagnia spaziale. I
+          brano <em>"Crystals"</em> di enviromaniac2 (CC0), selezionato per il
+          suo sound estremamente <strong>allegro</strong>, completamente in
+          contrasto con la situazione <strong>tragica e allarmante</strong>.
+        </p>
+        <p id="deckfall-jingle-audio">
+          <span>▶️ Ascolta il jingle!</span>
+          <span>🔵 premi per fermare</span>
+          <audio
+            loop=""
+            src="../assets/audio_jingle_394293__enviromaniac2__crystals.wav"
+            title="deckfall-jingle"
+          ></audio>
+        </p>
+        <p>
+          <img
+            src="../assets/monitor_corporate_message.webp"
+            alt="monitor che mostra il messaggio promozionale della compagnia in cui si invitano i clienti a lasciare una recensione positiva"
+          />
+        </p>
+      </section>
+    </section>
+
+    <section>
+      <h2 id="easter-eggs-e-riferimenti">Easter eggs e riferimenti</h2>
+      <section>
+        <h3 id="graffiti">Graffiti</h3>
+        <p>
+          Sul muro di fronte alle scale la scritta <em>This Way</em> aiuta il
+          giocatore a capire di doversi buttare di sotto per proseguire il
+          gioco. Inoltre questa prima scritta introduce la possibilità che nel
+          gioco esistano dei graffiti che svolgono il ruolo di suggerimento per
+          il giocatore.
+          <img
+            src="../assets/graffiti_thisway.webp"
+            alt='graffito "this way"'
+          />
+        </p>
+        <p>
+          Sul muro sopra la finestra da cui si vede lo spazio, è presente una
+          frase incisa che recita
+          <em>"You're looking in the wrong direction"</em>. È un riferimento ad
+          un graffito Torinese scritto su un muro di fronte alla Mole
+          Antonelliana.
+        </p>
         <div
-          class="container-img-wrapper"
           style="
-            align-content: center;
-            grid-row-start: 2;
-            height: 100%;
-            overflow: hidden;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(1, 1fr);
+            gap: 8px;
           "
         >
           <img
-            style="height: 150%"
-            src="../assets/startmenu.webp"
-            alt="menu di start"
+            style="height: 100%"
+            src="../assets/graffiti_wrongdirection.webp"
+            alt="graffito nel gioco"
+          />
+          <img
+            style="height: 100%"
+            src="../assets/graffiti_wrongdirection_turin.webp"
+            alt="graffito originale"
           />
         </div>
-        <div
-          class="container-img-wrapper"
-          style="grid-row-start: 2; height: 100%; overflow: hidden"
-        >
-          <video
-            style="scale: 2; margin-top: 10%"
-            autoplay=""
-            muted=""
-            loop=""
-            title="cartello pavimento fragile"
-          >
-            <source src="../assets/floorsign.mp4" type="video/mp4" />
-          </video>
-        </div>
-      </div>
-      <h3 id="numeri">Numeri</h3>
-      <p>
-        Durante l'introduzione, il monitor mostra alcuni messaggi di errore e di
-        pericolo e tra questi si nascondo alcuni riferimenti numerici.
-      </p>
-      <p>
-        <img
-          src="../assets/monitor_intro.webp"
-          alt="monitor con scritti tre messaggi di emergenza iniziali"
-        />
-      </p>
-      <blockquote>
+        <blockquote>
+          <p class="spoiler">
+            <i class="spoiler-alert"
+              >ATTENZIONE SPOILER! (premi per rivelare)</i
+            >
+            <span class="spoiler-content"
+              >La frase rivela la soluzione del puzzle, infatti il graffito è
+              visibile solo dopo che il giocatore avrà sbagliato per la prima
+              volta
+            </span>
+          </p>
+        </blockquote>
         <p>
-          "…REATTORI 441 E 507"<br />
-          "…PROTOCOLLO DI EVAQUAZIONE 850-M"
+          Sui muri delle stanze ad angolo è riportato in tempo reale il
+          conteggio dei tentativi del giocatore, con una incisione nello stile
+          dei tally marks.
+          <img
+            src="../assets/graffiti_tallymarks.webp"
+            alt="contatore tentativi"
+          />
         </p>
-      </blockquote>
-      <ul>
-        <li>
-          <strong>441</strong> rappresenta la versione dell'engine:
-          <code>Godot 4.4.1</code>
-        </li>
-        <li>
-          <strong>507</strong> è la Nave utilizzata dal rapper Rancore nel suo
-          album XENOVERSO
-        </li>
-        <li>
-          <strong>850-m</strong> si riferisce al codice della scheda video
-          (molto datata) del PC con cui è stato realizzato il gioco, ovvero la
-          <em>NVIDIA GTX 850M</em>.
-        </li>
-      </ul>
+        <h3 id="lomino-che-corre">L'omino che corre</h3>
+        <p>
+          Il segnale luminoso che indica l’uscita, mostra un omino di corsa
+          identico a quello usato dal nodo CharacterBody3D del Godot Engine. Lo
+          stesso omino è ripreso anche nel logo del gioco e nel segnale
+          <em>pavimento fragile</em>, in cui però è raffigurato mentre
+          precipita.
+        </p>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 8px;
+          "
+        >
+          <img
+            style="height: 100%"
+            src="../assets/monitor_exit.webp"
+            alt="monitor che contiene l'indicazione luminosa EXIT con una freccia verso sinistra"
+          />
+          <img
+            style="height: 100%"
+            src="../assets/icon_characterbody3d.png"
+            alt="icona del Character Body 3D"
+          />
+          <div
+            class="container-img-wrapper"
+            style="
+              align-content: center;
+              grid-row-start: 2;
+              height: 100%;
+              overflow: hidden;
+            "
+          >
+            <img
+              style="height: 150%"
+              src="../assets/startmenu.webp"
+              alt="menu di start"
+            />
+          </div>
+          <div
+            class="container-img-wrapper"
+            style="grid-row-start: 2; height: 100%; overflow: hidden"
+          >
+            <video
+              style="scale: 2; margin-top: 10%"
+              autoplay=""
+              muted=""
+              loop=""
+              title="cartello pavimento fragile"
+            >
+              <source src="../assets/floorsign.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+        <h3 id="numeri">Numeri</h3>
+        <p>
+          Durante l'introduzione, il monitor mostra alcuni messaggi di errore e
+          di pericolo e tra questi si nascondo alcuni riferimenti numerici.
+        </p>
+        <p>
+          <img
+            src="../assets/deckfall-monitor-alert-messages.webp"
+            alt="monitor con scritti tre messaggi di emergenza iniziali"
+          />
+        </p>
+        <blockquote>
+          <p>
+            "…REATTORI 441 E 507"<br />
+            "…PROTOCOLLO DI EVACUAZIONE 850-M"
+          </p>
+        </blockquote>
+        <ul>
+          <li>
+            <strong>441</strong> rappresenta la versione dell'engine:
+            <code>Godot 4.4.1</code>
+          </li>
+          <li>
+            <strong>507</strong> è la Nave utilizzata dal rapper Rancore nel suo
+            album XENOVERSO
+          </li>
+          <li>
+            <strong>850-m</strong> si riferisce al codice della scheda video
+            (molto datata) del PC con cui è stato realizzato il gioco, ovvero la
+            <em>NVIDIA GTX 850M</em>.
+          </li>
+        </ul>
+      </section>
     </section>
 
-    <h2 id="funzionamento">Funzionamento</h2>
     <section>
-      <div class="spoiler-section-flag" style="display: none">
-        ATTENZIONE SPOILER TOTALE! (premi per rivelare)
-      </div>
-      <h3 id="meccanismo-della-soluzione">Meccanismo della soluzione</h3>
-      <p>
-        Il puzzle (che si rifà ad un livello di superliminal) è strutturato in
-        modo che una freccia indica la via di uscita corretta ma la prima porta
-        che il giocatore <em>guarda</em> è sempre bloccata, mentre la seconda è
-        sempre liberaà.
-      </p>
-      <p>
-        Il modo più semplice per realizzarlo è posizionare da subito un ostacolo
-        su entrambe le porte, non appena il giocatore ne guarda uno si rimuove
-        immediatamente quello opposto.
-      </p>
-      <p>
-        <video
-          style="position: absolute"
-          class="prevent-cover"
-          muted=""
-          title="soluzione"
+      <h2 id="funzionamento">Funzionamento</h2>
+      <section>
+        <div class="spoiler-section-flag" style="display: none">
+          ATTENZIONE SPOILER TOTALE! (premi per rivelare)
+        </div>
+        <h3 id="meccanismo-della-soluzione">Meccanismo della soluzione</h3>
+        <p>
+          La freccia rossa indica sempre l'uscita corretta per raggiungere le
+          stanze successiva. Tuttavia la prima porta che il giocatore
+          <strong>guarda</strong> è sempre bloccata, mentre la seconda è sempre
+          libera. Per vincere occorre sempre guardare per prima nella direzione
+          opposta alla freccia.
+        </p>
+        <p>
+          Il modo più semplice per realizzarlo è posizionare da subito un
+          ostacolo su entrambe le porte, non appena il giocatore ne guarda uno
+          si rimuove immediatamente quello opposto.
+        </p>
+        <p>
+          <video
+            style="position: absolute"
+            class="prevent-cover"
+            muted=""
+            title="soluzione"
+          >
+            <source src="../assets/solution.webm" type="video/webm" />
+          </video>
+          <video
+            id="solution-video"
+            class="prevent-cover"
+            autoplay=""
+            muted=""
+            title="soluzione"
+          >
+            <source src="../assets/solution.webm" type="video/webm" />
+          </video>
+        </p>
+        <p><em>Ma come si crea questo meccanismo?</em></p>
+        <p>
+          In Godot Engine esiste un Nodo chiamato
+          <code>VisibleOnScreenNotifier3D</code> capace di emettere un segnale
+          quando la sua area entra o esce dal <em>campo visivo</em> della
+          Camera.
+        </p>
+        <p>
+          Così facile? No, perché non si tratta di un vero
+          <em>campo visivo</em> che tiene conto eventuali ostacoli o muri, ma di
+          una <strong>regione tridimensionale proiettata</strong> dalla camera,
+          anche detta <em>Frustum View</em>.<br />
+          Quindi il Nodo <code>VisibleOnScreenNotifier3D</code> si considera
+          "visibile" quando entra nel Frustum, anche se è nascosto da un muro e
+          non può essere visto direttamente dal giocatore.
+        </p>
+        <p>
+          <img
+            src="../assets/frustum_culling.webp"
+            alt="visualizzazione del Frustum"
+            class="prevent-cover"
+          />
+          <em
+            >Un chiaro esempio di oggetti che sono all'interno del Frustum View,
+            ma rimangono invisibili al giocatore a causa di un ostacolo</em
+          >
+        </p>
+        <p>
+          Per risolvere questo problema basterà rilevare quando tra il giocatore
+          ed il Nodo <code>VisibleOnScreenNotifier3D</code> si trova un ostacolo
+          visivo.
+        </p>
+        <p><em>Ma in che modo?</em></p>
+        <h3 id="tentativo-con-un-raycast3d">Tentativo con un Raycast3D</h3>
+        <p>
+          La scelta più immediata è quella utilizzare un nodo
+          <code>RayCast3D</code> che parte dallo stipite della porta e punta
+          costantemente verso il giocatore.
+        </p>
+        <p>
+          Se il raycast collide direttamente con il Body del giocatore significa
+          che non ci sono ostacoli nel mezzo e che possiamo "<em>fidarci</em>"
+          del segnale emesso dal <code>VisibleOnScreenNotifier3D</code>.
+        </p>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 1fr 100%;
+            gap: 8px;
+          "
         >
-          <source src="../assets/solution.webm" type="video/webm" />
-        </video>
-        <video
-          id="solution-video"
-          class="prevent-cover"
-          autoplay=""
-          muted=""
-          title="soluzione"
+          <img
+            style="object-position: bottom"
+            src="../assets/door_detect_raycast_out.webp"
+            alt="raycast bloccato dal muro"
+          />
+          <em style="grid-row-start: 2">Raycast bloccato dal muro</em>
+          <img
+            style="object-position: bottom"
+            src="../assets/door_detect_raycast_in.webp"
+            alt="raycast che colpisce il giocatore"
+          />
+          <em style="grid-row-start: 2">Raycast che colpisce il giocatore</em>
+        </div>
+        <p>
+          <strong>BUG</strong>: il Raycast punta "costantemente" verso il
+          giocatore con la funziona <code>look_at()</code>, e rileva le
+          collisioni attraverso la funzione <code>get_collider()</code>. Questo
+          meccanismo sembra funzionare sulla carta, ma nella pratica non è
+          affidabile: il raycast rischia di non aggiornare la sua direzione in
+          tempo quando il giocatore si muove molto velocemente. In fase di
+          testing è stato provato che è possibile intravedere di sfuggita la
+          porta senza azionare il meccanismo, rompendo di fatto la regola
+          principale del puzzle.
+        </p>
+        <h3 id="tentativo-con-un-area3d">Tentativo con un Area3D</h3>
+        <p>
+          Siccome le pareti della stanza e le porte sono elementi sempre fissi,
+          il raycast idealmente diventa "utile" solo oltrepassata la linea tra
+          porta e l'angolo del muro.<br />
+          Si può quindi ottenere lo stesso meccanismo con un nodo
+          <code>Area3D</code> che copre proprio questa regione. Quando il
+          giocatore entra nella zona significa che non ci sono ostacoli tra lui
+          e la porta e per tanto possiamo "<em>fidarci</em>" del
+          <code>VisibleOnScreenNotifier3D</code>.
+        </p>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(1, 1fr);
+            gap: 8px;
+          "
         >
-          <source src="../assets/solution.webm" type="video/webm" />
-        </video>
-      </p>
-      <p><em>Ma come si crea questo meccanismo?</em></p>
-      <p>
-        In Godot Engine esiste un Nodo chiamato
-        <code>VisibleOnScreenNotifier3D</code> capace di emettere un segnale
-        quando la sua area entra o esce dal <em>campo visivo</em> della Camera.
-      </p>
-      <p>
-        Così facile? No, perché non si tratta di un vero
-        <em>campo visivo</em> che tiene conto eventuali ostacoli o muri, ma di
-        una <strong>regione tridimenisionale proiettata</strong> dalla camera,
-        anche detta <em>Frustum View</em>.<br />
-        Quindi il Nodo <code>VisibleOnScreenNotifier3D</code> si considera
-        "visibile" quando entra nel Frustum, anche se è nascosto da un muro e
-        non può essere visto direttamente dal giocatore.
-      </p>
-      <p>
-        <img
-          src="../assets/frustum_culling.webp"
-          alt="visualizzazione del Frustum"
-          class="prevent-cover"
-        />
-        <em
-          >Un chiaro esempio di oggetti che sono all'interno del Frustum View,
-          ma rimangono invisibilial giocatore a causa di un ostacolo</em
-        >
-      </p>
-      <p>
-        Per risolvere questo problema basterà rilevare quando tra il giocatore
-        ed il Nodo <code>VisibleOnScreenNotifier3D</code> si trova un ostacolo
-        visivo.
-      </p>
-      <p><em>Ma in che modo?</em></p>
-      <h3 id="tentativo-con-un-raycast3d">Tentativo con un Raycast3D</h3>
-      <p>
-        La scelta più immediata è quella utilizzare un nodo
-        <code>RayCast3D</code> che parte dallo stipite della porta e punta
-        costantemente verso il giocatore.
-      </p>
-      <p>
-        Se il raycast collide direttamente con il Body del giocatore significa
-        che non ci sono ostacoli nel mezzo e che possiamo "<em>fidarci</em>" del
-        segnale emesso dal <code>VisibleOnScreenNotifier3D</code>.
-      </p>
-      <div
-        style="
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          grid-template-rows: 1fr 100%;
-          gap: 8px;
-        "
-      >
-        <img
-          style="object-position: bottom"
-          src="../assets/door_detect_raycast_out.webp"
-          alt="raycast bloccato dal muro"
-        />
-        <em style="grid-row-start: 2">Raycast bloccato dal muro</em>
-        <img
-          style="object-position: bottom"
-          src="../assets/door_detect_raycast_in.webp"
-          alt="raycast che colpisce il giocatore"
-        />
-        <em style="grid-row-start: 2">Raycast che colpisce il giocatore</em>
-      </div>
-      <p>
-        <strong>BUG</strong>: il Raycast punta "costantemente" verso il
-        giocatore con la funziona <code>look_at()</code>, e rileva le collisioni
-        attraverso la funzione <code>get_collider()</code>. Questo meccanismo
-        sembra funzionare sulla carta, ma nella pratica non è affidabile: il
-        raycast rischia di non aggiornare la sua direzione in tempo quando il
-        giocatore si muove molto velocemente. In fase di testing è stato provato
-        che è possibile intravedere di sfuggita la porta senza azionare il
-        meccanismo, rompendo di fatto la regola principale del puzzle.
-      </p>
-      <h3 id="tentativo-con-un-area3d">Tentativo con un Area3D</h3>
-      <p>
-        Siccome le pareti della stanza e le porte sono elementi sempre fissi, il
-        raycast idealmente diventa "utile" solo oltrepassata la linea tra porta
-        e l'angolo del muro.<br />
-        Si può quindi ottenere lo stesso meccanismo con un nodo
-        <code>Area3D</code> che copre proprio questa regione. Quando il
-        giocatore entra nella zona significa che non ci sono ostacoli tra lui e
-        la porta e per tanto possiamo "<em>fidarci</em>" del
-        <code>VisibleOnScreenNotifier3D</code>.
-      </p>
-      <div
-        style="
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          grid-template-rows: repeat(1, 1fr);
-          gap: 8px;
-        "
-      >
-        <img
-          style="object-position: bottom"
-          src="../assets/door_detect_area3d_out.webp"
-          alt="giocatore fuori dall'area"
-        />
-        <img
-          style="object-position: bottom"
-          src="../assets/door_detect_area3d_in.webp"
-          alt="giocatore dentro dall'area"
-        />
-      </div>
-      <h3 id="il-corridoio-infinito">Il Corridoio Infinito</h3>
-      <p>
-        Quando si "<em>cade</em>" dalle scale si atterra in un corridoio
-        identico al quello di partenza, simulando una sorta di loop infinito.
-        Tra i gradini e il pavimento c'è un Nodo <code>Area3D</code> che rileva
-        quando il giocatore sta cadendo, emette un segnale e il gioco reimposta
-        la posizione al corridoio iniziale, nello stesso punto "relativo". Si
-        tratta infatti di due scene identiche duplicate, con un
-        <code>Marker3D</code> posto di fronte alle scale. Durante la caduta si
-        prende la posizione del giocatore rispetto questo marker e si calcola
-        quale sarebbe la posizione partendo invece al marker del corridoio
-        principale.
-      </p>
-      <p>
-        <img
-          src="../assets/stairs.webp"
-          alt="scale che danno sul corridoio successivo"
-          class="prevent-cover"
-        />
-        <em>Scale che danno sul corridoio successivo</em>
-      </p>
-      <p>
-        <img
-          src="../assets/map_top_view.webp"
-          alt="vista dall'alto di tutta la mappa di gioco"
-          class="prevent-cover"
-        />
-        <em>Vista dall'alto della mappa di gioco</em>
-      </p>
-      <p>
-        <img
-          src="../assets/map_perspective_view.webp"
-          alt="vista prospettica della mappa di gioco"
-          class="prevent-cover"
-        />
-        <em>Vista prospettica della mappa di gioco</em>
-      </p>
-      <h3 id="sole">SOLE</h3>
-      <p>
-        Il sole proietta una forte luce all'interno della nave attraverso la
-        finestra del corriodio principale. Roteando ad una velocità lenta e
-        costante ricrea l'effetto del classico movimento di una nave in orbita.
-      </p>
-      <p>
-        Il sole è in realtà una combinazione di una Mesh luminosa a forma di
-        sfera ed un Nodo SpotLight3D, ossia un nodo che proietta un cono di
-        luce. La rotazione ha come fulcro proprio il centro della finesta.
-        Durante questa animazione anche il cielo stellato si muove nello stesso
-        modo e alla stessa velocità, attraverso la rotazione del parametro
-        <code>sky_rotation</code> del nodo <code>WorldEnvironment</code>.
-      </p>
-      <p>
-        <img
-          src="../assets/sun_light.webp"
-          alt="proiezione della luce sulla finestra"
-        />
-        <img src="../assets/sun_mesh.webp" alt="mesh del sole" />
-      </p>
-      <script src="../script.js"></script>
+          <img
+            style="object-position: bottom"
+            src="../assets/door_detect_area3d_out.webp"
+            alt="giocatore fuori dall'area"
+          />
+          <img
+            style="object-position: bottom"
+            src="../assets/door_detect_area3d_in.webp"
+            alt="giocatore dentro dall'area"
+          />
+        </div>
+        <h3 id="il-corridoio-infinito">Il Corridoio Infinito</h3>
+        <p>
+          Quando si "<em>cade</em>" dalle scale si atterra in un corridoio
+          identico al quello di partenza, simulando una sorta di loop infinito.
+          Tra i gradini e il pavimento c'è un Nodo <code>Area3D</code> che
+          rileva quando il giocatore sta cadendo, emette un segnale e il gioco
+          reimposta la posizione al corridoio iniziale, nello stesso punto
+          "relativo". Si tratta infatti di due scene identiche duplicate, con un
+          <code>Marker3D</code> posto di fronte alle scale. Durante la caduta si
+          prende la posizione del giocatore rispetto questo marker e si calcola
+          quale sarebbe la posizione partendo invece al marker del corridoio
+          principale.
+        </p>
+        <p>
+          <img
+            src="../assets/stairs.webp"
+            alt="scale che danno sul corridoio successivo"
+            class="prevent-cover"
+          />
+          <em>Scale che danno sul corridoio successivo</em>
+        </p>
+        <p>
+          <img
+            src="../assets/map_top_view.webp"
+            alt="vista dall'alto di tutta la mappa di gioco"
+            class="prevent-cover"
+          />
+          <em>Vista dall'alto della mappa di gioco</em>
+        </p>
+        <p>
+          <img
+            src="../assets/map_perspective_view.webp"
+            alt="vista prospettica della mappa di gioco"
+            class="prevent-cover"
+          />
+          <em>Vista prospettica della mappa di gioco</em>
+        </p>
+        <h3 id="sole">SOLE</h3>
+        <p>
+          Il sole proietta una forte luce all'interno della nave attraverso la
+          finestra del corridoio principale. Roteando ad una velocità lenta e
+          costante ricrea l'effetto del classico movimento di una nave in
+          orbita.
+        </p>
+        <p>
+          Il sole è in realtà una combinazione di una Mesh luminosa a forma di
+          sfera ed un Nodo SpotLight3D, ossia un nodo che proietta un cono di
+          luce. La rotazione ha come fulcro proprio il centro della finestra.
+          Durante questa animazione anche il cielo stellato si muove nello
+          stesso modo e alla stessa velocità, attraverso la rotazione del
+          parametro <code>sky_rotation</code> del nodo
+          <code>WorldEnvironment</code>.
+        </p>
+        <p>
+          <img
+            src="../assets/sun_light.webp"
+            alt="proiezione della luce sulla finestra"
+          />
+          <img src="../assets/sun_mesh.webp" alt="mesh del sole" />
+        </p>
+        <script src="../script.js"></script>
+      </section>
     </section>
   </body>
 </html>

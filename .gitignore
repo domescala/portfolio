@@ -2,3 +2,5 @@
 __*
 .vscode
 server.*
+.DS_Store
+

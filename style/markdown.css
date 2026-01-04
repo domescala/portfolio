@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital@0;1&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital@0;1&display=swap");
 :root {
   --text: #4c4d52;
   --main-background: #f6f6f6;
@@ -40,7 +40,7 @@ body {
   width: 900px;
   max-width: calc(100% - 170px);
   margin: 0 auto;
-  font-family: 'Lora';
+  font-family: "Lora";
   line-height: 1.5;
   background: var(--main-background);
   padding: 10px 0 50px;
@@ -48,7 +48,7 @@ body {
 }
 .markdown-box * {
   all: revert;
-  font-family: 'Lora';
+  font-family: "Lora";
   /* font-family: sans-serif; */
   font-size: 18px;
   color: var(--text);
@@ -58,7 +58,7 @@ body {
 
 .markdown-box h1 {
   font-size: 48px;
-  font-family: 'riffic';
+  font-family: "riffic";
   letter-spacing: 2px;
   z-index: 1100;
   display: block;
@@ -92,15 +92,14 @@ body {
   font-size: 24px;
   line-height: 1;
   padding-bottom: 6px;
-  font-family: 'riffic';
+  font-family: "riffic";
   letter-spacing: 1px;
   color: var(--blue);
   /* text-shadow: 0px 0px 15px var(--glow-blue); */
   /* filter:drop-shadow(0px 0px 10px var(--glow-blue)); */
   cursor: pointer;
   translate: 0px 0px;
-  transition:
-    all 0.5s ease,
+  transition: all 0.5s ease,
     letter-spacing 0.5s
       linear(
         0 0%,
@@ -136,29 +135,24 @@ body {
         1 86.7%,
         1 100%
       );
-  /* background:var(--test); */
-  /* position: sticky; */
   z-index: 1100;
   width: 100%;
-  border-bottom: 1px solid var(--lite-blue);
   text-transform: uppercase;
   letter-spacing: 3px;
   position: sticky;
   top: 0px;
   background: #f6f6f6;
+  border-bottom: 1px dashed var(--blue);
   margin: 0 -10px;
-  padding: 0.1em 10px 2px;
+  padding: 1.1em 10px 0.2em;
 }
 .markdown-box h2:hover {
-  /* translate: 20px 0px; */
   color: var(--red);
-  /* text-shadow: 0px 0px 15px var(--glow-red); */
-  border-bottom: 2px solid var(--glow-red);
+  border-bottom: 1px dashed var(--red);
   letter-spacing: 4px;
-  /* filter:drop-shadow(0px 0px 10px var(--glow-red)); */
 }
 .markdown-box h2:before {
-  content: '>';
+  content: ">";
   position: absolute;
   width: fit-content;
   color: transparent;
@@ -174,7 +168,7 @@ body {
   background: inherit;
 }
 .markdown-box h2::after {
-  content: '>';
+  content: ">";
   position: absolute;
   width: fit-content;
   left: -28px;
@@ -307,6 +301,10 @@ body {
 .markdown-box li {
   margin-bottom: 8px;
 }
+.markdown-box li ul {
+  padding: 0.5em 0.5em !important;
+  list-style: none !important;
+}
 .markdown-box blockquote {
   margin: 26px 40px 36px;
 }
@@ -327,13 +325,13 @@ body {
   font-family: monospace;
   /* font-weight: bold; */
   background: var();
-  padding: 1px 7px 2px;
+  padding: 0.2em 0.3em;
   border-radius: 4px;
   font-style: normal;
   /* color: white; */
-  background: rgb(221 231 240);
+  background: rgb(228 228 228);
   white-space: nowrap;
-  font-size: 0.95em;
+  font-size: 0.8em;
 }
 .markdown-box pre:has(code[class]) {
   background: #181a1f;
@@ -351,7 +349,7 @@ body {
   padding: 0;
 }
 
-.markdown-box pre code[class*='language-'] {
+.markdown-box pre code[class*="language-"] {
   text-shadow: none !important;
   background: none;
 }
@@ -408,7 +406,7 @@ body {
 }
 .markdown-box em {
 }
-.markdown-box input[type='color'] {
+.markdown-box input[type="color"] {
   /* width: 10px; */
 }
 .markdown-box .MathJax_Display * {

@@ -22,33 +22,42 @@ Musica: "Revolution" di [Alex-Productions](https://soundcloud.com/alexproduction
 Deckfall è un puzzle game in prima persona, sviluppato in **Godot Engine** e ispirato ad un livello di _Superliminal_.
 Il giocatore si trova su una astronave sul punto di collassare e dovrà percorrere un corridoio (quasi) infinito in cerca di una via d'uscita.
 
-Il gioco è disponibile sia ITCHIO (come build) che su github (progetto completo e build)
+Il gioco è disponibile sia su itch.io (come build) che su github (progetto completo e build)
 
 ## Come giocare
 
-Per i sistemi windows è sufficiente scaricare e avviare il file eseguibile `deckfall.exe`. Per gli altri sistemi si può avviare il gioco all'interno dell'editor di Godot 4.4.1!
+Deckfall gira su Windows, macOS e Linux. Per i sistemi Windows è sufficiente scaricare e avviare il file eseguibile `deckfall.exe`. Per gli altri sistemi si può avviare il gioco all'interno dell'editor di Godot 4.4.1!
 
-### 💻 Windows 
+### Avvia il gioco con l'eseguibile (Windows)
 
-1. Scarica il file esegubile `deckfall.exe` dal repository: [link404](/licence)
-2. Avvialo e gioca
+1. Scarica l'ultima versione di dalla sezione release:
+   - [🗃️ Sezione release](https://github.com/domescala/deckfall/releases)
+   - [🚀 Download diretto v1.0](https://github.com/domescala/deckfall/releases/download/v1.0/deckfall-v1.0.exe)
+2. Avvia il file `deckfall-v1.0.exe`
+3. Gioca!
 
-### 💻 Windows / macOs / linux
+### Avvia il gioco dall'engine (Windows/macOS/linux)
 
-1. Scarica `Godot 4.4.1` dal sito ufficiale: <https://godotengine.org/download/archive/4.4.1-stable/>
-2. Scarica `deckfall-v1.0.zip` dal repository: <https://github.com/domescala/deckfall-beta/archive/refs/tags/v0.1-beta.zip>
-3. Avvia `Godot_v4.4.1` e **trascina** il file `deckfall-v1.0.zip` all'interno della finestra
-4. Fai click su `install` e Godot spacchetterà in automatico il progetto: attendi qualche in qualche minuto
-5. Avvia il gioco premendo il tasto `F5` o il pulsante ▶️ in alto a destra
+1. Prima scarica il motore alla versione 4.4.1 dal sito ufficiale di Godot:
+   - [🗃️ Sezione Download](https://godotengine.org/download/archive/4.4.1-stable/)
+   - [🚀 Download diretto per Linux](https://downloads.godotengine.org/?version=4.4.1&flavor=stable&slug=linux.x86_64.zip&platform=linux.64)
+   - [🚀 Download diretto per Windows](https://downloads.godotengine.org/?version=4.4.1&flavor=stable&slug=win64.exe.zip&platform=windows.64)
+   - [🚀 Download diretto per macOS](https://downloads.godotengine.org/?version=4.4.1&flavor=stable&slug=macos.universal.zip&platform=macos.universal)
+2. Scarica l'ultima versione del gioco dalla sezione release:
+   - [🗃️ Sezione release](https://github.com/domescala/deckfall/releases)
+   - [🚀 Download diretto v1.0](https://github.com/domescala/deckfall/archive/refs/tags/v1.0.zip)
+3. Avvia `Godot_v4.4.1` e **trascina** il file `deckfall.zip` nella finestra
+4. Premi su `installa`: il motore spacchetterà e caricherà automaticamente il gioco in qualche minuto.
+5. Una volta pronto, per avviare il gioco premi sul bottone play (▶️) in alto a destra, oppure premi `F5` se sei su windows o `Command + D` se sei su macOS
 6. Gioca!
 
 ### ⚙️ Impostazioni
 
-Il gioco è disponibile in italiano e in inglese, questa impostazione si trova solo nel menù iniziale e non sarà modificabile a gioco avviato. Dal menù di pausa (premi `ESC`) è possibile aggiustare la sensibilità del mouse e modificare il livello di qualità.
+Il gioco è disponibile in italiano e in inglese, questa impostazione si trova solo nel menù iniziale e non sarà modificabile a gioco avviato. Inoltre dal menù di pausa (premi `ESC`) è possibile aggiustare la sensibilità del mouse e modificare il livello di qualità.
 
-## Lincenze e Crediti 🏷️
+## Licenze e Crediti 🏷️
 
-Il progetto è rilasciato con diverse licenze definite nel dettaglio all'interno del file [LICENCE404](/licence). Riassumendo le licenze si dividono in:
+Il progetto è rilasciato con diverse licenze definite nel dettaglio all'interno del file [LICENSE📃](https://github.com/domescala/deckfall/blob/main/LICENSE.md). Riassumendo, le licenze si dividono in:
 
 1. **Gioco compilato (Build)**  
    Siccome sono stati utilizzati assets di terze parti con varie licenze tra cui "ShareAlike", il gioco compilato (build) è distribuito con licenza di Attribuzione e ShareALike (CC BY-SA 4.0).
@@ -57,11 +66,11 @@ Il progetto è rilasciato con diverse licenze definite nel dettaglio all'interno
 3. **Asset originali**  
    Gli asset creati ad hoc per il progetto hanno la sola licenza di Attribuzione (CC BY 4.0).
 
-Tutte le risorse sono accreditate nel file [CREDITS404](/licence)
+Tutte le risorse di terze parti sono accreditate nel file [CREDITS📃](https://github.com/domescala/deckfall/blob/main/CREDITS.md)
 
-## Modelli 3D 
+## Modelli 3D
 
-Per gli elementi strutturali (muri, pavimenti, scalini, porte...) e per i dettagli (tubi, barili, monitor...) sono stati utilizzati gli asset della libreria Sci-fi "Space Station Kit" di Kenney (licenza CC0). Mentre i modelli specifici e "dinamici" come i numeri luminosi pixelati e la leva d'emergenza sono stati modellati ad hoc in Blender.
+Per gli elementi strutturali (muri, pavimenti, scalini, porte...) e per i dettagli (tubi, barili, monitor...) sono stati utilizzati gli asset della libreria Sci-fi "Space Station Kit" di Kenney (licenza CC0). Mentre i modelli specifici e "dinamici" come i numeri luminosi pixellati e la leva d'emergenza sono stati modellati ad hoc in Blender.
 
 <p class="videos-squared">
 <video autoplay muted loop><source src="../assets/pixel_numbers.mp4" type="video/mp4"></video>
@@ -78,12 +87,12 @@ La creazione delle stanze è stata svolta direttamente all'interno dell'engine
 <em>Corridoio principale</em>
 
 ![finestra del corridoio principale](../assets/room_corridor_window.webp)
-![vista corriodio principale, con il monitor degli errori e la finestra in fondo](../assets/room_corridor_full.webp)
+![vista corridoio principale, con il monitor degli errori e la finestra in fondo](../assets/room_corridor_full.webp)
 
 ![corridoio di sinistra con porta bloccata dai detriti e indicazione luminosa EXIT che punta in quella direzione](../assets/room_left_corridor.webp)
 <em>Vista sul corridoio che porta verso l'uscita di sinistra</em>
 
-![ostacoli e destriti che fuoriescono dalla porta bloccata](../assets/room_corridor_obstacles.webp)
+![ostacoli e detriti che fuoriescono dalla porta bloccata](../assets/room_corridor_obstacles.webp)
 <em>Ostacoli che bloccano la porta</em>
 
 ![stanza ad angolo](../assets/room_exit.webp)
@@ -107,22 +116,22 @@ Entrando nel livello successivo la musica continua nella seconda parte, con la m
 
 ### Jingle
 
-Durante la cutscene iniziale si puo sentire un Jingle proveniente dal monitor durante il messaggio promozionale della compagnia spaziale. I brano _"Crystals"_ di envirOmaniac2 (CC0), selezionato per il suo sound estremamente **allegro**, completamente in contrasto con la situazione **tragica e allarmante**.
+Durante la cutscene iniziale si può sentire un Jingle proveniente dal monitor durante il messaggio promozionale della compagnia spaziale. I brano _"Crystals"_ di enviromaniac2 (CC0), selezionato per il suo sound estremamente **allegro**, completamente in contrasto con la situazione **tragica e allarmante**.
 
 <p id="deckfall-jingle-audio">
 <span>▶️ Ascolta il jingle!</span>
 <span>🔵 premi per fermare</span>
-<audio loop src="../assets/audio_jingle_394293__enviromaniac2__crystals.wav" title="Title" ></audio>
+<audio loop src="../assets/audio_jingle_394293__enviromaniac2__crystals.wav" title="deckfall-jingle" ></audio>
 </p>
 
 ![monitor che mostra il messaggio promozionale della compagnia in cui si invitano i clienti a lasciare una recensione positiva](../assets/monitor_corporate_message.webp)
 
-## Easter eggs e riferimenti 
+## Easter eggs e riferimenti
 
 ### Graffiti
 
 Sul muro di fronte alle scale la scritta _This Way_ aiuta il giocatore a capire di doversi buttare di sotto per proseguire il gioco.
-Inoltre questa prima scritta incisa suggerisce che ne esistano anche altre.
+Inoltre questa prima scritta introduce la possibilità che nel gioco esistano dei graffiti che svolgono il ruolo di suggerimento per il giocatore.
 ![graffito "this way"](../assets/graffiti_thisway.webp)
 
 Sul muro sopra la finestra da cui si vede lo spazio, è presente una frase incisa che recita _"You're looking in the wrong direction"_. È un riferimento ad un graffito Torinese scritto su un muro di fronte alla Mole Antonelliana.
@@ -162,10 +171,10 @@ Il segnale luminoso che indica l’uscita, mostra un omino di corsa identico a q
 
 Durante l'introduzione, il monitor mostra alcuni messaggi di errore e di pericolo e tra questi si nascondo alcuni riferimenti numerici.
 
-![monitor con scritti tre messaggi di emergenza iniziali](../assets/monitor_intro.webp)
+![monitor con scritti tre messaggi di emergenza iniziali](../assets/deckfall-monitor-alert-messages.webp)
 
 > "...REATTORI 441 E 507"  
-> "...PROTOCOLLO DI EVAQUAZIONE 850-M"
+> "...PROTOCOLLO DI EVACUAZIONE 850-M"
 
 - **441** rappresenta la versione dell'engine: `Godot 4.4.1`
 - **507** è la Nave utilizzata dal rapper Rancore nel suo album XENOVERSO
@@ -177,7 +186,7 @@ Durante l'introduzione, il monitor mostra alcuni messaggi di errore e di pericol
 
 ### Meccanismo della soluzione
 
-Il puzzle (che si rifà ad un livello di superliminal) è strutturato in modo che una freccia indica la via di uscita corretta ma la prima porta che il giocatore _guarda_ è sempre bloccata, mentre la seconda è sempre liberaà.
+La freccia rossa indica sempre l'uscita corretta per raggiungere le stanze successiva. Tuttavia la prima porta che il giocatore **guarda** è sempre bloccata, mentre la seconda è sempre libera. Per vincere occorre sempre guardare per prima nella direzione opposta alla freccia.
 
 Il modo più semplice per realizzarlo è posizionare da subito un ostacolo su entrambe le porte, non appena il giocatore ne guarda uno si rimuove immediatamente quello opposto.
 
@@ -190,11 +199,11 @@ _Ma come si crea questo meccanismo?_
 
 In Godot Engine esiste un Nodo chiamato `VisibleOnScreenNotifier3D` capace di emettere un segnale quando la sua area entra o esce dal _campo visivo_ della Camera.
 
-Così facile? No, perché non si tratta di un vero _campo visivo_ che tiene conto eventuali ostacoli o muri, ma di una **regione tridimenisionale proiettata** dalla camera, anche detta _Frustum View_.  
+Così facile? No, perché non si tratta di un vero _campo visivo_ che tiene conto eventuali ostacoli o muri, ma di una **regione tridimensionale proiettata** dalla camera, anche detta _Frustum View_.  
 Quindi il Nodo `VisibleOnScreenNotifier3D` si considera "visibile" quando entra nel Frustum, anche se è nascosto da un muro e non può essere visto direttamente dal giocatore.
 
 ![visualizzazione del Frustum$class=prevent-cover](../assets/frustum_culling.webp)
-<em>Un chiaro esempio di oggetti che sono all'interno del Frustum View, ma rimangono invisibilial giocatore a causa di un ostacolo</em>
+<em>Un chiaro esempio di oggetti che sono all'interno del Frustum View, ma rimangono invisibili al giocatore a causa di un ostacolo</em>
 
 Per risolvere questo problema basterà rilevare quando tra il giocatore ed il Nodo `VisibleOnScreenNotifier3D` si trova un ostacolo visivo.
 
@@ -248,9 +257,9 @@ Si tratta infatti di due scene identiche duplicate, con un `Marker3D` posto di f
 
 ### SOLE
 
-Il sole proietta una forte luce all'interno della nave attraverso la finestra del corriodio principale. Roteando ad una velocità lenta e costante ricrea l'effetto del classico movimento di una nave in orbita.
+Il sole proietta una forte luce all'interno della nave attraverso la finestra del corridoio principale. Roteando ad una velocità lenta e costante ricrea l'effetto del classico movimento di una nave in orbita.
 
-Il sole è in realtà una combinazione di una Mesh luminosa a forma di sfera ed un Nodo SpotLight3D, ossia un nodo che proietta un cono di luce. La rotazione ha come fulcro proprio il centro della finesta.
+Il sole è in realtà una combinazione di una Mesh luminosa a forma di sfera ed un Nodo SpotLight3D, ossia un nodo che proietta un cono di luce. La rotazione ha come fulcro proprio il centro della finestra.
 Durante questa animazione anche il cielo stellato si muove nello stesso modo e alla stessa velocità, attraverso la rotazione del parametro `sky_rotation` del nodo `WorldEnvironment`.
 
 ![proiezione della luce sulla finestra](../assets/sun_light.webp)
