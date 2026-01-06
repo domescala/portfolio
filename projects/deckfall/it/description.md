@@ -6,6 +6,8 @@
 
 <link rel="stylesheet" href="../style.css">
 
+[Read me in english! 🇬🇧](../en)
+
 ###### _Puzzle game_ _Godot engine_
 
 # Deckfall
@@ -225,7 +227,7 @@ Se il raycast collide direttamente con il Body del giocatore significa che non c
 <em style="grid-row-start: 2">Raycast che colpisce il giocatore</em>
 </div>
 
-**BUG**: il Raycast punta "costantemente" verso il giocatore con la funziona `look_at()`, e rileva le collisioni attraverso la funzione `get_collider()`. Questo meccanismo sembra funzionare sulla carta, ma nella pratica non è affidabile: il raycast rischia di non aggiornare la sua direzione in tempo quando il giocatore si muove molto velocemente. In fase di testing è stato provato che è possibile intravedere di sfuggita la porta senza azionare il meccanismo, rompendo di fatto la regola principale del puzzle.
+**BUG**: il Raycast punta "costantemente" verso il giocatore con la funzione `look_at()`, e rileva le collisioni attraverso la funzione `get_collider()`. Questo meccanismo sembra funzionare sulla carta, ma nella pratica non è affidabile: il raycast rischia di non aggiornare la sua direzione in tempo quando il giocatore si muove molto velocemente. In fase di testing è stato provato che è possibile intravedere di sfuggita la porta senza azionare il meccanismo, rompendo di fatto la regola principale del puzzle.
 
 ### Tentativo con un Area3D
 

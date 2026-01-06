@@ -6,7 +6,11 @@
 
 <link rel="stylesheet" href="../style.css">
 
+[Leggimi in italiano! 🇮🇹](../it)
+
 ###### _Puzzle game_ _Godot engine_
+
+# Deckfall
 
 <div>
 <video id="trailer" class="prevent-cover" autoplay muted loop><source src="../assets/reel.mp4" type="video/mp4"></video>
@@ -17,7 +21,7 @@ Music: "Revolution" by [Alex-Productions](https://soundcloud.com/alexproductions
 
 ## Description 📢
 
-Deckfall is a little first person puzzle game, developed in **Godot Engine**, ispired by the "Infinite Hallway" level from _Superliminal_.
+Deckfall is a little first person puzzle game, developed in **Godot Engine**, inspired by the "Infinite Hallway" level from _Superliminal_.
 The game takes place on a spaceship on the verge of collapse, and the player must traverse an almost infinite corridor in search of an escape route.
 
 It's available on itch.io (as build) and on github (complete project, source and build).
@@ -147,7 +151,7 @@ On the wall above the window overlooking space, there is an engraved phrase that
 
 <blockquote><p class="spoiler">
 <i class="spoiler-alert">SPOILER ALERT! (click to reveal)</i>
-<span class=spoiler-content>The phrase reveals the solution of the game. In fact, this graffito only becomes visible after the player makes their first mistake.
+<span class=spoiler-content>The graffiti reveals the solution of the game. In fact, this graffito only becomes visible after the player makes their first mistake.
 </span>
 </p></blockquote>
 
@@ -157,21 +161,6 @@ On the corner room's walls, there is a real-time counter of all the player's att
 ### Running stickman
 
 The glowing Exit sign displays the same running stickman used in the Godot editor for the "CharacterBody3D" node. The same stickman appears in the game logo and in the _Fragile Floor_ yellow warning sign, where the figure is shown falling.
-
-### Numbers
-
-During the cutscene, the monitor dispays some error message where there hide some nerd references.
-
-![monitor displays the three error messages](../assets/deckfall-monitor-alert-messages.webp)
-
-> "...REACTORS 441 AND 507"  
-> "...PROTOCOL 850-M ACTIVATED EVACUATION"
-
-- **441** represents the Engine version `Godot 4.4.1`
-- **507** is the name of the spaceship of Rancore in his XENOVERSO album.
-- **850-m** is the name of the gpu card used for develop the game: _NVIDIA GTX 850M_.
-
-### Numbers
 
 During the cutscene, the monitor displays some error messages that hide a few nerdy references.
 
@@ -190,9 +179,9 @@ During the cutscene, the monitor displays some error messages that hide a few ne
 
 ### Solution mechanism
 
-The red arrow alawys points to the correct exit, but the first door seen from the player is aways locked, the second one is always unlocked. The solution is look first in the opposite direction and then walk to the correct door.
+The red arrow always points to the correct exit, but the first door seen from the player is always locked, the second one is always unlocked. The solution is look first in the opposite direction and then walk to the correct door.
 
-TThe easiest way to implement this is to place two oblstacles in front of both doors from the start. As soon as the player looks at one, the opposite obstacle immediately disappears.
+The easiest way to implement this is to place two obstacles in front of both doors from the start. As soon as the player looks at one, the opposite obstacle immediately disappears.
 
 <p>
 <video style="position:absolute" class="prevent-cover" muted title="soluzione"><source src="../assets/solution.webm" type="video/webm"></video>
@@ -230,7 +219,49 @@ If the raycast hits directly the player that means there are no intermediate obs
 <em style="grid-row-start: 2">Raycast hits the player</em>
 </div>
 
-**BUG**: "the raycast rotates and points constantly to the player by using `look_at()` function, and detect the collisions by `get_collider()` function.
-This solution seams works on paper but in reality it's not reliable: the raycast may not update his position enough in time if player is moving too fast.
+**BUG**: The raycast constantly rotates and points towards the player using the `look_at()` function, and detects collisions using the `get_collider()` function.
+This solution seems to work on paper, but in reality it is not reliable: the raycast may not update its position in time if the player moves too fast.  
+During beta testing, it was possible to see the door before the `get_collider()` function was activated, breaking the main rule of the puzzle.
 
-During beta testing
+### Second attempt using an Area3D
+
+Since the walls and door always have a fixed position, raycasting is only useful when the player turns the corner.
+You can achieve the same result by using an Area3D node on that region. If the player turns the corner and enters the area, it means the door is visible and we can _trust_ the signal coming from the `VisibleOnScreenNotifier3D` node.
+
+<div style="display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 8px;">
+<img style="object-position:bottom;" src="../assets/door_detect_area3d_out.webp" alt="player outside the area">
+<img style="object-position:bottom;" src="../assets/door_detect_area3d_in.webp" alt="player inside the area">
+</div>
+
+### The infinite hallway
+
+When the player falls down the stairs, they land in a new corridor identical to the previous one, simulating an infinite loop.
+
+Between the steps and the floor there is an `Area3D` node, which emits a signal when the player is falling. The game sets the player's position at the top of the starting corridor, in the same relative position.
+
+There are two identical cloned scenes of the corridor, and both have a `Marker3D` node positioned in front of the stairs. When the player falls, the game takes the player's distance from the marker and repositions the player at the same distance, but relative to the marker in the main hallway.
+
+![stairs leading to the next hallway$class=prevent-cover](../assets/stairs.webp)
+<em>Stairs leading to the next hallway</em>
+
+![top view of the game map$class=prevent-cover](../assets/map_top_view.webp)
+<em>Top view of the game map</em>
+
+![perspective top view of the game map$class=prevent-cover](../assets/map_perspective_view.webp)
+<em>Perspective top view of the game map</em>
+
+### The sun
+
+The sun casts intense light inside the spacecraft through the main corridor window. It is
+rotating slowly to simulate the classic movements of an orbiting spacecraft.
+
+The sun consists of a glow spherical Mesh and a `SpotLight3D` Node, which is a node projects a cone of light. The rotation pivots around the center of the window.
+In this animation, the starry sky also moves in the same way, controlled by the `sky_rotation` parameter of the `WorldEnvironment` node.
+
+![light projection on the window](../assets/sun_light.webp)
+![sun's mesh](../assets/sun_mesh.webp)
+
+<script src="../script.js"></script>

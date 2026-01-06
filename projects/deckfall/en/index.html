@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="light" style="color-scheme: only light">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deckfall</title>
+    <meta
+      name="description"
+      content="A little First person sci-fi game inspired by a level from Superliminal"
+    />
+
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+    <link href="../../../style/reset.css" rel="stylesheet" />
+    <link href="../../../style/fonts.css" rel="stylesheet" />
+    <link href="../../../style/markdown.css" rel="stylesheet" />
+    <link href="../../../style/markdown-mobile.css" rel="stylesheet" />
+    <link rel="icon" href="favicon.ico" />
+    <script src="../../../script/markdown.js" defer=""></script>
+
+    <!-- opengraph meta tags -->
+    <meta
+      property="og:url"
+      content="https://domescala.github.io/portfolio/projects/deckfall/en/"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Deckfall" />
+    <meta
+      property="og:description"
+      content="A little First person sci-fi game inspired by a level from Superliminal"
+    />
+    <meta
+      property="og:image"
+      content="https://domescala.github.io/portfolio/projects/deckfall/en/cover.gif"
+    />
+    <meta property="og:site_name" content="domescala.github.io" />
+    <!-- twitter meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="domescala.github.io" />
+    <meta
+      property="twitter:url"
+      content="https://domescala.github.io/portfolio/projects/deckfall/en/"
+    />
+    <meta name="twitter:title" content="Deckfall" />
+    <meta
+      name="twitter:description"
+      content="A little First person sci-fi game inspired by a level from Superliminal"
+    />
+    <meta
+      name="twitter:image"
+      content="https://domescala.github.io/portfolio/projects/deckfall/en/cover.gif"
+    />
+  </head>
+  <body class="markdown-box">
+    <p id="alert-banner" style="display: none">
+      Hey! This page is part of
+      <a href="../../../index.html">my portfolio :)</a>
+    </p>
+    <script>
+      if (window.self === window.top) {
+        document.querySelector("#alert-banner").style = "";
+      }
+    </script>
+
+    <p><link rel="stylesheet" href="../style.css" /></p>
+    <p>
+      <a href="../it" target="_blank"
+        >Leggimi in italiano! <span class="emoji">🇮🇹</span></a
+      >
+    </p>
+    <h6 id="_puzzle-game_-_godot-engine_">
+      <em>Puzzle game</em> <em>Godot engine</em>
+    </h6>
+    <h1 id="deckfall">Deckfall</h1>
+    <div>
+      <video id="trailer" class="prevent-cover" autoplay="" muted="" loop="">
+        <source src="../assets/reel.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <p>
+      <em
+        >Deckfall's trailer
+        <br />
+        Music: "Revolution" by
+        <a href="https://soundcloud.com/alexproductionsmusic" target="_blank"
+          >Alex-Productions</a
+        >
+        — CC BY 3.0</em
+      >
+    </p>
+    <p></p>
+
+    <section>
+      <h2 id="description-📢">Description <span class="emoji">📢</span></h2>
+      <section>
+        <p>
+          Deckfall is a little first person puzzle game, developed in
+          <strong>Godot Engine</strong>, inspired by the "Infinite Hallway"
+          level from <em>Superliminal</em>. The game takes place on a spaceship
+          on the verge of collapse, and the player must traverse an almost
+          infinite corridor in search of an escape route.
+        </p>
+        <p>
+          It's available on itch.io (as build) and on github (complete project,
+          source and build).
+        </p>
+      </section>
+    </section>
+
+    <section>
+      <h2 id="how-to-play-🕹️">How to play <span class="emoji">🕹️</span></h2>
+      <section>
+        <p>
+          Deckfall runs on Windows, Mac and Linux. For Windows systems, simply
+          download and run the executable file <code>deckfall.exe</code>. For
+          other systems, you can launch the game within the Godot 4.4.1 editor.
+        </p>
+        <h3 id="run-the-game-from-the-build-windows">
+          Run the game from the build (Windows)
+        </h3>
+        <ol>
+          <li>
+            Download the latest version from releases section
+            <ul>
+              <li>
+                <a
+                  href="https://github.com/domescala/deckfall/releases"
+                  target="_blank"
+                  ><span class="emoji">🗃️</span> Release section</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/domescala/deckfall/releases/download/v1.0/deckfall-v1.0.exe"
+                  target="_blank"
+                  ><span class="emoji">🚀</span> Direct download v1.0</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>Run the <code>deckfall-v1.0.exe</code> file</li>
+          <li>Play!</li>
+        </ol>
+        <h3 id="run-the-game-from-the-engine-windowsmacoslinux">
+          Run the game from the engine (Windows/macOS/linux)
+        </h3>
+        <ol>
+          <li>
+            First download the engine from the official Godot website (version
+            4.4.1):
+            <ul>
+              <li>
+                <a
+                  href="https://godotengine.org/download/archive/4.4.1-stable/"
+                  target="_blank"
+                  ><span class="emoji">🗃️</span> Download section</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://downloads.godotengine.org/?version=4.4.1&amp;flavor=stable&amp;slug=linux.x86_64.zip&amp;platform=linux.64"
+                  target="_blank"
+                  ><span class="emoji">🚀</span> Direct download for Linux</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://downloads.godotengine.org/?version=4.4.1&amp;flavor=stable&amp;slug=win64.exe.zip&amp;platform=windows.64"
+                  target="_blank"
+                  ><span class="emoji">🚀</span> Direct download for Windows</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://downloads.godotengine.org/?version=4.4.1&amp;flavor=stable&amp;slug=macos.universal.zip&amp;platform=macos.universal"
+                  target="_blank"
+                  ><span class="emoji">🚀</span> Direct download for macOS</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            Download the latest game's source from release section:
+            <ul>
+              <li>
+                <a
+                  href="https://github.com/domescala/deckfall/releases"
+                  target="_blank"
+                  ><span class="emoji">🗃️</span> Release section</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/domescala/deckfall/archive/refs/tags/v1.0.zip"
+                  target="_blank"
+                  ><span class="emoji">🚀</span> Direct download v1.0</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            Launch <code>Godot_v4.4.1</code> and <strong>drag</strong> the
+            <code>deckfall-v1.0.zip</code> file into the Godot window
+          </li>
+          <li>
+            Click <code>install</code>, Godot will unpack and load the project
+            in few minutes
+          </li>
+          <li>
+            Run the game by pressing the ▶️ button in the top-right corner, or
+            press <code>F5</code> (in Windows) / <code>Command + D</code> (in
+            macOS).
+          </li>
+          <li>Play!</li>
+        </ol>
+        <blockquote>
+          <p>
+            🚨 Note: if you want just play the game,
+            <strong>don't change anything in the editor!</strong>
+          </p>
+        </blockquote>
+        <h3 id="⚙️-settings"><span class="emoji">⚙️</span> Settings</h3>
+        <p>
+          The game is available in Italian and English. This setting is only
+          found in the start menu and cannot be changed once the game is
+          launched. You can also adjust mouse sensitivity and graphic quality
+          from the pause menu (press 'ESC' to open the pause menu).
+        </p>
+      </section>
+    </section>
+
+    <section>
+      <h2 id="licenses-and-credits-🏷️">
+        Licenses and Credits <span class="emoji">🏷️</span>
+      </h2>
+      <section>
+        <p>
+          Deckfall is released under several licenses, see the
+          <a
+            href="https://github.com/domescala/deckfall/blob/main/LICENSE.md"
+            target="_blank"
+            >LICENSE<span class="emoji">📃</span></a
+          >
+          file for complete details. In summary, the licenses are divided into:
+        </p>
+        <ol>
+          <li>
+            <strong>Compiled game (Build)</strong><br />
+            Because third-party assets under various licenses, including
+            "ShareAlike" were used, the compiled game (build) is licensed under
+            the Attribution-ShareAlike License (CC BY-SA 4.0).
+          </li>
+          <li>
+            <strong>Code</strong><br />
+            Scripts are licensed under the MIT License.
+          </li>
+          <li>
+            <strong>Original Assets</strong><br />
+            Assets created specifically for the project are licensed under the
+            Attribution-ShareAlike License (CC BY 4.0).
+          </li>
+        </ol>
+        <p>
+          See the
+          <a
+            href="https://github.com/domescala/deckfall/blob/main/CREDITS.md"
+            target="_blank"
+            >CREDITS<span class="emoji">📃</span></a
+          >
+          file for all credits related to third-party assets.
+        </p>
+      </section>
+    </section>
+
+    <section>
+      <h2 id="3d-models">3D Models</h2>
+      <section>
+        <p>
+          Structural elements (walls, floors, stairs, doors, etc.) and details
+          (pipes, barrels, monitors, etc.) come from Kenney's "Space Station
+          Kit" library (CC0 license). Specific and "dynamic" models, such as the
+          glowing pixelated numbers and the emergency lever, were custom-made in
+          Blender.
+        </p>
+        <p class="videos-squared">
+          <video autoplay="" muted="" loop="">
+            <source src="../assets/pixel_numbers.mp4" type="video/mp4" />
+          </video>
+          <video style="filter: brightness(1.5)" autoplay="" muted="" loop="">
+            <source src="../assets/floorsign.mp4" type="video/mp4" />
+          </video>
+          <video style="filter: brightness(1.5)" autoplay="" muted="" loop="">
+            <source src="../assets/lever.mp4" type="video/mp4" />
+          </video>
+          <em>...</em>
+        </p>
+        <h3 id="rooms-🏗️">Rooms <span class="emoji">🏗️</span></h3>
+        <p>The rooms were built directly in the engine.</p>
+        <p>
+          <img
+            src="../assets/room_corridor_front.webp"
+            alt="main corridor view"
+          />
+          <em>Main corridor</em>
+        </p>
+        <p>
+          <img
+            src="../assets/room_corridor_window.webp"
+            alt="Main corridor's window"
+          />
+          <img
+            src="../assets/room_corridor_full.webp"
+            alt="Main corridor view with error monitor and window in the background"
+          />
+        </p>
+        <p>
+          <img
+            src="../assets/room_left_corridor.webp"
+            alt='left corridor with door blocked by debris and glowing "EXIT" sign arrow pointing left'
+          />
+          <em>View of the corridor leading to the left exit</em>
+        </p>
+        <p>
+          <img
+            src="../assets/room_corridor_obstacles.webp"
+            alt="obstacles and debris overflowing from the blocked door"
+          />
+          <em>Door blocked by obstacles</em>
+        </p>
+        <p>
+          <img src="../assets/room_exit.webp" alt="corner room" />
+          <em>corner room with stairs leading to the next corridor</em>
+        </p>
+        <p>
+          <img
+            src="../assets/room_endgame.webp"
+            alt="last room without enough lighting"
+          />
+          <em>Deck Zero, final room</em>
+        </p>
+      </section>
+    </section>
+
+    <section>
+      <h2 id="musics-📻">Musics <span class="emoji">📻</span></h2>
+      <section>
+        <h3 id="score">Score</h3>
+        <p>
+          The background music is <em>"A Few Jumps Away"</em> by Arthur Vyncke,
+          selected through the <em>BreakingCopyright</em> website (CC BY-SA 3.0
+          license).<br />
+          Its <strong>electronic</strong> sound and subtle piano melody capture
+          the sci-fi setting, with a cyclical rhythm typical of puzzle games.
+        </p>
+        <h3 id="loops-and-dynamic-music">Loops and dynamic music</h3>
+        <p>
+          In order to create a smooth and constant music loop, the volume was
+          amplified at the start of the track and reduced in the chorus.
+        </p>
+        <p>
+          From the start menu through the entire first level, the music loops
+          only the first 20 seconds: a rhythmic accompaniment without melody.
+          When the player reaches the second level, the music transitions to the
+          second part with the full piano melody and developed arrangement.
+        </p>
+        <h3 id="jingle">Jingle</h3>
+        <p>
+          During the opening cutscene, a jingle can be heard coming from the
+          monitor during the space company's promotional message. The track
+          <em>"Crystals"</em> by enviromaniac2 (CC0) was selected for its
+          extremely <strong>cheerful</strong> sound, in complete contrast with
+          the <strong>tragic</strong> situation.
+        </p>
+        <p id="deckfall-jingle-audio">
+          <span>▶️ Press to play the jingle!</span>
+          <span>🔵 Press to stop</span>
+          <audio
+            loop=""
+            src="../assets/audio_jingle_394293__enviromaniac2__crystals.wav"
+            title="deckfall-jingle"
+          ></audio>
+        </p>
+        <p>
+          <img
+            src="../assets/monitor_corporate_message.webp"
+            alt="promotional message glowing from the monitor, asking customers to leave a positive review"
+          />
+        </p>
+      </section>
+    </section>
+
+    <section>
+      <h2 id="easter-eggs-and-references">Easter eggs and references</h2>
+      <section>
+        <h3 id="graffiti">Graffiti</h3>
+        <p>
+          On the wall in front of the stairs, the text
+          <em>This Way</em> suggests to the player to reach the next level by
+          jumping in the direction of the arrow.<br />
+          This first writing introduces the possibility that graffiti exist in
+          the game to help the player.
+          <img src="../assets/graffiti_thisway.webp" alt="graffiti this way" />
+        </p>
+        <p>
+          On the wall above the window overlooking space, there is an engraved
+          phrase that reads <em>"You're looking in the wrong direction"</em>.
+          This is a reference to a graffito in Turin written on a wall facing
+          the Mole Antonelliana.
+        </p>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(1, 1fr);
+            gap: 8px;
+          "
+        >
+          <img
+            style="height: 100%"
+            src="../assets/graffiti_wrongdirection.webp"
+            alt="graffito nel gioco"
+          />
+          <img
+            style="height: 100%"
+            src="../assets/graffiti_wrongdirection_turin.webp"
+            alt="graffito originale"
+          />
+        </div>
+        <blockquote>
+          <p class="spoiler">
+            <i class="spoiler-alert">SPOILER ALERT! (click to reveal)</i>
+            <span class="spoiler-content"
+              >The graffiti reveals the solution of the game. In fact, this
+              graffito only becomes visible after the player makes their first
+              mistake.
+            </span>
+          </p>
+        </blockquote>
+        <p>
+          On the corner room's walls, there is a real-time counter of all the
+          player's attempts, displayed in tally marks style.
+          <img src="../assets/graffiti_tallymarks.webp" alt="attempt counter" />
+        </p>
+        <h3 id="running-stickman">Running stickman</h3>
+        <p>
+          The glowing Exit sign displays the same running stickman used in the
+          Godot editor for the "CharacterBody3D" node. The same stickman appears
+          in the game logo and in the <em>Fragile Floor</em> yellow warning
+          sign, where the figure is shown falling.
+        </p>
+        <p>
+          During the cutscene, the monitor displays some error messages that
+          hide a few nerdy references.
+        </p>
+        <p>
+          <img
+            src="../assets/deckfall-monitor-alert-messages.webp"
+            alt="monitor displays three error messages"
+          />
+        </p>
+        <blockquote>
+          <p>
+            "…REACTORS 441 AND 507"<br />
+            "…PROTOCOL 850-M…"
+          </p>
+        </blockquote>
+        <ul>
+          <li>
+            <strong>441</strong> represents the engine version:
+            <code>Godot 4.4.1</code>
+          </li>
+          <li>
+            <strong>507</strong> is the name of the spaceship from Rancore's
+            XENOVERSO album
+          </li>
+          <li>
+            <strong>850-m</strong> refers to the GPU used to develop the game:
+            <em>NVIDIA GTX 850M</em> (very prehistoric, before GTA5)
+          </li>
+        </ul>
+      </section>
+    </section>
+
+    <section>
+      <h2 id="operation">Operation</h2>
+      <section>
+        <div class="spoiler-section-flag" style="display: none">
+          SPOILER ALERT! PLAY THE GAME FIRST! (click to reveal)
+        </div>
+        <h3 id="solution-mechanism">Solution mechanism</h3>
+        <p>
+          The red arrow always points to the correct exit, but the first door
+          seen from the player is always locked, the second one is always
+          unlocked. The solution is look first in the opposite direction and
+          then walk to the correct door.
+        </p>
+        <p>
+          The easiest way to implement this is to place two obstacles in front
+          of both doors from the start. As soon as the player looks at one, the
+          opposite obstacle immediately disappears.
+        </p>
+        <p>
+          <video
+            style="position: absolute"
+            class="prevent-cover"
+            muted=""
+            title="soluzione"
+          >
+            <source src="../assets/solution.webm" type="video/webm" />
+          </video>
+          <video
+            id="solution-video"
+            class="prevent-cover"
+            autoplay=""
+            muted=""
+            title="soluzione"
+          >
+            <source src="../assets/solution.webm" type="video/webm" />
+          </video>
+        </p>
+        <p><em>How do you create this mechanism?</em></p>
+        <p>
+          In Godot Engine there is the
+          <code>VisibleOnScreenNotifier3D</code> Node, which emits a signal
+          every time its area enters or exits the Camera's field of view.
+        </p>
+        <p>
+          That easy? No, because it's not a true <em>field of view</em> that
+          accounts for obstacles or walls, but rather a
+          <strong>three-dimensional region</strong> projected from the camera,
+          also known as <em>Frustum View</em>.
+        </p>
+        <p>
+          Therefore, the <code>VisibleOnScreenNotifier3D</code> Node marks as
+          "visible" every element inside the Frustum, even if the element is
+          hidden behind a wall and the player cannot see it
+        </p>
+        <p>
+          <img
+            src="../assets/frustum_culling.webp"
+            alt="visualization of the Frustum. A wall is placed in front of the camera and a lot of objects are hidden behind it"
+            class="prevent-cover"
+          />
+          <em
+            >A clear example of objects that are inside the Frustum View but
+            remain invisible to the player due to an obstacle</em
+          >
+        </p>
+        <p>
+          To solve this issue it's necessary detect when is an obstacle between
+          the player eyes (Camera) and the object.
+        </p>
+        <p><em>But how?</em></p>
+        <h3 id="first-attempt-using-a-raycast">
+          First attempt using a RayCast
+        </h3>
+        <p>
+          It is natural to think of using a <code>RayCast3D</code> node,
+          starting from the door frame and constantly pointing at the player's
+          head.
+        </p>
+        <p>
+          If the raycast hits directly the player that means there are no
+          intermediate obstacles, so we can trust the signal coming from the
+          <code>VisibleOnScreenNotifier3D</code> node.
+        </p>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 1fr 100%;
+            gap: 8px;
+          "
+        >
+          <img
+            style="object-position: bottom"
+            src="../assets/door_detect_raycast_out.webp"
+            alt="raycast bloccato dal muro"
+          />
+          <em style="grid-row-start: 2">Raycast is blocked by the wall</em>
+          <img
+            style="object-position: bottom"
+            src="../assets/door_detect_raycast_in.webp"
+            alt="raycast che colpisce il giocatore"
+          />
+          <em style="grid-row-start: 2">Raycast hits the player</em>
+        </div>
+        <p>
+          <strong>BUG</strong>: The raycast constantly rotates and points
+          towards the player using the <code>look_at()</code> function, and
+          detects collisions using the <code>get_collider()</code> function.
+          This solution seems to work on paper, but in reality it is not
+          reliable: the raycast may not update its position in time if the
+          player moves too fast.<br />
+          During beta testing, it was possible to see the door before the
+          <code>get_collider()</code> function was activated, breaking the main
+          rule of the puzzle.
+        </p>
+        <h3 id="second-attempt-using-an-area3d">
+          Second attempt using an Area3D
+        </h3>
+        <p>
+          Since the walls and door always have a fixed position, raycasting is
+          only useful when the player turns the corner. You can achieve the same
+          result by using an Area3D node on that region. If the player turns the
+          corner and enters the area, it means the door is visible and we can
+          <em>trust</em> the signal coming from the
+          <code>VisibleOnScreenNotifier3D</code> node.
+        </p>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(1, 1fr);
+            gap: 8px;
+          "
+        >
+          <img
+            style="object-position: bottom"
+            src="../assets/door_detect_area3d_out.webp"
+            alt="player outside the area"
+          />
+          <img
+            style="object-position: bottom"
+            src="../assets/door_detect_area3d_in.webp"
+            alt="player inside the area"
+          />
+        </div>
+        <h3 id="the-infinite-hallway">The infinite hallway</h3>
+        <p>
+          When the player falls down the stairs, they land in a new corridor
+          identical to the previous one, simulating an infinite loop.
+        </p>
+        <p>
+          Between the steps and the floor there is an <code>Area3D</code> node,
+          which emits a signal when the player is falling. The game sets the
+          player's position at the top of the starting corridor, in the same
+          relative position.
+        </p>
+        <p>
+          There are two identical cloned scenes of the corridor, and both have a
+          <code>Marker3D</code> node positioned in front of the stairs. When the
+          player falls, the game takes the player's distance from the marker and
+          repositions the player at the same distance, but relative to the
+          marker in the main hallway.
+        </p>
+        <p>
+          <img
+            src="../assets/stairs.webp"
+            alt="stairs leading to the next hallway"
+            class="prevent-cover"
+          />
+          <em>Stairs leading to the next hallway</em>
+        </p>
+        <p>
+          <img
+            src="../assets/map_top_view.webp"
+            alt="top view of the game map"
+            class="prevent-cover"
+          />
+          <em>Top view of the game map</em>
+        </p>
+        <p>
+          <img
+            src="../assets/map_perspective_view.webp"
+            alt="perspective top view of the game map"
+            class="prevent-cover"
+          />
+          <em>Perspective top view of the game map</em>
+        </p>
+        <h3 id="the-sun">The sun</h3>
+        <p>
+          The sun casts intense light inside the spacecraft through the main
+          corridor window. It is rotating slowly to simulate the classic
+          movements of an orbiting spacecraft.
+        </p>
+        <p>
+          The sun consists of a glow spherical Mesh and a
+          <code>SpotLight3D</code> Node, which is a node projects a cone of
+          light. The rotation pivots around the center of the window. In this
+          animation, the starry sky also moves in the same way, controlled by
+          the <code>sky_rotation</code> parameter of the
+          <code>WorldEnvironment</code> node.
+        </p>
+        <p>
+          <img
+            src="../assets/sun_light.webp"
+            alt="light projection on the window"
+          />
+          <img src="../assets/sun_mesh.webp" alt="sun's mesh" />
+        </p>
+        <script src="../script.js"></script>
+      </section>
+    </section>
+  </body>
+</html>
