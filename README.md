@@ -11,6 +11,9 @@ Dai un'occhiata ai miei progetti su: [domescala.github.io/portfolio](https://dom
  <a href="https://domescala.github.io/portfolio?project=node_class">
   <img src="projects/node_class/cover.gif" width="300" title="node class" alt="reel del progetto node class" />
  </a>
+ <a href="https://domescala.github.io/portfolio/projects/deckfall/it">
+  <img src="https://github.com/user-attachments/assets/2283b609-1de8-40aa-b30f-368b80336fba" width="300" title="deckfall" alt="reel del progetto deckfall" />
+ </a>
  <a href="https://domescala.github.io/portfolio?project=episode_tracker_the_clone_wars">
   <img src="https://github.com/user-attachments/assets/25fd9840-2e61-4920-b072-881fc58bc227" width="300" title="episode tracker the clone wars" alt="reel del progetto episode tracker the clone wars" />
  </a>
