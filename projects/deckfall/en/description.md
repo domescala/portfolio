@@ -6,6 +6,8 @@
 
 <link rel="stylesheet" href="../style.css">
 
+<iframe style="border-radius:5px" frameborder="0" src="https://itch.io/embed/4204427?linkback=true" width="552" height="167"><a href="https://domescala.itch.io/deckfall">Deckfall by domescala</a></iframe>
+
 [Leggimi in italiano! 🇮🇹](../it)
 
 ###### _Puzzle game_ _Godot engine_
@@ -34,7 +36,6 @@ Deckfall runs on Windows, Mac and Linux. For Windows systems, simply download an
 
 1. Download the latest version from releases section
    - [🗃️ Release section](https://github.com/domescala/deckfall/releases)
-   - [🚀 Direct download v1.0](https://github.com/domescala/deckfall/releases/download/v1.0/deckfall-v1.0.exe)
 2. Run the `deckfall-v1.0.exe` file
 3. Play!
 
