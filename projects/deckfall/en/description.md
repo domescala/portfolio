@@ -14,12 +14,8 @@
 
 # Deckfall
 
-<div>
-<video id="trailer" class="prevent-cover" autoplay muted loop><source src="../assets/reel.mp4" type="video/mp4"></video>
-</div>
-<em>Deckfall's trailer
-<br>
-Music: "Revolution" by [Alex-Productions](https://soundcloud.com/alexproductionsmusic) — CC BY 3.0</em>
+<iframe width="560" height="515" src="https://www.youtube.com/embed/N1dt6Ibu3w4?si=qJvzrqTMe6OzsMZG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<em>Deckfall's trailer</em>
 
 ## Description 📢
 
